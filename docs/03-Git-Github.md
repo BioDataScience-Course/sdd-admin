@@ -30,3 +30,13 @@ TODO: Guyliann: les éléments importants de la gestion de Github Classroom sont
 TODO: intégration de Github Classroom avec Moodle, voir https://classroom.github.com/help/setup-moodle & https://classroom.github.com/help/import-roster-from-lms.
 
 \BeginKnitrBlock{note}<div class="note">Une autre ressource intéressante dans le contexte de l'utilisation de Github/Github Classroom pour l'enseignement est [Github Education](https://education.github.com).</div>\EndKnitrBlock{note}
+
+## Astuces Git et Github
+
+Quelques astuces qui nous sont utiles...
+
+- Comparaison de branches sur Github\ : ajouter `/compare` à la fin de l'URL du dépôt et une page de comparaison de branche apparait. sinon, cette comparaison est aussi possible dans Github Desktop (menu `Branch -> Compare to Branch`).
+
+- Lorsqu'une branche n'est plus utile, elle peut être facilement éliminée depuis Github Desktop (entrée de menu `Branch -> Delete...`). Cette branche doit être activée d'abord, et tous les commits doivent avoir été pushés. Il est conseillé d'éliminer la branche sur le serveur en même temps que la branche locale.
+
+![La boite de dialogue d'élimination d'une branche dans Github Desktop.](images/git/git-delete-branch.png)
