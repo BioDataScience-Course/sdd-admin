@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapitre 6 Shiny | BioDataScience Administration</title>
+  <title>5.2 Intégration Wordpress - bookdown | BioDataScience Administration</title>
   <meta name="description" content="Administration de BioDataScience-Course." />
   <meta name="generator" content="bookdown 0.18 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapitre 6 Shiny | BioDataScience Administration" />
+  <meta property="og:title" content="5.2 Intégration Wordpress - bookdown | BioDataScience Administration" />
   <meta property="og:type" content="book" />
   <meta property="og:url" content="http://phgrosjean.sciviews.org/bookdown-test/" />
   <meta property="og:image" content="http://phgrosjean.sciviews.org/bookdown-test/images/front-cover.png" />
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="phgrosjean/bookdown-test" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapitre 6 Shiny | BioDataScience Administration" />
+  <meta name="twitter:title" content="5.2 Intégration Wordpress - bookdown | BioDataScience Administration" />
   
   <meta name="twitter:description" content="Administration de BioDataScience-Course." />
   <meta name="twitter:image" content="http://phgrosjean.sciviews.org/bookdown-test/images/front-cover.png" />
@@ -32,7 +32,7 @@
   
   
 <link rel="prev" href="installation-wordpress.html"/>
-<link rel="next" href="moodle.html"/>
+<link rel="next" href="shiny.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -324,7 +324,10 @@ code span.wa { color: #bf0303; } /* Warning */
 <li class="chapter" data-level="5" data-path="wordpress.html"><a href="wordpress.html"><i class="fa fa-check"></i><b>5</b> Wordpress</a><ul>
 <li class="chapter" data-level="5.1" data-path="installation-wordpress.html"><a href="installation-wordpress.html"><i class="fa fa-check"></i><b>5.1</b> Installation Wordpress</a><ul>
 <li class="chapter" data-level="5.1.1" data-path="installation-wordpress.html"><a href="installation-wordpress.html#intégration-des-bookdowns"><i class="fa fa-check"></i><b>5.1.1</b> Intégration des bookdowns</a></li>
+<li class="chapter" data-level="5.1.2" data-path="installation-wordpress.html"><a href="installation-wordpress.html#création-de-contenu-h5p"><i class="fa fa-check"></i><b>5.1.2</b> Création de contenu h5p</a></li>
+<li class="chapter" data-level="5.1.3" data-path="installation-wordpress.html"><a href="installation-wordpress.html#gestion-des-événements-xapi"><i class="fa fa-check"></i><b>5.1.3</b> Gestion des événements xAPI</a></li>
 </ul></li>
+<li class="chapter" data-level="5.2" data-path="intégration-wordpress-bookdown.html"><a href="intégration-wordpress-bookdown.html"><i class="fa fa-check"></i><b>5.2</b> Intégration Wordpress - bookdown</a></li>
 </ul></li>
 <li class="chapter" data-level="6" data-path="shiny.html"><a href="shiny.html"><i class="fa fa-check"></i><b>6</b> Shiny</a></li>
 <li class="chapter" data-level="7" data-path="moodle.html"><a href="moodle.html"><i class="fa fa-check"></i><b>7</b> Moodle</a><ul>
@@ -359,11 +362,16 @@ code span.wa { color: #bf0303; } /* Warning */
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="shiny" class="section level1">
-<h1><span class="header-section-number">Chapitre 6</span> Shiny</h1>
-<p>…</p>
+<div id="intégration-wordpress---bookdown" class="section level2">
+<h2><span class="header-section-number">5.2</span> Intégration Wordpress - bookdown</h2>
+<p>Tel que réalisé jusqu’ici, l’intégration Wordpress - bookdown est déjà pas trop mal, en particulier pour les widgets h5p. Ce qui serait bien d’implémenter en plus :</p>
+<ul>
+<li><p>Pouvoir transmettre l’identité du visiteur Wordpress aux learnrs et applis Shiny, ce qui nous dispenserait de l’identification manuelle actuelle bancale,</p></li>
+<li><p>Pouvoir afficher le bandeau Wordpress de l’utilisateur en haut des pages bookdown afin de pouvoir déterminer d’un coup d’œil si on est connecté ou pas au site, quelque soit la page actuellement affichée et avoir à tout instant accès à nos paramètres Wordpress et au tableau de bord.</p></li>
+</ul>
 
 </div>
+<!-- </div> -->
 <div id="disqus_thread"></div>
 <script>
 
@@ -390,7 +398,7 @@ s.setAttribute('data-timestamp', +new Date());
         </div>
       </div>
 <a href="installation-wordpress.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="moodle.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="shiny.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -421,7 +429,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/BioDataScience-Course/sdd-admin/edit/master/06-Shiny.Rmd",
+"link": "https://github.com/BioDataScience-Course/sdd-admin/edit/master/05-Wordpress.Rmd",
 "text": "Editer"
 },
 "history": {
