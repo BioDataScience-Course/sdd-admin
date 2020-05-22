@@ -1,0 +1,8 @@
+# Détails techniques {#details}
+
+```{r setup, include=FALSE, echo=FALSE, message=FALSE, results='hide'}
+knitr::opts_chunk$set(comment = '#', fig.align = "center")
+SciViews::R
+```
+
+Ici une page d'exemple qui donnerait quelques détails techniques...

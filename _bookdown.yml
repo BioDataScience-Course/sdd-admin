@@ -1,0 +1,25 @@
+book_filename: "bookdown-test"
+#chapter_name: "Module "
+repo: https://github.com/phgrosjean/bookdown-test
+output_dir: docs
+clean: [packages.bib, bookdown.bbl]
+delete_merged_file: yes
+new_session: yes
+language:
+  label:
+    fig: 'Figure '
+    tab: 'Tableau '
+    eq: 'Equation '
+    thm: 'Théorème '
+    lem: 'Lemme '
+    def: 'Définition '
+    cor: 'Corollaire '
+    prp: 'Proposition '
+    exm: 'Exemple '
+    exr: 'Exercice '
+    proof: 'Preuve. '
+    remark: 'Remarque. '
+    solution: 'Solution. '
+  ui:
+    edit: Editer
+    chapter_name: 'Module '

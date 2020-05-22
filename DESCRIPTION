@@ -1,0 +1,6 @@
+Package: placeholder
+Type: Book
+Title: Book SDD-UMONS.
+Version: 0.0.3
+Imports: bookdown
+Remotes: rstudio/bookdown

@@ -1,0 +1,10 @@
+# (APPENDIX) Appendices {-}
+
+
+# Installation de la SciViews Box {#svbox}
+
+```{r echo=FALSE, out.width="256px", fig.align='right'}
+knitr::include_graphics('images/sdd1_01/svBox-256.png')
+```
+
+...

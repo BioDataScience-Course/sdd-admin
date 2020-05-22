@@ -1,0 +1,44 @@
+--- 
+title: "A Test Bookdown Book"
+author: "Philippe Grosjean & Guyliann Engels"
+date: "`r Sys.Date()`"
+site: bookdown::bookdown_site
+output:
+  bookdown::gitbook:
+    info: yes
+    includes:
+      in_header: h5p.html
+      after_body: disqus.html
+documentclass: book
+bibliography: [book.bib, packages.bib]
+biblio-style: apalike
+link-citations: yes
+github-repo: phgrosjean/bookdown-test
+url: 'http\://phgrosjean.sciviews.org/bookdown-test/'
+description: "Tutoriel interactif pour la science des données avec R & SciViews-R."
+cover-image: "images/front-cover.png"
+---
+
+# Préambule {-}
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(comment = "#", fig.align = "center")
+# Automatically create a bib database for R packages
+knitr::write_bib(c(.packages(), 'bookdown', 'knitr', 'rmarkdown'), 'packages.bib')
+```
+
+Contenu de cet ouvrage en bref...
+
+![](images/front-cover.png)
+
+----
+
+_Le matériel dans cet ouvrage est distribué sous licence [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.fr)._
+
+----
+
+##### System information {-}
+
+```{r}
+sessioninfo::session_info()
+```
