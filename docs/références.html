@@ -4,27 +4,25 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Références | BioDataScience Administration</title>
-  <meta name="description" content="Administration de BioDataScience-Course." />
+  <title>Références | sdd-admin.utf8</title>
+  <meta name="description" content="" />
   <meta name="generator" content="bookdown 0.18 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Références | BioDataScience Administration" />
+  <meta property="og:title" content="Références | sdd-admin.utf8" />
   <meta property="og:type" content="book" />
-  <meta property="og:url" content="http://phgrosjean.sciviews.org/bookdown-test/" />
-  <meta property="og:image" content="http://phgrosjean.sciviews.org/bookdown-test/images/front-cover.png" />
-  <meta property="og:description" content="Administration de BioDataScience-Course." />
-  <meta name="github-repo" content="phgrosjean/bookdown-test" />
+  
+  
+  
+  
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Références | BioDataScience Administration" />
+  <meta name="twitter:title" content="Références | sdd-admin.utf8" />
   
-  <meta name="twitter:description" content="Administration de BioDataScience-Course." />
-  <meta name="twitter:image" content="http://phgrosjean.sciviews.org/bookdown-test/images/front-cover.png" />
-
-<meta name="author" content="Philippe Grosjean &amp; Guyliann Engels" />
+  
+  
 
 
-<meta name="date" content="2020-05-22" />
+
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -51,245 +49,7 @@
 
 
 
-<!-- Hide/show certain divs according to URL (UMONS or noinstitution) -->
-<script>
-// Parse the URL parameter
-function getParameterByName(name, url) {
-  if (!url) url = window.location.href;
-  name = name.replace(/[\[\]]/g, "\\$&");
-  var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
-    results = regex.exec(url);
-  if (!results) return null;
-  if (!results[2]) return '';
-  return decodeURIComponent(results[2].replace(/\+/g, " "));
-}
-// Collect parameters and store their values (as passed by Moodle)
-//var email       = getParameterByName('email');
-//var id          = getParameterByName('id');
-//var name        = getParameterByName('name');
-//var surname     = getParameterByName('surname');
-var institution = getParameterByName('institution');
-//var course      = getParameterByName('course');
-//var ref         = getParameterByName('ref');
 
-function showUMONS() {
-  var elems = document.getElementsByClassName('UMONS');
-  for (i = 0; i < elems.length; i++) {
-    var elem = elems[i];
-    elem.style.display = 'block';
-  }
-  var elems = document.getElementsByClassName('noinstitution');
-  for (i = 0; i < elems.length; i++) {
-    var elem = elems[i];
-    elem.style.display = 'none';
-  }
-}
-
-function hideUMONS() {
-  var elems = document.getElementsByClassName('UMONS');
-  for (i = 0; i < elems.length; i++) {
-    var elem = elems[i];
-    elem.style.display = 'none';
-  }
-  var elems = document.getElementsByClassName('noinstitution');
-  for (i = 0; i < elems.length; i++) {
-    var elem = elems[i];
-    elem.style.display = 'block';
-  }
-}
-
-function processParameters() {
-  if (institution == 'UMONS') {
-    showUMONS();
-  } else {
-    hideUMONS();
-  }
-  // Process other parameters too here...
-}
-
-window.onload = processParameters;
-</script>
-
-<!-- Show/hide R output as details -->
-<script>
-//(function() {
-//  var codes = document.querySelectorAll('pre:not([class])');
-//  var code, i, d, s, p;
-//  for (i = 0; i < codes.length; i++) {
-//    code = codes[i];
-//    p = code.parentNode;
-//    d = document.createElement('details');
-//    s = document.createElement('summary');
-//    s.innerText = 'Details';
-//    // <details><summary>Details</summary></details>
-//    d.appendChild(s);
-//    // move the code into <details>
-//    p.replaceChild(d, code);
-//    d.appendChild(code);
-//  }
-//})();
-</script>
-
-<!-- Pass URL arguments to iframe 'app' (embedded shiny app) & 'h5p' -->
-<script>
-var params = window.location.toString().split('?')[1];
-// Detect if we have the Sepia or Night theme
-if (document.getElementsByClassName('color-theme-1')) {
-  if (params === undefined) {
-    params = "theme=Sepia";
-  } else {
-    params = params + '&theme=Sepia';
-  }
-}
-if (document.getElementsByClassName('color-theme-22')) {
-  if (params === undefined) {
-    params = "theme=Night";
-  } else {
-    params = params + '&theme=Night';
-  }
-}
-
-if (params !== undefined) {
-  var apps = document.getElementsByClassName('app');
-  for (i = 0; i < apps.length; i++) {
-    var appitem = apps[i];
-    appitem.src = appitem.src + '?' + params;
-  }
-
-  var h5ps = document.getElementsByClassName('h5p');
-  for (i = 0; i < h5ps.length; i++) {
-    var h5pitem = h5ps[i];
-    h5pitem.src = h5pitem.src + '&' + params;
-  }
-}
-</script>
-
-<!-- Launch the app on click with URL parameters + theme -->
-<script>
-launchApp = function(id, src) {
-  var params = window.location.toString().split('?')[1];
-  // Detect if we have the Sepia or Night theme
-  if (document.getElementsByClassName('color-theme-1')[0]) {
-    if (params === undefined) {
-      params = "theme=Sepia";
-    } else {
-      params = params + '&theme=Sepia';
-    }
-  }
-  if (document.getElementsByClassName('color-theme-2')[0]) {
-    if (params === undefined) {
-      params = "theme=Night";
-    } else {
-      params = params + '&theme=Night';
-    }
-  }
-  if (params !== undefined) {
-    src = src + '?' + params;
-  }
-  var img = document.getElementById('img' + id);
-  var app = document.getElementById(id);
-  app.src = src;
-  app.style.display='block';
-  img.style.display='none';
-}
-</script>
-
-
-<!-- Required for H5P xAPI feedback -->
-
-<script>H5PIntegration = {"baseUrl":"https:\/\/wp.sciviews.org","url":"\/wp-content\/uploads\/h5p","postUserStatistics":false,"ajax":{"setFinished":"https:\/\/wp.sciviews.org\/wp-admin\/admin-ajax.php?token=e6b10366a6&action=h5p_setFinished","contentUserData":"https:\/\/wp.sciviews.org\/wp-admin\/admin-ajax.php?token=ea1774d67b&action=h5p_contents_user_data&content_id=:contentId&data_type=:dataType&sub_content_id=:subContentId"},"saveFreq":"30","siteUrl":"https:\/\/wp.sciviews.org","l10n":{"H5P":{"fullscreen":"Fullscreen","disableFullscreen":"Disable fullscreen","download":"Download","copyrights":"Rights of use","embed":"Embed","size":"Size","showAdvanced":"Show advanced","hideAdvanced":"Hide advanced","advancedHelp":"Include this script on your website if you want dynamic sizing of the embedded content:","copyrightInformation":"Rights of use","close":"Close","title":"Title","author":"Author","year":"Year","source":"Source","license":"License","thumbnail":"Thumbnail","noCopyrights":"No copyright information available for this content.","reuse":"Reuse","reuseContent":"Reuse Content","reuseDescription":"Reuse this content.","downloadDescription":"Download this content as a H5P file.","copyrightsDescription":"View copyright information for this content.","embedDescription":"View the embed code for this content.","h5pDescription":"Visit H5P.org to check out more cool content.","contentChanged":"This content has changed since you last used it.","startingOver":"You'll be starting over.","by":"by","showMore":"Show more","showLess":"Show less","subLevel":"Sublevel","confirmDialogHeader":"Confirm action","confirmDialogBody":"Please confirm that you wish to proceed. This action is not reversible.","cancelLabel":"Cancel","confirmLabel":"Confirm","licenseU":"Undisclosed","licenseCCBY":"Attribution","licenseCCBYSA":"Attribution-ShareAlike","licenseCCBYND":"Attribution-NoDerivs","licenseCCBYNC":"Attribution-NonCommercial","licenseCCBYNCSA":"Attribution-NonCommercial-ShareAlike","licenseCCBYNCND":"Attribution-NonCommercial-NoDerivs","licenseCC40":"4.0 International","licenseCC30":"3.0 Unported","licenseCC25":"2.5 Generic","licenseCC20":"2.0 Generic","licenseCC10":"1.0 Generic","licenseGPL":"General Public License","licenseV3":"Version 3","licenseV2":"Version 2","licenseV1":"Version 1","licensePD":"Public Domain","licenseCC010":"CC0 1.0 Universal (CC0 1.0) Public Domain Dedication","licensePDM":"Public Domain Mark","licenseC":"Copyright","contentType":"Content Type","licenseExtras":"License Extras","changes":"Changelog","contentCopied":"Content is copied to the clipboard","connectionLost":"Connection lost. Results will be stored and sent when you regain connection.","connectionReestablished":"Connection reestablished.","resubmitScores":"Attempting to submit stored results.","offlineDialogHeader":"Your connection to the server was lost","offlineDialogBody":"We were unable to send information about your completion of this task. Please check your internet connection.","offlineDialogRetryMessage":"Retrying in :num....","offlineDialogRetryButtonLabel":"Retry now","offlineSuccessfulSubmit":"Successfully submitted results."}},"hubIsEnabled":true,"reportingIsEnabled":true,"libraryConfig":null,"crossorigin":null,"crossoriginCacheBuster":null,"pluginCacheBuster":"?v=1.15.0","libraryUrl":"https:\/\/wp.sciviews.org\/wp-content\/plugins\/h5p\/h5p-php-library\/js","core":{"styles":["\/wp-content\/plugins\/h5p\/h5p-php-library\/styles\/h5p.css?ver=1.15.0","\/wp-content\/plugins\/h5p\/h5p-php-library\/styles\/h5p-confirmation-dialog.css?ver=1.15.0","\/wp-content\/plugins\/h5p\/h5p-php-library\/styles\/h5p-core-button.css?ver=1.15.0"],"scripts":["\/wp-content\/plugins\/h5p\/h5p-php-library\/js\/jquery.js?ver=1.15.0","\/wp-content\/plugins\/h5p\/h5p-php-library\/js\/h5p.js?ver=1.15.0","\/wp-content\/plugins\/h5p\/h5p-php-library\/js\/h5p-event-dispatcher.js?ver=1.15.0","\/wp-content\/plugins\/h5p\/h5p-php-library\/js\/h5p-x-api-event.js?ver=1.15.0","\/wp-content\/plugins\/h5p\/h5p-php-library\/js\/h5p-x-api.js?ver=1.15.0","\/wp-content\/plugins\/h5p\/h5p-php-library\/js\/h5p-content-type.js?ver=1.15.0","\/wp-content\/plugins\/h5p\/h5p-php-library\/js\/h5p-confirmation-dialog.js?ver=1.15.0","\/wp-content\/plugins\/h5p\/h5p-php-library\/js\/h5p-action-bar.js?ver=1.15.0","\/wp-content\/plugins\/h5p\/h5p-php-library\/js\/request-queue.js?ver=1.15.0"]},"loadedJs":[],"loadedCss":[],"contents":{"cid-7":{"library":"H5P.MultiChoice 1.14","jsonContent":"{\"answers\":[{\"correct\":false,\"tipsAndFeedback\":{\"tip\":\"\",\"chosenFeedback\":\"\",\"notChosenFeedback\":\"\"},\"text\":\"<div>The header of the document<\\\/div>\\n\"},{\"correct\":true,\"tipsAndFeedback\":{\"tip\":\"\",\"chosenFeedback\":\"<div>Excellent! A chunk is indeed a special area delimited by \\u0010\\u0010```{R} and ``` tags that contains R code to be evaluated in place when the document is compiled.<\\\/div>\\n\",\"notChosenFeedback\":\"<div>Oww! You should go back to the capsule about R Markdown to learn what a chunk is.<\\\/div>\\n\"},\"text\":\"<div>An area that contains R code<\\\/div>\\n\"},{\"correct\":false,\"tipsAndFeedback\":{\"tip\":\"\",\"chosenFeedback\":\"\",\"notChosenFeedback\":\"\"},\"text\":\"<div>A area that contains markdown text<\\\/div>\\n\"}],\"overallFeedback\":[{\"from\":0,\"to\":100}],\"UI\":{\"checkAnswerButton\":\"Check\",\"showSolutionButton\":\"Show solution\",\"tryAgainButton\":\"Retry\",\"tipsLabel\":\"Show tip\",\"scoreBarLabel\":\"You got :num out of :total points\",\"tipAvailable\":\"Tip available\",\"feedbackAvailable\":\"Feedback available\",\"readFeedback\":\"Read feedback\",\"wrongAnswer\":\"Wrong answer\",\"correctAnswer\":\"Correct answer\",\"shouldCheck\":\"Should have been checked\",\"shouldNotCheck\":\"Should not have been checked\",\"noInput\":\"Please answer before viewing the solution\"},\"behaviour\":{\"enableRetry\":true,\"enableSolutionsButton\":true,\"enableCheckButton\":true,\"type\":\"auto\",\"singlePoint\":true,\"randomAnswers\":true,\"showSolutionsRequiresInput\":true,\"confirmCheckDialog\":false,\"confirmRetryDialog\":false,\"autoCheck\":false,\"passPercentage\":100,\"showScorePoints\":true},\"confirmCheck\":{\"header\":\"Finish ?\",\"body\":\"Are you sure you wish to finish ?\",\"cancelLabel\":\"Cancel\",\"confirmLabel\":\"Finish\"},\"confirmRetry\":{\"header\":\"Retry ?\",\"body\":\"Are you sure you wish to retry ?\",\"cancelLabel\":\"Cancel\",\"confirmLabel\":\"Confirm\"},\"question\":\"<p>What is a chunk in R Markdown?<\\\/p>\\n\",\"media\":{\"disableImageZooming\":false}}","fullScreen":"0","exportUrl":"\/wp-content\/uploads\/h5p\/exports\/multiple-choice-7.h5p","embedCode":"<iframe src=\"https:\/\/wp.sciviews.org\/wp-admin\/admin-ajax.php?action=h5p_embed&id=7\" width=\":w\" height=\":h\" frameborder=\"0\" allowfullscreen=\"allowfullscreen\"><\/iframe>","resizeCode":"<script src=\"https:\/\/wp.sciviews.org\/wp-content\/plugins\/h5p\/h5p-php-library\/js\/h5p-resizer.js\" charset=\"UTF-8\"><\/script>","url":"https:\/\/wp.sciviews.org\/wp-admin\/admin-ajax.php?action=h5p_embed&id=7","title":"multiple-choice","displayOptions":{"frame":false,"export":false,"embed":true,"copyright":false,"icon":false,"copy":false},"metadata":{"title":"multiple-choice","license":"U"},"contentUserData":[{"state":"{}"}],"scripts":["\/wp-content\/uploads\/h5p\/cachedassets\/bbb484ab91a596c1d881578ee3d99ab92df05f05.js","https:\/\/wp.sciviews.org\/wp-content\/plugins\/h5pxapikatchu\/js\/h5pxapikatchu-listener.js?ver=0.4.2"],"styles":["\/wp-content\/uploads\/h5p\/cachedassets\/bbb484ab91a596c1d881578ee3d99ab92df05f05.css"]}}};</script><link rel='stylesheet' id='h5p-core-styles-h5p-css'  href='https://wp.sciviews.org/wp-content/plugins/h5p/h5p-php-library/styles/h5p.css' media='all' />
-<link rel='stylesheet' id='h5p-core-styles-h5p-confirmation-dialog-css'  href='https://wp.sciviews.org/wp-content/plugins/h5p/h5p-php-library/styles/h5p-confirmation-dialog.css' media='all' />
-<link rel='stylesheet' id='h5p-core-styles-h5p-core-button-css'  href='https://wp.sciviews.org/wp-content/plugins/h5p/h5p-php-library/styles/h5p-core-button.css' media='all' />
-<script src='https://wp.sciviews.org/wp-includes/js/wp-embed.min.js'></script>
-
-<!--
-<script src='https://wp.sciviews.org/wp-includes/js/jquery/jquery.js?ver=1.12.4-wp'></script>
-<script src='https://wp.sciviews.org/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.4.1'></script>
--->
-
-<script>
-var wpAJAXurl = "https:\/\/wp.sciviews.org\/wp-admin\/admin-ajax.php";
-var debugEnabled = "0";
-var captureAllH5pContentTypes = "1";
-var h5pContentTypes = [""];
-</script>
-<script src='https://wp.sciviews.org/wp-content/plugins/h5pxapikatchu/js/h5pxapikatchu-variables.js'></script>
-<script src='https://wp.sciviews.org/wp-content/plugins/h5p/h5p-php-library/js/jquery.js'></script>
-<script src='https://wp.sciviews.org/wp-content/plugins/h5p/h5p-php-library/js/h5p.js'></script>
-<script src='https://wp.sciviews.org/wp-content/plugins/h5p/h5p-php-library/js/h5p-event-dispatcher.js'></script>
-<script src='https://wp.sciviews.org/wp-content/plugins/h5p/h5p-php-library/js/h5p-x-api-event.js'></script>
-<script src='https://wp.sciviews.org/wp-content/plugins/h5p/h5p-php-library/js/h5p-x-api.js'></script>
-<script src='https://wp.sciviews.org/wp-content/plugins/h5p/h5p-php-library/js/h5p-content-type.js'></script>
-<script src='https://wp.sciviews.org/wp-content/plugins/h5p/h5p-php-library/js/h5p-confirmation-dialog.js'></script>
-<script src='https://wp.sciviews.org/wp-content/plugins/h5p/h5p-php-library/js/h5p-action-bar.js'></script>
-<script src='https://wp.sciviews.org/wp-content/plugins/h5p/h5p-php-library/js/request-queue.js'></script>
-
-
-<style type="text/css">
-a.sourceLine { display: inline-block; line-height: 1.25; }
-a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
-a.sourceLine:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode { white-space: pre; position: relative; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-code.sourceCode { white-space: pre-wrap; }
-a.sourceLine { text-indent: -1em; padding-left: 1em; }
-}
-pre.numberSource a.sourceLine
-  { position: relative; left: -4em; }
-pre.numberSource a.sourceLine::before
-  { content: attr(data-line-number);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; pointer-events: all; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-    background-color: #ffffff;
-    color: #a0a0a0;
-  }
-pre.numberSource { margin-left: 3em; border-left: 1px solid #a0a0a0;  padding-left: 4px; }
-div.sourceCode
-  { color: #1f1c1b; background-color: #ffffff; }
-@media screen {
-a.sourceLine::before { text-decoration: underline; }
-}
-code span. { color: #1f1c1b; } /* Normal */
-code span.al { color: #bf0303; background-color: #f7e6e6; font-weight: bold; } /* Alert */
-code span.an { color: #ca60ca; } /* Annotation */
-code span.at { color: #0057ae; } /* Attribute */
-code span.bn { color: #b08000; } /* BaseN */
-code span.bu { color: #644a9b; font-weight: bold; } /* BuiltIn */
-code span.cf { color: #1f1c1b; font-weight: bold; } /* ControlFlow */
-code span.ch { color: #924c9d; } /* Char */
-code span.cn { color: #aa5500; } /* Constant */
-code span.co { color: #898887; } /* Comment */
-code span.cv { color: #0095ff; } /* CommentVar */
-code span.do { color: #607880; } /* Documentation */
-code span.dt { color: #0057ae; } /* DataType */
-code span.dv { color: #b08000; } /* DecVal */
-code span.er { color: #bf0303; text-decoration: underline; } /* Error */
-code span.ex { color: #0095ff; font-weight: bold; } /* Extension */
-code span.fl { color: #b08000; } /* Float */
-code span.fu { color: #644a9b; } /* Function */
-code span.im { color: #ff5500; } /* Import */
-code span.in { color: #b08000; } /* Information */
-code span.kw { color: #1f1c1b; font-weight: bold; } /* Keyword */
-code span.op { color: #1f1c1b; } /* Operator */
-code span.ot { color: #006e28; } /* Other */
-code span.pp { color: #006e28; } /* Preprocessor */
-code span.re { color: #0057ae; background-color: #e0e9f8; } /* RegionMarker */
-code span.sc { color: #3daee9; } /* SpecialChar */
-code span.ss { color: #ff5500; } /* SpecialString */
-code span.st { color: #bf0303; } /* String */
-code span.va { color: #0057ae; } /* Variable */
-code span.vs { color: #bf0303; } /* VerbatimString */
-code span.wa { color: #bf0303; } /* Warning */
-</style>
 
 <link rel="stylesheet" href="style.css" type="text/css" />
 </head>
@@ -347,7 +107,7 @@ code span.wa { color: #bf0303; } /* Warning */
       <div class="body-inner">
         <div class="book-header" role="navigation">
           <h1>
-            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">BioDataScience Administration</a>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./"></a>
           </h1>
         </div>
 
@@ -359,26 +119,6 @@ code span.wa { color: #bf0303; } /* Warning */
 <h1>Références</h1>
 
 </div>
-<div id="disqus_thread"></div>
-<script>
-
-/**
-*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
-*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
-/*
-var disqus_config = function () {
-this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
-this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
-};
-*/
-/*(function() { // DON'T EDIT BELOW THIS LINE
-var d = document, s = d.createElement('script');
-s.src = 'https://sddb.disqus.com/embed.js';
-s.setAttribute('data-timestamp', +new Date());
-(d.head || d.body).appendChild(s);
-})();*/
-</script>
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
             </section>
 
           </div>
