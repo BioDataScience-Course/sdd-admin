@@ -1,21 +1,21 @@
 --- 
-title: "A Test Bookdown Book"
+title: "BioDataScience Administration"
 author: "Philippe Grosjean & Guyliann Engels"
-date: "2020-05-20"
+date: "2020-05-22"
 site: bookdown::bookdown_site
 output:
   bookdown::gitbook:
     info: yes
     includes:
-      in_header: h5p.html
-      after_body: disqus.html
+      in_header: header.html
+      after_body: footer.html
 documentclass: book
 bibliography: [book.bib, packages.bib]
 biblio-style: apalike
 link-citations: yes
 github-repo: phgrosjean/bookdown-test
 url: 'http\://phgrosjean.sciviews.org/bookdown-test/'
-description: "Tutoriel interactif pour la science des données avec R & SciViews-R."
+description: "Administration de BioDataScience-Course."
 cover-image: "images/front-cover.png"
 ---
 
@@ -23,7 +23,7 @@ cover-image: "images/front-cover.png"
 
 
 
-Contenu de cet ouvrage en bref...
+Notre organisation **BioDataScience-Course** sur Github devient de plus en plus complexe avec le temps car nous combinons plusieurs outils différents pour fournir à nos étudiants un environnement de travail et du matériel pédagogique riches et variés. Ce bookdown centralise l'information nécessaire pour les enseignants et les administrateurs de ces outils.
 
 ![](images/front-cover.png)
 
@@ -33,7 +33,10 @@ _Le matériel dans cet ouvrage est distribué sous licence [CC BY-NC-SA 4.0](htt
 
 ----
 
-##### System information {-}
+<details>
+<summary>Détails concernant le système utilisé pour compiler ce bookdown...</summary>
+
+##### Information système {-}
 
 
 ```r
@@ -51,7 +54,7 @@ sessioninfo::session_info()
 #  collate  en_US.UTF-8                 
 #  ctype    en_US.UTF-8                 
 #  tz       Europe/Brussels             
-#  date     2020-05-20                  
+#  date     2020-05-22                  
 # 
 # ─ Packages ───────────────────────────────────────────────────────────────────
 #  package     * version    date       lib source                            
@@ -77,3 +80,5 @@ sessioninfo::session_info()
 # 
 # [1] /Library/Frameworks/R.framework/Versions/3.6/Resources/library
 ```
+
+</details>

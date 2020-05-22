@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>BioDataScience Administration</title>
+  <title>3.2 BioDataScience-Course | BioDataScience Admin</title>
   <meta name="description" content="Administration de BioDataScience-Course." />
   <meta name="generator" content="bookdown 0.18 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="BioDataScience Administration" />
+  <meta property="og:title" content="3.2 BioDataScience-Course | BioDataScience Admin" />
   <meta property="og:type" content="book" />
   <meta property="og:url" content="http://phgrosjean.sciviews.org/bookdown-test/" />
   <meta property="og:image" content="http://phgrosjean.sciviews.org/bookdown-test/images/front-cover.png" />
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="phgrosjean/bookdown-test" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="BioDataScience Administration" />
+  <meta name="twitter:title" content="3.2 BioDataScience-Course | BioDataScience Admin" />
   
   <meta name="twitter:description" content="Administration de BioDataScience-Course." />
   <meta name="twitter:image" content="http://phgrosjean.sciviews.org/bookdown-test/images/front-cover.png" />
@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-
-<link rel="next" href="intro.html"/>
+<link rel="prev" href="installation-git-et-cie.html"/>
+<link rel="next" href="github-classroom.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -341,7 +341,7 @@ code span.wa { color: #bf0303; } /* Warning */
       <div class="body-inner">
         <div class="book-header" role="navigation">
           <h1>
-            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">BioDataScience Administration</a>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">BioDataScience Admin</a>
           </h1>
         </div>
 
@@ -349,60 +349,16 @@ code span.wa { color: #bf0303; } /* Warning */
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="header">
-<h1 class="title">BioDataScience Administration</h1>
-<p class="author"><em>Philippe Grosjean &amp; Guyliann Engels</em></p>
-<p class="date"><em>2020-05-22</em></p>
-</div>
-<div id="préambule" class="section level1 unnumbered">
-<h1>Préambule</h1>
-<p>Notre organisation <strong>BioDataScience-Course</strong> sur Github devient de plus en plus complexe avec le temps car nous combinons plusieurs outils différents pour fournir à nos étudiants un environnement de travail et du matériel pédagogique riches et variés. Ce bookdown centralise l’information nécessaire pour les enseignants et les administrateurs de ces outils.</p>
-<p><img src="images/front-cover.png" /></p>
-<hr />
-<p><em>Le matériel dans cet ouvrage est distribué sous licence <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.fr">CC BY-NC-SA 4.0</a>.</em></p>
-<hr />
-<details>
-<p><summary>Détails concernant le système utilisé pour compiler ce bookdown…</summary></p>
-<div id="information-système" class="section level5 unnumbered">
-<h5>Information système</h5>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" data-line-number="1">sessioninfo<span class="op">::</span><span class="kw">session_info</span>()</a></code></pre></div>
-<pre><code># ─ Session info ───────────────────────────────────────────────────────────────
-#  setting  value                       
-#  version  R version 3.6.3 (2020-02-29)
-#  os       macOS Catalina 10.15.4      
-#  system   x86_64, darwin15.6.0        
-#  ui       X11                         
-#  language (EN)                        
-#  collate  en_US.UTF-8                 
-#  ctype    en_US.UTF-8                 
-#  tz       Europe/Brussels             
-#  date     2020-05-22                  
-# 
-# ─ Packages ───────────────────────────────────────────────────────────────────
-#  package     * version    date       lib source                            
-#  assertthat    0.2.1      2019-03-21 [1] CRAN (R 3.6.0)                    
-#  bookdown      0.18       2020-03-05 [1] CRAN (R 3.6.0)                    
-#  cli           2.0.2      2020-02-28 [1] CRAN (R 3.6.0)                    
-#  crayon        1.3.4.9000 2020-04-29 [1] Github (r-lib/crayon@dcf6d44)     
-#  digest        0.6.25     2020-02-23 [1] CRAN (R 3.6.0)                    
-#  evaluate      0.14       2019-05-28 [1] CRAN (R 3.6.0)                    
-#  fansi         0.4.1      2020-01-08 [1] CRAN (R 3.6.0)                    
-#  glue          1.4.0      2020-04-03 [1] CRAN (R 3.6.2)                    
-#  htmltools     0.4.0.9003 2020-04-29 [1] Github (rstudio/htmltools@984b39c)
-#  knitr         1.28       2020-02-06 [1] CRAN (R 3.6.0)                    
-#  magrittr      1.5        2014-11-22 [1] CRAN (R 3.6.0)                    
-#  rlang         0.4.5      2020-03-01 [1] CRAN (R 3.6.0)                    
-#  rmarkdown     2.1        2020-01-20 [1] CRAN (R 3.6.0)                    
-#  sessioninfo   1.1.1      2018-11-05 [1] CRAN (R 3.6.0)                    
-#  stringi       1.4.6      2020-02-17 [1] CRAN (R 3.6.0)                    
-#  stringr       1.4.0      2019-02-10 [1] CRAN (R 3.6.0)                    
-#  withr         2.2.0      2020-04-20 [1] CRAN (R 3.6.2)                    
-#  xfun          0.13       2020-04-13 [1] CRAN (R 3.6.2)                    
-#  yaml          2.2.1      2020-02-01 [1] CRAN (R 3.6.0)                    
-# 
-# [1] /Library/Frameworks/R.framework/Versions/3.6/Resources/library</code></pre>
-</details>
-
+<div id="biodatascience-course" class="section level2">
+<h2><span class="header-section-number">3.2</span> BioDataScience-Course</h2>
+<p>L’organisation <a href="https://github.com/BioDataScience-Course">BioDataScience-Course</a> regroupe tous les dépôts Github relatifs à nos cours, y compris les travaux des étudiants.</p>
+<div id="convention-de-noms" class="section level3">
+<h3><span class="header-section-number">3.2.1</span> Convention de noms</h3>
+<p>Comme l’organisation contient plusieurs centaines de dépôts, il est utile de les nommer correctement pour s’y retrouver. Les dépôts créés via Github Classroom seront traités plus loin. Voici quelques règles :</p>
+<ul>
+<li><p>Les dépôts important (matériel pédagogique, gestion des étudiants et de leur progression, …) commencent tous par <code>sdd</code>. Pour les dépôts moins importants ou de test, utiliser un autre préfixe.</p></li>
+<li><p>Lorsqu’un dépôt est relatif à une cohorte d’étudiants en particulier, nous l’indiquons par un suffixe reprenant les deux derniers chiffres de l’année initiale, suivi de <code>m</code> pour les étudiants montois et <code>c</code> pour les étudiants de Charleroi. Par exemple, <code>sdd_students19m</code> concerne la cohorte d’étudiants montois inscrits en premier cours (Bab2 de biologie) en 2019-2020. De même <code>sdd_students20c</code> concerne la cohorte d’étudiants de Charleroi inscrits en Bab2 en 2020-2021.</p></li>
+</ul>
 </div>
 </div>
 <div id="disqus_thread"></div>
@@ -430,8 +386,8 @@ s.setAttribute('data-timestamp', +new Date());
           </div>
         </div>
       </div>
-
-<a href="intro.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="installation-git-et-cie.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="github-classroom.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -462,7 +418,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/BioDataScience-Course/sdd-admin/edit/master/index.Rmd",
+"link": "https://github.com/BioDataScience-Course/sdd-admin/edit/master/03-Git-Github.Rmd",
 "text": "Editer"
 },
 "history": {
