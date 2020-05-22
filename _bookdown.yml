@@ -22,4 +22,4 @@ language:
     solution: 'Solution. '
   ui:
     edit: Editer
-    chapter_name: 'Module '
+    chapter_name: 'Chapitre '
