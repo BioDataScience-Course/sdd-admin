@@ -41,13 +41,23 @@ Le serveur est installé initialement avec **PHP 7.3** et une base de données *
 
 - **Import Users from CSV 1.0.1** est un plugin permettant de créer des utilisateurs en batch depuis un fichier CSV. Nous pourrons ainsi exporter en bloc les données venant de Moodle et créer en avance les comptes Wordpress avec plein d'informations supplémentaires.
 
+- **Advanced iFrame 2020.2.1** permet d'insérer un iframe avec plein d'options\ : sécurisation, adaptation de la taille, passage de paramètres, etc. Nous utilisons ce plugin pour intégrer les bookdown dans le site Wordpress, et ainsi conserver la bannière supérieure et le pied de page de notre site tout en affichant le bookdown.
+
 - **UpdraftPlus 1.16.24** comme système de backup de l'ensemble (fichiers Wordpress + base MySQL). Le backup se fait en local pour l'instant dans `lamp0/web/vhosts/wp.sciviews.org/htdocs/wp-content/updraft`, mais il est recopié sur notre disque p-cloud dans le dossier `sdd_site_backup`.
 
 - Quelques autres plugins aidant à gére le site Wordpress\ : **Broken Link Checker 1.11.12**, **Health Check & Troubleshooting 1.4.4** & **WP-Optimize 3.0.19**.
 
 Le site est servi à l'adresse https://wp.sciviews.org. Les enseignants y sont enregistrés comme éditeurs. En outre, un compte administrateur est aussi créé. Le serveur est accessible par SSH (aprèz activation provisoire dans gandi) et sFTP. Toutes les informations nécessaires seront transmises aux intéressés par voie sécurisée.
 
-### Intégration des bookdowns
+### Intégration des bookdowns dans le site
+
+Pour l'instant, il y a deux versions\ :
+
+- Science des données biologiques 1 renvoie vers le bookdown de test directement. A partir de ce moment, nous perdons le contrôle et c'est le bookdown qui doit tout gérer... or comme c'est une page statique, les possibilités sont limitées à du JavaScript qu'on aurait été y mettre,
+
+- Science des données biologiques 3 revoie à la même page, **mais intégrées sous forme d'iframe** dans une page de Wordpress dédiée. Nous utilisons le plugin *Advanced iFrame* qui permet de contrôler la taille de l'iframe, de lui passer des paramètres et encore d'autres choses. Cela donne pas mal, et l'utilisateur conserve la barre d'outils supérieure (accès à Moodle, Discord, etc.) S'il veut lire le contenu du bookdown sans voir cette barre, il lui suffit de faire coulisser la page jusque tout en bas et la barre de menu du site sera cachée.
+
+### Intégration des h5p dans bookdown
 
 H5p s'affiche dans un iframe dans le document principal. Il lui transmet les événements xAPI, et c'est donc ce document principal qui doit les traiter. Nous avons ici une impossibilité à le faire si nous sommes dans un cas où h5p est servi par un serveur différent que notre bookdown. En effet, les accès en "Cross-Origin Resource Sharing" ou CORS sont restreintes pour éviter des attaques de site évidentes. Ainsi un iframe issu d'un serveur différent de la page qui l'héberge ne peut communiquer librement avec la page qui le contien si elle provient d'un site différent. Or, nous avons besoin de cette communication pour transmettre les événements xAPI de h5p.
 
@@ -97,11 +107,3 @@ Ces événements sont accessibles à partir du tableau de bord de Wordpress dans
 ![Événements xAPI dans H5PxAPIkatchu. En bas tu tableau, on peut filtrer les données, et le bouton `Download` permet de récupérer le tableau filtré au format CSV. Le lien `Delete` permet de tout effacer et n'est disponible que pour un administrateur du site.](images/wordpress/h5pxapi.png)
 
 Cette interface est basique, mais elle n'est pas prévue pour se substituer à des outils plus évolués. TODO: nous devons voir comment récupérer ces évémnements facilement et les injecter dans notre base de données MongoDB, à côté des événements learnr et Shiny. Pour rappel, la base de données MySQL n'est **pas** accessible depuis l'extérieur pour des raisons de sécurité et l'accès SSH doit être réactivé manuellement pour une courte durée.
-
-## Intégration Wordpress - bookdown
-
-Tel que réalisé jusqu'ici, l'intégration Wordpress - bookdown est déjà pas trop mal, en particulier pour les widgets h5p. Ce qui serait bien d'implémenter en plus\ :
-
-- Pouvoir transmettre l'identité du visiteur Wordpress aux learnrs et applis Shiny, ce qui nous dispenserait de l'identification manuelle actuelle bancale,
-
-- Pouvoir afficher le bandeau Wordpress de l'utilisateur en haut des pages bookdown afin de pouvoir déterminer d'un coup d'œil si on est connecté ou pas au site, quelque soit la page actuellement affichée et avoir à tout instant accès à nos paramètres Wordpress et au tableau de bord. 

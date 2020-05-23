@@ -24,7 +24,7 @@
 <meta name="author" content="Philippe Grosjean &amp; Guyliann Engels" />
 
 
-<meta name="date" content="2020-05-22" />
+<meta name="date" content="2020-05-23" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -32,7 +32,7 @@
   
   
 <link rel="prev" href="wordpress.html"/>
-<link rel="next" href="intégration-wordpress-bookdown.html"/>
+<link rel="next" href="shiny.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -323,11 +323,11 @@ code span.wa { color: #bf0303; } /* Warning */
 <li class="chapter" data-level="4" data-path="bookdown.html"><a href="bookdown.html"><i class="fa fa-check"></i><b>4</b> Bookdown</a></li>
 <li class="chapter" data-level="5" data-path="wordpress.html"><a href="wordpress.html"><i class="fa fa-check"></i><b>5</b> Wordpress</a><ul>
 <li class="chapter" data-level="5.1" data-path="installation-wordpress.html"><a href="installation-wordpress.html"><i class="fa fa-check"></i><b>5.1</b> Installation Wordpress</a><ul>
-<li class="chapter" data-level="5.1.1" data-path="installation-wordpress.html"><a href="installation-wordpress.html#intégration-des-bookdowns"><i class="fa fa-check"></i><b>5.1.1</b> Intégration des bookdowns</a></li>
-<li class="chapter" data-level="5.1.2" data-path="installation-wordpress.html"><a href="installation-wordpress.html#création-de-contenu-h5p"><i class="fa fa-check"></i><b>5.1.2</b> Création de contenu h5p</a></li>
-<li class="chapter" data-level="5.1.3" data-path="installation-wordpress.html"><a href="installation-wordpress.html#gestion-des-événements-xapi"><i class="fa fa-check"></i><b>5.1.3</b> Gestion des événements xAPI</a></li>
+<li class="chapter" data-level="5.1.1" data-path="installation-wordpress.html"><a href="installation-wordpress.html#intégration-des-bookdowns-dans-le-site"><i class="fa fa-check"></i><b>5.1.1</b> Intégration des bookdowns dans le site</a></li>
+<li class="chapter" data-level="5.1.2" data-path="installation-wordpress.html"><a href="installation-wordpress.html#intégration-des-h5p-dans-bookdown"><i class="fa fa-check"></i><b>5.1.2</b> Intégration des h5p dans bookdown</a></li>
+<li class="chapter" data-level="5.1.3" data-path="installation-wordpress.html"><a href="installation-wordpress.html#création-de-contenu-h5p"><i class="fa fa-check"></i><b>5.1.3</b> Création de contenu h5p</a></li>
+<li class="chapter" data-level="5.1.4" data-path="installation-wordpress.html"><a href="installation-wordpress.html#gestion-des-événements-xapi"><i class="fa fa-check"></i><b>5.1.4</b> Gestion des événements xAPI</a></li>
 </ul></li>
-<li class="chapter" data-level="5.2" data-path="intégration-wordpress-bookdown.html"><a href="intégration-wordpress-bookdown.html"><i class="fa fa-check"></i><b>5.2</b> Intégration Wordpress - bookdown</a></li>
 </ul></li>
 <li class="chapter" data-level="6" data-path="shiny.html"><a href="shiny.html"><i class="fa fa-check"></i><b>6</b> Shiny</a></li>
 <li class="chapter" data-level="7" data-path="moodle.html"><a href="moodle.html"><i class="fa fa-check"></i><b>7</b> Moodle</a><ul>
@@ -371,12 +371,21 @@ code span.wa { color: #bf0303; } /* Warning */
 <li><p><strong>SNORDIAN’s H5PxAPIkatchu 0.4.2</strong> capture les événements xAPI générés par H5P et les stockent directement dans la base de données MySQL liée à Wordpress. Il y a une interface simpliste pour visualiser les tables, les filtrer et explrter au format CSV. <strong>Dans un premier cela nous servira, mais nous devrons développer une autre façon de récupérer les donner, voire, dériver un autre plugin pour envoyer les événements directement dans la même base de données MongoDB que celle utilisée par nos applis Shiny</strong> (voir <a href="shiny.html#shiny">6</a>).</p></li>
 <li><p><strong>OAuth Single Sign On - SSO (OAuth Client) 6.15.2</strong> configuré pour enregistrer et connecter un utilisateur via son compte Github. Pour permettre ceci une application Github nommée <strong>BioDataScience</strong> a été créée. La configuration de ce plugin est disponible depuis le tableau de bord de Wordpress -&gt; miniOrange -&gt; OAuth.</p></li>
 <li><p><strong>Import Users from CSV 1.0.1</strong> est un plugin permettant de créer des utilisateurs en batch depuis un fichier CSV. Nous pourrons ainsi exporter en bloc les données venant de Moodle et créer en avance les comptes Wordpress avec plein d’informations supplémentaires.</p></li>
+<li><p><strong>Advanced iFrame 2020.2.1</strong> permet d’insérer un iframe avec plein d’options : sécurisation, adaptation de la taille, passage de paramètres, etc. Nous utilisons ce plugin pour intégrer les bookdown dans le site Wordpress, et ainsi conserver la bannière supérieure et le pied de page de notre site tout en affichant le bookdown.</p></li>
 <li><p><strong>UpdraftPlus 1.16.24</strong> comme système de backup de l’ensemble (fichiers Wordpress + base MySQL). Le backup se fait en local pour l’instant dans <code>lamp0/web/vhosts/wp.sciviews.org/htdocs/wp-content/updraft</code>, mais il est recopié sur notre disque p-cloud dans le dossier <code>sdd_site_backup</code>.</p></li>
 <li><p>Quelques autres plugins aidant à gére le site Wordpress : <strong>Broken Link Checker 1.11.12</strong>, <strong>Health Check &amp; Troubleshooting 1.4.4</strong> &amp; <strong>WP-Optimize 3.0.19</strong>.</p></li>
 </ul>
 <p>Le site est servi à l’adresse <a href="https://wp.sciviews.org" class="uri">https://wp.sciviews.org</a>. Les enseignants y sont enregistrés comme éditeurs. En outre, un compte administrateur est aussi créé. Le serveur est accessible par SSH (aprèz activation provisoire dans gandi) et sFTP. Toutes les informations nécessaires seront transmises aux intéressés par voie sécurisée.</p>
-<div id="intégration-des-bookdowns" class="section level3">
-<h3><span class="header-section-number">5.1.1</span> Intégration des bookdowns</h3>
+<div id="intégration-des-bookdowns-dans-le-site" class="section level3">
+<h3><span class="header-section-number">5.1.1</span> Intégration des bookdowns dans le site</h3>
+<p>Pour l’instant, il y a deux versions :</p>
+<ul>
+<li><p>Science des données biologiques 1 renvoie vers le bookdown de test directement. A partir de ce moment, nous perdons le contrôle et c’est le bookdown qui doit tout gérer… or comme c’est une page statique, les possibilités sont limitées à du JavaScript qu’on aurait été y mettre,</p></li>
+<li><p>Science des données biologiques 3 revoie à la même page, <strong>mais intégrées sous forme d’iframe</strong> dans une page de Wordpress dédiée. Nous utilisons le plugin <em>Advanced iFrame</em> qui permet de contrôler la taille de l’iframe, de lui passer des paramètres et encore d’autres choses. Cela donne pas mal, et l’utilisateur conserve la barre d’outils supérieure (accès à Moodle, Discord, etc.) S’il veut lire le contenu du bookdown sans voir cette barre, il lui suffit de faire coulisser la page jusque tout en bas et la barre de menu du site sera cachée.</p></li>
+</ul>
+</div>
+<div id="intégration-des-h5p-dans-bookdown" class="section level3">
+<h3><span class="header-section-number">5.1.2</span> Intégration des h5p dans bookdown</h3>
 <p>H5p s’affiche dans un iframe dans le document principal. Il lui transmet les événements xAPI, et c’est donc ce document principal qui doit les traiter. Nous avons ici une impossibilité à le faire si nous sommes dans un cas où h5p est servi par un serveur différent que notre bookdown. En effet, les accès en “Cross-Origin Resource Sharing” ou CORS sont restreintes pour éviter des attaques de site évidentes. Ainsi un iframe issu d’un serveur différent de la page qui l’héberge ne peut communiquer librement avec la page qui le contien si elle provient d’un site différent. Or, nous avons besoin de cette communication pour transmettre les événements xAPI de h5p.</p>
 <p>La solution que nous avons trouvée est d’ajouter le dossier qui contient nos pages statiques du bookdown à Wordpress directement. Ainsi les deux sont maintenanrt servis à partir de la même adresse <a href="https://wp.sciviews.org" class="uri">https://wp.sciviews.org</a>. Pour l’instant, nous copions simplement ces fichiers dans un sous dossier <code>sdd-umons</code> dans <code>lamp0/web/vhosts/wp.sciviews.org/htdocs</code>. Ainsi, le bookdown en question est servi par Wordpress à l’adresse <a href="https://wp.sciviews.org/sdd-umons" class="uri">https://wp.sciviews.org/sdd-umons</a>. Et à présent, la communication des xAPI h5p est possible… à condition d’ajouter le code nécessaire dans bookdown.</p>
 <p>Nous créons un fichier <code>header.html</code> dans bookdown qui contient ce code, extrait du serveur Wordpress, puisque nous sommes dedans maintenant. Il suffit alors de le reseigner dans l’entête YAML du fichier principal <code>index.Rmd</code> comme :</p>
@@ -401,20 +410,22 @@ code span.wa { color: #bf0303; } /* Warning */
 <p>Nous avons également tenté de passer des arguments supplémentaires via l’URL qui lance la page bookdown, et qui les tranfèrent vers l’iframe h5p, mais sans succès car apparemment Worpress réécrit l’URL et laisse tomber ces arguments supplémentaires. C’est pas important si nous pouvons tracer nos utilisateurs via leur login (= login Github pour rappel).</p>
 </div>
 <div id="création-de-contenu-h5p" class="section level3">
-<h3><span class="header-section-number">5.1.2</span> Création de contenu h5p</h3>
+<h3><span class="header-section-number">5.1.3</span> Création de contenu h5p</h3>
 <p>Tout éditeur Wordpress (les ensignants) peuvent créer du contenu nouveau h5p à partir du tableau de bord de Wordpress, et éditer les widgets existants. L’édition de manière quasi-wysiwyg avec les mêmes éditeurs que ceux disponibles sur <a href="https://h5p.org" class="uri">https://h5p.org</a>. C’est donc très facile. Il faudrait juste se discipliner à faire des backups via les fichiers .h5p sur p-Cloud dans <code>sdd_h5p_backup</code> par sécurité.</p>
 <p>TODO: il serait utile de pouvoir sortir une table de correspondance entre l’ID du widget h5p et un nom plus explicite. En effet, seul l’ID apparait dans l’événement xAPI.</p>
 </div>
 <div id="gestion-des-événements-xapi" class="section level3">
-<h3><span class="header-section-number">5.1.3</span> Gestion des événements xAPI</h3>
+<h3><span class="header-section-number">5.1.4</span> Gestion des événements xAPI</h3>
 <p>Ces événements sont accessibles à partir du tableau de bord de Wordpress dans la section H5PxAPIkatchu.</p>
 <div class="figure">
 <img src="images/wordpress/h5pxapi.png" alt="Événements xAPI dans H5PxAPIkatchu. En bas tu tableau, on peut filtrer les données, et le bouton Download permet de récupérer le tableau filtré au format CSV. Le lien Delete permet de tout effacer et n’est disponible que pour un administrateur du site." />
 <p class="caption">Événements xAPI dans H5PxAPIkatchu. En bas tu tableau, on peut filtrer les données, et le bouton <code>Download</code> permet de récupérer le tableau filtré au format CSV. Le lien <code>Delete</code> permet de tout effacer et n’est disponible que pour un administrateur du site.</p>
 </div>
 <p>Cette interface est basique, mais elle n’est pas prévue pour se substituer à des outils plus évolués. TODO: nous devons voir comment récupérer ces évémnements facilement et les injecter dans notre base de données MongoDB, à côté des événements learnr et Shiny. Pour rappel, la base de données MySQL n’est <strong>pas</strong> accessible depuis l’extérieur pour des raisons de sécurité et l’accès SSH doit être réactivé manuellement pour une courte durée.</p>
+
 </div>
 </div>
+<!-- </div> -->
 <div id="disqus_thread"></div>
 <script>
 
@@ -441,7 +452,7 @@ s.setAttribute('data-timestamp', +new Date());
         </div>
       </div>
 <a href="wordpress.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="intégration-wordpress-bookdown.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="shiny.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
