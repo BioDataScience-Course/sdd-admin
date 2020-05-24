@@ -24,7 +24,7 @@
 <meta name="author" content="Philippe Grosjean &amp; Guyliann Engels" />
 
 
-<meta name="date" content="2020-05-23" />
+<meta name="date" content="2020-05-24" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -327,6 +327,7 @@ code span.wa { color: #bf0303; } /* Warning */
 <li class="chapter" data-level="5.1.2" data-path="installation-wordpress.html"><a href="installation-wordpress.html#intégration-des-h5p-dans-bookdown"><i class="fa fa-check"></i><b>5.1.2</b> Intégration des h5p dans bookdown</a></li>
 <li class="chapter" data-level="5.1.3" data-path="installation-wordpress.html"><a href="installation-wordpress.html#création-de-contenu-h5p"><i class="fa fa-check"></i><b>5.1.3</b> Création de contenu h5p</a></li>
 <li class="chapter" data-level="5.1.4" data-path="installation-wordpress.html"><a href="installation-wordpress.html#gestion-des-événements-xapi"><i class="fa fa-check"></i><b>5.1.4</b> Gestion des événements xAPI</a></li>
+<li class="chapter" data-level="5.1.5" data-path="installation-wordpress.html"><a href="installation-wordpress.html#variables-contextuelles"><i class="fa fa-check"></i><b>5.1.5</b> Variables contextuelles</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="6" data-path="shiny.html"><a href="shiny.html"><i class="fa fa-check"></i><b>6</b> Shiny</a></li>
@@ -371,7 +372,7 @@ code span.wa { color: #bf0303; } /* Warning */
 <li><p><strong>SNORDIAN’s H5PxAPIkatchu 0.4.2</strong> capture les événements xAPI générés par H5P et les stockent directement dans la base de données MySQL liée à Wordpress. Il y a une interface simpliste pour visualiser les tables, les filtrer et explrter au format CSV. <strong>Dans un premier cela nous servira, mais nous devrons développer une autre façon de récupérer les donner, voire, dériver un autre plugin pour envoyer les événements directement dans la même base de données MongoDB que celle utilisée par nos applis Shiny</strong> (voir <a href="shiny.html#shiny">6</a>).</p></li>
 <li><p><strong>OAuth Single Sign On - SSO (OAuth Client) 6.15.2</strong> configuré pour enregistrer et connecter un utilisateur via son compte Github. Pour permettre ceci une application Github nommée <strong>BioDataScience</strong> a été créée. La configuration de ce plugin est disponible depuis le tableau de bord de Wordpress -&gt; miniOrange -&gt; OAuth.</p></li>
 <li><p><strong>Import Users from CSV 1.0.1</strong> est un plugin permettant de créer des utilisateurs en batch depuis un fichier CSV. Nous pourrons ainsi exporter en bloc les données venant de Moodle et créer en avance les comptes Wordpress avec plein d’informations supplémentaires.</p></li>
-<li><p><strong>Advanced iFrame 2020.2.1</strong> permet d’insérer un iframe avec plein d’options : sécurisation, adaptation de la taille, passage de paramètres, etc. Nous utilisons ce plugin pour intégrer les bookdown dans le site Wordpress, et ainsi conserver la bannière supérieure et le pied de page de notre site tout en affichant le bookdown.</p></li>
+<li><p><strong>Advanced iFrame Pro 2020.3</strong> permet d’insérer un iframe avec plein d’options : sécurisation, adaptation de la taille, passage de paramètres, réécriture d’URL, etc. Nous utilisons ce plugin pour intégrer les bookdown dans le site Wordpress, et ainsi conserver la bannière supérieure de notre site tout en affichant le bookdown.</p></li>
 <li><p><strong>UpdraftPlus 1.16.24</strong> comme système de backup de l’ensemble (fichiers Wordpress + base MySQL). Le backup se fait en local pour l’instant dans <code>lamp0/web/vhosts/wp.sciviews.org/htdocs/wp-content/updraft</code>, mais il est recopié sur notre disque p-cloud dans le dossier <code>sdd_site_backup</code>.</p></li>
 <li><p>Quelques autres plugins aidant à gére le site Wordpress : <strong>Broken Link Checker 1.11.12</strong>, <strong>Health Check &amp; Troubleshooting 1.4.4</strong> &amp; <strong>WP-Optimize 3.0.19</strong>.</p></li>
 </ul>
@@ -422,10 +423,101 @@ code span.wa { color: #bf0303; } /* Warning */
 <p class="caption">Événements xAPI dans H5PxAPIkatchu. En bas tu tableau, on peut filtrer les données, et le bouton <code>Download</code> permet de récupérer le tableau filtré au format CSV. Le lien <code>Delete</code> permet de tout effacer et n’est disponible que pour un administrateur du site.</p>
 </div>
 <p>Cette interface est basique, mais elle n’est pas prévue pour se substituer à des outils plus évolués. TODO: nous devons voir comment récupérer ces évémnements facilement et les injecter dans notre base de données MongoDB, à côté des événements learnr et Shiny. Pour rappel, la base de données MySQL n’est <strong>pas</strong> accessible depuis l’extérieur pour des raisons de sécurité et l’accès SSH doit être réactivé manuellement pour une courte durée.</p>
+</div>
+<div id="variables-contextuelles" class="section level3">
+<h3><span class="header-section-number">5.1.5</span> Variables contextuelles</h3>
+<p>Pour le bon fonctionnement de nos outils et l’enregistrement de l’activité des étudiants, nous avons besoin de définir un certain nombre de variables reprises dans le tableau ci-dessous. Toutes ces variables sont obtenues directement à la source<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a>. La colonne origine indique d’où nous obtenons ces informations (pour Moodle, il faut que l’étudiant ait lancé <a href="https://wp.sciviews.org" class="uri">https://wp.sciviews.org</a> depuis son compte Moodle et la page de cours correspondant).</p>
+<table>
+<colgroup>
+<col width="23%" />
+<col width="55%" />
+<col width="21%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">Variable</th>
+<th align="left">Contenu</th>
+<th align="left">Origine</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">login</td>
+<td align="left">Le login Github de l’étudiant</td>
+<td align="left">WP via Github <code>[sv slug='sc-username']</code></td>
+</tr>
+<tr class="even">
+<td align="left">ghemail</td>
+<td align="left">Le mail primaire Github de l’étudiant</td>
+<td align="left">WP via Github <code>[sv slug='sc-user-email']</code></td>
+</tr>
+<tr class="odd">
+<td align="left">email</td>
+<td align="left">Le mail UMONS de l’étudiant</td>
+<td align="left">Moddle <code>email</code>= Adresse de courriel</td>
+</tr>
+<tr class="even">
+<td align="left">displayname</td>
+<td align="left">Nom utilisateur Wordpress</td>
+<td align="left">WP <code>[sv slug='sc-display-name']</code></td>
+</tr>
+<tr class="odd">
+<td align="left">firstname</td>
+<td align="left">Prénom comme indiqué dans Wordpress</td>
+<td align="left">WP via Github <code>[sv slug='sc-first-name']</code></td>
+</tr>
+<tr class="even">
+<td align="left">lastname</td>
+<td align="left">Nom de famille comme indiqué dans Wordpress</td>
+<td align="left">WP via Github <code>[sv slug='sc-last-name']</code></td>
+</tr>
+<tr class="odd">
+<td align="left">register</td>
+<td align="left">Numéro de matricule de l’étudiant</td>
+<td align="left">Moodle <code>register</code> = Nom d’utilisateur</td>
+</tr>
+<tr class="even">
+<td align="left">institution</td>
+<td align="left">Institution (ici <code>UMONS</code>)</td>
+<td align="left">Moodle <code>institution</code> = Institution</td>
+</tr>
+<tr class="odd">
+<td align="left">course</td>
+<td align="left">Nom abbrégé du cours (ex.: <code>SBIOG-006</code>)</td>
+<td align="left">Moodle <code>course</code> = N° d’identification du cours</td>
+</tr>
+<tr class="even">
+<td align="left">moodle</td>
+<td align="left">URL du serveur Moodle</td>
+<td align="left">Moodle <code>moodle</code> = URL du serveur</td>
+</tr>
+<tr class="odd">
+<td align="left">userref</td>
+<td align="left">Identifiant unique dans Moodle</td>
+<td align="left">Moodle <code>userref</code> = Numéro d’identification</td>
+</tr>
+</tbody>
+</table>
+<p>A noter que nous croisons différentes sources (Moodle, Github, Wordpress), et les infos peuvent différer entre ces sources. Considérant un étudiant qui a “installé” ses outils correctement, à savoir :</p>
+<ul>
+<li>Son compte est créé au préalable dans Wordpress à partir du tableau des utilisateurs du cours issu de Moodle<a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a>,</li>
+<li>Il a créé un compte Github,</li>
+<li>Il a au moins une fois lancé la page <a href="https://wp.sciviews.org" class="uri">https://wp.sciviews.org</a> depuis le lien Moodle dans le bon cours,</li>
+<li>Il s’est connecté dans Wordpress à partir du bouton de login via Github/BioDataScience.</li>
+</ul>
+<p>Toutes les informations de son compte lui sont accessibles dans Wordpress, et il peut librement les modifier dans le tableau de bord. Donc, cela signifie que l’information cruciale pour identifier un étudiant est <code>email</code>, son adresse email de l’UMONS fournie par Moodle. Toutefois, nous devons recouper avec son <code>login</code> Github pour obtenir les données issues de Github pour le même étudiant. Nous avons éventuellement besoin aussi de <code>ghemail</code>, son email Github primaire (mais vérifier si celui-ci est enregistré dans Wordpress si l’étudiant est pré-enregistré via le tableau Moodle ! A moins que l’enregistrement ne puisse se faire <em>que</em> si les deux emails sont identiques ?)</p>
+<p>Si nous continuons à utiliser Discord, ce serait bien d’avoir le login Discord de l’étudiant aussi. Mais ici, il a le droit d’y poser des questions de manière anonymisée (c’est notre souhait). Néanmoins, il serait utile d’avoir un champ où nous pouvons éventuellement rentrer cette info à la main si souhaité. Une autre colonne <code>comment</code> serait aussi utile. Nous pourrions y indiquer par exemple si un étudiant a des difficultés particulières, ou la date de son arrivée pour les étudiants étrangers en passerelle, par exemple.</p>
 
 </div>
 </div>
 <!-- </div> -->
+<div class="footnotes">
+<hr />
+<ol start="1">
+<li id="fn1"><p>En 2018-2019 et 2019-2020, nous utilisions le login Github et l’adresse email UMONS pour identifier les événements learnr, mais comme les étudiants devaient rentrer ces infos manuellement, nous avons eu beaucoup de soucis avec des encodages erronés… Donc maintenant, nous récupérons ces infos de manière automatique à la source autant que possible.<a href="installation-wordpress.html#fnref1" class="footnote-back">↩</a></p></li>
+<li id="fn2"><p>Il serait possible de proposer l’enregistrement libre, mais il faut acheter la version pro du plugin correspondant… et de plus, tout le monde ayant un compte Github pourrait alors s’enregistrer ! C’est pas ce qu’on souhaite.<a href="installation-wordpress.html#fnref2" class="footnote-back">↩</a></p></li>
+</ol>
+</div>
 <div id="disqus_thread"></div>
 <script>
 

@@ -38,7 +38,7 @@ Le serveur est installé initialement avec **PHP 7.3** et une base de données *
 
 - **Import Users from CSV 1.0.1** est un plugin permettant de créer des utilisateurs en batch depuis un fichier CSV. Nous pourrons ainsi exporter en bloc les données venant de Moodle et créer en avance les comptes Wordpress avec plein d'informations supplémentaires.
 
-- **Advanced iFrame 2020.2.1** permet d'insérer un iframe avec plein d'options\ : sécurisation, adaptation de la taille, passage de paramètres, etc. Nous utilisons ce plugin pour intégrer les bookdown dans le site Wordpress, et ainsi conserver la bannière supérieure et le pied de page de notre site tout en affichant le bookdown.
+- **Advanced iFrame Pro 2020.3** permet d'insérer un iframe avec plein d'options\ : sécurisation, adaptation de la taille, passage de paramètres, réécriture d'URL, etc. Nous utilisons ce plugin pour intégrer les bookdown dans le site Wordpress, et ainsi conserver la bannière supérieure de notre site tout en affichant le bookdown.
 
 - **UpdraftPlus 1.16.24** comme système de backup de l'ensemble (fichiers Wordpress + base MySQL). Le backup se fait en local pour l'instant dans `lamp0/web/vhosts/wp.sciviews.org/htdocs/wp-content/updraft`, mais il est recopié sur notre disque p-cloud dans le dossier `sdd_site_backup`.
 
@@ -105,3 +105,32 @@ Ces événements sont accessibles à partir du tableau de bord de Wordpress dans
 ![Événements xAPI dans H5PxAPIkatchu. En bas tu tableau, on peut filtrer les données, et le bouton `Download` permet de récupérer le tableau filtré au format CSV. Le lien `Delete` permet de tout effacer et n'est disponible que pour un administrateur du site.](images/wordpress/h5pxapi.png)
 
 Cette interface est basique, mais elle n'est pas prévue pour se substituer à des outils plus évolués. TODO: nous devons voir comment récupérer ces évémnements facilement et les injecter dans notre base de données MongoDB, à côté des événements learnr et Shiny. Pour rappel, la base de données MySQL n'est **pas** accessible depuis l'extérieur pour des raisons de sécurité et l'accès SSH doit être réactivé manuellement pour une courte durée.
+
+### Variables contextuelles
+
+Pour le bon fonctionnement de nos outils et l'enregistrement de l'activité des étudiants, nous avons besoin de définir un certain nombre de variables reprises dans le tableau ci-dessous. Toutes ces variables sont obtenues directement à la source^[En 2018-2019 et 2019-2020, nous utilisions le login Github et l'adresse email UMONS pour identifier les événements learnr, mais comme les étudiants devaient rentrer ces infos manuellement, nous avons eu beaucoup de soucis avec des encodages erronés... Donc maintenant, nous récupérons ces infos de manière automatique à la source autant que possible.]. La colonne origine indique d'où nous obtenons ces informations (pour Moodle, il faut que l'étudiant ait lancé https://wp.sciviews.org depuis son compte Moodle et la page de cours correspondant).
+
+| Variable      | Contenu                            | Origine      |
+|:--------------|:-----------------------------------|:-------------|
+| login         | Le login Github de l'étudiant      | WP via Github `[sv slug='sc-username']` |
+| ghemail       | Le mail primaire Github de l'étudiant | WP via Github `[sv slug='sc-user-email']` |
+| email         | Le mail UMONS de l'étudiant        | Moddle `email`= Adresse de courriel  |
+| displayname   | Nom utilisateur Wordpress          | WP `[sv slug='sc-display-name']` |
+| firstname     | Prénom comme indiqué dans Wordpress | WP via Github `[sv slug='sc-first-name']` |
+| lastname     | Nom de famille comme indiqué dans Wordpress | WP via Github `[sv slug='sc-last-name']` |
+| register    | Numéro de matricule de l'étudiant  | Moodle `register` = Nom d'utilisateur |
+| institution | Institution (ici `UMONS`)   | Moodle `institution` = Institution |
+| course    | Nom abbrégé du cours (ex.: `SBIOG-006`)  | Moodle `course` = N° d'identification du cours |
+| moodle    | URL du serveur Moodle                    | Moodle `moodle` = URL du serveur |
+| userref    | Identifiant unique dans Moodle          | Moodle `userref` = Numéro d'identification |
+
+A noter que nous croisons différentes sources (Moodle, Github, Wordpress), et les infos peuvent différer entre ces sources. Considérant un étudiant qui a "installé" ses outils correctement, à savoir\ :
+
+- Son compte est créé au préalable dans Wordpress à partir du tableau des utilisateurs du cours issu de Moodle^[Il serait possible de proposer l'enregistrement libre, mais il faut acheter la version pro du plugin correspondant... et de plus, tout le monde ayant un compte Github pourrait alors s'enregistrer\ ! C'est pas ce qu'on souhaite.],
+- Il a créé un compte Github,
+- Il a au moins une fois lancé la page https://wp.sciviews.org depuis le lien Moodle dans le bon cours,
+- Il s'est connecté dans Wordpress à partir du bouton de login via Github/BioDataScience.
+
+Toutes les informations de son compte lui sont accessibles dans Wordpress, et il peut librement les modifier dans le tableau de bord. Donc, cela signifie que l'information cruciale pour identifier un étudiant est `email`, son adresse email de l'UMONS fournie par Moodle. Toutefois, nous devons recouper avec son `login` Github pour obtenir les données issues de Github pour le même étudiant. Nous avons éventuellement besoin aussi de `ghemail`, son email Github primaire (mais vérifier si celui-ci est enregistré dans Wordpress si l'étudiant est pré-enregistré via le tableau Moodle\ ! A moins que l'enregistrement ne puisse se faire *que* si les deux emails sont identiques\ ?)
+
+Si nous continuons à utiliser Discord, ce serait bien d'avoir le login Discord de l'étudiant aussi. Mais ici, il a le droit d'y poser des questions de manière anonymisée (c'est notre souhait). Néanmoins, il serait utile d'avoir un champ où nous pouvons éventuellement rentrer cette info à la main si souhaité. Une autre colonne `comment` serait aussi utile. Nous pourrions y indiquer par exemple si un étudiant a des difficultés particulières, ou la date de son arrivée pour les étudiants étrangers en passerelle, par exemple.
