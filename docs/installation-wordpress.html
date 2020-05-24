@@ -327,7 +327,7 @@ code span.wa { color: #bf0303; } /* Warning */
 <li class="chapter" data-level="5.1.2" data-path="installation-wordpress.html"><a href="installation-wordpress.html#intégration-des-h5p-dans-bookdown"><i class="fa fa-check"></i><b>5.1.2</b> Intégration des h5p dans bookdown</a></li>
 <li class="chapter" data-level="5.1.3" data-path="installation-wordpress.html"><a href="installation-wordpress.html#création-de-contenu-h5p"><i class="fa fa-check"></i><b>5.1.3</b> Création de contenu h5p</a></li>
 <li class="chapter" data-level="5.1.4" data-path="installation-wordpress.html"><a href="installation-wordpress.html#gestion-des-événements-xapi"><i class="fa fa-check"></i><b>5.1.4</b> Gestion des événements xAPI</a></li>
-<li class="chapter" data-level="5.1.5" data-path="installation-wordpress.html"><a href="installation-wordpress.html#variables-contextuelles"><i class="fa fa-check"></i><b>5.1.5</b> Variables contextuelles</a></li>
+<li class="chapter" data-level="5.1.5" data-path="installation-wordpress.html"><a href="installation-wordpress.html#var-context"><i class="fa fa-check"></i><b>5.1.5</b> Variables contextuelles</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="6" data-path="shiny.html"><a href="shiny.html"><i class="fa fa-check"></i><b>6</b> Shiny</a></li>
@@ -373,6 +373,7 @@ code span.wa { color: #bf0303; } /* Warning */
 <li><p><strong>OAuth Single Sign On - SSO (OAuth Client) 6.15.2</strong> configuré pour enregistrer et connecter un utilisateur via son compte Github. Pour permettre ceci une application Github nommée <strong>BioDataScience</strong> a été créée. La configuration de ce plugin est disponible depuis le tableau de bord de Wordpress -&gt; miniOrange -&gt; OAuth.</p></li>
 <li><p><strong>Import Users from CSV 1.0.1</strong> est un plugin permettant de créer des utilisateurs en batch depuis un fichier CSV. Nous pourrons ainsi exporter en bloc les données venant de Moodle et créer en avance les comptes Wordpress avec plein d’informations supplémentaires.</p></li>
 <li><p><strong>Advanced iFrame Pro 2020.3</strong> permet d’insérer un iframe avec plein d’options : sécurisation, adaptation de la taille, passage de paramètres, réécriture d’URL, etc. Nous utilisons ce plugin pour intégrer les bookdown dans le site Wordpress, et ainsi conserver la bannière supérieure de notre site tout en affichant le bookdown.</p></li>
+<li><p><strong>Shortcode Variables 3.1.1</strong> ajoute un shortcode <code>[sv slug='...']</code> permettant d’y placer du texte prédéfini ou une variable système comme le nom ou l’email de l’utilisateur actuel, voir aussi <a href="installation-wordpress.html#var-context">5.1.5</a>.</p></li>
 <li><p><strong>UpdraftPlus 1.16.24</strong> comme système de backup de l’ensemble (fichiers Wordpress + base MySQL). Le backup se fait en local pour l’instant dans <code>lamp0/web/vhosts/wp.sciviews.org/htdocs/wp-content/updraft</code>, mais il est recopié sur notre disque p-cloud dans le dossier <code>sdd_site_backup</code>.</p></li>
 <li><p>Quelques autres plugins aidant à gére le site Wordpress : <strong>Broken Link Checker 1.11.12</strong>, <strong>Health Check &amp; Troubleshooting 1.4.4</strong> &amp; <strong>WP-Optimize 3.0.19</strong>.</p></li>
 </ul>
@@ -424,7 +425,7 @@ code span.wa { color: #bf0303; } /* Warning */
 </div>
 <p>Cette interface est basique, mais elle n’est pas prévue pour se substituer à des outils plus évolués. TODO: nous devons voir comment récupérer ces évémnements facilement et les injecter dans notre base de données MongoDB, à côté des événements learnr et Shiny. Pour rappel, la base de données MySQL n’est <strong>pas</strong> accessible depuis l’extérieur pour des raisons de sécurité et l’accès SSH doit être réactivé manuellement pour une courte durée.</p>
 </div>
-<div id="variables-contextuelles" class="section level3">
+<div id="var-context" class="section level3">
 <h3><span class="header-section-number">5.1.5</span> Variables contextuelles</h3>
 <p>Pour le bon fonctionnement de nos outils et l’enregistrement de l’activité des étudiants, nous avons besoin de définir un certain nombre de variables reprises dans le tableau ci-dessous. Toutes ces variables sont obtenues directement à la source<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a>. La colonne origine indique d’où nous obtenons ces informations (pour Moodle, il faut que l’étudiant ait lancé <a href="https://wp.sciviews.org" class="uri">https://wp.sciviews.org</a> depuis son compte Moodle et la page de cours correspondant).</p>
 <table>
