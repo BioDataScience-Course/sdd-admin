@@ -24,7 +24,7 @@
 <meta name="author" content="Philippe Grosjean &amp; Guyliann Engels" />
 
 
-<meta name="date" content="2020-05-24" />
+<meta name="date" content="2020-05-25" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -32,7 +32,7 @@
   
   
 <link rel="prev" href="notes.html"/>
-<link rel="next" href="videos.html"/>
+<link rel="next" href="quelques-contenus-h5p-utiles.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -225,71 +225,6 @@ var h5pContentTypes = [""];
 <script src='https://wp.sciviews.org/wp-content/plugins/h5p/h5p-php-library/js/request-queue.js'></script>
 
 
-<style type="text/css">
-a.sourceLine { display: inline-block; line-height: 1.25; }
-a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
-a.sourceLine:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode { white-space: pre; position: relative; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-code.sourceCode { white-space: pre-wrap; }
-a.sourceLine { text-indent: -1em; padding-left: 1em; }
-}
-pre.numberSource a.sourceLine
-  { position: relative; left: -4em; }
-pre.numberSource a.sourceLine::before
-  { content: attr(data-line-number);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; pointer-events: all; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-    background-color: #ffffff;
-    color: #a0a0a0;
-  }
-pre.numberSource { margin-left: 3em; border-left: 1px solid #a0a0a0;  padding-left: 4px; }
-div.sourceCode
-  { color: #1f1c1b; background-color: #ffffff; }
-@media screen {
-a.sourceLine::before { text-decoration: underline; }
-}
-code span. { color: #1f1c1b; } /* Normal */
-code span.al { color: #bf0303; background-color: #f7e6e6; font-weight: bold; } /* Alert */
-code span.an { color: #ca60ca; } /* Annotation */
-code span.at { color: #0057ae; } /* Attribute */
-code span.bn { color: #b08000; } /* BaseN */
-code span.bu { color: #644a9b; font-weight: bold; } /* BuiltIn */
-code span.cf { color: #1f1c1b; font-weight: bold; } /* ControlFlow */
-code span.ch { color: #924c9d; } /* Char */
-code span.cn { color: #aa5500; } /* Constant */
-code span.co { color: #898887; } /* Comment */
-code span.cv { color: #0095ff; } /* CommentVar */
-code span.do { color: #607880; } /* Documentation */
-code span.dt { color: #0057ae; } /* DataType */
-code span.dv { color: #b08000; } /* DecVal */
-code span.er { color: #bf0303; text-decoration: underline; } /* Error */
-code span.ex { color: #0095ff; font-weight: bold; } /* Extension */
-code span.fl { color: #b08000; } /* Float */
-code span.fu { color: #644a9b; } /* Function */
-code span.im { color: #ff5500; } /* Import */
-code span.in { color: #b08000; } /* Information */
-code span.kw { color: #1f1c1b; font-weight: bold; } /* Keyword */
-code span.op { color: #1f1c1b; } /* Operator */
-code span.ot { color: #006e28; } /* Other */
-code span.pp { color: #006e28; } /* Preprocessor */
-code span.re { color: #0057ae; background-color: #e0e9f8; } /* RegionMarker */
-code span.sc { color: #3daee9; } /* SpecialChar */
-code span.ss { color: #ff5500; } /* SpecialString */
-code span.st { color: #bf0303; } /* String */
-code span.va { color: #0057ae; } /* Variable */
-code span.vs { color: #bf0303; } /* VerbatimString */
-code span.wa { color: #bf0303; } /* Warning */
-</style>
 
 <link rel="stylesheet" href="style.css" type="text/css" />
 </head>
@@ -327,7 +262,7 @@ code span.wa { color: #bf0303; } /* Warning */
 <li class="chapter" data-level="5.1.2" data-path="installation-wordpress.html"><a href="installation-wordpress.html#intégration-des-h5p-dans-bookdown"><i class="fa fa-check"></i><b>5.1.2</b> Intégration des h5p dans bookdown</a></li>
 <li class="chapter" data-level="5.1.3" data-path="installation-wordpress.html"><a href="installation-wordpress.html#création-de-contenu-h5p"><i class="fa fa-check"></i><b>5.1.3</b> Création de contenu h5p</a></li>
 <li class="chapter" data-level="5.1.4" data-path="installation-wordpress.html"><a href="installation-wordpress.html#gestion-des-événements-xapi"><i class="fa fa-check"></i><b>5.1.4</b> Gestion des événements xAPI</a></li>
-<li class="chapter" data-level="5.1.5" data-path="installation-wordpress.html"><a href="installation-wordpress.html#variables-contextuelles"><i class="fa fa-check"></i><b>5.1.5</b> Variables contextuelles</a></li>
+<li class="chapter" data-level="5.1.5" data-path="installation-wordpress.html"><a href="installation-wordpress.html#var-context"><i class="fa fa-check"></i><b>5.1.5</b> Variables contextuelles</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="6" data-path="shiny.html"><a href="shiny.html"><i class="fa fa-check"></i><b>6</b> Shiny</a></li>
@@ -335,7 +270,15 @@ code span.wa { color: #bf0303; } /* Warning */
 <li class="chapter" data-level="7.1" data-path="badges.html"><a href="badges.html"><i class="fa fa-check"></i><b>7.1</b> Badges</a></li>
 <li class="chapter" data-level="7.2" data-path="notes.html"><a href="notes.html"><i class="fa fa-check"></i><b>7.2</b> Notes</a></li>
 </ul></li>
-<li class="chapter" data-level="8" data-path="h5p.html"><a href="h5p.html"><i class="fa fa-check"></i><b>8</b> H5p</a></li>
+<li class="chapter" data-level="8" data-path="h5p.html"><a href="h5p.html"><i class="fa fa-check"></i><b>8</b> H5p</a><ul>
+<li class="chapter" data-level="8.1" data-path="quelques-contenus-h5p-utiles.html"><a href="quelques-contenus-h5p-utiles.html"><i class="fa fa-check"></i><b>8.1</b> Quelques contenus H5P utiles</a><ul>
+<li class="chapter" data-level="8.1.1" data-path="quelques-contenus-h5p-utiles.html"><a href="quelques-contenus-h5p-utiles.html#apprentissage-du-code-r"><i class="fa fa-check"></i><b>8.1.1</b> Apprentissage du code R</a></li>
+<li class="chapter" data-level="8.1.2" data-path="quelques-contenus-h5p-utiles.html"><a href="quelques-contenus-h5p-utiles.html#apprentissage-des-graphiques"><i class="fa fa-check"></i><b>8.1.2</b> Apprentissage des graphiques</a></li>
+<li class="chapter" data-level="8.1.3" data-path="quelques-contenus-h5p-utiles.html"><a href="quelques-contenus-h5p-utiles.html#explications-générales"><i class="fa fa-check"></i><b>8.1.3</b> Explications générales</a></li>
+<li class="chapter" data-level="8.1.4" data-path="quelques-contenus-h5p-utiles.html"><a href="quelques-contenus-h5p-utiles.html#autoévaluation"><i class="fa fa-check"></i><b>8.1.4</b> Autoévaluation</a></li>
+<li class="chapter" data-level="8.1.5" data-path="quelques-contenus-h5p-utiles.html"><a href="quelques-contenus-h5p-utiles.html#take-home-message"><i class="fa fa-check"></i><b>8.1.5</b> “Take home message”</a></li>
+</ul></li>
+</ul></li>
 <li class="chapter" data-level="9" data-path="videos.html"><a href="videos.html"><i class="fa fa-check"></i><b>9</b> Vidéos</a></li>
 <li class="appendix"><span><b>Appendices</b></span></li>
 <li class="chapter" data-level="A" data-path="installation.html"><a href="installation.html"><i class="fa fa-check"></i><b>A</b> Installation</a></li>
@@ -365,8 +308,7 @@ code span.wa { color: #bf0303; } /* Warning */
             <section class="normal" id="section-">
 <div id="h5p" class="section level1">
 <h1><span class="header-section-number">Chapitre 8</span> H5p</h1>
-<p>…</p>
-
+<p>TODO: explications de l’installation, configuration et utilisation.</p>
 </div>
 <div id="disqus_thread"></div>
 <script>
@@ -394,7 +336,7 @@ s.setAttribute('data-timestamp', +new Date());
         </div>
       </div>
 <a href="notes.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="videos.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="quelques-contenus-h5p-utiles.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

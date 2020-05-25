@@ -110,29 +110,31 @@ Cette interface est basique, mais elle n'est pas prévue pour se substituer à d
 
 ### Variables contextuelles {#var-context}
 
-Pour le bon fonctionnement de nos outils et l'enregistrement de l'activité des étudiants, nous avons besoin de définir un certain nombre de variables reprises dans le tableau ci-dessous. Toutes ces variables sont obtenues directement à la source^[En 2018-2019 et 2019-2020, nous utilisions le login Github et l'adresse email UMONS pour identifier les événements learnr, mais comme les étudiants devaient rentrer ces infos manuellement, nous avons eu beaucoup de soucis avec des encodages erronés... Donc maintenant, nous récupérons ces infos de manière automatique à la source autant que possible.]. La colonne origine indique d'où nous obtenons ces informations (pour Moodle, il faut que l'étudiant ait lancé https://wp.sciviews.org depuis son compte Moodle et la page de cours correspondant).
+Pour le bon fonctionnement de nos outils et l'enregistrement de l'activité des étudiants, nous avons besoin de définir un certain nombre de variables reprises dans le tableau ci-dessous. Toutes ces variables sont obtenues directement à la source^[En 2018-2019 et 2019-2020, nous utilisions le login Github et l'adresse email UMONS pour identifier les événements learnr, mais comme les étudiants devaient rentrer ces infos manuellement, nous avons eu beaucoup de soucis avec des encodages erronés... Donc maintenant, nous récupérons ces infos de manière automatique à la source autant que possible.]. La colonne origine indique d'où nous obtenons ces informations (pour Moodle, il faut que l'étudiant ait lancé https://wp.sciviews.org depuis son compte Moodle et à partir de la page de cours correspondante).
 
 | Variable      | Contenu                            | Origine      |
 |:--------------|:-----------------------------------|:-------------|
 | login         | Le login Github de l'étudiant      | WP via Github `[sv slug='sc-username']` |
-| ghemail       | Le mail primaire Github de l'étudiant | WP via Github `[sv slug='sc-user-email']` |
-| email         | Le mail UMONS de l'étudiant        | Moddle `email`= Adresse de courriel  |
-| displayname   | Nom utilisateur Wordpress          | WP `[sv slug='sc-display-name']` |
+| email         | Le mail primaire Github de l'étudiant | WP via Github `[sv slug='sc-user-email']` |
+| displayname   | Nom utilisateur Wordpress(/Github)    | WP `[sv slug='sc-display-name']` |
 | firstname     | Prénom comme indiqué dans Wordpress | WP via Github `[sv slug='sc-first-name']` |
-| lastname     | Nom de famille comme indiqué dans Wordpress | WP via Github `[sv slug='sc-last-name']` |
-| register    | Numéro de matricule de l'étudiant  | Moodle `register` = Nom d'utilisateur |
-| institution | Institution (ici `UMONS`)   | Moodle `institution` = Institution |
-| course    | Nom abbrégé du cours (ex.: `SBIOG-006`)  | Moodle `course` = N° d'identification du cours |
-| moodle    | URL du serveur Moodle                    | Moodle `moodle` = URL du serveur |
-| userref    | Identifiant unique dans Moodle          | Moodle `userref` = Numéro d'identification |
+| lastname      | Nom de famille comme indiqué dans Wordpress | WP via Github `[sv slug='sc-last-name']` |
+| iemail        | Le mail UMONS (institutionnel) de l'étudiant        | Moddle `iemail`= Adresse de courriel  |
+| iid           | Numéro de matricule de l'étudiant  | Moodle `register` = Nom d'utilisateur |
+| ifirstname     | Prénom comme indiqué dans Moodle | Moodle `ifirstname` = Prénom |
+| ilastname      | Nom de famille comme indiqué dans Moodle | Moodle `ilastname` = Nom |
+| institution   | Institution (ici `UMONS`)   | Moodle `institution` = Institution |
+| icourse       | Nom abbrégé du cours (ex.: `S-BIOG-006`)  | Moodle `icourse` = N° d'identification du cours |
+| iurl          | URL du serveur institutionnel (Moodle)         | Moodle `iurl` = URL du serveur |
+| iref          | Identifiant unique dans Moodle          | Moodle `iref` = Numéro d'identification |
 
 A noter que nous croisons différentes sources (Moodle, Github, Wordpress), et les infos peuvent différer entre ces sources. Considérant un étudiant qui a "installé" ses outils correctement, à savoir\ :
 
 - Son compte est créé au préalable dans Wordpress à partir du tableau des utilisateurs du cours issu de Moodle^[Il serait possible de proposer l'enregistrement libre, mais il faut acheter la version pro du plugin correspondant... et de plus, tout le monde ayant un compte Github pourrait alors s'enregistrer\ ! C'est pas ce qu'on souhaite.],
 - Il a créé un compte Github,
-- Il a au moins une fois lancé la page https://wp.sciviews.org depuis le lien Moodle dans le bon cours,
+- Il a au moins une fois lancé la page https://wp.sciviews.org depuis le lien Moodle `Bookdown` dans le bon cours,
 - Il s'est connecté dans Wordpress à partir du bouton de login via Github/BioDataScience.
 
-Toutes les informations de son compte lui sont accessibles dans Wordpress, et il peut librement les modifier dans le tableau de bord. Donc, cela signifie que l'information cruciale pour identifier un étudiant est `email`, son adresse email de l'UMONS fournie par Moodle. Toutefois, nous devons recouper avec son `login` Github pour obtenir les données issues de Github pour le même étudiant. Nous avons éventuellement besoin aussi de `ghemail`, son email Github primaire (mais vérifier si celui-ci est enregistré dans Wordpress si l'étudiant est pré-enregistré via le tableau Moodle\ ! A moins que l'enregistrement ne puisse se faire *que* si les deux emails sont identiques\ ?)
+Toutes les informations de son compte lui sont accessibles dans Wordpress, et il peut librement les modifier dans le tableau de bord. Donc, cela signifie que l'information cruciale pour identifier un étudiant est `iemail`, son adresse email de l'UMONS fournie par Moodle. Toutefois, nous devons recouper avec son `login` Github pour obtenir les données issues de Github pour le même étudiant. Nous avons éventuellement besoin aussi de `email`, son email Github primaire (mais vérifier si celui-ci est enregistré dans Wordpress si l'étudiant est pré-enregistré via le tableau Moodle\ ! A moins que l'enregistrement ne puisse se faire *que* si les deux emails sont identiques\ ?)
 
 Si nous continuons à utiliser Discord, ce serait bien d'avoir le login Discord de l'étudiant aussi. Mais ici, il a le droit d'y poser des questions de manière anonymisée (c'est notre souhait). Néanmoins, il serait utile d'avoir un champ où nous pouvons éventuellement rentrer cette info à la main si souhaité. Une autre colonne `comment` serait aussi utile. Nous pourrions y indiquer par exemple si un étudiant a des difficultés particulières, ou la date de son arrivée pour les étudiants étrangers en passerelle, par exemple.
