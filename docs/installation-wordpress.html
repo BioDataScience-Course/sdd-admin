@@ -332,8 +332,9 @@ code span.wa { color: #bf0303; } /* Warning */
 </ul></li>
 <li class="chapter" data-level="6" data-path="shiny.html"><a href="shiny.html"><i class="fa fa-check"></i><b>6</b> Shiny</a></li>
 <li class="chapter" data-level="7" data-path="moodle.html"><a href="moodle.html"><i class="fa fa-check"></i><b>7</b> Moodle</a><ul>
-<li class="chapter" data-level="7.1" data-path="badges.html"><a href="badges.html"><i class="fa fa-check"></i><b>7.1</b> Badges</a></li>
-<li class="chapter" data-level="7.2" data-path="notes.html"><a href="notes.html"><i class="fa fa-check"></i><b>7.2</b> Notes</a></li>
+<li class="chapter" data-level="7.1" data-path="gestion-des-cours.html"><a href="gestion-des-cours.html"><i class="fa fa-check"></i><b>7.1</b> Gestion des cours</a></li>
+<li class="chapter" data-level="7.2" data-path="badges.html"><a href="badges.html"><i class="fa fa-check"></i><b>7.2</b> Badges</a></li>
+<li class="chapter" data-level="7.3" data-path="notes.html"><a href="notes.html"><i class="fa fa-check"></i><b>7.3</b> Notes</a></li>
 </ul></li>
 <li class="chapter" data-level="8" data-path="h5p.html"><a href="h5p.html"><i class="fa fa-check"></i><b>8</b> H5p</a><ul>
 <li class="chapter" data-level="8.1" data-path="quelques-contenus-h5p-utiles.html"><a href="quelques-contenus-h5p-utiles.html"><i class="fa fa-check"></i><b>8.1</b> Quelques contenus H5P utiles</a><ul>
@@ -345,7 +346,7 @@ code span.wa { color: #bf0303; } /* Warning */
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="9" data-path="videos.html"><a href="videos.html"><i class="fa fa-check"></i><b>9</b> Vidéos</a></li>
-<li class="chapter" data-level="10" data-path="progression.html"><a href="progression.html"><i class="fa fa-check"></i><b>10</b> Progression</a></li>
+<li class="chapter" data-level="10" data-path="progression.html"><a href="progression.html"><i class="fa fa-check"></i><b>10</b> Rapport de progression</a></li>
 <li class="appendix"><span><b>Appendices</b></span></li>
 <li class="chapter" data-level="A" data-path="installation.html"><a href="installation.html"><i class="fa fa-check"></i><b>A</b> Installation</a></li>
 <li class="chapter" data-level="" data-path="références.html"><a href="références.html"><i class="fa fa-check"></i>Références</a></li>
@@ -408,9 +409,9 @@ code span.wa { color: #bf0303; } /* Warning */
 <p class="caption">H5P content dans Wordpress. Les widgets sont identifiés par leur <strong>ID</strong> (ici, 6, 7, 8, 9 &amp; 10).</p>
 </div>
 <p>Nous devons créer un iframe dans la page bookdown, mais nous pouvons déléguer ce travail à une fonction R :</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" data-line-number="1">h5p &lt;-<span class="st"> </span><span class="cf">function</span>(id, <span class="dt">width =</span> <span class="dv">780</span>, <span class="dt">height =</span> <span class="dv">500</span>) {</a>
-<a class="sourceLine" id="cb4-2" data-line-number="2">  glue<span class="op">::</span><span class="kw">glue</span>(<span class="st">&quot;</span><span class="ch">\n</span><span class="st">&lt;iframe src=</span><span class="ch">\&quot;</span><span class="st">https://wp.sciviews.org/wp-admin/admin-ajax.php?action=h5p_embed&amp;id={id}</span><span class="ch">\&quot;</span><span class="st"> width=</span><span class="ch">\&quot;</span><span class="st">{width}</span><span class="ch">\&quot;</span><span class="st"> height=</span><span class="ch">\&quot;</span><span class="st">{height}</span><span class="ch">\&quot;</span><span class="st"> frameborder=</span><span class="ch">\&quot;</span><span class="st">0</span><span class="ch">\&quot;</span><span class="st"> allowfullscreen=</span><span class="ch">\&quot;</span><span class="st">allowfullscreen</span><span class="ch">\&quot;</span><span class="st"> class=</span><span class="ch">\&quot;</span><span class="st">h5p</span><span class="ch">\&quot;</span><span class="st">&gt;&lt;/iframe&gt;&lt;script src=</span><span class="ch">\&quot;</span><span class="st">https://wp.sciviews.org/wp-content/plugins/h5p/h5p-php-library/js/h5p-resizer.js</span><span class="ch">\&quot;</span><span class="st"> charset=</span><span class="ch">\&quot;</span><span class="st">UTF-8</span><span class="ch">\&quot;</span><span class="st">&gt;&lt;/script&gt;</span><span class="ch">\n</span><span class="st">&quot;</span>)</a>
-<a class="sourceLine" id="cb4-3" data-line-number="3">}</a></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" data-line-number="1">h5p &lt;-<span class="st"> </span><span class="cf">function</span>(id, <span class="dt">width =</span> <span class="dv">780</span>, <span class="dt">height =</span> <span class="dv">500</span>) {</a>
+<a class="sourceLine" id="cb2-2" data-line-number="2">  glue<span class="op">::</span><span class="kw">glue</span>(<span class="st">&quot;</span><span class="ch">\n</span><span class="st">&lt;iframe src=</span><span class="ch">\&quot;</span><span class="st">https://wp.sciviews.org/wp-admin/admin-ajax.php?action=h5p_embed&amp;id={id}</span><span class="ch">\&quot;</span><span class="st"> width=</span><span class="ch">\&quot;</span><span class="st">{width}</span><span class="ch">\&quot;</span><span class="st"> height=</span><span class="ch">\&quot;</span><span class="st">{height}</span><span class="ch">\&quot;</span><span class="st"> frameborder=</span><span class="ch">\&quot;</span><span class="st">0</span><span class="ch">\&quot;</span><span class="st"> allowfullscreen=</span><span class="ch">\&quot;</span><span class="st">allowfullscreen</span><span class="ch">\&quot;</span><span class="st"> class=</span><span class="ch">\&quot;</span><span class="st">h5p</span><span class="ch">\&quot;</span><span class="st">&gt;&lt;/iframe&gt;&lt;script src=</span><span class="ch">\&quot;</span><span class="st">https://wp.sciviews.org/wp-content/plugins/h5p/h5p-php-library/js/h5p-resizer.js</span><span class="ch">\&quot;</span><span class="st"> charset=</span><span class="ch">\&quot;</span><span class="st">UTF-8</span><span class="ch">\&quot;</span><span class="st">&gt;&lt;/script&gt;</span><span class="ch">\n</span><span class="st">&quot;</span>)</a>
+<a class="sourceLine" id="cb2-3" data-line-number="3">}</a></code></pre></div>
 <p>Ensuite, ajouter un widget h5p est aussi simple que d’ajouter <code>h5p(id)</code> dans du code R en ligne où “id” est l’ID tel que renseigné dans le tableau sous Wordpress. On peut aussi jouer sur les arguments <code>width=</code> et <code>height=</code> pour ajuster l’emplacement du widget h5p dans la page.</p>
 <p>Ainsi programmé notre widget h5p se comporte comme suit :</p>
 <ul>
@@ -525,6 +526,11 @@ code span.wa { color: #bf0303; } /* Warning */
 <li>Il a au moins une fois lancé la page <a href="https://wp.sciviews.org" class="uri">https://wp.sciviews.org</a> depuis le lien Moodle <code>Bookdown</code> dans le bon cours,</li>
 <li>Il s’est connecté dans Wordpress à partir du bouton de login via Github/BioDataScience.</li>
 </ul>
+
+<div class="note">
+Faut-il <em>forcer</em> le login de l’étudiant dans Wordpress ? Autrement dit, il n’aurait accès aux cours que s’il est connecté. Il existe des plugins Wordpress qui permettent de faire cela, et aussi d’exclure les pages qui peuvent être vues par tous. Un de ces plugins est <strong><a href="https://wordpress.org/plugins/wp-force-login/">Force login</a></strong>.
+</div>
+
 <p>Toutes les informations de son compte lui sont accessibles dans Wordpress, et il peut librement les modifier dans le tableau de bord. Donc, cela signifie que l’information cruciale pour identifier un étudiant est <code>iemail</code>, son adresse email de l’UMONS fournie par Moodle. Toutefois, nous devons recouper avec son <code>login</code> Github pour obtenir les données issues de Github pour le même étudiant. Nous avons éventuellement besoin aussi de <code>email</code>, son email Github primaire (mais vérifier si celui-ci est enregistré dans Wordpress si l’étudiant est pré-enregistré via le tableau Moodle ! A moins que l’enregistrement ne puisse se faire <em>que</em> si les deux emails sont identiques ?)</p>
 <p>Si nous continuons à utiliser Discord, ce serait bien d’avoir le login Discord de l’étudiant aussi. Mais ici, il a le droit d’y poser des questions de manière anonymisée (c’est notre souhait). Néanmoins, il serait utile d’avoir un champ où nous pouvons éventuellement rentrer cette info à la main si souhaité. Une autre colonne <code>comment</code> serait aussi utile. Nous pourrions y indiquer par exemple si un étudiant a des difficultés particulières, ou la date de son arrivée pour les étudiants étrangers en passerelle, par exemple.</p>
 

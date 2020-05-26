@@ -23,11 +23,11 @@ Comme l'organisation contient plusieurs centaines de dépôts, il est utile de l
 
 ## Github Classroom
 
-Nous utilisons [Github Classroom]() pour générer la distribution des travaux aux étudiants sous forme de dépôts Github.
+Nous utilisons [Github Classroom](https://classroom.github.com/classrooms) pour générer la distribution des travaux aux étudiants sous forme de dépôts Github.
 
-TODO: Guyliann: les éléments importants de la gestion de Github Classroom sont à présenter ici...
+**TODO: Guyliann: les éléments importants de la gestion de Github Classroom sont à présenter ici...**
 
-TODO: intégration de Github Classroom avec Moodle, voir https://classroom.github.com/help/setup-moodle & https://classroom.github.com/help/import-roster-from-lms.
+**TODO: intégration de Github Classroom avec Moodle, voir** https://classroom.github.com/help/setup-moodle & https://classroom.github.com/help/import-roster-from-lms.
 
 \BeginKnitrBlock{note}<div class="note">Une autre ressource intéressante dans le contexte de l'utilisation de Github/Github Classroom pour l'enseignement est [Github Education](https://education.github.com).</div>\EndKnitrBlock{note}
 

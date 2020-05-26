@@ -30,11 +30,33 @@ Les divers outils logiciels que nous utilisons pour créer un environnement d'ap
 
 - Les vidéos relatives au cours sont hébergées sur [Youtube](https://www.youtube.com/channel/UCT5UQDG5bP9YtSgBpvoRdPg) dans un canal dédié **BioDataScience-Course**. La section relative aux vidéos (voir \@ref(videos)) explique aussi en détails comment nous créons ces vidéos et avec quels outils.
 
-- Enfin, les données relatives à la progression des étudiants dans les learnrs sont collectées dans une base de données MongoDB hébergée sur le cloud [MongoDB Atlas](https://account.mongodb.com).
+- Enfin, les données relatives à la progression des étudiants dans les learnrs sont collectées dans une base de données MongoDB hébergée sur le cloud [MongoDB Atlas](https://account.mongodb.com). La progression peut être suivie grâce aux rapports de progression (\@ref(progression)).
 
 \BeginKnitrBlock{info}<div class="info">Ces nombreux outils et services devant collaborer entre eux pour fournir un environnement d'apprentissage complet et cohérent, il est important de les configurer et de les faire collaborer correctement. C'est le but principal du présent document que d'expliquer comment nous y arrivons.</div>\EndKnitrBlock{info}
 
 Les sections suivantes détaillent l'installation et la configuration de différents outils logiciels tandis que les paragraphes suivants dans la présente section reprennent quelques informations générales utiles.
+
+## RGPD, droit d'auteur & plagiat
+
+Les questions relatives aux données d'un point de vue plus légal sont traitées ici.
+
+### RGPD
+
+Le **Règlement Général sur la Protection des Données** ou RGPD (n° 2016/679) adopté par l'Union Européenne en 2016 régit la façon dont les données à caractère personnel peuvent être collectées et utilisées. Ce règlement est en faveur de l'utilisateur (ici l'étudiant). Il faut notamment son accord pour collected ses données personnelles. Or de telles données sont indispensables pour suivre la progression des étudiants, pouvoir les noter, etc.
+
+A l'UMONS, l'étudiant signe le document adéquant lors de son inscription. Ce document mets **Moodle** en confiormité, mais pas les outils externes. Nous devons donc préciser exectement ce que nous devons faire pour être en conformité avec la juriste de l'UMONS une fois tous nos outils mis en place.
+
+L'annonimisation des données est de mise lorsque ces données servent à une étude générale (par exemple, évolution des performances des cohortes d'étudiants avec les outils progressivement mis en place, études scientifiques, ...).
+
+### Droit d'auteur
+
+...
+
+### Plagiat
+
+L'UMONS s'est doté d'un outil de détection du plagiat intégré à Moodle. Il reconnait les fichiers Word, PowerPoint et PDF. Malheureusement, il ne reconnait pas les PDF générés via LaTeX. Donc, il faut sortir soit en Word, soit faire un PDF depuis Word. Il faut intégrer les documents sous forme de devoirs dans Moodle pour pouvoir bénéficier de cette fonction, ce qui est très contraignants pour nous.
+
+**TODO: réfléchir à des façons plus pratiques de mettre en œuvre l'anti-plagiat dans nos cours de Science des données.**
 
 ## Infos utiles concernant le DSI UMONS
 
