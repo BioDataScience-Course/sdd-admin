@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>7.2 Badges | BioDataScience Administration</title>
+  <title>7.1 Gestion des cours | BioDataScience Administration</title>
   <meta name="description" content="Administration de BioDataScience-Course." />
   <meta name="generator" content="bookdown 0.18 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="7.2 Badges | BioDataScience Administration" />
+  <meta property="og:title" content="7.1 Gestion des cours | BioDataScience Administration" />
   <meta property="og:type" content="book" />
   <meta property="og:url" content="http://phgrosjean.sciviews.org/bookdown-test/" />
   <meta property="og:image" content="http://phgrosjean.sciviews.org/bookdown-test/images/front-cover.png" />
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="phgrosjean/bookdown-test" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="7.2 Badges | BioDataScience Administration" />
+  <meta name="twitter:title" content="7.1 Gestion des cours | BioDataScience Administration" />
   
   <meta name="twitter:description" content="Administration de BioDataScience-Course." />
   <meta name="twitter:image" content="http://phgrosjean.sciviews.org/bookdown-test/images/front-cover.png" />
@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="gestion-des-cours.html"/>
-<link rel="next" href="notes.html"/>
+<link rel="prev" href="moodle.html"/>
+<link rel="next" href="badges.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -308,15 +308,65 @@ var h5pContentTypes = [""];
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="badges" class="section level2">
-<h2><span class="header-section-number">7.2</span> Badges</h2>
-<p>Les badges sont très utiles car ils matérialisent la progression des étudiants. C’est à la fois une façon ludique d’apprendre, et un moyen efficace de pousser un étudiant à travailler. Les badges sont générés dans Moodle, mais bien sûr, ils sont liés à des …. activités Moodle. Avec nos applications externes, nous ne pouvons fournir des badges que manuellement, ce qui devient très vite laborieux. TODO: trouver un moyen d’automatiser l’octroi de badges. Moodle peut se connecter à <a href="https://badgr.io" class="uri">https://badgr.io</a>, et nous pouvons peut-être travailler via son interface ? A creuser !</p>
-<p>Pour créer des badges, nous pouvons utiliser une <a href="https://www.openbadges.me/designer.html">application en ligne</a>. Il suffit d’indiquer son adresse email, et de concevoir son badge. La même interface peut d’ailleurs être utilisée pour concevoir visuellement des hex-stickers (à faible résolution toutefois puisque c’est des pichiers .png de 200x200 pixels). Voici un exemple de badge que nous pourrions utiliser dans nos cours :</p>
-<div class="figure">
-<img src="images/moodle/sdd1-02visualisation1.png" alt="Exemple de badge" />
-<p class="caption">Exemple de badge</p>
-</div>
-<p>Les images correspondant à nos différents badges sont sur p-Cloud, dans le sous-dossier <code>sdd_badges</code>.</p>
+<div id="gestion-des-cours" class="section level2">
+<h2><span class="header-section-number">7.1</span> Gestion des cours</h2>
+<p>Un espace différent a été créé pour chaque AA (donc, deux pour SDD I et SDD II) par l’administrateur Moodle. Voici la liste des AA, l’intitutlé et le code Moodle correspondant (qui ne correspond <strong>pas</strong> au code dans le programme des cours) :</p>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Cours</th>
+<th align="left">Code Moodle</th>
+<th align="left">Intitulé</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">SDD I Q1</td>
+<td align="left">S-BIOG-006</td>
+<td align="left">Science des données I : visualisation</td>
+</tr>
+<tr class="even">
+<td align="left">SDD I Q2</td>
+<td align="left">S-BIOG-027</td>
+<td align="left">Science des données I : inférence</td>
+</tr>
+<tr class="odd">
+<td align="left">SDD II Q1</td>
+<td align="left">S-BIOG-015</td>
+<td align="left">Science des données II : modélisation</td>
+</tr>
+<tr class="even">
+<td align="left">SDD II Q2</td>
+<td align="left">S-BIOG-061</td>
+<td align="left">Science des données II : analyse</td>
+</tr>
+<tr class="odd">
+<td align="left">SDD III Q1</td>
+<td align="left">S-BIOG-025</td>
+<td align="left">Science des données III : exploration et prédiction</td>
+</tr>
+<tr class="even">
+<td align="left">SDD IV all</td>
+<td align="left">S-BIOG-043</td>
+<td align="left">Science des données IV : pratique</td>
+</tr>
+<tr class="odd">
+<td align="left">SDD V Q1</td>
+<td align="left">S-BIOG-077</td>
+<td align="left">Science des données V : recherche reproductible</td>
+</tr>
+<tr class="even">
+<td align="left">SDD I Charleroi Q1</td>
+<td align="left">S-BIOG-921</td>
+<td align="left">Bio-informatique et science des données</td>
+</tr>
+<tr class="odd">
+<td align="left">SDD II Charleroi Q2</td>
+<td align="left">??????????</td>
+<td align="left">Bio-informatique et science des données II</td>
+</tr>
+</tbody>
+</table>
 </div>
 <div id="disqus_thread"></div>
 <script>
@@ -343,8 +393,8 @@ s.setAttribute('data-timestamp', +new Date());
           </div>
         </div>
       </div>
-<a href="gestion-des-cours.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="notes.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="moodle.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="badges.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
