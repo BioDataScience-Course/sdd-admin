@@ -51,6 +51,10 @@ Le **Règlement Général sur la Protection des Données** ou RGPD (n° 2016/679
 
 A l'UMONS, l'étudiant signe le document adéquant lors de son inscription. Ce document mets **Moodle** en confiormité, mais pas les outils externes. Nous devons donc préciser exectement ce que nous devons faire pour être en conformité avec la juriste de l'UMONS une fois tous nos outils mis en place.
 
+L'utilisateur doit avoir la possibilité d'effacer intégralement ses données personnelles s'il le souhaite lorsqu'il efface son compte d'un site. C'est explicitye dans le RGPD. Cependant, des restrictions à ceci sont indispensables pour la bonne gestion du suivi des étudiants à l'Université. C'est pour cela que l'étudiant a du signer un accord lors de son inscription. Afin d'être en conformité avec cette directive, j'ai rajouté un bouton `Effacer mes données personnelles` dans la première page des cours bookdown. L'utilisateur peut ensuite lire le contenu de manière anonyme et les activités learnr/Shiny apps ne sont **pas** enregistrées. Par contre, h5p est toujours enregistré et les données historiques antérieures sont toujours dans notre base de données.
+
+**TODO: il faudra peut-être mettre en place un bouton qui permette de demander l'effacement de _toutes_ les données, et qui pourrait êrtre utilisé pour les visiteurs non-UMONS pour être totalement en conformité RGOPD de ce point de vue.**
+
 L'annonimisation des données est de mise lorsque ces données servent à une étude générale (par exemple, évolution des performances des cohortes d'étudiants avec les outils progressivement mis en place, études scientifiques, ...).
 
 ### Droit d'auteur

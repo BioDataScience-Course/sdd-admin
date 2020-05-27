@@ -1,7 +1,7 @@
 --- 
 title: "BioDataScience Administration"
 author: "Philippe Grosjean & Guyliann Engels"
-date: "2020-05-26"
+date: "2020-05-27"
 site: bookdown::bookdown_site
 output:
   bookdown::gitbook:
@@ -54,7 +54,7 @@ sessioninfo::session_info()
 #  collate  en_US.UTF-8                 
 #  ctype    en_US.UTF-8                 
 #  tz       Europe/Brussels             
-#  date     2020-05-26                  
+#  date     2020-05-27                  
 # 
 # ─ Packages ───────────────────────────────────────────────────────────────────
 #  package     * version    date       lib source                            

@@ -49,7 +49,19 @@ Le serveur est installé initialement avec **PHP 7.3** et une base de données *
 
 - Quelques autres plugins aidant à gére le site Wordpress\ : **Broken Link Checker 1.11.12**, **Health Check & Troubleshooting 1.4.4** & **WP-Optimize 3.0.19**.
 
-Le site est servi à l'adresse https://wp.sciviews.org. Les enseignants y sont enregistrés comme éditeurs. En outre, un compte administrateur est aussi créé. Le serveur est accessible par SSH (aprèz activation provisoire dans gandi) et sFTP. Toutes les informations nécessaires seront transmises aux intéressés par voie sécurisée.
+Le site est servi à l'adresse https://wp.sciviews.org. Les enseignants y sont enregistrés comme éditeurs. En outre, un compte administrateur est aussi créé. Le serveur est accessible par SSH (après activation provisoire dans gandi) et sFTP. Toutes les informations nécessaires seront transmises aux intéressés par voie sécurisée.
+
+### Login et enregistrement de la progression
+
+Pour l'instant, le login dans le site Wordpress est réaliser via le compte Github de l'étudiant comme expliqué plus haut. Cela permet de récupérer des infos sur le compte Github comme le logiun, ou l'adresse mail primaire associé. Si la page principale est lancée depuis Moodle, nous injectons également des données issues de Moodle et donc, les infos UMONS de l'étudiant comme son nom, son email UMONS, son numéro de matricule, etc. De cette manière, nous arrivons à combiner toutes les infos qui nous sont nécessaire pour gérer correctement le compte de chaque étudiant et enregistrer sa progression.
+
+Une fois le compte créé dans Wordpress, l'étudiant a la possibilité de modifier des informations, dont son adresse email. S'il le fait, cette adresse n'est alors plus synchrone avec celle de Github (**à tester**). C'est toutefois cette addresse email enregistrée dans Wordpress qui est employée pour enregistrer les activités h5p, et le sera aussi pour les learnr et les app Shiny dans une certaine mesure. En effet, pour ces derniers, le choix de l'identifiant est le suivant\ : (1) l'email du compte Wordpress (donc le même que Guthub initialement), (2) si vide, l'email UMONS, (3) si vide, le login Github. Si aucune des trois infos n'est disponible, nous n'enregistrons **pas** l'activité learnr et app Shiny, et l'outil de test en début de bookdown indique clairement que la navigation se fait de manière anonyme. Par contre, il me semble (à tester) que H5xAPIkatchu enregistre l'activité h5p sous un UUID créé à la volée. Même si c'est le cas, nous pouvons toujours filtrer et éliminer ces données-là plus tard.
+
+Par ailleurs, il est possible d'enregistrer les événements principaux h5p (soumission des exercices) dans Wordpress directement. Je pense (à vérifier) que cette fonction est associée à l'enregistrement d'état des contenus h5p d'une session à l'autre. Cette info est redondante avec H5PxAPIkatchu, mais elle est utile car l'étudiant a accès à h5p en lecture seule dans le tableau de bord, et il peut y lire les détails de sa progression dans l'ensemble des exercices h5p de tous les cours, s'il le souhaite (voir capture d'écran). Reste à déterminer l'occupation disque de cette fonction\ !
+
+![Suivi de la progression H5P dans le tableau de bord accessible aux étudiants.](images/wordpress/dashboard-user-h5p.png)
+
+Comme nous pouvons le voir, le tableau de bord de l'étudiant est réduit au minimum. En plus de la partie "H5P Content" où il peut voir et filtrer la liste des applis H5P et voir ses propres résultats H5P, il a accès à son profil où il peut modifier des données utilisées par nos outils comme `displayname`, `email`, `firstname`, `lastname`. Il ne peut pas modifier son login (alias "identifiant" dans Wordpress). De plus, comme nous croisons avec les données UMONS issues de Moodle, nous aurons toujours à disposition des informations permettant d'identifier les étudiants. Par contre, je crois que la possibilité de modifier ces informations par l'étudiant (utilisateur) lui-même fait partie des contraintes RGPD pour lesquelles Wordpress assure la compatibilité.
 
 ### Intégration des bookdowns dans le site
 
