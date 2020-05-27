@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapitre 4 Bookdown | BioDataScience Administration</title>
+  <title>8.2 Gestion des contenus H5P | BioDataScience Administration</title>
   <meta name="description" content="Administration de BioDataScience-Course." />
   <meta name="generator" content="bookdown 0.18 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapitre 4 Bookdown | BioDataScience Administration" />
+  <meta property="og:title" content="8.2 Gestion des contenus H5P | BioDataScience Administration" />
   <meta property="og:type" content="book" />
   <meta property="og:url" content="http://phgrosjean.sciviews.org/bookdown-test/" />
   <meta property="og:image" content="http://phgrosjean.sciviews.org/bookdown-test/images/front-cover.png" />
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="phgrosjean/bookdown-test" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapitre 4 Bookdown | BioDataScience Administration" />
+  <meta name="twitter:title" content="8.2 Gestion des contenus H5P | BioDataScience Administration" />
   
   <meta name="twitter:description" content="Administration de BioDataScience-Course." />
   <meta name="twitter:image" content="http://phgrosjean.sciviews.org/bookdown-test/images/front-cover.png" />
@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="astuces-git-et-github.html"/>
-<link rel="next" href="wordpress.html"/>
+<link rel="prev" href="installation-de-h5p.html"/>
+<link rel="next" href="quelques-contenus-h5p-utiles.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -225,6 +225,71 @@ var h5pContentTypes = [""];
 <script src='https://wp.sciviews.org/wp-content/plugins/h5p/h5p-php-library/js/request-queue.js'></script>
 
 
+<style type="text/css">
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(data-line-number);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    background-color: #ffffff;
+    color: #a0a0a0;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #a0a0a0;  padding-left: 4px; }
+div.sourceCode
+  { color: #1f1c1b; background-color: #ffffff; }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span. { color: #1f1c1b; } /* Normal */
+code span.al { color: #bf0303; background-color: #f7e6e6; font-weight: bold; } /* Alert */
+code span.an { color: #ca60ca; } /* Annotation */
+code span.at { color: #0057ae; } /* Attribute */
+code span.bn { color: #b08000; } /* BaseN */
+code span.bu { color: #644a9b; font-weight: bold; } /* BuiltIn */
+code span.cf { color: #1f1c1b; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #924c9d; } /* Char */
+code span.cn { color: #aa5500; } /* Constant */
+code span.co { color: #898887; } /* Comment */
+code span.cv { color: #0095ff; } /* CommentVar */
+code span.do { color: #607880; } /* Documentation */
+code span.dt { color: #0057ae; } /* DataType */
+code span.dv { color: #b08000; } /* DecVal */
+code span.er { color: #bf0303; text-decoration: underline; } /* Error */
+code span.ex { color: #0095ff; font-weight: bold; } /* Extension */
+code span.fl { color: #b08000; } /* Float */
+code span.fu { color: #644a9b; } /* Function */
+code span.im { color: #ff5500; } /* Import */
+code span.in { color: #b08000; } /* Information */
+code span.kw { color: #1f1c1b; font-weight: bold; } /* Keyword */
+code span.op { color: #1f1c1b; } /* Operator */
+code span.ot { color: #006e28; } /* Other */
+code span.pp { color: #006e28; } /* Preprocessor */
+code span.re { color: #0057ae; background-color: #e0e9f8; } /* RegionMarker */
+code span.sc { color: #3daee9; } /* SpecialChar */
+code span.ss { color: #ff5500; } /* SpecialString */
+code span.st { color: #bf0303; } /* String */
+code span.va { color: #0057ae; } /* Variable */
+code span.vs { color: #bf0303; } /* VerbatimString */
+code span.wa { color: #bf0303; } /* Warning */
+</style>
 
 <link rel="stylesheet" href="style.css" type="text/css" />
 </head>
@@ -283,12 +348,15 @@ var h5pContentTypes = [""];
 <li class="chapter" data-level="8.1.2" data-path="installation-de-h5p.html"><a href="installation-de-h5p.html#configuration-de-h5p"><i class="fa fa-check"></i><b>8.1.2</b> Configuration de H5P</a></li>
 <li class="chapter" data-level="8.1.3" data-path="installation-de-h5p.html"><a href="installation-de-h5p.html#enregistrement-h5p-xapi"><i class="fa fa-check"></i><b>8.1.3</b> Enregistrement H5P xAPI</a></li>
 </ul></li>
-<li class="chapter" data-level="8.2" data-path="quelques-contenus-h5p-utiles.html"><a href="quelques-contenus-h5p-utiles.html"><i class="fa fa-check"></i><b>8.2</b> Quelques contenus H5P utiles</a><ul>
-<li class="chapter" data-level="8.2.1" data-path="quelques-contenus-h5p-utiles.html"><a href="quelques-contenus-h5p-utiles.html#apprentissage-du-code-r"><i class="fa fa-check"></i><b>8.2.1</b> Apprentissage du code R</a></li>
-<li class="chapter" data-level="8.2.2" data-path="quelques-contenus-h5p-utiles.html"><a href="quelques-contenus-h5p-utiles.html#apprentissage-des-graphiques"><i class="fa fa-check"></i><b>8.2.2</b> Apprentissage des graphiques</a></li>
-<li class="chapter" data-level="8.2.3" data-path="quelques-contenus-h5p-utiles.html"><a href="quelques-contenus-h5p-utiles.html#explications-générales"><i class="fa fa-check"></i><b>8.2.3</b> Explications générales</a></li>
-<li class="chapter" data-level="8.2.4" data-path="quelques-contenus-h5p-utiles.html"><a href="quelques-contenus-h5p-utiles.html#autoévaluation"><i class="fa fa-check"></i><b>8.2.4</b> Autoévaluation</a></li>
-<li class="chapter" data-level="8.2.5" data-path="quelques-contenus-h5p-utiles.html"><a href="quelques-contenus-h5p-utiles.html#take-home-message"><i class="fa fa-check"></i><b>8.2.5</b> “Take home message”</a></li>
+<li class="chapter" data-level="8.2" data-path="gestion-des-contenus-h5p.html"><a href="gestion-des-contenus-h5p.html"><i class="fa fa-check"></i><b>8.2</b> Gestion des contenus H5P</a><ul>
+<li class="chapter" data-level="8.2.1" data-path="gestion-des-contenus-h5p.html"><a href="gestion-des-contenus-h5p.html#backup-h5p"><i class="fa fa-check"></i><b>8.2.1</b> Backup H5P</a></li>
+</ul></li>
+<li class="chapter" data-level="8.3" data-path="quelques-contenus-h5p-utiles.html"><a href="quelques-contenus-h5p-utiles.html"><i class="fa fa-check"></i><b>8.3</b> Quelques contenus H5P utiles</a><ul>
+<li class="chapter" data-level="8.3.1" data-path="quelques-contenus-h5p-utiles.html"><a href="quelques-contenus-h5p-utiles.html#apprentissage-du-code-r"><i class="fa fa-check"></i><b>8.3.1</b> Apprentissage du code R</a></li>
+<li class="chapter" data-level="8.3.2" data-path="quelques-contenus-h5p-utiles.html"><a href="quelques-contenus-h5p-utiles.html#apprentissage-des-graphiques"><i class="fa fa-check"></i><b>8.3.2</b> Apprentissage des graphiques</a></li>
+<li class="chapter" data-level="8.3.3" data-path="quelques-contenus-h5p-utiles.html"><a href="quelques-contenus-h5p-utiles.html#explications-générales"><i class="fa fa-check"></i><b>8.3.3</b> Explications générales</a></li>
+<li class="chapter" data-level="8.3.4" data-path="quelques-contenus-h5p-utiles.html"><a href="quelques-contenus-h5p-utiles.html#autoévaluation"><i class="fa fa-check"></i><b>8.3.4</b> Autoévaluation</a></li>
+<li class="chapter" data-level="8.3.5" data-path="quelques-contenus-h5p-utiles.html"><a href="quelques-contenus-h5p-utiles.html#take-home-message"><i class="fa fa-check"></i><b>8.3.5</b> “Take home message”</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="9" data-path="videos.html"><a href="videos.html"><i class="fa fa-check"></i><b>9</b> Vidéos</a></li>
@@ -319,14 +387,37 @@ var h5pContentTypes = [""];
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="bookdown" class="section level1">
-<h1><span class="header-section-number">Chapitre 4</span> Bookdown</h1>
-<p>…</p>
-<p><strong>TODO: trouver un moyen simple de mettre à jour les pages statiques bookdown des cours dans Wordpress (ainsi que les données pour les rapports de progression des étudiants dans <code>/users</code>).</strong></p>
-<p>Un essai a été fait en passant les informations via le query string de l’URL et en utilisant le plugin Wordpress <strong>Variable shortcode</strong>. Celà donne quelque chose comme ceci :</p>
-<pre><code>&lt;a href=&quot;https://wp.sciviews.org/test-bookdown?login=[sv slug=&#39;sc-username&#39;]&amp;amp;ghemail=[sv slug=&#39;sc-user-email&#39;]&amp;amp;displayname=[sv slug=&#39;sc-display-name&#39;]&amp;amp;firstname=[sv slug=&#39;sc-first-name&#39;]&amp;amp;lastname=[sv slug=&#39;sc-last-name&#39;]&quot;&gt;</code></pre>
-<p>Ensuite, c’est à bookdown d’enregistrer ces variables dans le <strong>localStorage</strong> du browser Web. Cela fonctionne, mais n’est pas optimal. Nous préférons au final que ce soit la page wordpress appelée par Moodle qui récupère ces informations et les stockent dans <strong>localStorage</strong>. Du coup, le plugin <strong>Variable shortcode</strong> n’est plus nécessaire. Voir la configuration de Wordpress pour en savoir plus (<a href="wordpress.html#wordpress">5</a>).</p>
-
+<div id="gestion-des-contenus-h5p" class="section level2">
+<h2><span class="header-section-number">8.2</span> Gestion des contenus H5P</h2>
+<p>Chaque contenu H5P est indépendant du reste. Attention que les contenus complexes sont volumineux. Par exemple, les vidéos interactives occupent chacune 2,8Mo sur le serveur lorsque les vidéos sont sur youtube (donc, occupation de place minimale puisque la vidéo elle-même n’est <strong>pas</strong> sur le site Wordpress).</p>
+<p>Au départ, aucun contenu n’est réalisable car les <strong>librairies</strong> nécessaires ne sont pas encore installée. Mais il n’est pas nécessaire de les installer car il suffit de téléverser du contenu pour que leur installation se fasse automatiquement. Donc, la procédure pragmatique suivante est retenue pour enrichir le site des librairies dont nous avons besoin :</p>
+<ul>
+<li>Pour un type de contenu pas encore supporté, aller sur <a href="https://h5p.org">h5p.org</a>. Se connecter (créer un compte gratuit, si nécessaire).</li>
+<li>Aller dans “Examples and Downloads” et choisir un exemple de type de contenu souhaité. Cliquer sur “Reuse”. Ou alors aller dans “Contents” -&gt; “Create New Content” et créer un contenu du type souhaité. Puis cliquer sur “Reuse” lorsqu’on est satisfait du contenu.</li>
+</ul>
+<p>Voici un exemple avec le contenu de type “True/False”.</p>
+<div class="figure">
+<img src="images/h5p/h5p-new-content1.png" alt="Dans son compte sur h5p.org aller dans “Contents” -&gt; “Create New Content”, et choisir le type de contenu que l’on veut créer (ici True/False question)." />
+<p class="caption">Dans son compte sur h5p.org aller dans “Contents” -&gt; “Create New Content”, et choisir le type de contenu que l’on veut créer (ici True/False question).</p>
+</div>
+<div class="figure">
+<img src="images/h5p/h5p-new-content2.png" alt="Créer le contenu et l’enregister)." />
+<p class="caption">Créer le contenu et l’enregister).</p>
+</div>
+<div class="figure">
+<img src="images/h5p/h5p-new-content3.png" alt="Une fois le contenu terminé, il suffit de liquer sur “Reuse” (flèche rouge) et de cliquer sur “Download as an .h5p file” pour récupérer le fichier .h5p." />
+<p class="caption">Une fois le contenu terminé, il suffit de liquer sur “Reuse” (flèche rouge) et de cliquer sur “Download as an .h5p file” pour récupérer le fichier .h5p.</p>
+</div>
+<p>Ensuite, dans le tableau de bord de Wordpress (pour un utilisateur éditeur), aller dans H5P Content -&gt; Add New. Sélectionner “Téléverser” et indiquer le fichier .h5p que l’on vient de sauver, puis “Utiliser”.</p>
+<div class="figure">
+<img src="images/h5p/h5p-new-content4.png" alt="Ajout du contenu H5P sur le site Worpress par té&quot;léversement du fichier .h5p." />
+<p class="caption">Ajout du contenu H5P sur le site Worpress par té&quot;léversement du fichier .h5p.</p>
+</div>
+<p>Une fois que c’est fait, non seulement le contenu est téléversé, mais les librairies requises sont également ajoutées. De cette façon, un autre contenu de ce type peut maintenant être créé directement depuis la tableau de bord de Wordpress, H5P content -&gt; Add New.</p>
+<div id="backup-h5p" class="section level3">
+<h3><span class="header-section-number">8.2.1</span> Backup H5P</h3>
+<p>Le backup du site entier Wordpress est effectué. Par contre, il est utile d’avoir une copie de nos différents contenus H5P au format de fichier .h5p. Pour cela, un administrateur de site doit au préalable temporairement cocher l’option “Toolbar Below Content”, de sorte quel es boutons “Reuse” apparaissent. Pour chaque contenu que l’on souhaite sauvegarder, l’afficher, et cliquer sur son bouton “Reuse” pour récupérer le fichier .h5p. Ensuite, placer les fichiers .h5p sur p-Cloud dans le répertoire <code>sdd_h5p_backup</code>.</p>
+</div>
 </div>
 <div id="disqus_thread"></div>
 <script>
@@ -353,8 +444,8 @@ s.setAttribute('data-timestamp', +new Date());
           </div>
         </div>
       </div>
-<a href="astuces-git-et-github.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="wordpress.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="installation-de-h5p.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="quelques-contenus-h5p-utiles.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -385,7 +476,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/BioDataScience-Course/sdd-admin/edit/master/04-Bookdown.Rmd",
+"link": "https://github.com/BioDataScience-Course/sdd-admin/edit/master/08-H5p.Rmd",
 "text": "Editer"
 },
 "history": {
