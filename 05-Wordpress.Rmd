@@ -82,7 +82,7 @@ ssh 3693753@git.sd3.gpaas.net deploy wp.sciviews.org.git
 Dans un premier temps, l'identification se fait via un mot de passe. Voici comment cloner le dépôt git à partir d'un répertoire racine de votre choix, mais nous aurons absolument besoin que ce répertoire racine soit le même que celui où les dépôts Github de BioDataScience-Course sont également placés (sur le Mac, il est facile de s'y placer en tapant `cd` suivi d'une espace, et puis en allant faire un drag&drop du dossier depuis le Finder vers le terminal, puis d'exécuter cette commande).
 
 ```
-# Placezvous dans le bon dossier
+# Placez-vous dans le bon dossier
 #cd <dossier racine des dépôts BioDataScience-Course>
 git clone git+ssh://3693753@git.sd3.gpaas.net/wp.sciviews.org.git
 ```
