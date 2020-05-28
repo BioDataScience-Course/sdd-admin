@@ -35,7 +35,7 @@ Le serveur est installé initialement avec **PHP 7.3** et une base de données *
 
 - **H5P 1.15.0**. Il faut installer les libraires séparément et les principales ont été rajoutées dès le départ. Les 5 ou 6 widgets H5P que nous avions déjà créés sont facilement importés en les exportant de leur site original au format `.h5p` en cliquant sur le bouton `reuse` en bas à gauche du widget. Ensuite dans Wordpress, on va dans le tableau de bord -> H5P Content, on clique `Add New` puis `Téléverser` et on sélectionne le ficher `.h5p`. Un backup de ces fichiers `.h5p` est également effectué sur p-cloud dans le dossier `sdd_h5p_backup`. Le plugin est ensuite configuré pour ne pas motrer la bannière h5p en bas des widgets et pour générer tous les événements xAPI possibles. 
 
-- **SNORDIAN's H5PxAPIkatchu 0.4.2** capture les événements xAPI générés par H5P et les stockent directement dans la base de données MySQL liée à Wordpress. Il y a une interface simpliste pour visualiser les tables, les filtrer et explrter au format CSV. **Dans un premier cela nous servira, mais nous devrons développer une autre façon de récupérer les donner, voire, dériver un autre plugin pour envoyer les événements directement dans la même base de données MongoDB que celle utilisée par nos applis Shiny** (voir \@ref(shiny)).
+- **SNORDIAN's H5PxAPIkatchu 0.4.2** capture les événements xAPI générés par H5P et les stockent directement dans la base de données MySQL liée à Wordpress. Il y a une interface simpliste pour visualiser les tables, les filtrer et explrter au format CSV. **Dans un premier cela nous servira, mais nous devrons développer une autre façon de récupérer les donner, voire, dériver un autre plugin pour envoyer les événements directement dans la même base de données MongoDB que celle utilisée par nos applis Shiny** (voir \@ref(shiny)). [Patché pour enregistrer les données dans MongoDB Atlas].
 
 - **OAuth Single Sign On - SSO (OAuth Client) 6.15.2** configuré pour enregistrer et connecter un utilisateur via son compte Github. Pour permettre ceci une application Github nommée **BioDataScience** a été créée. La configuration de ce plugin est disponible depuis le tableau de bord de Wordpress -> miniOrange -> OAuth.
 
@@ -43,13 +43,164 @@ Le serveur est installé initialement avec **PHP 7.3** et une base de données *
 
 - **Advanced iFrame Pro 2020.3** permet d'insérer un iframe avec plein d'options\ : sécurisation, adaptation de la taille, passage de paramètres, réécriture d'URL, etc. Nous utilisons ce plugin pour intégrer les bookdown dans le site Wordpress, et ainsi conserver la bannière supérieure de notre site tout en affichant le bookdown.
 
-- **Shortcode Variables 3.1.1** ajoute un shortcode `[sv slug='...']` permettant d'y placer du texte prédéfini ou une variable système comme le nom ou l'email de l'utilisateur actuel, voir aussi \@ref(var-context).
+- **Shortcode Variables 3.1.1** ajoute un shortcode `[sv slug='...']` permettant d'y placer du texte prédéfini ou une variable système comme le nom ou l'email de l'utilisateur actuel, voir aussi \@ref(var-context). [éliminé plus tard]
 
 - **UpdraftPlus 1.16.24** comme système de backup de l'ensemble (fichiers Wordpress + base MySQL). Le backup se fait en local pour l'instant dans `lamp0/web/vhosts/wp.sciviews.org/htdocs/wp-content/updraft`, mais il est recopié sur notre disque p-cloud dans le dossier `sdd_site_backup`.
 
 - Quelques autres plugins aidant à gére le site Wordpress\ : **Broken Link Checker 1.11.12**, **Health Check & Troubleshooting 1.4.4** & **WP-Optimize 3.0.19**.
 
 Le site est servi à l'adresse https://wp.sciviews.org. Les enseignants y sont enregistrés comme éditeurs. En outre, un compte administrateur est aussi créé. Le serveur est accessible par SSH (après activation provisoire dans gandi) et sFTP. Toutes les informations nécessaires seront transmises aux intéressés par voie sécurisée.
+
+### Configuration serveur et git
+
+Simple hosting de gandi.net permet d'accéder aux fichiers sur le serveur de trois façons\ :
+
+- Par sFTP (TODO: détails)
+- Par Console SSH (TODO: détails). La console n'est pas active en permanence. Il faut l'activer dans le panneau de configuration du simple hosting sur Gandi.net. Cette activation reste valable pour 2 heures seulement par sécurité.
+- Via git. C'est le plus simple pour développer et synchroniser son site. C'est d'ailleurs aussi la seule façon de faire pour ajouter des dépendances à PHP via composer (et nous aurons besoin de rajouter une dépendance par rapport à mongodb pour enregistrer les événements H5P xAPI dans notre base de données).
+
+#### Sécurisation du site Wordpress
+
+Modification du fichier `.htaccess` dans `htdocs`. Afin d'éviter des attaques de type pingback xmlrpc sur le site wordpress, il faut rajouter la ligne suivante dans le fichier `.htaccess`\ :
+
+```
+RewriteRule ^xmlrpc\.php$ "http\:\/\/0\.0\.0\.0\/" [R=301,L]
+```
+
+#### Utilisation de git
+
+Il faut git et un client SSH installé (pas de problèmes pour le Mac ou Linux). Les infos pour utiliser git sont dans la page du site `wp.sciviews.org`\ :
+
+```
+git remote add gandi git+ssh://3693753@git.sd3.gpaas.net/wp.sciviews.org.git
+# Faire un push
+git push gandi master
+# Déployer
+ssh 3693753@git.sd3.gpaas.net deploy wp.sciviews.org.git
+```
+
+Dans un premier temps, l'identification se fait via un mot de passe. Voici comment cloner le dépôt git à partir d'un répertoire racine de votre choix, mais nous aurons absolument besoin que ce répertoire racine soit le même que celui où les dépôts Github de BioDataScience-Course sont également placés (sur le Mac, il est facile de s'y placer en tapant `cd` suivi d'une espace, et puis en allant faire un drag&drop du dossier depuis le Finder vers le terminal, puis d'exécuter cette commande).
+
+```
+# Placezvous dans le bon dossier
+#cd <dossier racine des dépôts BioDataScience-Course>
+git clone git+ssh://3693753@git.sd3.gpaas.net/wp.sciviews.org.git
+```
+
+Accepter (`yes`) pour le message relatif à l'authenticité, puis rentrer le mot de passe d'administration du site. **Vérifier que les fichiers ont bien été rajoutés en comparant avec le contenu affiché dans Cyberduck avant de continuer.**
+
+Avant de pouvoir effectuer un push via Github Desktop, il faut avoir configuré git correctement et avoir une clé SSH.
+
+```
+git config --global user.name <username>
+git config --global user.email <user@email.com>
+# Générer une clé SSH pour l'authentification
+ssh-keygen -t rsa -b 4096 -C '<user@email.com>'
+```
+
+Une fois la clé SSH générée, copier le contenu de `~/.ssh/id_rsa.pub` d'une part vers "SSH Keys" dans Github -> Settings -> SSH and GPG Keys, et d'autre part, dans le panneau principal Simple hosting de Gandi.net, dans la section sécurité, cliquer sur "Ajouter une clé SSH".  Puis créer une nouvelle clé et y coller le contenu.
+
+Essayez une petite modification anodine dnas votre dépôt git en local, puis commit et push. Ça doit fonctionner.
+
+Attention que les données qui sont poussées vers le serveur ne sont pas encore publiées à ce stade\ ! Il faut **déployer** ces changements en faisant\ :
+
+```
+ssh 3693753@git.sd3.gpaas.net 'deploy wp.sciviews.org.git'
+```
+
+Le `deploy` ajoute des nouveaux fichiers et remplace les fichiers existants (à condition que le droit en écriture sur le fichier soit OK). Part contre, il n'élimine pas les fichiers. On risque donc d'accumuler des fichiers devenus inutiles ou fur et à mesure de l'édition des blogdown. Si cela ne devrait pas impacter l'affichage des pages, cela utilise inutilement de l'espace disque sur le serveur. donc, de temps en temps, il faut procéder à un nettoyage complet avec `clean` suivi d'un redéploiement.
+
+```
+ssh 3693753@git.sd3.gpaas.net 'clean wp.sciviews.org.git'
+```
+
+**Attention qu'un fichier `.gitignore` correct est indispensable ici.** Les fichiers concernés par le `.gitignore` ne seront pas effacés. Tout le reste oui (faire un backup avant\ !).
+
+### Ajout de mongodb pour PHP
+
+Le serveur sur Gandi.net n'autorise qu'une seule manière de rajouter des dépendances pour PHP\ : via git + ssh en utilisant `composer`. Et il faut créer les ficihers `composer.json` et `composer;lock` sur la machine locale avant de pouvoir faire un push sur le serveur. cela signifie d'avoir php et la dépendance mongodb pour php installés localement. Malheureusement, malgré de nombreux essais infructueux, je n'ai pas réussi à installer mongodb pour PHP sur MacOS Catalina. apparemment, la nouvelle puce de sécurité T2 empêche de le faire.
+
+Par conséquent, j'ai du passer par une machine sous Ubuntu 18.04 (la machine virtuelle svbox2019) pour le faire. Voici la procédure\ :
+
+- Installer PHP et les dépendances nécessaires.
+
+```
+php --version # Version 7.2.17, alors que 7.3.11 sur le serveur
+sudo apt install php-mongodb # version 1.3.4-1build1
+sudo apt install composer
+```
+
+Ensuite, créer un dossier et y placer un fichier `com
+
+```
+mkdir ~/php-mongodb
+cd ~/php-mongodb
+# Normalement composer require mongodb/mongodb devrait faire l'affaire
+# mais ça ne marche pas !
+# Par contre, créer composer.json manuellement
+echo '{
+  "require": {
+    "mongodb/mongodb": "^1.0.0"
+  }
+}' > composer.json
+# Ensuite faire créer composer.lock par composer sur cette base
+composer update
+```
+Ensuite, transférer le fichier `composer.lock` ainsi généré dans le dépôt git, faire un commit, un push, puis un `deploy` comme expliqué plus haut.
+
+Y lire les versions des extensions installées (mongodb 1.2.0 et ext-mongodb 1.3.0), aller voir la version de mongodb utilisée pour MongoDB Atlas et vérifier dans le tableau de compatibilité [ici](https://docs.mongodb.com/drivers/driver-compatibility-reference).
+
+Il faut ext 1.5 + lib 1.4 minimum pour php 7.3 => pas bon! Aussi pour MongoDB 4.2 et PHP 7.4, il faut au minimum ext 1.6 + lib 1.5. Donc, je charge une version plus récente de Xubuntu (20.04, depuis www.osboxes.org) afin de pouvoir faire le travail avec des versions plus récentes de php et mongodb. Cependant comme elle n'est pas dispo, je préfère la version Ubuntu server 20.04 moins volumineuse.
+
+OK, maintenant Ubuntu utilises uniquement la version 7.4 de PHP. J'ai regardé s'il y avait un moyen de vérifier que tous les plugins qu'on utilise dans Wordpress sont compatibles avec PHP 7.4 (on peut faire l'upgrade, mais on ne peux pas downgrader après !). Il y a un plugin [php compatibility checker](https://fr.wordpress.org/plugins/php-compatibility-checker/) mais celui-ci est limité à la version 7.3 max de php et ça fait des mois qu'ils promettent une version pour 7.4... mais rien. donc, je préfère rester en 7.3. Ce qui m'oblige à installer un Xubuntu 19.10 (disque intial de 5.9Go). Changement de clavier, ajout de permissions pour accéder au dossier partagé (MacDesktop), mise-à-jour, et on est prêt à travailler (utilisateur osboxes, mot de passe osboxes.org)...
+
+```
+sudo usermod -aG vboxsf osboxes
+sudo apt update
+sudo apt upgrade
+sudo apt autoremove
+sudo apt autoclean
+sudo apt clean
+sudo reboot
+```
+
+Install php, php-mongodb & composer.
+
+```
+sudo apt install php7.3-cli
+sudo apt install php-pear
+sudo apt install php-mongodb
+sudo apt install composer
+```
+
+Ensuite, c'est reparti\ !
+
+```
+mkdir /media/sf_MacDesktop/php-mongodb
+cd /media/sf_MacDesktop/php-mongodb
+# Normalement composer require mongodb/mongodb devrait faire l'affaire
+# mais ça ne marche pas !
+# Par contre, créer composer.json manuellement
+echo '{
+  "require": {
+    "mongodb/mongodb": "^1.5.0"
+  }
+}' > composer.json
+# Ensuite faire créer composer.lock par composer sur cette base
+composer update
+```
+
+Tout cela ne fonctionne pas et se plaint constamment d'incompatibilité de versions\ ! Tentative d'installation avec pecl
+
+```
+sudo apt install php7.3-dev
+sudo pecl install mongodb # mongodb 1.7.4
+mkdir /media/sf_MacDesktop/php-mongodb
+cd /media/sf_MacDesktop/php-mongodb
+composer require mongodb/mongodb  # Version 1.6.0 apparemment
+```
+
+Maintenant, copier `composer.json` et `composer.lock` à la racide du dépôt git, faire un commit, un push et un deploy. Cette fois-ci mongodb 1.6.0 semble s'être bien installé. Je reteste dans Wordpress... **et cette fois-ci c'est bon, ça maaaarche\!**
 
 ### Login et enregistrement de la progression
 
