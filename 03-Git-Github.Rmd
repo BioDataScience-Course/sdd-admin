@@ -13,7 +13,7 @@ Dans la SciViews Box, git, Github Desktop et RStudio server (incluant une interf
 
 ## BioDataScience-Course
 
-L'organisation [BioDataScience-Course](https://github.com/BioDataScience-Course) regroupe tous les dépôts Github relatifs à nos cours, y compris les travaux des étudiants.
+L'organisation Github [BioDataScience-Course](https://github.com/BioDataScience-Course) regroupe tous les dépôts relatifs à nos cours, y compris les travaux des étudiants.
 
 ### Convention de noms
 
@@ -40,7 +40,7 @@ Une autre ressource intéressante dans le contexte de l'utilisation de Github/Gi
 
 Quelques astuces qui nous sont utiles...
 
-- Comparaison de branches sur Github\ : ajouter `/compare` à la fin de l'URL du dépôt et une page de comparaison de branche apparait. sinon, cette comparaison est aussi possible dans Github Desktop (menu `Branch -> Compare to Branch`).
+- Comparaison de branches sur Github\ : ajouter `/compare` à la fin de l'URL du dépôt et une page de comparaison de branche apparait. Sinon, cette comparaison est aussi possible dans Github Desktop (menu `Branch -> Compare to Branch`).
 
 - Lorsqu'une branche n'est plus utile, elle peut être facilement éliminée depuis Github Desktop (entrée de menu `Branch -> Delete...`). Cette branche doit être activée d'abord, et tous les commits doivent avoir été pushés. Il est conseillé d'éliminer la branche sur le serveur en même temps que la branche locale.
 

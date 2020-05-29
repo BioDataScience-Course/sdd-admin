@@ -24,7 +24,7 @@
 <meta name="author" content="Philippe Grosjean &amp; Guyliann Engels" />
 
 
-<meta name="date" content="2020-05-28" />
+<meta name="date" content="2020-05-29" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -226,9 +226,9 @@ var h5pContentTypes = [""];
 
 
 <style type="text/css">
-a.sourceLine { display: inline-block; line-height: 1.25; }
-a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
-a.sourceLine:empty { height: 1.2em; }
+code.sourceCode > span { display: inline-block; line-height: 1.25; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode { white-space: pre; position: relative; }
 pre.sourceCode { margin: 0; }
@@ -237,14 +237,16 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 code.sourceCode { white-space: pre-wrap; }
-a.sourceLine { text-indent: -1em; padding-left: 1em; }
+code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
-pre.numberSource a.sourceLine
-  { position: relative; left: -4em; }
-pre.numberSource a.sourceLine::before
-  { content: attr(data-line-number);
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
     position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; pointer-events: all; display: inline-block;
+    border: none; display: inline-block;
     -webkit-touch-callout: none; -webkit-user-select: none;
     -khtml-user-select: none; -moz-user-select: none;
     -ms-user-select: none; user-select: none;
@@ -256,7 +258,7 @@ pre.numberSource { margin-left: 3em; border-left: 1px solid #a0a0a0;  padding-le
 div.sourceCode
   { color: #1f1c1b; background-color: #ffffff; }
 @media screen {
-a.sourceLine::before { text-decoration: underline; }
+code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 code span. { color: #1f1c1b; } /* Normal */
 code span.al { color: #bf0303; background-color: #f7e6e6; font-weight: bold; } /* Alert */
@@ -325,41 +327,51 @@ code span.wa { color: #bf0303; } /* Warning */
 <li class="chapter" data-level="3.3" data-path="github-classroom.html"><a href="github-classroom.html"><i class="fa fa-check"></i><b>3.3</b> Github Classroom</a></li>
 <li class="chapter" data-level="3.4" data-path="astuces-git-et-github.html"><a href="astuces-git-et-github.html"><i class="fa fa-check"></i><b>3.4</b> Astuces Git et Github</a></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="bookdown.html"><a href="bookdown.html"><i class="fa fa-check"></i><b>4</b> Bookdown</a></li>
-<li class="chapter" data-level="5" data-path="wordpress.html"><a href="wordpress.html"><i class="fa fa-check"></i><b>5</b> Wordpress</a><ul>
-<li class="chapter" data-level="5.1" data-path="installation-wordpress.html"><a href="installation-wordpress.html"><i class="fa fa-check"></i><b>5.1</b> Installation Wordpress</a><ul>
-<li class="chapter" data-level="5.1.1" data-path="installation-wordpress.html"><a href="installation-wordpress.html#configuration-serveur-et-git"><i class="fa fa-check"></i><b>5.1.1</b> Configuration serveur et git</a></li>
-<li class="chapter" data-level="5.1.2" data-path="installation-wordpress.html"><a href="installation-wordpress.html#ajout-de-mongodb-pour-php"><i class="fa fa-check"></i><b>5.1.2</b> Ajout de mongodb pour PHP</a></li>
-<li class="chapter" data-level="5.1.3" data-path="installation-wordpress.html"><a href="installation-wordpress.html#login-et-enregistrement-de-la-progression"><i class="fa fa-check"></i><b>5.1.3</b> Login et enregistrement de la progression</a></li>
-<li class="chapter" data-level="5.1.4" data-path="installation-wordpress.html"><a href="installation-wordpress.html#intégration-des-bookdowns-dans-le-site"><i class="fa fa-check"></i><b>5.1.4</b> Intégration des bookdowns dans le site</a></li>
-<li class="chapter" data-level="5.1.5" data-path="installation-wordpress.html"><a href="installation-wordpress.html#intégration-des-h5p-dans-bookdown"><i class="fa fa-check"></i><b>5.1.5</b> Intégration des h5p dans bookdown</a></li>
-<li class="chapter" data-level="5.1.6" data-path="installation-wordpress.html"><a href="installation-wordpress.html#création-de-contenu-h5p"><i class="fa fa-check"></i><b>5.1.6</b> Création de contenu h5p</a></li>
-<li class="chapter" data-level="5.1.7" data-path="installation-wordpress.html"><a href="installation-wordpress.html#gestion-des-événements-xapi"><i class="fa fa-check"></i><b>5.1.7</b> Gestion des événements xAPI</a></li>
-<li class="chapter" data-level="5.1.8" data-path="installation-wordpress.html"><a href="installation-wordpress.html#var-context"><i class="fa fa-check"></i><b>5.1.8</b> Variables contextuelles</a></li>
+<li class="chapter" data-level="4" data-path="wordpress.html"><a href="wordpress.html"><i class="fa fa-check"></i><b>4</b> Wordpress</a><ul>
+<li class="chapter" data-level="4.1" data-path="authentification-des-étudiants.html"><a href="authentification-des-étudiants.html"><i class="fa fa-check"></i><b>4.1</b> Authentification des étudiants</a></li>
+<li class="chapter" data-level="4.2" data-path="installation-wordpress.html"><a href="installation-wordpress.html"><i class="fa fa-check"></i><b>4.2</b> Installation Wordpress</a><ul>
+<li class="chapter" data-level="4.2.1" data-path="installation-wordpress.html"><a href="installation-wordpress.html#plugins-wordpress"><i class="fa fa-check"></i><b>4.2.1</b> Plugins Wordpress</a></li>
+<li class="chapter" data-level="4.2.2" data-path="installation-wordpress.html"><a href="installation-wordpress.html#thème-du-site"><i class="fa fa-check"></i><b>4.2.2</b> Thème du site</a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="configuration-serveur-et-git.html"><a href="configuration-serveur-et-git.html"><i class="fa fa-check"></i><b>4.3</b> Configuration serveur et git</a><ul>
+<li class="chapter" data-level="4.3.1" data-path="configuration-serveur-et-git.html"><a href="configuration-serveur-et-git.html#ajout-de-mongodb-pour-php"><i class="fa fa-check"></i><b>4.3.1</b> Ajout de mongodb pour PHP</a></li>
+</ul></li>
+<li class="chapter" data-level="4.4" data-path="agencement-du-site.html"><a href="agencement-du-site.html"><i class="fa fa-check"></i><b>4.4</b> Agencement du site</a><ul>
+<li class="chapter" data-level="4.4.1" data-path="agencement-du-site.html"><a href="agencement-du-site.html#tableau-de-bord"><i class="fa fa-check"></i><b>4.4.1</b> Tableau de bord</a></li>
+<li class="chapter" data-level="4.4.2" data-path="agencement-du-site.html"><a href="agencement-du-site.html#gestion-des-événements-xapi"><i class="fa fa-check"></i><b>4.4.2</b> Gestion des événements xAPI</a></li>
+</ul></li>
+<li class="chapter" data-level="4.5" data-path="var-context.html"><a href="var-context.html"><i class="fa fa-check"></i><b>4.5</b> Variables contextuelles</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="h5p.html"><a href="h5p.html"><i class="fa fa-check"></i><b>5</b> H5P</a><ul>
+<li class="chapter" data-level="5.1" data-path="installation-de-h5p.html"><a href="installation-de-h5p.html"><i class="fa fa-check"></i><b>5.1</b> Installation de H5P</a><ul>
+<li class="chapter" data-level="5.1.1" data-path="installation-de-h5p.html"><a href="installation-de-h5p.html#installation-du-plugin-h5p"><i class="fa fa-check"></i><b>5.1.1</b> Installation du plugin H5P</a></li>
+<li class="chapter" data-level="5.1.2" data-path="installation-de-h5p.html"><a href="installation-de-h5p.html#configuration-de-h5p"><i class="fa fa-check"></i><b>5.1.2</b> Configuration de H5P</a></li>
+</ul></li>
+<li class="chapter" data-level="5.2" data-path="enregistrement-h5p-xapi.html"><a href="enregistrement-h5p-xapi.html"><i class="fa fa-check"></i><b>5.2</b> Enregistrement H5P xAPI</a><ul>
+<li class="chapter" data-level="5.2.1" data-path="enregistrement-h5p-xapi.html"><a href="enregistrement-h5p-xapi.html#h5pxapikatchu"><i class="fa fa-check"></i><b>5.2.1</b> H5PxAPIkatchu</a></li>
+<li class="chapter" data-level="5.2.2" data-path="enregistrement-h5p-xapi.html"><a href="enregistrement-h5p-xapi.html#wp-h5p-xapi-et-lrs"><i class="fa fa-check"></i><b>5.2.2</b> wp-h5p-xapi et LRS</a></li>
+<li class="chapter" data-level="5.2.3" data-path="enregistrement-h5p-xapi.html"><a href="enregistrement-h5p-xapi.html#autres-plugins-h5p"><i class="fa fa-check"></i><b>5.2.3</b> Autres plugins H5P</a></li>
+</ul></li>
+<li class="chapter" data-level="5.3" data-path="gestion-des-contenus-h5p.html"><a href="gestion-des-contenus-h5p.html"><i class="fa fa-check"></i><b>5.3</b> Gestion des contenus H5P</a><ul>
+<li class="chapter" data-level="5.3.1" data-path="gestion-des-contenus-h5p.html"><a href="gestion-des-contenus-h5p.html#backup-h5p"><i class="fa fa-check"></i><b>5.3.1</b> Backup H5P</a></li>
+</ul></li>
+<li class="chapter" data-level="5.4" data-path="quelques-contenus-h5p-utiles.html"><a href="quelques-contenus-h5p-utiles.html"><i class="fa fa-check"></i><b>5.4</b> Quelques contenus H5P utiles</a><ul>
+<li class="chapter" data-level="5.4.1" data-path="quelques-contenus-h5p-utiles.html"><a href="quelques-contenus-h5p-utiles.html#apprentissage-du-code-r"><i class="fa fa-check"></i><b>5.4.1</b> Apprentissage du code R</a></li>
+<li class="chapter" data-level="5.4.2" data-path="quelques-contenus-h5p-utiles.html"><a href="quelques-contenus-h5p-utiles.html#apprentissage-des-graphiques"><i class="fa fa-check"></i><b>5.4.2</b> Apprentissage des graphiques</a></li>
+<li class="chapter" data-level="5.4.3" data-path="quelques-contenus-h5p-utiles.html"><a href="quelques-contenus-h5p-utiles.html#explications-générales"><i class="fa fa-check"></i><b>5.4.3</b> Explications générales</a></li>
+<li class="chapter" data-level="5.4.4" data-path="quelques-contenus-h5p-utiles.html"><a href="quelques-contenus-h5p-utiles.html#autoévaluation"><i class="fa fa-check"></i><b>5.4.4</b> Autoévaluation</a></li>
+<li class="chapter" data-level="5.4.5" data-path="quelques-contenus-h5p-utiles.html"><a href="quelques-contenus-h5p-utiles.html#take-home-message"><i class="fa fa-check"></i><b>5.4.5</b> “Take home message”</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="6" data-path="shiny.html"><a href="shiny.html"><i class="fa fa-check"></i><b>6</b> Shiny</a></li>
-<li class="chapter" data-level="7" data-path="moodle.html"><a href="moodle.html"><i class="fa fa-check"></i><b>7</b> Moodle</a><ul>
-<li class="chapter" data-level="7.1" data-path="gestion-des-cours.html"><a href="gestion-des-cours.html"><i class="fa fa-check"></i><b>7.1</b> Gestion des cours</a></li>
-<li class="chapter" data-level="7.2" data-path="badges.html"><a href="badges.html"><i class="fa fa-check"></i><b>7.2</b> Badges</a></li>
-<li class="chapter" data-level="7.3" data-path="notes.html"><a href="notes.html"><i class="fa fa-check"></i><b>7.3</b> Notes</a></li>
+<li class="chapter" data-level="6" data-path="bookdown.html"><a href="bookdown.html"><i class="fa fa-check"></i><b>6</b> Bookdown</a><ul>
+<li class="chapter" data-level="6.1" data-path="intégration-dans-wordpress.html"><a href="intégration-dans-wordpress.html"><i class="fa fa-check"></i><b>6.1</b> Intégration dans Wordpress</a></li>
+<li class="chapter" data-level="6.2" data-path="contenu-h5p-dans-bookdown.html"><a href="contenu-h5p-dans-bookdown.html"><i class="fa fa-check"></i><b>6.2</b> Contenu H5P dans bookdown</a></li>
 </ul></li>
-<li class="chapter" data-level="8" data-path="h5p.html"><a href="h5p.html"><i class="fa fa-check"></i><b>8</b> H5P</a><ul>
-<li class="chapter" data-level="8.1" data-path="installation-de-h5p.html"><a href="installation-de-h5p.html"><i class="fa fa-check"></i><b>8.1</b> Installation de H5P</a><ul>
-<li class="chapter" data-level="8.1.1" data-path="installation-de-h5p.html"><a href="installation-de-h5p.html#installation-du-plugin-h5p"><i class="fa fa-check"></i><b>8.1.1</b> Installation du plugin H5P</a></li>
-<li class="chapter" data-level="8.1.2" data-path="installation-de-h5p.html"><a href="installation-de-h5p.html#configuration-de-h5p"><i class="fa fa-check"></i><b>8.1.2</b> Configuration de H5P</a></li>
-<li class="chapter" data-level="8.1.3" data-path="installation-de-h5p.html"><a href="installation-de-h5p.html#enregistrement-h5p-xapi"><i class="fa fa-check"></i><b>8.1.3</b> Enregistrement H5P xAPI</a></li>
-</ul></li>
-<li class="chapter" data-level="8.2" data-path="gestion-des-contenus-h5p.html"><a href="gestion-des-contenus-h5p.html"><i class="fa fa-check"></i><b>8.2</b> Gestion des contenus H5P</a><ul>
-<li class="chapter" data-level="8.2.1" data-path="gestion-des-contenus-h5p.html"><a href="gestion-des-contenus-h5p.html#backup-h5p"><i class="fa fa-check"></i><b>8.2.1</b> Backup H5P</a></li>
-</ul></li>
-<li class="chapter" data-level="8.3" data-path="quelques-contenus-h5p-utiles.html"><a href="quelques-contenus-h5p-utiles.html"><i class="fa fa-check"></i><b>8.3</b> Quelques contenus H5P utiles</a><ul>
-<li class="chapter" data-level="8.3.1" data-path="quelques-contenus-h5p-utiles.html"><a href="quelques-contenus-h5p-utiles.html#apprentissage-du-code-r"><i class="fa fa-check"></i><b>8.3.1</b> Apprentissage du code R</a></li>
-<li class="chapter" data-level="8.3.2" data-path="quelques-contenus-h5p-utiles.html"><a href="quelques-contenus-h5p-utiles.html#apprentissage-des-graphiques"><i class="fa fa-check"></i><b>8.3.2</b> Apprentissage des graphiques</a></li>
-<li class="chapter" data-level="8.3.3" data-path="quelques-contenus-h5p-utiles.html"><a href="quelques-contenus-h5p-utiles.html#explications-générales"><i class="fa fa-check"></i><b>8.3.3</b> Explications générales</a></li>
-<li class="chapter" data-level="8.3.4" data-path="quelques-contenus-h5p-utiles.html"><a href="quelques-contenus-h5p-utiles.html#autoévaluation"><i class="fa fa-check"></i><b>8.3.4</b> Autoévaluation</a></li>
-<li class="chapter" data-level="8.3.5" data-path="quelques-contenus-h5p-utiles.html"><a href="quelques-contenus-h5p-utiles.html#take-home-message"><i class="fa fa-check"></i><b>8.3.5</b> “Take home message”</a></li>
-</ul></li>
+<li class="chapter" data-level="7" data-path="shiny.html"><a href="shiny.html"><i class="fa fa-check"></i><b>7</b> Shiny</a></li>
+<li class="chapter" data-level="8" data-path="moodle.html"><a href="moodle.html"><i class="fa fa-check"></i><b>8</b> Moodle</a><ul>
+<li class="chapter" data-level="8.1" data-path="gestion-des-cours.html"><a href="gestion-des-cours.html"><i class="fa fa-check"></i><b>8.1</b> Gestion des cours</a></li>
+<li class="chapter" data-level="8.2" data-path="badges.html"><a href="badges.html"><i class="fa fa-check"></i><b>8.2</b> Badges</a></li>
+<li class="chapter" data-level="8.3" data-path="notes.html"><a href="notes.html"><i class="fa fa-check"></i><b>8.3</b> Notes</a></li>
 </ul></li>
 <li class="chapter" data-level="9" data-path="videos.html"><a href="videos.html"><i class="fa fa-check"></i><b>9</b> Vidéos</a></li>
 <li class="chapter" data-level="10" data-path="progression.html"><a href="progression.html"><i class="fa fa-check"></i><b>10</b> Rapport de progression</a></li>
@@ -403,18 +415,19 @@ En parallèle au déploiement du matériel d’e-learning hors présentiel, nous
 </ul>
 <p>La vidéo suivante explique d’ailleurs pourquoi le coercitif ne fonctionne pas bien et pourquoi il faut plutôt <strong>valoriser le travail effectué</strong> plutôt que de punir s’il n’est pas fait. Il faut aussi <strong>une récompense immédiate</strong>, et favoriser l’<strong>émulation individuelle</strong> (se dépasser soi-même), et <strong>de groupe</strong> (se comparer à la progression générale de la classe).</p>
 <iframe src="https://www.youtube.com/embed/xp0O2vi8DX4" width="770" height="433" frameborder="0" allowfullscreen=""></iframe>
-<p>Les aides et encouragement au travail que nous avons mis en place de manière utile sont :</p>
+<p>Les aides et encouragements au travail que nous avons mis en place de manière utile sont :</p>
 <ul>
-<li><p>L’<em>émulation personnelle</em> au travers de point reçu si l’on fait tous les exercices,</p></li>
-<li><p>La <em>valorisation d’un comportement ou d’un résultat positif au delà de la moyenne</em> à l’aide de points bonus,</p></li>
-<li><p>Les <em>travaux de groupes</em>, les <em>challenges</em> (par exemple, les étudiants doivent reproduire un graphique difficile), les <em>compétitions</em> (une course contre le temps et/ou entre plusieurs groupes pour résoudre un problème) participent efficacement à dynamiser le travail en classe et à vairer les activités.</p></li>
-<li><p>L’utilisation des <em>réseaux sociaux</em> pour communiquer. Le forum de Moodle est peu ou pas utilisé du tout. Les issues de Github, une fois que les étudiants ont appris à les utiliser, s’avèrent utiles car elles sont disponibles près du dépôt lui-même qui contient les exercices. Mais ce qui fonctionne le mieux (testé en période de confinement Covid-19), c’est <em>Discord</em> parce que beaucoup d’étudiants connaissent et utilisent déjà pour les jeux.</p></li>
-<li><p>Les étudiants sollicitant une <em>aide plus directe</em> apprécie de pouvoir poser ses questions par email. Afin de pouvoir être plus réactif, nous avons mis en place une adress <code>sdd@sciviews.org</code> pour laquelle tous les enseignants du cours ont accès.</p></li>
-<li><p>Pour le <em>retour direct</em>, nous mettons progressivement en place le <strong>rapport de progression</strong>. Les actions de l’étudiant dans les learnrs (et dans un second temps également h5p et les apps shiny) sont enrgistrés. Le rapport de progression est une app shiny qui collecte, nettoyes, prépare, et présente graphiquement la progression de l’étudiant. L’<em>émulation de groupe</em> est obtenue en comparant la progression de l’étudiant à la progression générale de la classe.</p></li>
+<li><p>L’<em>émulation personnelle</em> au travers de point reçu si l’on fait tous les exercices (les badges, et la “gamification” en général de l’apprentissage sont également à considérer sérieusement dans ce contexte),</p></li>
+<li><p>La <em>valorisation d’un comportement ou d’un résultat positif au delà de la moyenne</em> à l’aide de points bonus (on est toujours dans la gratification et la gamification ici),</p></li>
+<li><p>l’<em>entre-aide</em>, faire expliquer les points difficiles par un collègue qui les ont compris est extrêmement efficace. En plus, cela permet de mitiger un aspect difficile à gérer : la différence de vitesse d’apprentissage entre les “bons” et les “mauvais” étudiants (non, il n’y a pas de bons et de mauvais étudiants, nous le savons, il y a juste des étudiants avec des facultés et des motivations différentes… mais certains sont quand même beaucoup plus lents et <strong>énervants</strong> que d’autres). Au lieu de se tourner les pouces, demander à ceux qui ont fini en avance d’expliquer aux autres permet d’utiliser efficacement le temps et les ressources humaine en classe.</p></li>
+<li><p>Les <em>travaux de groupes</em>, les <em>challenges</em> (par exemple, les étudiants doivent reproduire un graphique difficile), les <em>compétitions</em> (une course contre le temps et/ou entre plusieurs groupes pour résoudre un problème) participent efficacement à dynamiser le travail en classe et à varier les activités.</p></li>
+<li><p>L’utilisation des <em>réseaux sociaux</em> pour communiquer. Le forum de Moodle est peu ou pas utilisé du tout. Les issues de Github, une fois que les étudiants ont appris à les utiliser, s’avèrent utiles car elles sont disponibles près du dépôt lui-même qui contient les exercices. Mais ce qui fonctionne le mieux (testé en période de confinement Covid-19), c’est <em>Discord</em> parce que beaucoup d’étudiants connaissent et utilisent déjà pour les jeux. Le ton des échanges y est d’ailleurs plus décontracté (parfois nettement plus), mais cela reste un outil efficace pour aider un étudiant qui est bloqué dans sa progression.</p></li>
+<li><p>Les étudiants sollicitant une <em>aide plus directe</em> apprécie de pouvoir poser ses questions par email. Afin de pouvoir être plus réactif, nous avons mis en place une adresse <code>sdd@sciviews.org</code> pour laquelle tous les enseignants du cours ont accès. Ainsi, les interventions peuvent être partagées et plus rapides.</p></li>
+<li><p>Pour obtenir un <em>retour plus direct</em> par rapport aux activités, nous mettons progressivement en place le <strong>rapport de progression</strong>. Les actions de l’étudiant dans les learnrs (et dans un second temps également H5P et les apps Shiny) sont enregistrées dans une base de données. Le rapport de progression est une app Shiny qui collecte, nettoies, prépare, et présente graphiquement la progression de l’étudiant. L’<em>émulation de groupe</em> est obtenue en comparant la progression de l’étudiant à la progression générale de la classe.</p></li>
 </ul>
-<p>Afin d’avoir un retour immédiat, nous souhaitons rendre ce rapport de progression dynamique de sorte qu’il montre l’évolution en temps réel. Il est en effet important que l’étudiant puisse visualiser sur son rapport qu’il vient d’avancer en achevant à la seconde un exercice ! De plus, nous souhaitons asoscier cela à des récompenses sous forme de <strong>badges</strong> lorsque l’étudiant franchit une étape dans son apprentissage (de plus, des badges spéciaux pourraient être associés aux points bonus). La gestion des badges a été abordée dans la section dédiée à Moodle (voir <a href="moodle.html#moodle">7</a>).</p>
-<p>L’app Shiny de rapport de progression est développée dans le dépôt Github privé <a href="https://github.com/BioDataScience-Course/sdd_progress-report">sdd_progress-report</a>. Comme il contient du code sensible, il n’est pas disponible de manière publique. Par contre, les ensignants du cours y ont accès et le fichier <code>README.md</code> détaille son fonctionnement et contient du code pour le tester.</p>
-<p>Cette app Shiny est ensuite intégrée dans Moodle via un lien URL qui ouvre l’app dans une fenêtre interne et lui passe huit paramètres issus de Moodle afin de déterminer quel rapport il faut présenter.</p>
+<p>Afin d’avoir un retour immédiat, nous souhaitons rendre ce rapport de progression dynamique de sorte qu’il montre l’évolution en temps réel. Il est en effet important que l’étudiant puisse visualiser sur son rapport qu’il vient d’avancer en achevant à la seconde un exercice ! De plus, nous souhaitons associer cela à des récompenses sous forme de <strong>badges</strong> lorsque l’étudiant franchit une étape dans son apprentissage (aussi, des badges spéciaux pourraient être associés aux points bonus). La gestion des badges a été abordée dans la section dédiée à Moodle (voir <a href="moodle.html#moodle">8</a>).</p>
+<p>L’app Shiny de rapport de progression est développée dans le dépôt Github privé <a href="https://github.com/BioDataScience-Course/sdd_progress-report">sdd_progress-report</a>. Comme il contient du code sensible, il n’est pas disponible de manière publique. Par contre, les enseignants du cours y ont accès. Le fichier <code>README.md</code> du dépôt détaille son fonctionnement et contient du code pour le tester.</p>
+<p>Cette app Shiny est ensuite intégrée dans Moodle via un lien URL qui ouvre l’app dans une fenêtre interne et lui passe des paramètres issus de Moodle (identité de l’étudiant, cours correspondant) afin de déterminer quel rapport il faut présenter.</p>
 
 </div>
 

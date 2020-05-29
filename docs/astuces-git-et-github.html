@@ -24,7 +24,7 @@
 <meta name="author" content="Philippe Grosjean &amp; Guyliann Engels" />
 
 
-<meta name="date" content="2020-05-28" />
+<meta name="date" content="2020-05-29" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -32,7 +32,7 @@
   
   
 <link rel="prev" href="github-classroom.html"/>
-<link rel="next" href="bookdown.html"/>
+<link rel="next" href="wordpress.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -226,9 +226,9 @@ var h5pContentTypes = [""];
 
 
 <style type="text/css">
-a.sourceLine { display: inline-block; line-height: 1.25; }
-a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
-a.sourceLine:empty { height: 1.2em; }
+code.sourceCode > span { display: inline-block; line-height: 1.25; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode { white-space: pre; position: relative; }
 pre.sourceCode { margin: 0; }
@@ -237,14 +237,16 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 code.sourceCode { white-space: pre-wrap; }
-a.sourceLine { text-indent: -1em; padding-left: 1em; }
+code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
-pre.numberSource a.sourceLine
-  { position: relative; left: -4em; }
-pre.numberSource a.sourceLine::before
-  { content: attr(data-line-number);
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
     position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; pointer-events: all; display: inline-block;
+    border: none; display: inline-block;
     -webkit-touch-callout: none; -webkit-user-select: none;
     -khtml-user-select: none; -moz-user-select: none;
     -ms-user-select: none; user-select: none;
@@ -256,7 +258,7 @@ pre.numberSource { margin-left: 3em; border-left: 1px solid #a0a0a0;  padding-le
 div.sourceCode
   { color: #1f1c1b; background-color: #ffffff; }
 @media screen {
-a.sourceLine::before { text-decoration: underline; }
+code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 code span. { color: #1f1c1b; } /* Normal */
 code span.al { color: #bf0303; background-color: #f7e6e6; font-weight: bold; } /* Alert */
@@ -325,41 +327,51 @@ code span.wa { color: #bf0303; } /* Warning */
 <li class="chapter" data-level="3.3" data-path="github-classroom.html"><a href="github-classroom.html"><i class="fa fa-check"></i><b>3.3</b> Github Classroom</a></li>
 <li class="chapter" data-level="3.4" data-path="astuces-git-et-github.html"><a href="astuces-git-et-github.html"><i class="fa fa-check"></i><b>3.4</b> Astuces Git et Github</a></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="bookdown.html"><a href="bookdown.html"><i class="fa fa-check"></i><b>4</b> Bookdown</a></li>
-<li class="chapter" data-level="5" data-path="wordpress.html"><a href="wordpress.html"><i class="fa fa-check"></i><b>5</b> Wordpress</a><ul>
-<li class="chapter" data-level="5.1" data-path="installation-wordpress.html"><a href="installation-wordpress.html"><i class="fa fa-check"></i><b>5.1</b> Installation Wordpress</a><ul>
-<li class="chapter" data-level="5.1.1" data-path="installation-wordpress.html"><a href="installation-wordpress.html#configuration-serveur-et-git"><i class="fa fa-check"></i><b>5.1.1</b> Configuration serveur et git</a></li>
-<li class="chapter" data-level="5.1.2" data-path="installation-wordpress.html"><a href="installation-wordpress.html#ajout-de-mongodb-pour-php"><i class="fa fa-check"></i><b>5.1.2</b> Ajout de mongodb pour PHP</a></li>
-<li class="chapter" data-level="5.1.3" data-path="installation-wordpress.html"><a href="installation-wordpress.html#login-et-enregistrement-de-la-progression"><i class="fa fa-check"></i><b>5.1.3</b> Login et enregistrement de la progression</a></li>
-<li class="chapter" data-level="5.1.4" data-path="installation-wordpress.html"><a href="installation-wordpress.html#intégration-des-bookdowns-dans-le-site"><i class="fa fa-check"></i><b>5.1.4</b> Intégration des bookdowns dans le site</a></li>
-<li class="chapter" data-level="5.1.5" data-path="installation-wordpress.html"><a href="installation-wordpress.html#intégration-des-h5p-dans-bookdown"><i class="fa fa-check"></i><b>5.1.5</b> Intégration des h5p dans bookdown</a></li>
-<li class="chapter" data-level="5.1.6" data-path="installation-wordpress.html"><a href="installation-wordpress.html#création-de-contenu-h5p"><i class="fa fa-check"></i><b>5.1.6</b> Création de contenu h5p</a></li>
-<li class="chapter" data-level="5.1.7" data-path="installation-wordpress.html"><a href="installation-wordpress.html#gestion-des-événements-xapi"><i class="fa fa-check"></i><b>5.1.7</b> Gestion des événements xAPI</a></li>
-<li class="chapter" data-level="5.1.8" data-path="installation-wordpress.html"><a href="installation-wordpress.html#var-context"><i class="fa fa-check"></i><b>5.1.8</b> Variables contextuelles</a></li>
+<li class="chapter" data-level="4" data-path="wordpress.html"><a href="wordpress.html"><i class="fa fa-check"></i><b>4</b> Wordpress</a><ul>
+<li class="chapter" data-level="4.1" data-path="authentification-des-étudiants.html"><a href="authentification-des-étudiants.html"><i class="fa fa-check"></i><b>4.1</b> Authentification des étudiants</a></li>
+<li class="chapter" data-level="4.2" data-path="installation-wordpress.html"><a href="installation-wordpress.html"><i class="fa fa-check"></i><b>4.2</b> Installation Wordpress</a><ul>
+<li class="chapter" data-level="4.2.1" data-path="installation-wordpress.html"><a href="installation-wordpress.html#plugins-wordpress"><i class="fa fa-check"></i><b>4.2.1</b> Plugins Wordpress</a></li>
+<li class="chapter" data-level="4.2.2" data-path="installation-wordpress.html"><a href="installation-wordpress.html#thème-du-site"><i class="fa fa-check"></i><b>4.2.2</b> Thème du site</a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="configuration-serveur-et-git.html"><a href="configuration-serveur-et-git.html"><i class="fa fa-check"></i><b>4.3</b> Configuration serveur et git</a><ul>
+<li class="chapter" data-level="4.3.1" data-path="configuration-serveur-et-git.html"><a href="configuration-serveur-et-git.html#ajout-de-mongodb-pour-php"><i class="fa fa-check"></i><b>4.3.1</b> Ajout de mongodb pour PHP</a></li>
+</ul></li>
+<li class="chapter" data-level="4.4" data-path="agencement-du-site.html"><a href="agencement-du-site.html"><i class="fa fa-check"></i><b>4.4</b> Agencement du site</a><ul>
+<li class="chapter" data-level="4.4.1" data-path="agencement-du-site.html"><a href="agencement-du-site.html#tableau-de-bord"><i class="fa fa-check"></i><b>4.4.1</b> Tableau de bord</a></li>
+<li class="chapter" data-level="4.4.2" data-path="agencement-du-site.html"><a href="agencement-du-site.html#gestion-des-événements-xapi"><i class="fa fa-check"></i><b>4.4.2</b> Gestion des événements xAPI</a></li>
+</ul></li>
+<li class="chapter" data-level="4.5" data-path="var-context.html"><a href="var-context.html"><i class="fa fa-check"></i><b>4.5</b> Variables contextuelles</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="h5p.html"><a href="h5p.html"><i class="fa fa-check"></i><b>5</b> H5P</a><ul>
+<li class="chapter" data-level="5.1" data-path="installation-de-h5p.html"><a href="installation-de-h5p.html"><i class="fa fa-check"></i><b>5.1</b> Installation de H5P</a><ul>
+<li class="chapter" data-level="5.1.1" data-path="installation-de-h5p.html"><a href="installation-de-h5p.html#installation-du-plugin-h5p"><i class="fa fa-check"></i><b>5.1.1</b> Installation du plugin H5P</a></li>
+<li class="chapter" data-level="5.1.2" data-path="installation-de-h5p.html"><a href="installation-de-h5p.html#configuration-de-h5p"><i class="fa fa-check"></i><b>5.1.2</b> Configuration de H5P</a></li>
+</ul></li>
+<li class="chapter" data-level="5.2" data-path="enregistrement-h5p-xapi.html"><a href="enregistrement-h5p-xapi.html"><i class="fa fa-check"></i><b>5.2</b> Enregistrement H5P xAPI</a><ul>
+<li class="chapter" data-level="5.2.1" data-path="enregistrement-h5p-xapi.html"><a href="enregistrement-h5p-xapi.html#h5pxapikatchu"><i class="fa fa-check"></i><b>5.2.1</b> H5PxAPIkatchu</a></li>
+<li class="chapter" data-level="5.2.2" data-path="enregistrement-h5p-xapi.html"><a href="enregistrement-h5p-xapi.html#wp-h5p-xapi-et-lrs"><i class="fa fa-check"></i><b>5.2.2</b> wp-h5p-xapi et LRS</a></li>
+<li class="chapter" data-level="5.2.3" data-path="enregistrement-h5p-xapi.html"><a href="enregistrement-h5p-xapi.html#autres-plugins-h5p"><i class="fa fa-check"></i><b>5.2.3</b> Autres plugins H5P</a></li>
+</ul></li>
+<li class="chapter" data-level="5.3" data-path="gestion-des-contenus-h5p.html"><a href="gestion-des-contenus-h5p.html"><i class="fa fa-check"></i><b>5.3</b> Gestion des contenus H5P</a><ul>
+<li class="chapter" data-level="5.3.1" data-path="gestion-des-contenus-h5p.html"><a href="gestion-des-contenus-h5p.html#backup-h5p"><i class="fa fa-check"></i><b>5.3.1</b> Backup H5P</a></li>
+</ul></li>
+<li class="chapter" data-level="5.4" data-path="quelques-contenus-h5p-utiles.html"><a href="quelques-contenus-h5p-utiles.html"><i class="fa fa-check"></i><b>5.4</b> Quelques contenus H5P utiles</a><ul>
+<li class="chapter" data-level="5.4.1" data-path="quelques-contenus-h5p-utiles.html"><a href="quelques-contenus-h5p-utiles.html#apprentissage-du-code-r"><i class="fa fa-check"></i><b>5.4.1</b> Apprentissage du code R</a></li>
+<li class="chapter" data-level="5.4.2" data-path="quelques-contenus-h5p-utiles.html"><a href="quelques-contenus-h5p-utiles.html#apprentissage-des-graphiques"><i class="fa fa-check"></i><b>5.4.2</b> Apprentissage des graphiques</a></li>
+<li class="chapter" data-level="5.4.3" data-path="quelques-contenus-h5p-utiles.html"><a href="quelques-contenus-h5p-utiles.html#explications-générales"><i class="fa fa-check"></i><b>5.4.3</b> Explications générales</a></li>
+<li class="chapter" data-level="5.4.4" data-path="quelques-contenus-h5p-utiles.html"><a href="quelques-contenus-h5p-utiles.html#autoévaluation"><i class="fa fa-check"></i><b>5.4.4</b> Autoévaluation</a></li>
+<li class="chapter" data-level="5.4.5" data-path="quelques-contenus-h5p-utiles.html"><a href="quelques-contenus-h5p-utiles.html#take-home-message"><i class="fa fa-check"></i><b>5.4.5</b> “Take home message”</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="6" data-path="shiny.html"><a href="shiny.html"><i class="fa fa-check"></i><b>6</b> Shiny</a></li>
-<li class="chapter" data-level="7" data-path="moodle.html"><a href="moodle.html"><i class="fa fa-check"></i><b>7</b> Moodle</a><ul>
-<li class="chapter" data-level="7.1" data-path="gestion-des-cours.html"><a href="gestion-des-cours.html"><i class="fa fa-check"></i><b>7.1</b> Gestion des cours</a></li>
-<li class="chapter" data-level="7.2" data-path="badges.html"><a href="badges.html"><i class="fa fa-check"></i><b>7.2</b> Badges</a></li>
-<li class="chapter" data-level="7.3" data-path="notes.html"><a href="notes.html"><i class="fa fa-check"></i><b>7.3</b> Notes</a></li>
+<li class="chapter" data-level="6" data-path="bookdown.html"><a href="bookdown.html"><i class="fa fa-check"></i><b>6</b> Bookdown</a><ul>
+<li class="chapter" data-level="6.1" data-path="intégration-dans-wordpress.html"><a href="intégration-dans-wordpress.html"><i class="fa fa-check"></i><b>6.1</b> Intégration dans Wordpress</a></li>
+<li class="chapter" data-level="6.2" data-path="contenu-h5p-dans-bookdown.html"><a href="contenu-h5p-dans-bookdown.html"><i class="fa fa-check"></i><b>6.2</b> Contenu H5P dans bookdown</a></li>
 </ul></li>
-<li class="chapter" data-level="8" data-path="h5p.html"><a href="h5p.html"><i class="fa fa-check"></i><b>8</b> H5P</a><ul>
-<li class="chapter" data-level="8.1" data-path="installation-de-h5p.html"><a href="installation-de-h5p.html"><i class="fa fa-check"></i><b>8.1</b> Installation de H5P</a><ul>
-<li class="chapter" data-level="8.1.1" data-path="installation-de-h5p.html"><a href="installation-de-h5p.html#installation-du-plugin-h5p"><i class="fa fa-check"></i><b>8.1.1</b> Installation du plugin H5P</a></li>
-<li class="chapter" data-level="8.1.2" data-path="installation-de-h5p.html"><a href="installation-de-h5p.html#configuration-de-h5p"><i class="fa fa-check"></i><b>8.1.2</b> Configuration de H5P</a></li>
-<li class="chapter" data-level="8.1.3" data-path="installation-de-h5p.html"><a href="installation-de-h5p.html#enregistrement-h5p-xapi"><i class="fa fa-check"></i><b>8.1.3</b> Enregistrement H5P xAPI</a></li>
-</ul></li>
-<li class="chapter" data-level="8.2" data-path="gestion-des-contenus-h5p.html"><a href="gestion-des-contenus-h5p.html"><i class="fa fa-check"></i><b>8.2</b> Gestion des contenus H5P</a><ul>
-<li class="chapter" data-level="8.2.1" data-path="gestion-des-contenus-h5p.html"><a href="gestion-des-contenus-h5p.html#backup-h5p"><i class="fa fa-check"></i><b>8.2.1</b> Backup H5P</a></li>
-</ul></li>
-<li class="chapter" data-level="8.3" data-path="quelques-contenus-h5p-utiles.html"><a href="quelques-contenus-h5p-utiles.html"><i class="fa fa-check"></i><b>8.3</b> Quelques contenus H5P utiles</a><ul>
-<li class="chapter" data-level="8.3.1" data-path="quelques-contenus-h5p-utiles.html"><a href="quelques-contenus-h5p-utiles.html#apprentissage-du-code-r"><i class="fa fa-check"></i><b>8.3.1</b> Apprentissage du code R</a></li>
-<li class="chapter" data-level="8.3.2" data-path="quelques-contenus-h5p-utiles.html"><a href="quelques-contenus-h5p-utiles.html#apprentissage-des-graphiques"><i class="fa fa-check"></i><b>8.3.2</b> Apprentissage des graphiques</a></li>
-<li class="chapter" data-level="8.3.3" data-path="quelques-contenus-h5p-utiles.html"><a href="quelques-contenus-h5p-utiles.html#explications-générales"><i class="fa fa-check"></i><b>8.3.3</b> Explications générales</a></li>
-<li class="chapter" data-level="8.3.4" data-path="quelques-contenus-h5p-utiles.html"><a href="quelques-contenus-h5p-utiles.html#autoévaluation"><i class="fa fa-check"></i><b>8.3.4</b> Autoévaluation</a></li>
-<li class="chapter" data-level="8.3.5" data-path="quelques-contenus-h5p-utiles.html"><a href="quelques-contenus-h5p-utiles.html#take-home-message"><i class="fa fa-check"></i><b>8.3.5</b> “Take home message”</a></li>
-</ul></li>
+<li class="chapter" data-level="7" data-path="shiny.html"><a href="shiny.html"><i class="fa fa-check"></i><b>7</b> Shiny</a></li>
+<li class="chapter" data-level="8" data-path="moodle.html"><a href="moodle.html"><i class="fa fa-check"></i><b>8</b> Moodle</a><ul>
+<li class="chapter" data-level="8.1" data-path="gestion-des-cours.html"><a href="gestion-des-cours.html"><i class="fa fa-check"></i><b>8.1</b> Gestion des cours</a></li>
+<li class="chapter" data-level="8.2" data-path="badges.html"><a href="badges.html"><i class="fa fa-check"></i><b>8.2</b> Badges</a></li>
+<li class="chapter" data-level="8.3" data-path="notes.html"><a href="notes.html"><i class="fa fa-check"></i><b>8.3</b> Notes</a></li>
 </ul></li>
 <li class="chapter" data-level="9" data-path="videos.html"><a href="videos.html"><i class="fa fa-check"></i><b>9</b> Vidéos</a></li>
 <li class="chapter" data-level="10" data-path="progression.html"><a href="progression.html"><i class="fa fa-check"></i><b>10</b> Rapport de progression</a></li>
@@ -393,11 +405,11 @@ code span.wa { color: #bf0303; } /* Warning */
 <h2><span class="header-section-number">3.4</span> Astuces Git et Github</h2>
 <p>Quelques astuces qui nous sont utiles…</p>
 <ul>
-<li><p>Comparaison de branches sur Github : ajouter <code>/compare</code> à la fin de l’URL du dépôt et une page de comparaison de branche apparait. sinon, cette comparaison est aussi possible dans Github Desktop (menu <code>Branch -&gt; Compare to Branch</code>).</p></li>
+<li><p>Comparaison de branches sur Github : ajouter <code>/compare</code> à la fin de l’URL du dépôt et une page de comparaison de branche apparait. Sinon, cette comparaison est aussi possible dans Github Desktop (menu <code>Branch -&gt; Compare to Branch</code>).</p></li>
 <li><p>Lorsqu’une branche n’est plus utile, elle peut être facilement éliminée depuis Github Desktop (entrée de menu <code>Branch -&gt; Delete...</code>). Cette branche doit être activée d’abord, et tous les commits doivent avoir été pushés. Il est conseillé d’éliminer la branche sur le serveur en même temps que la branche locale.</p></li>
 </ul>
 <div class="figure">
-<img src="images/git/git-delete-branch.png" alt="La boite de dialogue d’élimination d’une branche dans Github Desktop." />
+<img src="images/git/git-delete-branch.png" alt="" />
 <p class="caption">La boite de dialogue d’élimination d’une branche dans Github Desktop.</p>
 </div>
 
@@ -429,7 +441,7 @@ s.setAttribute('data-timestamp', +new Date());
         </div>
       </div>
 <a href="github-classroom.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="bookdown.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="wordpress.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

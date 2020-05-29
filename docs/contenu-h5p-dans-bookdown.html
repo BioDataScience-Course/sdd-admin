@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapitre 8 Moodle | BioDataScience Administration</title>
+  <title>6.2 Contenu H5P dans bookdown | BioDataScience Administration</title>
   <meta name="description" content="Administration de BioDataScience-Course." />
   <meta name="generator" content="bookdown 0.18 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapitre 8 Moodle | BioDataScience Administration" />
+  <meta property="og:title" content="6.2 Contenu H5P dans bookdown | BioDataScience Administration" />
   <meta property="og:type" content="book" />
   <meta property="og:url" content="http://phgrosjean.sciviews.org/bookdown-test/" />
   <meta property="og:image" content="http://phgrosjean.sciviews.org/bookdown-test/images/front-cover.png" />
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="phgrosjean/bookdown-test" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapitre 8 Moodle | BioDataScience Administration" />
+  <meta name="twitter:title" content="6.2 Contenu H5P dans bookdown | BioDataScience Administration" />
   
   <meta name="twitter:description" content="Administration de BioDataScience-Course." />
   <meta name="twitter:image" content="http://phgrosjean.sciviews.org/bookdown-test/images/front-cover.png" />
@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="shiny.html"/>
-<link rel="next" href="gestion-des-cours.html"/>
+<link rel="prev" href="intégration-dans-wordpress.html"/>
+<link rel="next" href="shiny.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -401,10 +401,30 @@ code span.wa { color: #bf0303; } /* Warning */
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="moodle" class="section level1">
-<h1><span class="header-section-number">Chapitre 8</span> Moodle</h1>
-<p>…</p>
+<div id="contenu-h5p-dans-bookdown" class="section level2">
+<h2><span class="header-section-number">6.2</span> Contenu H5P dans bookdown</h2>
+<p>Nous avons déjà vu que le contenu H5P s’affiche dans un iframe dans un document principal. Il lui transmet les événements xAPI, et c’est donc ce document principal qui doit les traiter. Nous avons ici une impossibilité à le faire si nous sommes dans un cas où H5P est servi par un serveur différent que notre bookdown. En effet, les accès en “Cross-Origin Resource Sharing” ou CORS sont restreintes pour éviter des attaques de site évidentes. Ainsi un iframe issu d’un serveur différent de la page qui l’héberge ne peut communiquer librement avec la page qui le contient si elle provient d’un site différent. Or, nous avons besoin de cette communication pour transmettre les événements xAPI…</p>
+<p>La solution que nous avons trouvée est d’ajouter le dossier qui contient nos pages statiques du bookdown à Wordpress directement. Ainsi les deux sont maintenant servis à partir de la même adresse <a href="https://wp.sciviews.org" class="uri">https://wp.sciviews.org</a>. Pour l’instant, nous copions simplement ces fichiers dans un sous dossier <code>sdd-umons</code> dans <code>lamp0/web/vhosts/wp.sciviews.org/htdocs</code>. Ainsi, le bookdown en question est servi par Wordpress à l’adresse <a href="https://wp.sciviews.org/sdd-umons" class="uri">https://wp.sciviews.org/sdd-umons</a>. Et à présent, la communication des xAPI H5P est possible… à condition d’ajouter le code nécessaire dans bookdown, mais cela, nous l’avons expliqué dans le chapitre consacré à H5P (<a href="h5p.html#h5p">5</a>).</p>
+<p>Il nous faut maintenant inclure facilement les contenus H5P depuis Wordpress dans nos pages bookdown. Ces contenus sont identifiés par un numéro (ID) dans Wordpress. Cet ID apparaît clairement dans la liste des contenus H5P dans le tableau de bord. Il suffit de noter le numéro ID correspondant au contenu que l’on souhaite inclure.</p>
+<div class="figure">
+<img src="images/wordpress/h5p-content.png" alt="" />
+<p class="caption">H5P Content dans Wordpress. Les widgets sont identifiés par leur <strong>ID</strong> (ici, 6, 7, 8, 9 &amp; 10).</p>
 </div>
+<p>Nous devons créer un iframe dans la page bookdown, mais nous pouvons déléguer ce travail à une fonction R. A terme, cette fonction se trouvera dans le package <code>learndown</code>, mais en voici le code :</p>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="contenu-h5p-dans-bookdown.html#cb16-1"></a>h5p &lt;-<span class="st"> </span><span class="cf">function</span>(id, <span class="dt">width =</span> <span class="dv">780</span>, <span class="dt">height =</span> <span class="dv">500</span>) {</span>
+<span id="cb16-2"><a href="contenu-h5p-dans-bookdown.html#cb16-2"></a>  glue<span class="op">::</span><span class="kw">glue</span>(<span class="st">&quot;</span><span class="ch">\n</span><span class="st">&lt;iframe src=</span><span class="ch">\&quot;</span><span class="st">https://wp.sciviews.org/wp-admin/admin-ajax.php?action=h5p_embed&amp;id={id}</span><span class="ch">\&quot;</span><span class="st"> width=</span><span class="ch">\&quot;</span><span class="st">{width}</span><span class="ch">\&quot;</span><span class="st"> height=</span><span class="ch">\&quot;</span><span class="st">{height}</span><span class="ch">\&quot;</span><span class="st"> frameborder=</span><span class="ch">\&quot;</span><span class="st">0</span><span class="ch">\&quot;</span><span class="st"> allowfullscreen=</span><span class="ch">\&quot;</span><span class="st">allowfullscreen</span><span class="ch">\&quot;</span><span class="st"> class=</span><span class="ch">\&quot;</span><span class="st">h5p</span><span class="ch">\&quot;</span><span class="st">&gt;&lt;/iframe&gt;&lt;script src=</span><span class="ch">\&quot;</span><span class="st">https://wp.sciviews.org/wp-content/plugins/h5p/h5p-php-library/js/h5p-resizer.js</span><span class="ch">\&quot;</span><span class="st"> charset=</span><span class="ch">\&quot;</span><span class="st">UTF-8</span><span class="ch">\&quot;</span><span class="st">&gt;&lt;/script&gt;</span><span class="ch">\n</span><span class="st">&quot;</span>)</span>
+<span id="cb16-3"><a href="contenu-h5p-dans-bookdown.html#cb16-3"></a>}</span></code></pre></div>
+<p>A partir d’ici, ajouter un contenu H5P est aussi simple que d’ajouter <code>h5p(id)</code> dans du code R en ligne où “id” est l’ID que nous avons noté. On peut aussi jouer sur les arguments <code>width=</code> et <code>height=</code> pour ajuster l’emplacement et la taille du contenu H5P dans la page.</p>
+<p>Ainsi programmé notre contenu H5P se comporte comme suit :</p>
+<ul>
+<li><p>pour un utilisateur enregistré dans Wordpress, les événements xAPI sont enregistrés à son nom. Nous pouvons donc suivre la progression de nos étudiants via les contenus H5P parsemés dans le bookdown également, en plus des applis Shiny et des learnrs. De plus, l’état d’achèvement de l’exercice est aussi enregistré pour un bon nombre de contenus H5P et rétabli lorsque la page est rechargée par le même utilisateur.</p></li>
+<li><p>pour un utilisateur non enregistré, les contenus H5P fonctionnent normalement, mais aucun événement xAPI n’est enregistré, et l’état de complétude de l’exercice n’est pas conservé non plus. Si la page est rechargée, les contenus H5P retournent à leur état initial à chaque fois.</p></li>
+</ul>
+<p>Ceci est un inconfort mineur pour un utilisateur anonyme et permet l’utilisation des contenus H5P de manière optimale pour nos étudiants dûment enregistrés, tout en permettant une libre utilisation par d’autres visiteurs sans polluer notre base de données.</p>
+<p>Nous avons également tenté de passer des arguments supplémentaires via l’URL qui lance la page bookdown, et qui les tranfèrent vers l’iframe H5P, mais sans succès car apparemment Worpress réécrit l’URL et laisse tomber ces arguments supplémentaires. Mais de toutes façons, ce n’est pas important pour l’instant car nous pouvons tracer nos utilisateurs enregistrés dans Wordpress telle que c’est actuellement implémenté.</p>
+
+</div>
+<!-- </div> -->
 <div id="disqus_thread"></div>
 <script>
 
@@ -430,8 +450,8 @@ s.setAttribute('data-timestamp', +new Date());
           </div>
         </div>
       </div>
-<a href="shiny.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="gestion-des-cours.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="intégration-dans-wordpress.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="shiny.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -462,7 +482,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/BioDataScience-Course/sdd-admin/edit/master/08-Moodle.Rmd",
+"link": "https://github.com/BioDataScience-Course/sdd-admin/edit/master/06-Bookdown.Rmd",
 "text": "Editer"
 },
 "history": {

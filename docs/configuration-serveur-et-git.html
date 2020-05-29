@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapitre 8 Moodle | BioDataScience Administration</title>
+  <title>4.3 Configuration serveur et git | BioDataScience Administration</title>
   <meta name="description" content="Administration de BioDataScience-Course." />
   <meta name="generator" content="bookdown 0.18 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapitre 8 Moodle | BioDataScience Administration" />
+  <meta property="og:title" content="4.3 Configuration serveur et git | BioDataScience Administration" />
   <meta property="og:type" content="book" />
   <meta property="og:url" content="http://phgrosjean.sciviews.org/bookdown-test/" />
   <meta property="og:image" content="http://phgrosjean.sciviews.org/bookdown-test/images/front-cover.png" />
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="phgrosjean/bookdown-test" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapitre 8 Moodle | BioDataScience Administration" />
+  <meta name="twitter:title" content="4.3 Configuration serveur et git | BioDataScience Administration" />
   
   <meta name="twitter:description" content="Administration de BioDataScience-Course." />
   <meta name="twitter:image" content="http://phgrosjean.sciviews.org/bookdown-test/images/front-cover.png" />
@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="shiny.html"/>
-<link rel="next" href="gestion-des-cours.html"/>
+<link rel="prev" href="installation-wordpress.html"/>
+<link rel="next" href="agencement-du-site.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -225,73 +225,6 @@ var h5pContentTypes = [""];
 <script src='https://wp.sciviews.org/wp-content/plugins/h5p/h5p-php-library/js/request-queue.js'></script>
 
 
-<style type="text/css">
-code.sourceCode > span { display: inline-block; line-height: 1.25; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode { white-space: pre; position: relative; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-code.sourceCode { white-space: pre-wrap; }
-code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-    background-color: #ffffff;
-    color: #a0a0a0;
-  }
-pre.numberSource { margin-left: 3em; border-left: 1px solid #a0a0a0;  padding-left: 4px; }
-div.sourceCode
-  { color: #1f1c1b; background-color: #ffffff; }
-@media screen {
-code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
-code span. { color: #1f1c1b; } /* Normal */
-code span.al { color: #bf0303; background-color: #f7e6e6; font-weight: bold; } /* Alert */
-code span.an { color: #ca60ca; } /* Annotation */
-code span.at { color: #0057ae; } /* Attribute */
-code span.bn { color: #b08000; } /* BaseN */
-code span.bu { color: #644a9b; font-weight: bold; } /* BuiltIn */
-code span.cf { color: #1f1c1b; font-weight: bold; } /* ControlFlow */
-code span.ch { color: #924c9d; } /* Char */
-code span.cn { color: #aa5500; } /* Constant */
-code span.co { color: #898887; } /* Comment */
-code span.cv { color: #0095ff; } /* CommentVar */
-code span.do { color: #607880; } /* Documentation */
-code span.dt { color: #0057ae; } /* DataType */
-code span.dv { color: #b08000; } /* DecVal */
-code span.er { color: #bf0303; text-decoration: underline; } /* Error */
-code span.ex { color: #0095ff; font-weight: bold; } /* Extension */
-code span.fl { color: #b08000; } /* Float */
-code span.fu { color: #644a9b; } /* Function */
-code span.im { color: #ff5500; } /* Import */
-code span.in { color: #b08000; } /* Information */
-code span.kw { color: #1f1c1b; font-weight: bold; } /* Keyword */
-code span.op { color: #1f1c1b; } /* Operator */
-code span.ot { color: #006e28; } /* Other */
-code span.pp { color: #006e28; } /* Preprocessor */
-code span.re { color: #0057ae; background-color: #e0e9f8; } /* RegionMarker */
-code span.sc { color: #3daee9; } /* SpecialChar */
-code span.ss { color: #ff5500; } /* SpecialString */
-code span.st { color: #bf0303; } /* String */
-code span.va { color: #0057ae; } /* Variable */
-code span.vs { color: #bf0303; } /* VerbatimString */
-code span.wa { color: #bf0303; } /* Warning */
-</style>
 
 <link rel="stylesheet" href="style.css" type="text/css" />
 </head>
@@ -401,9 +334,89 @@ code span.wa { color: #bf0303; } /* Warning */
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="moodle" class="section level1">
-<h1><span class="header-section-number">Chapitre 8</span> Moodle</h1>
-<p>…</p>
+<div id="configuration-serveur-et-git" class="section level2">
+<h2><span class="header-section-number">4.3</span> Configuration serveur et git</h2>
+<p>Simple hosting de Gandi.net permet d’accéder aux fichiers sur le serveur de trois façons :</p>
+<ul>
+<li>Par sFTP (TODO: détails)</li>
+<li>Par Console SSH (TODO: détails). La console n’est pas active en permanence. Il faut l’activer dans le panneau de configuration du simple hosting sur Gandi.net. Cette activation reste valable pour 2 heures seulement par sécurité.</li>
+<li>Via git. C’est le plus simple pour développer et synchroniser son site. C’est d’ailleurs aussi la seule façon de faire pour ajouter des dépendances à PHP via composer (et nous aurons besoin de rajouter une dépendance par rapport à mongodb pour enregistrer les événements H5P xAPI dans notre base de données).</li>
+</ul>
+<div id="sécurisation-du-site-wordpress" class="section level4">
+<h4><span class="header-section-number">4.3.0.1</span> Sécurisation du site Wordpress</h4>
+<ul>
+<li>Modification du fichier <code>.htaccess</code> dans <code>htdocs</code>. Afin d’éviter des attaques de type <a href="https://perishablepress.com/wordpress-xmlrpc-pingback-vulnerability/">pingback xmlrpc</a> sur le site Wordpress, il faut rajouter la ligne suivante dans le fichier <code>.htaccess</code> :</li>
+</ul>
+<pre><code>RewriteRule ^xmlrpc\.php$ &quot;http\:\/\/0\.0\.0\.0\/&quot; [R=301,L]</code></pre>
+<ul>
+<li><p>Utilisation des plugins “Health Check &amp; Troubleshooting” et “WP-Optimize” pour diagnostiquer et remédier aux problèmes potentiels. Un seul problème reste impossible à résoudre pour l’instant, il s’agit de “A plugin has prevented updates by disabling <code>wp_version_check()</code>.” qui peut azvoir de nombreuses origines, et dans le cas cde notre site, nous n’avons pa pu détecter la cause. Même en désactivant tous les plugins et le thème, le message reste.</p></li>
+<li><p>Nous avons aussi utilisé l’outil de sécurité et d’audit de Chrome dans les outils développeurs pour détecter les failles éventuelles et les erreurs côté client (Javascript, CSS, …), et nous assurer que le site est sain. Globalement, il n’y a pas de failles majeures, mais certains aspects pourraient être améliorés pour avoir un site plus rapide, par exemple. Nous examinerons ces points plus tard.</p></li>
+</ul>
+</div>
+<div id="utilisation-de-git" class="section level4">
+<h4><span class="header-section-number">4.3.0.2</span> Utilisation de git</h4>
+<p>Il faut git et un client SSH installé (pas de problèmes pour le Mac ou Linux). Les infos pour utiliser git sont dans la page de gestion du site <code>wp.sciviews.org</code> sur Gandi.net. Dans un premier temps, l’identification se fait via un mot de passe. Voici comment cloner le dépôt git à partir d’un répertoire racine de votre choix, mais nous aurons absolument besoin que ce répertoire racine soit le même que celui où les dépôts Github de BioDataScience-Course sont également placés (sur le Mac, il est facile de s’y placer en tapant <code>cd</code> suivi d’une espace, et puis en allant faire un drag&amp;drop du dossier depuis le Finder vers le terminal, puis d’exécuter cette commande).</p>
+<pre><code># Placez-vous dans le bon dossier
+#cd &lt;dossier racine des dépôts BioDataScience-Course&gt;
+git clone git+ssh://3693753@git.sd3.gpaas.net/wp.sciviews.org.git</code></pre>
+<p>Accepter (<code>yes</code>) pour le message relatif à l’authenticité, puis rentrer le mot de passe d’administration du site. <strong>Vérifier que les fichiers du dépôt git ont bien été rajoutés dans le dossier avant de continuer.</strong> Avant de pouvoir effectuer un push via Github Desktop, il faut avoir configuré git correctement et avoir une clé SSH.</p>
+<pre><code>git config --global user.name &lt;username&gt;
+git config --global user.email &lt;user@email.com&gt;
+# Générer une clé SSH pour l&#39;authentification
+ssh-keygen -t rsa -b 4096 -C &#39;&lt;user@email.com&gt;&#39;</code></pre>
+<p>Une fois la clé SSH générée, copier le contenu de <code>~/.ssh/id_rsa.pub</code> d’une part vers “SSH Keys” dans Github -&gt; Settings -&gt; SSH and GPG Keys (pour être aussi en ordre vis-à-vis de Github), et d’autre part, dans le panneau principal Simple hosting de Gandi.net, dans la section sécurité, cliquer sur “Ajouter une clé SSH”. Puis créer une nouvelle clé et y coller le contenu.</p>
+<p>Essayez une petite modification anodine dans votre dépôt git en local, puis commit et push. Ça doit fonctionner. Attention que les données qui sont poussées vers le serveur ne sont pas encore publiées à ce stade ! Il faut <strong>déployer</strong> ces changements en faisant :</p>
+<pre><code>ssh 3693753@git.sd3.gpaas.net &#39;deploy wp.sciviews.org.git&#39;</code></pre>
+<p>Le <code>deploy</code> ajoute des nouveaux fichiers et remplace les fichiers existants sur le site (à condition que le droit en écriture sur les fichiers soit OK). Par contre, il n’élimine pas de fichiers. On risque donc d’accumuler des fichiers devenus inutiles au fur et à mesure de l’édition des blogdown. Si cela ne devrait pas impacter l’affichage des pages, cela utilise inutilement de l’espace disque sur le serveur. Donc, de temps en temps, il faut procéder à un nettoyage complet avec <code>clean</code> suivi d’un redéploiement.</p>
+<pre><code>ssh 3693753@git.sd3.gpaas.net &#39;clean wp.sciviews.org.git&#39;</code></pre>
+<p><strong>Attention qu’un fichier <code>.gitignore</code> correct est indispensable ici dans le dépôt.</strong> Les fichiers concernés par le <code>.gitignore</code> ne seront pas effacés. Tout le reste oui (faire toujours une sauvegarde complète avant) !.</p>
+</div>
+<div id="ajout-de-mongodb-pour-php" class="section level3">
+<h3><span class="header-section-number">4.3.1</span> Ajout de mongodb pour PHP</h3>
+<p>Le serveur sur Gandi.net n’autorise qu’une seule manière de rajouter des dépendances pour PHP : via git + ssh en utilisant <code>composer</code>. Et il faut créer les fichiers <code>composer.json</code> et <code>composer.lock</code> sur une machine locale avant de pouvoir faire un push sur le serveur. Cela signifie d’avoir PHP et la dépendance mongodb pour PHP installés localement. Ceci n’est pas facile, et il faut les mêmes versions que sur le serveur. Comme le PHP sous MacOS Catalina a la même version, j’ai d’abord essayé sur le Mac… sans succès car la puce de sécurité T2 empêche des modifications indispensables dans les dossiers <code>\usr\...</code> pour pouvoir compiler mongodb pour PHP. J’ai essayé aussi avec la SciViews Boxes 2019 (mais version PHP 7.2 trop ancienne) et une VirtualBox Ubuntu Server 20.04, mais version PHP 7.4 trop élevée. Gasp ! Finalement, j’ai pu le faire avec une VirtualBox Xubuntu 19.10. La procédure est détaillée ci-dessous.</p>
+<ul>
+<li><p>Noter la version X.Y de PHP utilisée sur le serveur (ici 7.3). Il faudra la même en local.</p></li>
+<li><p>Aller dans MongoDB Atlas et regarder la version de MongoDB déployée (ici 4.2). Il faudra une version de l’extension mongodb qui supporte à la fois la version de PHP et celle de MongoDB qui gère notre base de données.</p></li>
+<li><p>Rechercher la version compatible dans le tableau relatif à PHP <a href="https://docs.mongodb.com/drivers/driver-compatibility-reference">ici</a>. Nous pouvons voir qu’il nous faut l’extension 1.6+ ou 1.7+, avec la librairie 1.5 ou 1.6, respectivement, et par ailleurs cette version de l’extension est bien compatible avec la version 7.3 de PHP.</p></li>
+<li><p>Installer un (X)Ubuntu d’un version telle qu’il propose la bonne version de PHP. La 18.04LTS utilises PHP 7.2, pas bon. La 20.04LTS utilise la version 7.4 de PHP. Au final, une 19.10 convient, et c’est la version la plus récente avant qu’Ubuntu ne passe à PHP 7.4. Une machine virtuelle préinstallée peut être téléchargée depuis <a href="https://www.osboxes.org">Osboxes</a>. La façon de l’installer dans VirtualBox est expliquée sur le site. Le disque virtuel initial de la machine occupe 5,89Go.</p></li>
+<li><p>Configurer la machine virtuelle dans VirtualBox pour avoir un dossier partagé, par exemple ‘Desktop’ partagé en ‘MacDesktop’, avec connexion automatique.</p></li>
+<li><p>Lancer la machine virtuelle. Login : “oxboxes”, mot de passe : “oxboxes.org”, mais attention, en clavier configuré QWERTY. Avec un AZERTY, il faut entrer en fait “oxboxes:org” comme mot de passe.</p></li>
+<li><p>Aller dans le panneau de configuration et changer le clavier (belge, ou français (Macintosh) par exemple).</p></li>
+<li><p>Lancer un terminal et exécuter les lignes suivantes :</p></li>
+</ul>
+<pre><code># Rendre le dossier partagé VirtualBox accessible pour l&#39;utilisateur oxboxes
+sudo usermod -aG vboxsf osboxes
+# Mettre la machine à jour
+sudo apt update
+sudo apt upgrade
+sudo apt autoremove
+sudo apt autoclean
+sudo apt clean
+# Redémarrer
+sudo reboot</code></pre>
+<ul>
+<li>Il se peut que la machine virtuelle rebascule en QWERTY. Vérifier et corriger à nouveau. Ensuite, installer PHP et ses dépendances nécessaires :</li>
+</ul>
+<pre><code>sudo apt install php7.3-cli php7.3-dev php-pear php-mongodb composer</code></pre>
+<p>Ensuite, nous devrions pouvoir créer les fichiers nécessaires via la commande <code>composer require mongodb/mongodb</code>, mais cela ne fonctionne pas lorsque <code>php-mongodb</code> est installé via le package Ubuntu. Nous devons le compiler nous-même avec <code>pecl</code> sur la machine<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a> :</p>
+<pre><code># Créer un répertoire dans le dossier partagé et s&#39;y placer
+mkdir /media/sf_MacDesktop/php-mongodb
+cd /media/sf_MacDesktop/php-mongodb
+# Compiler mongodb depuis les sources
+sudo pecl install mongodb
+# Créer composer.json et composer.lock (entre autres)
+composer require mongodb/mongodb</code></pre>
+<ul>
+<li><p>Copier <code>composer.json</code> et <code>composer.lock</code> ainsi obtenus à la racine du dépôt git, faire un commit, un push et un deploy. Cette fois-ci mongodb PHP 1.7 semble s’être bien installé sur le serveur lors du deploy.</p></li>
+<li><p>Faire un test dans Wordpress. Aller jusqu’à une contenu H5P quelconque sur le site et interagir avec lui. Aller ensuite voir si les données correspondantes ont bien été enregistrées dans notre MongoDB ATLAS, dans la collection <code>sdd.h5p</code>. Si pas, vérifier si ces mêmes données sont enregistrées dans H5PxAPIkatchu dans le tableau de bord Wordpress. Si c’est le cas, c’est un problème d’accès à la base de données MongoDB ATLAS, sinon, c’est un problème plus profond : est-ce que l’enregistrement xAPI est bien activé, et est-ce que les extensions bookdown nécessaires ont bien été injectées via un fichier <code>header.html</code> (voir configuration du bookdown <a href="bookdown.html#bookdown">6</a>) ? L’option de débogage de H5PxAPIkatchu sevrait s’avérer utile ici pour déterminer ce qui ne va pas, voir @reg(h5p).</p></li>
+</ul>
+</div>
+</div>
+<div class="footnotes">
+<hr />
+<ol start="1">
+<li id="fn1"><p>Je suis arrivé à créer <code>composer.lock</code> via la commande <code>composer update</code> en ayant été écrire à la main un <code>composer.json</code> qui contient les lignes minimales renseignées sur la page d’aide de <a href="https://docs.gandi.net/fr/simple_hosting/langages/php.html#sommaire">Gandi.net</a>, mais j’aboutis à une version trop ancienne du driver, et de toutes façons, c’est un bricolage qui ne me plaît pas !<a href="configuration-serveur-et-git.html#fnref1" class="footnote-back">↩︎</a></p></li>
+</ol>
 </div>
 <div id="disqus_thread"></div>
 <script>
@@ -430,8 +443,8 @@ s.setAttribute('data-timestamp', +new Date());
           </div>
         </div>
       </div>
-<a href="shiny.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="gestion-des-cours.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="installation-wordpress.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="agencement-du-site.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -462,7 +475,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/BioDataScience-Course/sdd-admin/edit/master/08-Moodle.Rmd",
+"link": "https://github.com/BioDataScience-Course/sdd-admin/edit/master/04-Wordpress.Rmd",
 "text": "Editer"
 },
 "history": {
