@@ -27,13 +27,15 @@ Les aides et encouragements au travail que nous avons mis en place de manière u
 
 - La *valorisation d'un comportement ou d'un résultat positif au delà de la moyenne*  à l'aide de points bonus (on est toujours dans la gratification et la gamification ici),
 
+- Montrer que nous (en temps qu'enseignants), nous nous *intéressons réellement à leur travail*. Cela tient à des petits détails\ : des retours sous forme de courts commentaires, des relances, des questions, des encouragements, la reconnaissance de leurs progrès, ...
+
 - l'*entre-aide*, faire expliquer les points difficiles par un collègue qui les ont compris est extrêmement efficace. En plus, cela permet de mitiger un aspect difficile à gérer\ : la différence de vitesse d'apprentissage entre les "bons" et les "mauvais" étudiants (non, il n'y a pas de bons et de mauvais étudiants, nous le savons, il y a juste des étudiants avec des facultés et des motivations différentes... mais certains sont quand même beaucoup plus lents et **énervants** que d'autres). Au lieu de se tourner les pouces, demander à ceux qui ont fini en avance d'expliquer aux autres permet d'utiliser efficacement le temps et les ressources humaine en classe.
 
 - Les *travaux de groupes*, les *challenges* (par exemple, les étudiants doivent reproduire un graphique difficile), les *compétitions* (une course contre le temps et/ou entre plusieurs groupes pour résoudre un problème) participent efficacement à dynamiser le travail en classe et à varier les activités.
 
 - L'utilisation des *réseaux sociaux* pour communiquer. Le forum de Moodle est peu ou pas utilisé du tout. Les issues de Github, une fois que les étudiants ont appris à les utiliser, s'avèrent utiles car elles sont disponibles près du dépôt lui-même qui contient les exercices. Mais ce qui fonctionne le mieux (testé en période de confinement Covid-19), c'est *Discord* parce que beaucoup d'étudiants connaissent et utilisent déjà pour les jeux. Le ton des échanges y est d'ailleurs plus décontracté (parfois nettement plus), mais cela reste un outil efficace pour aider un étudiant qui est bloqué dans sa progression.
 
-- Les étudiants sollicitant une *aide plus directe* apprécie de pouvoir poser ses questions par email. Afin de pouvoir être plus réactif, nous avons mis en place une adresse `sdd@sciviews.org` pour laquelle tous les enseignants du cours ont accès. Ainsi, les interventions peuvent être partagées et plus rapides.
+- Les étudiants sollicitant une *aide plus directe* apprécient de pouvoir poser leurs questions par email. Afin de pouvoir être plus réactif, nous avons mis en place une adresse `sdd@sciviews.org` pour laquelle tous les enseignants du cours ont accès. Ainsi, les interventions peuvent être partagées et plus rapides.
 
 - Pour obtenir un *retour plus direct* par rapport aux activités, nous mettons progressivement en place le **rapport de progression**. Les actions de l'étudiant dans les learnrs (et dans un second temps également H5P et les apps Shiny) sont enregistrées dans une base de données. Le rapport de progression est une app Shiny qui collecte, nettoies, prépare, et présente graphiquement la progression de l'étudiant. L'*émulation de groupe* est obtenue en comparant la progression de l'étudiant à la progression générale de la classe.
 
