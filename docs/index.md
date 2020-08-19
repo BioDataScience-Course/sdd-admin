@@ -1,7 +1,7 @@
 --- 
 title: "BioDataScience Administration"
 author: "Philippe Grosjean & Guyliann Engels"
-date: "2020-05-30"
+date: "2020-08-19"
 site: bookdown::bookdown_site
 output:
   bookdown::gitbook:
@@ -44,19 +44,19 @@ sessioninfo::session_info()
 ```
 
 ```
-# - Session info ---------------------------------------------------------------
+# ─ Session info ───────────────────────────────────────────────────────────────
 #  setting  value                       
 #  version  R version 3.6.3 (2020-02-29)
-#  os       macOS Catalina 10.15.4      
+#  os       macOS Catalina 10.15.5      
 #  system   x86_64, darwin15.6.0        
 #  ui       X11                         
 #  language (EN)                        
 #  collate  en_US.UTF-8                 
 #  ctype    en_US.UTF-8                 
 #  tz       Europe/Brussels             
-#  date     2020-05-30                  
+#  date     2020-08-19                  
 # 
-# - Packages -------------------------------------------------------------------
+# ─ Packages ───────────────────────────────────────────────────────────────────
 #  package     * version    date       lib source                            
 #  assertthat    0.2.1      2019-03-21 [1] CRAN (R 3.6.0)                    
 #  bookdown      0.18       2020-03-05 [1] CRAN (R 3.6.0)                    

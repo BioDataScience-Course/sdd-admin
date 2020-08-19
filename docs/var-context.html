@@ -24,7 +24,7 @@
 <meta name="author" content="Philippe Grosjean &amp; Guyliann Engels" />
 
 
-<meta name="date" content="2020-05-30" />
+<meta name="date" content="2020-08-19" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -351,6 +351,7 @@ code span.wa { color: #bf0303; } /* Warning */
 <li class="chapter" data-level="5.2.1" data-path="enregistrement-h5p-xapi.html"><a href="enregistrement-h5p-xapi.html#h5pxapikatchu"><i class="fa fa-check"></i><b>5.2.1</b> H5PxAPIkatchu</a></li>
 <li class="chapter" data-level="5.2.2" data-path="enregistrement-h5p-xapi.html"><a href="enregistrement-h5p-xapi.html#wp-h5p-xapi-et-lrs"><i class="fa fa-check"></i><b>5.2.2</b> wp-h5p-xapi et LRS</a></li>
 <li class="chapter" data-level="5.2.3" data-path="enregistrement-h5p-xapi.html"><a href="enregistrement-h5p-xapi.html#autres-plugins-h5p"><i class="fa fa-check"></i><b>5.2.3</b> Autres plugins H5P</a></li>
+<li class="chapter" data-level="5.2.4" data-path="enregistrement-h5p-xapi.html"><a href="enregistrement-h5p-xapi.html#solution-finale-choisie"><i class="fa fa-check"></i><b>5.2.4</b> Solution finale choisie</a></li>
 </ul></li>
 <li class="chapter" data-level="5.3" data-path="gestion-des-contenus-h5p.html"><a href="gestion-des-contenus-h5p.html"><i class="fa fa-check"></i><b>5.3</b> Gestion des contenus H5P</a><ul>
 <li class="chapter" data-level="5.3.1" data-path="gestion-des-contenus-h5p.html"><a href="gestion-des-contenus-h5p.html#backup-h5p"><i class="fa fa-check"></i><b>5.3.1</b> Backup H5P</a></li>
@@ -363,7 +364,7 @@ code span.wa { color: #bf0303; } /* Warning */
 <li class="chapter" data-level="5.4.5" data-path="quelques-contenus-h5p-utiles.html"><a href="quelques-contenus-h5p-utiles.html#take-home-message"><i class="fa fa-check"></i><b>5.4.5</b> “Take home message”</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="6" data-path="bookdown.html"><a href="bookdown.html"><i class="fa fa-check"></i><b>6</b> Bookdown</a><ul>
+<li class="chapter" data-level="6" data-path="bookdown.html"><a href="bookdown.html"><i class="fa fa-check"></i><b>6</b> Bookdown &amp; learndown</a><ul>
 <li class="chapter" data-level="6.1" data-path="intégration-dans-wordpress.html"><a href="intégration-dans-wordpress.html"><i class="fa fa-check"></i><b>6.1</b> Intégration dans Wordpress</a></li>
 <li class="chapter" data-level="6.2" data-path="contenu-h5p-dans-bookdown.html"><a href="contenu-h5p-dans-bookdown.html"><i class="fa fa-check"></i><b>6.2</b> Contenu H5P dans bookdown</a></li>
 </ul></li>
@@ -403,7 +404,7 @@ code span.wa { color: #bf0303; } /* Warning */
             <section class="normal" id="section-">
 <div id="var-context" class="section level2">
 <h2><span class="header-section-number">4.5</span> Variables contextuelles</h2>
-<p>Pour le bon fonctionnement de nos outils et l’enregistrement de l’activité des étudiants, nous avons besoin de définir un certain nombre de variables reprises dans le tableau ci-dessous. Toutes ces variables sont obtenues directement à la source<a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a>. La colonne origine indique d’où nous obtenons ces informations (pour Moodle, il faut que l’étudiant ait lancé <a href="https://wp.sciviews.org" class="uri">https://wp.sciviews.org</a> depuis son compte Moodle et à partir de la page de cours correspondante).</p>
+<p>Pour le bon fonctionnement de nos outils et l’enregistrement de l’activité des étudiants, nous avons besoin de définir un certain nombre de variables reprises dans le tableau ci-dessous. Toutes ces variables sont obtenues directement à la source<a href="#fn3" class="footnote-ref" id="fnref3"><sup>3</sup></a>. La colonne origine indique d’où nous obtenons ces informations (pour Moodle, il faut que l’étudiant ait lancé <a href="https://wp.sciviews.org" class="uri">https://wp.sciviews.org</a> depuis son compte Moodle et à partir de la page de cours correspondante).</p>
 <table>
 <colgroup>
 <col width="23%" />
@@ -492,7 +493,7 @@ code span.wa { color: #bf0303; } /* Warning */
 </table>
 <p>A noter que nous croisons différentes sources (Moodle, Github, Wordpress), et les infos peuvent différer entre ces sources. Considérant un étudiant qui a “installé” ses outils correctement, à savoir :</p>
 <ul>
-<li>Son compte est créé au préalable dans Wordpress à partir du tableau des utilisateurs du cours issu de Moodle ou de Github Classroom<a href="#fn3" class="footnote-ref" id="fnref3"><sup>3</sup></a>,</li>
+<li>Son compte est créé au préalable dans Wordpress à partir du tableau des utilisateurs du cours issu de Moodle ou de Github Classroom<a href="#fn4" class="footnote-ref" id="fnref4"><sup>4</sup></a>,</li>
 <li>Il a créé un compte Github et y a renseigné son adresse mail UMONS,</li>
 <li>Il a au moins une fois lancé la page <a href="https://wp.sciviews.org" class="uri">https://wp.sciviews.org</a> depuis le lien Moodle “Cours” dans la section “Ressources en ligne” de son cours,</li>
 <li>Dans la page qui s’ouvre, il s’est connecté dans Wordpress à partir du bouton de login via Github/BioDataScience.</li>
@@ -510,9 +511,9 @@ Faut-il <em>forcer</em> le login de l’étudiant dans Wordpress ? Autrement di
 <!-- </div> -->
 <div class="footnotes">
 <hr />
-<ol start="2">
-<li id="fn2"><p>En 2018-2019 et 2019-2020, nous utilisions le login Github et l’adresse email UMONS pour identifier les événements learnr, mais comme les étudiants devaient rentrer ces infos manuellement, nous avons eu beaucoup de soucis avec des encodages erronés… Donc maintenant, nous récupérons ces infos de manière automatique à la source autant que possible.<a href="var-context.html#fnref2" class="footnote-back">↩︎</a></p></li>
-<li id="fn3"><p>Il serait possible de proposer l’enregistrement libre, mais il faut acheter la version pro du plugin d’identification Github… et de plus, tout le monde ayant un compte Github pourrait alors s’enregistrer ! C’est pas ce qu’on souhaite.<a href="var-context.html#fnref3" class="footnote-back">↩︎</a></p></li>
+<ol start="3">
+<li id="fn3"><p>En 2018-2019 et 2019-2020, nous utilisions le login Github et l’adresse email UMONS pour identifier les événements learnr, mais comme les étudiants devaient rentrer ces infos manuellement, nous avons eu beaucoup de soucis avec des encodages erronés… Donc maintenant, nous récupérons ces infos de manière automatique à la source autant que possible.<a href="var-context.html#fnref3" class="footnote-back">↩︎</a></p></li>
+<li id="fn4"><p>Il serait possible de proposer l’enregistrement libre, mais il faut acheter la version pro du plugin d’identification Github… et de plus, tout le monde ayant un compte Github pourrait alors s’enregistrer ! C’est pas ce qu’on souhaite.<a href="var-context.html#fnref4" class="footnote-back">↩︎</a></p></li>
 </ol>
 </div>
 <div id="disqus_thread"></div>

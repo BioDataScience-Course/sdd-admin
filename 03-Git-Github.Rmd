@@ -19,7 +19,7 @@ L'organisation Github [BioDataScience-Course](https://github.com/BioDataScience-
 
 Comme l'organisation contient plusieurs centaines de dépôts, il est utile de les nommer correctement pour s'y retrouver. Les dépôts créés via Github Classroom seront traités plus loin. Voici quelques règles\ :
 
-- Les dépôts important (matériel pédagogique, gestion des étudiants et de leur progression, ...) commencent tous par `sdd`. Pour les dépôts moins importants ou de test, utiliser un autre préfixe.
+- Les dépôts important (matériel pédagogique, gestion des étudiants et de leur progression, ...) commencent tous par `sdd` lorsque ces dépôts sont utilisés en interne (ex.\ : `sdd_lesson`, `sdd_movies`, `sdd-admin`, ...)^[Au départ, nous avons omis de déterminer si `sdd` devait être suivi du trait souligné `_` ou du tiret `-`. Résultat\ : nous rencontrons maintenant les deux formes dans nos dépôts `BioDataScience-Course`.]. Les dépôt concernant des items publics peuvent aussi utiliser `BioDataScience` comme préfixe pour être plus explicite (ex.\ : `BioDataScience1`, `BioDataScienceData`, `BioDataScienceExam`, ...). Pour les dépôts moins importants ou de test, utiliser un autre préfixe.
 
 - Lorsqu'un dépôt est relatif à une cohorte d'étudiants en particulier, nous l'indiquons par un suffixe reprenant les deux derniers chiffres de l'année initiale, suivi de `m` pour les étudiants montois et `c` pour les étudiants de Charleroi. Par exemple, `sdd_students19m` concerne la cohorte d'étudiants montois inscrits en premier cours (Bab2 de biologie) en 2019-2020. De même `sdd_students20c` concerne la cohorte d'étudiants de Charleroi inscrits en Bab2 en 2020-2021.
 

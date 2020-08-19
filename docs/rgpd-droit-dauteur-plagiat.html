@@ -24,7 +24,7 @@
 <meta name="author" content="Philippe Grosjean &amp; Guyliann Engels" />
 
 
-<meta name="date" content="2020-05-30" />
+<meta name="date" content="2020-08-19" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -351,6 +351,7 @@ code span.wa { color: #bf0303; } /* Warning */
 <li class="chapter" data-level="5.2.1" data-path="enregistrement-h5p-xapi.html"><a href="enregistrement-h5p-xapi.html#h5pxapikatchu"><i class="fa fa-check"></i><b>5.2.1</b> H5PxAPIkatchu</a></li>
 <li class="chapter" data-level="5.2.2" data-path="enregistrement-h5p-xapi.html"><a href="enregistrement-h5p-xapi.html#wp-h5p-xapi-et-lrs"><i class="fa fa-check"></i><b>5.2.2</b> wp-h5p-xapi et LRS</a></li>
 <li class="chapter" data-level="5.2.3" data-path="enregistrement-h5p-xapi.html"><a href="enregistrement-h5p-xapi.html#autres-plugins-h5p"><i class="fa fa-check"></i><b>5.2.3</b> Autres plugins H5P</a></li>
+<li class="chapter" data-level="5.2.4" data-path="enregistrement-h5p-xapi.html"><a href="enregistrement-h5p-xapi.html#solution-finale-choisie"><i class="fa fa-check"></i><b>5.2.4</b> Solution finale choisie</a></li>
 </ul></li>
 <li class="chapter" data-level="5.3" data-path="gestion-des-contenus-h5p.html"><a href="gestion-des-contenus-h5p.html"><i class="fa fa-check"></i><b>5.3</b> Gestion des contenus H5P</a><ul>
 <li class="chapter" data-level="5.3.1" data-path="gestion-des-contenus-h5p.html"><a href="gestion-des-contenus-h5p.html#backup-h5p"><i class="fa fa-check"></i><b>5.3.1</b> Backup H5P</a></li>
@@ -363,7 +364,7 @@ code span.wa { color: #bf0303; } /* Warning */
 <li class="chapter" data-level="5.4.5" data-path="quelques-contenus-h5p-utiles.html"><a href="quelques-contenus-h5p-utiles.html#take-home-message"><i class="fa fa-check"></i><b>5.4.5</b> “Take home message”</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="6" data-path="bookdown.html"><a href="bookdown.html"><i class="fa fa-check"></i><b>6</b> Bookdown</a><ul>
+<li class="chapter" data-level="6" data-path="bookdown.html"><a href="bookdown.html"><i class="fa fa-check"></i><b>6</b> Bookdown &amp; learndown</a><ul>
 <li class="chapter" data-level="6.1" data-path="intégration-dans-wordpress.html"><a href="intégration-dans-wordpress.html"><i class="fa fa-check"></i><b>6.1</b> Intégration dans Wordpress</a></li>
 <li class="chapter" data-level="6.2" data-path="contenu-h5p-dans-bookdown.html"><a href="contenu-h5p-dans-bookdown.html"><i class="fa fa-check"></i><b>6.2</b> Contenu H5P dans bookdown</a></li>
 </ul></li>
@@ -409,7 +410,7 @@ code span.wa { color: #bf0303; } /* Warning */
 <p>Le <strong>Règlement Général sur la Protection des Données</strong> ou RGPD (n° 2016/679) adopté par l’Union Européenne en 2016 régit la façon dont les données à caractère personnel peuvent être collectées et utilisées. Ce règlement est en faveur de l’utilisateur (ici l’étudiant). Il faut notamment son accord pour collecter et utiliser ses données personnelles. Or de telles données sont indispensables pour suivre la progression des étudiants, pouvoir les noter, etc.</p>
 <p>A l’UMONS, l’étudiant signe le document adéquat lors de son inscription. Ce document mets <strong>Moodle</strong> en conformité par rapport au RGPD, mais pas les outils externes. Nous devons donc préciser exactement ce que nous devons faire pour être en conformité. C’est un travail que nous devons encore réaliser au stade actuel avec la juriste de l’UMONS une fois tous nos outils mis en place.</p>
 <p>L’utilisateur doit avoir la possibilité d’effacer intégralement ses données personnelles s’il le souhaite lorsqu’il efface son compte d’un site. C’est indiqué explicitement dans le RGPD. Cependant, des restrictions à ceci sont indispensables pour la bonne gestion du suivi des étudiants à l’Université. C’est pour cela que l’étudiant a du signer un accord lors de son inscription. Afin d’être en conformité avec cette directive, nous avons rajouté un bouton <code>Effacer mes données personnelles</code> dans la première page des cours bookdown. S’il clique sur ce bouton, l’utilisateur peut ensuite lire le contenu de manière anonyme et les activités learnr/Shiny ne sont <strong>pas</strong> enregistrées. Par contre, H5P est toujours enregistré et les données historiques antérieures sont toujours dans notre base de données.</p>
-<p><strong>TODO: il faudra peut-être mettre en place un bouton qui permette de demander l’effacement de <em>toutes</em> les données, et qui pourrait être utilisé pour les visiteurs non-UMONS pour être totalement en conformité RGOPD de ce point de vue.</strong></p>
+<p><strong>TODO: il faudra peut-être mettre en place un bouton qui permette de demander l’effacement de <em>toutes</em> les données, et qui pourrait être utilisé pour les visiteurs non-UMONS pour être totalement en conformité RGPD de ce point de vue.</strong></p>
 <p>L’anonimisation des données est de mise lorsque ces données servent à une étude générale (par exemple, évolution des performances des cohortes d’étudiants avec les outils progressivement mis en place, études scientifiques, …). Cela passe par l’effacement des données de toute information à caractère personnel. Le nom, numéro de matricule ou adresse email de l’étudiant sont remplacés par un identifiant générique, par exemple, “étudiant #1”, “étudiant #2”, etc. Nous mettons cette pratique en œuvre pour toutes les études rétrospectives générales visant à estimer l’impact pédagogique des outils mis en place.</p>
 </div>
 <div id="droit-dauteur" class="section level3">

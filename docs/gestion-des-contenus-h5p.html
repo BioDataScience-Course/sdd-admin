@@ -24,7 +24,7 @@
 <meta name="author" content="Philippe Grosjean &amp; Guyliann Engels" />
 
 
-<meta name="date" content="2020-05-30" />
+<meta name="date" content="2020-08-19" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -351,6 +351,7 @@ code span.wa { color: #bf0303; } /* Warning */
 <li class="chapter" data-level="5.2.1" data-path="enregistrement-h5p-xapi.html"><a href="enregistrement-h5p-xapi.html#h5pxapikatchu"><i class="fa fa-check"></i><b>5.2.1</b> H5PxAPIkatchu</a></li>
 <li class="chapter" data-level="5.2.2" data-path="enregistrement-h5p-xapi.html"><a href="enregistrement-h5p-xapi.html#wp-h5p-xapi-et-lrs"><i class="fa fa-check"></i><b>5.2.2</b> wp-h5p-xapi et LRS</a></li>
 <li class="chapter" data-level="5.2.3" data-path="enregistrement-h5p-xapi.html"><a href="enregistrement-h5p-xapi.html#autres-plugins-h5p"><i class="fa fa-check"></i><b>5.2.3</b> Autres plugins H5P</a></li>
+<li class="chapter" data-level="5.2.4" data-path="enregistrement-h5p-xapi.html"><a href="enregistrement-h5p-xapi.html#solution-finale-choisie"><i class="fa fa-check"></i><b>5.2.4</b> Solution finale choisie</a></li>
 </ul></li>
 <li class="chapter" data-level="5.3" data-path="gestion-des-contenus-h5p.html"><a href="gestion-des-contenus-h5p.html"><i class="fa fa-check"></i><b>5.3</b> Gestion des contenus H5P</a><ul>
 <li class="chapter" data-level="5.3.1" data-path="gestion-des-contenus-h5p.html"><a href="gestion-des-contenus-h5p.html#backup-h5p"><i class="fa fa-check"></i><b>5.3.1</b> Backup H5P</a></li>
@@ -363,7 +364,7 @@ code span.wa { color: #bf0303; } /* Warning */
 <li class="chapter" data-level="5.4.5" data-path="quelques-contenus-h5p-utiles.html"><a href="quelques-contenus-h5p-utiles.html#take-home-message"><i class="fa fa-check"></i><b>5.4.5</b> “Take home message”</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="6" data-path="bookdown.html"><a href="bookdown.html"><i class="fa fa-check"></i><b>6</b> Bookdown</a><ul>
+<li class="chapter" data-level="6" data-path="bookdown.html"><a href="bookdown.html"><i class="fa fa-check"></i><b>6</b> Bookdown &amp; learndown</a><ul>
 <li class="chapter" data-level="6.1" data-path="intégration-dans-wordpress.html"><a href="intégration-dans-wordpress.html"><i class="fa fa-check"></i><b>6.1</b> Intégration dans Wordpress</a></li>
 <li class="chapter" data-level="6.2" data-path="contenu-h5p-dans-bookdown.html"><a href="contenu-h5p-dans-bookdown.html"><i class="fa fa-check"></i><b>6.2</b> Contenu H5P dans bookdown</a></li>
 </ul></li>
@@ -404,9 +405,9 @@ code span.wa { color: #bf0303; } /* Warning */
 <div id="gestion-des-contenus-h5p" class="section level2">
 <h2><span class="header-section-number">5.3</span> Gestion des contenus H5P</h2>
 <p>Chaque contenu H5P est indépendant du reste. Attention que les contenus complexes sont volumineux. Par exemple, les vidéos interactives occupent chacune 2,8Mo sur le serveur lorsque les vidéos sont sur youtube (donc, occupation de place minimale puisque la vidéo elle-même n’est <strong>pas</strong> sur le site Wordpress).</p>
-<p>Au départ, aucun contenu n’est réalisable car les <strong>librairies</strong> nécessaires ne sont pas encore installée. Mais il n’est pas nécessaire de les installer car il suffit de téléverser du contenu pour que leur installation se fasse automatiquement. Donc, la procédure pragmatique suivante est retenue pour enrichir le site des librairies dont nous avons besoin :</p>
+<p>Au départ, aucun contenu n’est réalisable car les <strong>librairies</strong> nécessaires ne sont pas encore installée. Mais il n’est pas nécessaire de les installer car il suffit de téléverser du contenu pour que leur installation se fasse automatiquement (mais si de nouvelles librairies sont nécessaires, il faut alors le faire avec le compte admin de Wordpress). Donc, la procédure pragmatique suivante est retenue pour enrichir le site des librairies dont nous avons besoin :</p>
 <ul>
-<li>Pour un type de contenu pas encore supporté, aller sur <a href="https://h5p.org">h5p.org</a>. Se connecter (créer un compte gratuit, si nécessaire).</li>
+<li>Pour un type de contenu qui n’est pas encore supporté, aller sur <a href="https://h5p.org">h5p.org</a>. Se connecter (créer un compte gratuit, si nécessaire).</li>
 <li>Aller dans “Examples and Downloads” et choisir un exemple de type de contenu souhaité. Cliquer sur “Reuse”. Ou alors aller dans “Contents” -&gt; “Create New Content” et créer un contenu du type souhaité. Puis cliquer sur “Reuse” lorsqu’on est satisfait du contenu.</li>
 </ul>
 <p>Voici un exemple avec le contenu de type “True/False”.</p>
@@ -422,16 +423,16 @@ code span.wa { color: #bf0303; } /* Warning */
 <img src="images/h5p/h5p-new-content3.png" alt="" />
 <p class="caption">Une fois le contenu terminé, il suffit de cliquer sur “Reuse” (flèche rouge) et de cliquer sur “Download as an .h5p file” pour récupérer le fichier .h5p.</p>
 </div>
-<p>Ensuite, dans le tableau de bord de Wordpress (pour un utilisateur éditeur), aller dans H5P Content -&gt; Add New. Sélectionner “Téléverser” et indiquer le fichier <code>.h5p</code> que l’on vient de sauver, puis “Utiliser”.</p>
+<p>Ensuite, dans le tableau de bord de Wordpress (en ayant pris soin de s’être enregistré en qualité d’administrateur), aller dans H5P Content -&gt; Add New. Sélectionner “Téléverser” et indiquer le fichier <code>.h5p</code> que l’on vient de sauver, puis “Utiliser”.</p>
 <div class="figure">
 <img src="images/h5p/h5p-new-content4.png" alt="" />
 <p class="caption">Ajout du contenu H5P sur le site Worpress par téléversement du fichier .h5p.</p>
 </div>
-<p>Une fois que c’est fait, non seulement le contenu est téléversé, mais les librairies requises sont également ajoutées. De cette façon, un autre contenu de ce type peut maintenant être créé <em>directement</em> depuis la tableau de bord de Wordpress, H5P content -&gt; Add New.</p>
+<p>Une fois que c’est fait, non seulement le contenu est téléversé, mais les librairies requises sont également ajoutées. De cette façon, un autre contenu de ce type peut maintenant être créé <em>directement</em> depuis la tableau de bord de Wordpress, H5P content -&gt; Add New par n’importe quel utilisateur qui a les droits d’édition sur le site (donc, les profs).</p>
 <div id="backup-h5p" class="section level3">
 <h3><span class="header-section-number">5.3.1</span> Backup H5P</h3>
 <p>Le backup du site entier Wordpress est effectué. Par contre, il est utile d’avoir une copie de nos différents contenus H5P au format de fichier <code>.h5p</code>. Pour cela, un administrateur de site doit au préalable temporairement cocher l’option “Toolbar Below Content” dans les paramètres du plugin H5P de Wordpress (tableau de bord), de sorte que le bouton “Reuse” apparaisse en dessus d’un contenu H5P. Pour chaque contenu que l’on souhaite sauvegarder, l’afficher, et cliquer sur son bouton “Reuse” pour récupérer le fichier <code>.h5p</code>. Ensuite, placer les fichiers <code>.h5p</code> sur p-Cloud dans le répertoire <code>sdd_h5p_backup</code>.</p>
-<p>TODO: une solution de récupération automatisée des fichiers <code>.h5p</code> d’un site devrait être développée à la place, cette procédure ne devrait être utilisée que ponctuellement pour récupéer un ou un petit nombre de contenus H5P.</p>
+<p><strong>TODO:</strong> une solution de récupération automatisée des fichiers <code>.h5p</code> d’un site devrait être développée à la place, cette procédure ne devrait être utilisée que ponctuellement pour récupérer un ou un petit nombre de contenus H5P.</p>
 </div>
 </div>
 <div id="disqus_thread"></div>

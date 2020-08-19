@@ -24,7 +24,7 @@
 <meta name="author" content="Philippe Grosjean &amp; Guyliann Engels" />
 
 
-<meta name="date" content="2020-05-30" />
+<meta name="date" content="2020-08-19" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -351,6 +351,7 @@ code span.wa { color: #bf0303; } /* Warning */
 <li class="chapter" data-level="5.2.1" data-path="enregistrement-h5p-xapi.html"><a href="enregistrement-h5p-xapi.html#h5pxapikatchu"><i class="fa fa-check"></i><b>5.2.1</b> H5PxAPIkatchu</a></li>
 <li class="chapter" data-level="5.2.2" data-path="enregistrement-h5p-xapi.html"><a href="enregistrement-h5p-xapi.html#wp-h5p-xapi-et-lrs"><i class="fa fa-check"></i><b>5.2.2</b> wp-h5p-xapi et LRS</a></li>
 <li class="chapter" data-level="5.2.3" data-path="enregistrement-h5p-xapi.html"><a href="enregistrement-h5p-xapi.html#autres-plugins-h5p"><i class="fa fa-check"></i><b>5.2.3</b> Autres plugins H5P</a></li>
+<li class="chapter" data-level="5.2.4" data-path="enregistrement-h5p-xapi.html"><a href="enregistrement-h5p-xapi.html#solution-finale-choisie"><i class="fa fa-check"></i><b>5.2.4</b> Solution finale choisie</a></li>
 </ul></li>
 <li class="chapter" data-level="5.3" data-path="gestion-des-contenus-h5p.html"><a href="gestion-des-contenus-h5p.html"><i class="fa fa-check"></i><b>5.3</b> Gestion des contenus H5P</a><ul>
 <li class="chapter" data-level="5.3.1" data-path="gestion-des-contenus-h5p.html"><a href="gestion-des-contenus-h5p.html#backup-h5p"><i class="fa fa-check"></i><b>5.3.1</b> Backup H5P</a></li>
@@ -363,7 +364,7 @@ code span.wa { color: #bf0303; } /* Warning */
 <li class="chapter" data-level="5.4.5" data-path="quelques-contenus-h5p-utiles.html"><a href="quelques-contenus-h5p-utiles.html#take-home-message"><i class="fa fa-check"></i><b>5.4.5</b> “Take home message”</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="6" data-path="bookdown.html"><a href="bookdown.html"><i class="fa fa-check"></i><b>6</b> Bookdown</a><ul>
+<li class="chapter" data-level="6" data-path="bookdown.html"><a href="bookdown.html"><i class="fa fa-check"></i><b>6</b> Bookdown &amp; learndown</a><ul>
 <li class="chapter" data-level="6.1" data-path="intégration-dans-wordpress.html"><a href="intégration-dans-wordpress.html"><i class="fa fa-check"></i><b>6.1</b> Intégration dans Wordpress</a></li>
 <li class="chapter" data-level="6.2" data-path="contenu-h5p-dans-bookdown.html"><a href="contenu-h5p-dans-bookdown.html"><i class="fa fa-check"></i><b>6.2</b> Contenu H5P dans bookdown</a></li>
 </ul></li>
@@ -408,10 +409,16 @@ code span.wa { color: #bf0303; } /* Warning */
 <h3><span class="header-section-number">3.2.1</span> Convention de noms</h3>
 <p>Comme l’organisation contient plusieurs centaines de dépôts, il est utile de les nommer correctement pour s’y retrouver. Les dépôts créés via Github Classroom seront traités plus loin. Voici quelques règles :</p>
 <ul>
-<li><p>Les dépôts important (matériel pédagogique, gestion des étudiants et de leur progression, …) commencent tous par <code>sdd</code>. Pour les dépôts moins importants ou de test, utiliser un autre préfixe.</p></li>
+<li><p>Les dépôts important (matériel pédagogique, gestion des étudiants et de leur progression, …) commencent tous par <code>sdd</code> lorsque ces dépôts sont utilisés en interne (ex. : <code>sdd_lesson</code>, <code>sdd_movies</code>, <code>sdd-admin</code>, …)<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a>. Les dépôt concernant des items publics peuvent aussi utiliser <code>BioDataScience</code> comme préfixe pour être plus explicite (ex. : <code>BioDataScience1</code>, <code>BioDataScienceData</code>, <code>BioDataScienceExam</code>, …). Pour les dépôts moins importants ou de test, utiliser un autre préfixe.</p></li>
 <li><p>Lorsqu’un dépôt est relatif à une cohorte d’étudiants en particulier, nous l’indiquons par un suffixe reprenant les deux derniers chiffres de l’année initiale, suivi de <code>m</code> pour les étudiants montois et <code>c</code> pour les étudiants de Charleroi. Par exemple, <code>sdd_students19m</code> concerne la cohorte d’étudiants montois inscrits en premier cours (Bab2 de biologie) en 2019-2020. De même <code>sdd_students20c</code> concerne la cohorte d’étudiants de Charleroi inscrits en Bab2 en 2020-2021.</p></li>
 </ul>
 </div>
+</div>
+<div class="footnotes">
+<hr />
+<ol start="1">
+<li id="fn1"><p>Au départ, nous avons omis de déterminer si <code>sdd</code> devait être suivi du trait souligné <code>_</code> ou du tiret <code>-</code>. Résultat : nous rencontrons maintenant les deux formes dans nos dépôts <code>BioDataScience-Course</code>.<a href="biodatascience-course.html#fnref1" class="footnote-back">↩︎</a></p></li>
+</ol>
 </div>
 <div id="disqus_thread"></div>
 <script>

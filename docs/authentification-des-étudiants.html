@@ -24,7 +24,7 @@
 <meta name="author" content="Philippe Grosjean &amp; Guyliann Engels" />
 
 
-<meta name="date" content="2020-05-30" />
+<meta name="date" content="2020-08-19" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -351,6 +351,7 @@ code span.wa { color: #bf0303; } /* Warning */
 <li class="chapter" data-level="5.2.1" data-path="enregistrement-h5p-xapi.html"><a href="enregistrement-h5p-xapi.html#h5pxapikatchu"><i class="fa fa-check"></i><b>5.2.1</b> H5PxAPIkatchu</a></li>
 <li class="chapter" data-level="5.2.2" data-path="enregistrement-h5p-xapi.html"><a href="enregistrement-h5p-xapi.html#wp-h5p-xapi-et-lrs"><i class="fa fa-check"></i><b>5.2.2</b> wp-h5p-xapi et LRS</a></li>
 <li class="chapter" data-level="5.2.3" data-path="enregistrement-h5p-xapi.html"><a href="enregistrement-h5p-xapi.html#autres-plugins-h5p"><i class="fa fa-check"></i><b>5.2.3</b> Autres plugins H5P</a></li>
+<li class="chapter" data-level="5.2.4" data-path="enregistrement-h5p-xapi.html"><a href="enregistrement-h5p-xapi.html#solution-finale-choisie"><i class="fa fa-check"></i><b>5.2.4</b> Solution finale choisie</a></li>
 </ul></li>
 <li class="chapter" data-level="5.3" data-path="gestion-des-contenus-h5p.html"><a href="gestion-des-contenus-h5p.html"><i class="fa fa-check"></i><b>5.3</b> Gestion des contenus H5P</a><ul>
 <li class="chapter" data-level="5.3.1" data-path="gestion-des-contenus-h5p.html"><a href="gestion-des-contenus-h5p.html#backup-h5p"><i class="fa fa-check"></i><b>5.3.1</b> Backup H5P</a></li>
@@ -363,7 +364,7 @@ code span.wa { color: #bf0303; } /* Warning */
 <li class="chapter" data-level="5.4.5" data-path="quelques-contenus-h5p-utiles.html"><a href="quelques-contenus-h5p-utiles.html#take-home-message"><i class="fa fa-check"></i><b>5.4.5</b> “Take home message”</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="6" data-path="bookdown.html"><a href="bookdown.html"><i class="fa fa-check"></i><b>6</b> Bookdown</a><ul>
+<li class="chapter" data-level="6" data-path="bookdown.html"><a href="bookdown.html"><i class="fa fa-check"></i><b>6</b> Bookdown &amp; learndown</a><ul>
 <li class="chapter" data-level="6.1" data-path="intégration-dans-wordpress.html"><a href="intégration-dans-wordpress.html"><i class="fa fa-check"></i><b>6.1</b> Intégration dans Wordpress</a></li>
 <li class="chapter" data-level="6.2" data-path="contenu-h5p-dans-bookdown.html"><a href="contenu-h5p-dans-bookdown.html"><i class="fa fa-check"></i><b>6.2</b> Contenu H5P dans bookdown</a></li>
 </ul></li>
@@ -406,24 +407,24 @@ code span.wa { color: #bf0303; } /* Warning */
 <p>En 2020-2021, nous avons décidé de mettre en œuvre un serveur Wordpress pour fournir le contenu H5P qui nous manque et dont l’utilisation est enregistrée pour chaque étudiant afin de pouvoir suivre sa progression (protocole xAPI). Ce serveur Wordpress nous donne aussi l’occasion de mettre en œuvre une authentification des étudiants plus fiable. Notre objectif est double au niveau de l’authentification de nos étudiants. D’une part, nous voulons obtenir de manière fiable à la fois leurs données UMONS (via Moodle) et leurs données Github, ce qui implique que ces données doivent être soit fournies automatiquement, soit vérifiées durant l’authentification. D’autre part, nous voulons pouvoir exécuter des applications Shiny en mode sécurisé pour, par exemple, leur offrir un rapport de progression calculé en direct. La nouvelle authentification se fait comme suit :</p>
 <ol style="list-style-type: decimal">
 <li><p>Nous intégrons nos outils dans Moodle via une URL qui transmet des informations relatives à l’utilisateur authentifié UMONS (“query string”, c’est-à-dire la partie “?…” de l’URL). On obtient de cette façon, entre autres, son numéro de matricule, son adresse email UMONS, son nom et son prénom, le cours qu’il suit, … Les détails sont dans la section correspondante (voir <a href="moodle.html#moodle">8</a>) et ne seront donc pas discutés ici.</p></li>
-<li><p>Par ailleurs, nous utilisons abondamment Github pour les exercices des étudiants. Leur login y est différent, et il est aussi possible qu’ils y aient indiqué une adresse email différente (même si nous leurs demandons de mettre la même, ce qui est d’ailleurs indispensable pour l’identification correcte de l’auteur des commits). Dans Wordpress, nous pouvons intégrer une authentification sur base de leur compte Github via le protocole OAuth. C’est doublement intéressant car nous obtenons ainsi leur login Github à tous les coups, et aussi, nous sommes certains que leur compte Github est créé et actif dès le moment où ils sont enregistrés dans Wordpress. Que des avantages, donc. De plus, dans l’implémentation choisie, la connexion via Github montre clairement à l’étudiant s’il est connecté ou non.</p></li>
+<li><p>Par ailleurs, nous utilisons abondamment Github pour les exercices des étudiants. Leur login y est différent, et il est aussi possible qu’ils y aient indiqué une adresse email différente (même si nous leurs demandons de mettre la même, ce qui est d’ailleurs indispensable pour l’identification correcte de l’auteur des commits). Dans Wordpress, nous pouvons intégrer une authentification sur base de leur compte Github via le protocole OAuth2. C’est doublement intéressant car nous obtenons ainsi leur login Github à tous les coups, et aussi, nous sommes certains que leur compte Github est créé et actif dès le moment où ils sont enregistrés dans Wordpress. Que des avantages, donc. De plus, dans l’implémentation choisie, la connexion via Github montre clairement à l’étudiant s’il est connecté ou non.</p></li>
 </ol>
 <div class="figure">
 <img src="images/wordpress/non-enregistre.png" alt="" />
-<p class="caption">Page principale du site lorsque l’utilisateur n’est pas connecté (au travers d’un login BioDataScience dans Github.</p>
+<p class="caption">Page principale du site lorsque l’utilisateur n’est pas connecté (au travers d’un login BioDataScience dans Github).</p>
 </div>
 <div class="figure">
 <img src="images/wordpress/enregistre.png" alt="" />
 <p class="caption">La même page principale du site lorsque l’utilisateur est enregistré et connecté via Github.</p>
 </div>
-<p>Dès que l’étudiant s’est enregistré, les données utiles venant de Github sont rentrées dans la table des utilisateurs Wordpress. Nous pouvons donc combiner cette information avec les données provenant de Moodle pour établir un profil complet de l’étudiant dans notre site Wordpress automatiquement. A noter que Wordpress tente de récupérer aussi d’autres informations venant de Github, dont l’email. Cependant, ce dernier peut être caché dans le compte Github (c’est d’ailleurs le cas par défaut), et n’est donc pas accessible. La plupart du temps, nous n’avons donc que l’email UMONS à disposition. <strong>Nous avons donc décidé d’utiliser l’email Wordpress, l’email UMONS, ou le login Github de manière interchangeable selon le contexte comme identifiant</strong>. Comme l’email du commiteur est automatiquement mis à celui de l’UMONS lorsque RStudio Serveur est accédé via Moodle, l’étudiant se doit d’indiquer le <em>même</em> email dans son compte Github, sans quoi, ses commits à partir de la SciViews Box ne pourront pas lui être attribués dans Github. <em>C’est de sa responsabilité.</em></p>
+<p>Dès que l’étudiant s’est enregistré, les données utiles venant de Github sont rentrées dans la table des utilisateurs Wordpress. Nous pouvons donc combiner cette information avec les données provenant de Moodle pour établir un profil complet de l’étudiant dans notre site Wordpress automatiquement. A noter que Wordpress tente de récupérer aussi d’autres informations venant de Github, dont l’email. Cependant, ce dernier peut être caché dans le compte Github (c’est d’ailleurs le cas par défaut), et n’est donc pas accessible. La plupart du temps, nous n’avons donc que l’email UMONS à disposition. <strong>Nous avons donc décidé d’utiliser l’email Wordpress, l’email UMONS, ou le login Github de manière interchangeable selon le contexte comme identifiant</strong>. Comme l’email git est mis à celui de l’UMONS lorsque RStudio Serveur est accédé via Moodle, l’étudiant se doit d’indiquer le <em>même</em> email dans son compte Github, sans quoi, ses commits à partir de la SciViews Box ne pourront pas lui être attribués dans Github. <em>C’est de sa responsabilité.</em></p>
 
 <div class="warning">
 <p>Le changement automatique d’email git dans la SciViews Box (à partir de la version 2020) ne se fait <em>que</em> si RStudio est accédé depuis le lien dans Moodle UMONS. Ainsi, un externe peut très bien utiliser n’importe quelle autre adresse mail sans problèmes.</p>
-<p>L’adresse mail utilisée est celle renseignée par Moodle, soit <code>prénom.nom@[student].umons.ac.be</code>. Cependant, dans de rares cas, l’adresse UMONS utilise des caractères qui posent problèmes ailleurs (Github), comme une apostrophe dans le nom. Ce cas est automatiquement détecté et le système bascule alors sur l’adresse alternative <code>matricule@umons.ac.be</code>.</p>
+<p>L’adresse mail utilisée est celle renseignée par Moodle, soit <code>prénom.nom@[student.]umons.ac.be</code>. Cependant, dans de rares cas, l’adresse UMONS utilise des caractères qui posent problèmes ailleurs (Github), comme une apostrophe dans le nom. Ce cas est automatiquement détecté et le système bascule alors sur l’adresse alternative <code>matricule@umons.ac.be</code>.</p>
 </div>
 
-<p>Les informations utilisateurs complémentaires sont fournis manuellement à Wordpress via un tableau CSV et le plugin “Import Users from CSV”. Ce tableau provient de Moodle et/ou Github Classroom.</p>
+<p><strong>TODO:</strong> Utilisier un autre plugin OAuth2 et implémenter l’ajout de l’email lorsqu’un nouveau compte est créé depuis Github. Ou alors, ne pas autoriser la création de nouveaux comptes de cette manière et rentrer les informations utilisateurs manuellement à Wordpress via un tableau CSV et le plugin “Import Users from CSV”. Ce tableau provient de Moodle et/ou Github Classroom (mais alors, il faut s’assurer que le login Wordpress soit le même que celui sur Github pour chaque étudiant età ce stade, cela ne peut se faire que manuellement).</p>
 <p><strong>TODO: expliquer la procédure pour extraire la liste des étudiants d’un cours et les pré-enregistrer dans Wordpress avec le bon email.</strong></p>
 </div>
 <div id="disqus_thread"></div>

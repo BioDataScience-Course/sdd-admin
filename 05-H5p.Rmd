@@ -18,7 +18,7 @@ L'un des LMS les plus populaires est [Moodle](https://moodle.com/fr/) qui a ét�
 
 Cette autre option consiste à utiliser soit [Wordpress](https://fr.wordpress.com/), soit [Drupal](https://www.drupal.org/) pour lesquels H5P est également compatible. Après comparaison des possibilités des deux, nous avons opté pour Wordpress, plus largement utilisé.
 
-H5P permet de récupérer des informations concernant l'activité des étudiants dans les exercices sous forme de requêtes [xAPI](https://xapi.com/overview/). xAPI est un standard développé pour permettre l'interaction entre un LMS comme Moodle qui produit des événements xAPI, et un LRS (Learning Record Store) une base de données chargée d'enregistrer les traces de l'apprentissage au format standardisé xAPI. En complément de H5P lui-même et de Wordpress comme serveur principal, il nous faut donc un LRS et un plugin qui fait le pont entre H5P et ce LRS. Enfin, l'information n'est utile que si elle est identifiable comme provenant d'un étudiant en particulier. Le serveur doit donc gérer l'authentification des utilisateurs et transmettre l'identité de l'étudiant au travers de la requête xAPI. Si tout cela parait très compliqué, voici un petit schéma qui résume l'ensemble (à noter que nous avons choisi l'authentification via Github parce que nos étudiants ont également d'autres activités sur Github/Github Classroom, et il est dès lors plus facile de gérer une identité commune à toutes ces activités, même si l'identité UMONS est, hors contexte, la plus logique ici)\ :
+H5P permet de récupérer des informations concernant l'activité des étudiants dans les exercices sous forme de requêtes [xAPI](https://xapi.com/overview/). xAPI est un standard développé pour permettre l'interaction entre un LMS comme Moodle qui produit des événements xAPI, et un LRS (Learning Record Store) une base de données chargée d'enregistrer les traces de l'apprentissage au format standardisé xAPI. En complément de H5P lui-même et de Wordpress comme serveur principal, il nous faut donc un LRS et un plugin qui fasse le pont entre H5P et ce LRS. Enfin, l'information n'est utile que si elle est identifiable comme provenant d'un étudiant en particulier. Le serveur doit donc gérer l'authentification des utilisateurs et transmettre l'identité de l'étudiant au travers de la requête xAPI. Si tout cela parait très compliqué, voici un petit schéma qui résume l'ensemble (à noter que nous avons choisi l'authentification via Github parce que nos étudiants ont également d'autres activités sur Github/Github Classroom, et il est dès lors plus facile de gérer une identité commune à toutes ces activités, même si l'identité UMONS est, hors contexte, la plus logique ici)\ :
 
 ![H5P et bookdown sont intégrés dans le même serveur Wordpress, ce qui permet l'affichage en iframe sans contraintes. Les informations de l'utilisateur proviennent d'une authentification Github, plus des données issues de Moodle via URL ou LTI. L'activité des étudiants H5P peut ainsi être enregistrée dans le LRS de notre choix via le protocole standard xAPI avec une identification univoque.](images/h5p/h5p-general.png)
 
@@ -42,9 +42,9 @@ Le panneau de configuration est accessible pour l'administrateur Wordpress depui
 
 ![](images/h5p/h5p-configuration.png)
  
-- La barre d'outils H5P en dessous du contenu est désactivée par défaut ("Controlled by author" non coché). Cette barre d'outils permet le partage et la réutilisation de contenu. Nous la garderions bien activées, mais le bouton de réemploi doit apparemment être activé pour que l'inclusion dans un bookdown soit possible. Or, si ce bouton est activé, tout le monde peut inclure le contenu dans d'autres sites... et impacter notre quotas d'utilisation de requêtes. Nous ne le souhaitons bien évidemment pas. *Pour récupérer un contenu sous forme de fichier .h5p, il faut réactiver cette option temporairement dans le tableau de bord, et seul l'administrateur du site peut le faire (voir backup H5P plus loin).*
+- La barre d'outils H5P en dessous du contenu est désactivée par défaut ("Controlled by author" non coché). Cette barre d'outils permet le partage et la réutilisation de contenu. Nous la garderions bien activées, mais le bouton de réemploi doit apparemment être activé pour que l'inclusion dans un bookdown soit possible. Or, si ce bouton est activé, tout le monde peut inclure le contenu dans d'autres sites... et impacter notre quotas d'utilisation de requêtes. Nous ne le souhaitons bien évidemment pas. *Pour récupérer un contenu sous forme de fichier .h5p, il faut réactiver cette option temporairement dans le tableau de bord, et seul l'administrateur du site peut le faire (voir Gestion des contenus H5P plus loin).*
 
-- Les résutats utilisateurs ("Log results..." est coché) permet d'avoir des statistiques de base utilisateur par utilisateur sur les H5P. C'est utile, mais il faudra voir à terme l'impact sur l'espace disque utilisé pour cette fonction.
+- Les résultats utilisateurs ("Log results..." est coché) permet d'avoir des statistiques de base utilisateur par utilisateur sur les H5P. C'est utile, mais il faudra voir à terme l'impact sur l'espace disque utilisé pour cette fonction.
 
 - La sauvegarde du contenu ("Allow logged-in users to resume tasks") est activée et utile puisqu'elle permet la mémorisation d'une session à l'autre des sélections dans les contenus H5P pour les utilisateurs enregistrés.
 
@@ -178,7 +178,7 @@ function h5pxapikatchu_custom_insert_data( $actor, $verb, $object, $result, $xap
 }
 ```
 
-TODO: Cela fonctionne, mais pour une utilisation plus robuste, il nous faudra passer les paramètres nécessaires à la requête AJAX sur Wordpress de manière dynamique à nos pages bookdown. Nous pourrions utiliser le même mécanisme que celui utilisé pour transmettre les informations de l'utilisateur avec un `localStorage`, ou plutôt, un `sessionStorage` serait mieux.
+Cela fonctionne, mais pour une utilisation plus robuste, il nous faudra passer les paramètres nécessaires à la requête AJAX sur Wordpress de manière dynamique à nos pages bookdown.
 
 ### wp-h5p-xapi et LRS
 
@@ -194,13 +194,22 @@ En allant sur leur site, on se rend compte qu'il n'est pas possible de créer un
 
 - [Gamipress](https://gamipress.com/) est une solution Open Source et entièrement gratuite de gamification de sites Worpress (l'utilisateur est encouragé à utiliser le site en gagnant des points, des bagdes, un ranking des utilisateurs peut être affiché, etc.). Ils proposent aussi un plugin qui permet d'obtenir des points avec les [activités H5P](https://fr-be.wordpress.org/plugins/gamipress-h5p-integration/). Les badges et la gamification de l'apprentissage est une piste très intéressante que nous devrions développer pour stimuler nos étudiants. Donc, nous explorerons cette piste plus tard (voir aussi la section sur les badges dans Moodle \@ref(moodle)).
 
+### Solution finale choisie
+
+Nous avons vu l'extrême complexité à faire fonctionner H5P/Wordpress avec bookdown. Cependant, nos développements ont abouti à une solution fonctionnelle via le plugin H5PxAPIkatchu paché et du code Javascript rajouté dans le bookdown. Nous avons donc décidé de finaliser cette implémentation de la façon suivante\ :
+
+- Suite à un pull request, l'auteur de H5PxAPIkatchu a modifié son plugin pour permettre de faire appel à une fonction personnalisée pour entegistrer les événements xAPI de H5P où bon nous semble. Nous l'utilisons via une fonction écrite en PHP dans Wordpress pour enregistrer ces informations dans MongoDB ATLAS
+
+- Toute la machinerie Javascript nécessaire dans la page qui inclus un composant H5P dans un iframe est fournie au bookdown via l'extension [learndown](https://www.sciviews.org/learndown/). Ceci est discuté dans la section correspondante (voir \@ref(bookdown)).
+
+
 ## Gestion des contenus H5P
 
 Chaque contenu H5P est indépendant du reste. Attention que les contenus complexes sont volumineux. Par exemple, les vidéos interactives occupent chacune 2,8Mo sur le serveur lorsque les vidéos sont sur youtube (donc, occupation de place minimale puisque la vidéo elle-même n'est **pas** sur le site Wordpress).
 
-Au départ, aucun contenu n'est réalisable car les **librairies** nécessaires ne sont pas encore installée. Mais il n'est pas nécessaire de les installer car il suffit de téléverser du contenu pour que leur installation se fasse automatiquement. Donc, la procédure pragmatique suivante est retenue pour enrichir le site des librairies dont nous avons besoin\ :
+Au départ, aucun contenu n'est réalisable car les **librairies** nécessaires ne sont pas encore installée. Mais il n'est pas nécessaire de les installer car il suffit de téléverser du contenu pour que leur installation se fasse automatiquement (mais si de nouvelles librairies sont nécessaires, il faut alors le faire avec le compte admin de Wordpress). Donc, la procédure pragmatique suivante est retenue pour enrichir le site des librairies dont nous avons besoin\ :
 
-- Pour un type de contenu pas encore supporté, aller sur [h5p.org](https://h5p.org). Se connecter (créer un compte gratuit, si nécessaire).
+- Pour un type de contenu qui n'est pas encore supporté, aller sur [h5p.org](https://h5p.org). Se connecter (créer un compte gratuit, si nécessaire).
 - Aller dans "Examples and Downloads" et choisir un exemple de type de contenu souhaité. Cliquer sur "Reuse". Ou alors aller dans "Contents" -> "Create New Content" et créer un contenu du type souhaité. Puis cliquer sur "Reuse" lorsqu'on est satisfait du contenu.
 
 Voici un exemple avec le contenu de type "True/False".
@@ -211,17 +220,17 @@ Voici un exemple avec le contenu de type "True/False".
 
 ![Une fois le contenu terminé, il suffit de cliquer sur "Reuse" (flèche rouge) et de cliquer sur "Download as an .h5p file" pour récupérer le fichier .h5p.](images/h5p/h5p-new-content3.png)
 
-Ensuite, dans le tableau de bord de Wordpress (pour un utilisateur éditeur), aller dans H5P Content -> Add New. Sélectionner "Téléverser" et indiquer le fichier `.h5p` que l'on vient de sauver, puis "Utiliser".
+Ensuite, dans le tableau de bord de Wordpress (en ayant pris soin de s'être enregistré en qualité d'administrateur), aller dans H5P Content -> Add New. Sélectionner "Téléverser" et indiquer le fichier `.h5p` que l'on vient de sauver, puis "Utiliser".
 
 ![Ajout du contenu H5P sur le site Worpress par téléversement du fichier .h5p.](images/h5p/h5p-new-content4.png)
 
-Une fois que c'est fait, non seulement le contenu est téléversé, mais les librairies requises sont également ajoutées. De cette façon, un autre contenu de ce type peut maintenant être créé *directement* depuis la tableau de bord de Wordpress, H5P content -> Add New.
+Une fois que c'est fait, non seulement le contenu est téléversé, mais les librairies requises sont également ajoutées. De cette façon, un autre contenu de ce type peut maintenant être créé *directement* depuis la tableau de bord de Wordpress, H5P content -> Add New par n'importe quel utilisateur qui a les droits d'édition sur le site (donc, les profs).
 
 ### Backup H5P
 
 Le backup du site entier Wordpress est effectué. Par contre, il est utile d'avoir une copie de nos différents contenus H5P au format de fichier `.h5p`. Pour cela, un administrateur de site doit au préalable temporairement cocher l'option "Toolbar Below Content" dans les paramètres du plugin H5P de Wordpress (tableau de bord), de sorte que le bouton "Reuse" apparaisse en dessus d'un contenu H5P. Pour chaque contenu que l'on souhaite sauvegarder, l'afficher, et cliquer sur son bouton "Reuse" pour récupérer le fichier `.h5p`. Ensuite, placer les fichiers `.h5p` sur p-Cloud dans le répertoire `sdd_h5p_backup`.
 
-TODO: une solution de récupération automatisée des fichiers `.h5p` d'un site devrait être développée à la place, cette procédure ne devrait être utilisée que ponctuellement pour récupéer un ou un petit nombre de contenus H5P.
+**TODO:** une solution de récupération automatisée des fichiers `.h5p` d'un site devrait être développée à la place, cette procédure ne devrait être utilisée que ponctuellement pour récupérer un ou un petit nombre de contenus H5P.
 
 ## Quelques contenus H5P utiles
 
@@ -259,7 +268,7 @@ La visualisation des données impose de développer deux compétences en parall�
 
 ### Autoévaluation
 
-Les learnrs sont des outils de choix que nous appliquons avec succès pour l'autoévaluation des étudiants. Cependant, une autoévaluation plus rapide et plus proche du matériel pédagogique lui-même est encore plus efficace en première ligne (suivi en seconde ligne par des learnrs avec un niveau de difficulté supérieur), et enfin en troisième ligne, les exercices sur données réelles dans un projet RStudio *via* Github Classroom. Nous venons de voir que H5P permet cette autoévaluation directement à l'intérieur des vidéos et des présentations. Il nous manque l'équivalent pour les développements textuels. Les contenus suivants fournissent ce dont nous avons besoin à ce niveau.
+Les learnrs sont des outils de choix que nous appliquons avec succès pour l'autoévaluation des étudiants. Cependant, une autoévaluation plus rapide et plus proche du matériel pédagogique lui-même est encore plus efficace en première ligne (suivi en seconde ligne par des learnrs avec un niveau de difficulté supérieur, en troisième ligne des exercices guidés sur données réelles dans un projet RStudio *via* Github Classroom et enfin en quatrième ligne, des analyses à faire *via* Github Classroom mais avec un guidage minimal). Nous venons de voir que H5P permet cette autoévaluation directement à l'intérieur des vidéos et des présentations. Il nous manque l'équivalent pour les développements textuels. Les contenus suivants fournissent ce dont nous avons besoin à ce niveau.
 
 - [Quizzs](https://h5p.org/question-set) permet de rassembler plusieurs questions successives en un contenu unique avec une note finale pour l'ensemble du genre 4/6 questions répondues correctement.
 

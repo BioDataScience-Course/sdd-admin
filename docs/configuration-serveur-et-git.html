@@ -24,7 +24,7 @@
 <meta name="author" content="Philippe Grosjean &amp; Guyliann Engels" />
 
 
-<meta name="date" content="2020-05-30" />
+<meta name="date" content="2020-08-19" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -351,6 +351,7 @@ code span.wa { color: #bf0303; } /* Warning */
 <li class="chapter" data-level="5.2.1" data-path="enregistrement-h5p-xapi.html"><a href="enregistrement-h5p-xapi.html#h5pxapikatchu"><i class="fa fa-check"></i><b>5.2.1</b> H5PxAPIkatchu</a></li>
 <li class="chapter" data-level="5.2.2" data-path="enregistrement-h5p-xapi.html"><a href="enregistrement-h5p-xapi.html#wp-h5p-xapi-et-lrs"><i class="fa fa-check"></i><b>5.2.2</b> wp-h5p-xapi et LRS</a></li>
 <li class="chapter" data-level="5.2.3" data-path="enregistrement-h5p-xapi.html"><a href="enregistrement-h5p-xapi.html#autres-plugins-h5p"><i class="fa fa-check"></i><b>5.2.3</b> Autres plugins H5P</a></li>
+<li class="chapter" data-level="5.2.4" data-path="enregistrement-h5p-xapi.html"><a href="enregistrement-h5p-xapi.html#solution-finale-choisie"><i class="fa fa-check"></i><b>5.2.4</b> Solution finale choisie</a></li>
 </ul></li>
 <li class="chapter" data-level="5.3" data-path="gestion-des-contenus-h5p.html"><a href="gestion-des-contenus-h5p.html"><i class="fa fa-check"></i><b>5.3</b> Gestion des contenus H5P</a><ul>
 <li class="chapter" data-level="5.3.1" data-path="gestion-des-contenus-h5p.html"><a href="gestion-des-contenus-h5p.html#backup-h5p"><i class="fa fa-check"></i><b>5.3.1</b> Backup H5P</a></li>
@@ -363,7 +364,7 @@ code span.wa { color: #bf0303; } /* Warning */
 <li class="chapter" data-level="5.4.5" data-path="quelques-contenus-h5p-utiles.html"><a href="quelques-contenus-h5p-utiles.html#take-home-message"><i class="fa fa-check"></i><b>5.4.5</b> “Take home message”</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="6" data-path="bookdown.html"><a href="bookdown.html"><i class="fa fa-check"></i><b>6</b> Bookdown</a><ul>
+<li class="chapter" data-level="6" data-path="bookdown.html"><a href="bookdown.html"><i class="fa fa-check"></i><b>6</b> Bookdown &amp; learndown</a><ul>
 <li class="chapter" data-level="6.1" data-path="intégration-dans-wordpress.html"><a href="intégration-dans-wordpress.html"><i class="fa fa-check"></i><b>6.1</b> Intégration dans Wordpress</a></li>
 <li class="chapter" data-level="6.2" data-path="contenu-h5p-dans-bookdown.html"><a href="contenu-h5p-dans-bookdown.html"><i class="fa fa-check"></i><b>6.2</b> Contenu H5P dans bookdown</a></li>
 </ul></li>
@@ -407,7 +408,7 @@ code span.wa { color: #bf0303; } /* Warning */
 <ul>
 <li>Par sFTP (TODO: détails)</li>
 <li>Par Console SSH (TODO: détails). La console n’est pas active en permanence. Il faut l’activer dans le panneau de configuration du simple hosting sur Gandi.net. Cette activation reste valable pour 2 heures seulement par sécurité.</li>
-<li>Via git. C’est le plus simple pour développer et synchroniser son site. C’est d’ailleurs aussi la seule façon de faire pour ajouter des dépendances à PHP via composer (et nous aurons besoin de rajouter une dépendance par rapport à mongodb pour enregistrer les événements H5P xAPI dans notre base de données).</li>
+<li>Via git. C’est le plus simple pour développer et synchroniser son site. C’est d’ailleurs aussi la seule façon de faire pour ajouter des dépendances à PHP via composer (et nous aurons besoin de rajouter une dépendance par rapport à MongoDB pour enregistrer les événements H5P xAPI dans notre base de données).</li>
 </ul>
 <div id="sécurisation-du-site-wordpress" class="section level4">
 <h4><span class="header-section-number">4.3.0.1</span> Sécurisation du site Wordpress</h4>
@@ -416,7 +417,7 @@ code span.wa { color: #bf0303; } /* Warning */
 </ul>
 <pre><code>RewriteRule ^xmlrpc\.php$ &quot;http\:\/\/0\.0\.0\.0\/&quot; [R=301,L]</code></pre>
 <ul>
-<li><p>Utilisation des plugins “Health Check &amp; Troubleshooting” et “WP-Optimize” pour diagnostiquer et remédier aux problèmes potentiels. Un seul problème reste impossible à résoudre pour l’instant, il s’agit de “A plugin has prevented updates by disabling <code>wp_version_check()</code>.” qui peut azvoir de nombreuses origines, et dans le cas cde notre site, nous n’avons pa pu détecter la cause. Même en désactivant tous les plugins et le thème, le message reste.</p></li>
+<li><p>Utilisation des plugins “Health Check &amp; Troubleshooting” et “WP-Optimize” pour diagnostiquer et remédier aux problèmes potentiels. Un seul problème reste impossible à résoudre pour l’instant, il s’agit de “A plugin has prevented updates by disabling <code>wp_version_check()</code>.” qui peut avoir de nombreuses origines, et dans le cas de notre site, nous n’avons pa pu détecter la cause. Même en désactivant tous les plugins et le thème, le message reste.</p></li>
 <li><p>Nous avons aussi utilisé l’outil de sécurité et d’audit de Chrome dans les outils développeurs pour détecter les failles éventuelles et les erreurs côté client (Javascript, CSS, …), et nous assurer que le site est sain. Globalement, il n’y a pas de failles majeures, mais certains aspects pourraient être améliorés pour avoir un site plus rapide, par exemple. Nous examinerons ces points plus tard.</p></li>
 </ul>
 </div>
@@ -440,7 +441,7 @@ ssh-keygen -t rsa -b 4096 -C &#39;&lt;user@email.com&gt;&#39;</code></pre>
 </div>
 <div id="ajout-de-mongodb-pour-php" class="section level3">
 <h3><span class="header-section-number">4.3.1</span> Ajout de mongodb pour PHP</h3>
-<p>Le serveur sur Gandi.net n’autorise qu’une seule manière de rajouter des dépendances pour PHP : via git + ssh en utilisant <code>composer</code>. Et il faut créer les fichiers <code>composer.json</code> et <code>composer.lock</code> sur une machine locale avant de pouvoir faire un push sur le serveur. Cela signifie d’avoir PHP et la dépendance mongodb pour PHP installés localement. Ceci n’est pas facile, et il faut les mêmes versions que sur le serveur. Comme le PHP sous MacOS Catalina a la même version, j’ai d’abord essayé sur le Mac… sans succès car la puce de sécurité T2 empêche des modifications indispensables dans les dossiers <code>\usr\...</code> pour pouvoir compiler mongodb pour PHP. J’ai essayé aussi avec la SciViews Boxes 2019 (mais version PHP 7.2 trop ancienne) et une VirtualBox Ubuntu Server 20.04, mais version PHP 7.4 trop élevée. Gasp ! Finalement, j’ai pu le faire avec une VirtualBox Xubuntu 19.10. La procédure est détaillée ci-dessous.</p>
+<p>Le serveur sur Gandi.net n’autorise qu’une seule manière de rajouter des dépendances pour PHP : via git + ssh en utilisant <code>composer</code>. Et il faut créer les fichiers <code>composer.json</code> et <code>composer.lock</code> sur une machine locale avant de pouvoir faire un push sur le serveur. Cela signifie d’avoir PHP et la dépendance mongodb pour PHP installés localement. Ceci n’est pas facile, et il faut les mêmes versions que sur le serveur. Comme le PHP sous MacOS Catalina a la même version, j’ai d’abord essayé sur le Mac… sans succès car la puce de sécurité T2 empêche des modifications indispensables dans les dossiers <code>\usr\...</code> pour pouvoir compiler mongodb pour PHP. J’ai essayé aussi avec la SciViews Box 2019 (mais version PHP 7.2 trop ancienne) et une VirtualBox Ubuntu Server 20.04, mais version PHP 7.4 trop élevée. Gasp ! Finalement, j’ai pu le faire avec une VirtualBox Xubuntu 19.10. La procédure est détaillée ci-dessous.</p>
 <ul>
 <li><p>Noter la version X.Y de PHP utilisée sur le serveur (ici 7.3). Il faudra la même en local.</p></li>
 <li><p>Aller dans MongoDB Atlas et regarder la version de MongoDB déployée (ici 4.2). Il faudra une version de l’extension mongodb qui supporte à la fois la version de PHP et celle de MongoDB qui gère notre base de données.</p></li>
@@ -465,7 +466,7 @@ sudo reboot</code></pre>
 <li>Il se peut que la machine virtuelle rebascule en QWERTY. Vérifier et corriger à nouveau. Ensuite, installer PHP et ses dépendances nécessaires :</li>
 </ul>
 <pre><code>sudo apt install php7.3-cli php7.3-dev php-pear php-mongodb composer</code></pre>
-<p>Ensuite, nous devrions pouvoir créer les fichiers nécessaires via la commande <code>composer require mongodb/mongodb</code>, mais cela ne fonctionne pas lorsque <code>php-mongodb</code> est installé via le package Ubuntu. Nous devons le compiler nous-même avec <code>pecl</code> sur la machine<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a> :</p>
+<p>Ensuite, nous devrions pouvoir créer les fichiers nécessaires via la commande <code>composer require mongodb/mongodb</code>, mais cela ne fonctionne pas lorsque <code>php-mongodb</code> est installé via le package Ubuntu. Nous devons le compiler nous-même avec <code>pecl</code> sur la machine<a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a> :</p>
 <pre><code># Créer un répertoire dans le dossier partagé et s&#39;y placer
 mkdir /media/sf_MacDesktop/php-mongodb
 cd /media/sf_MacDesktop/php-mongodb
@@ -475,14 +476,14 @@ sudo pecl install mongodb
 composer require mongodb/mongodb</code></pre>
 <ul>
 <li><p>Copier <code>composer.json</code> et <code>composer.lock</code> ainsi obtenus à la racine du dépôt git, faire un commit, un push et un deploy. Cette fois-ci mongodb PHP 1.7 semble s’être bien installé sur le serveur lors du deploy.</p></li>
-<li><p>Faire un test dans Wordpress. Aller jusqu’à une contenu H5P quelconque sur le site et interagir avec lui. Aller ensuite voir si les données correspondantes ont bien été enregistrées dans notre MongoDB ATLAS, dans la collection <code>sdd.h5p</code>. Si pas, vérifier si ces mêmes données sont enregistrées dans H5PxAPIkatchu dans le tableau de bord Wordpress. Si c’est le cas, c’est un problème d’accès à la base de données MongoDB ATLAS, sinon, c’est un problème plus profond : est-ce que l’enregistrement xAPI est bien activé, et est-ce que les extensions bookdown nécessaires ont bien été injectées via un fichier <code>header.html</code> (voir configuration du bookdown <a href="bookdown.html#bookdown">6</a>) ? L’option de débogage de H5PxAPIkatchu sevrait s’avérer utile ici pour déterminer ce qui ne va pas, voir @reg(h5p).</p></li>
+<li><p>Faire un test dans Wordpress. Aller jusqu’à une contenu H5P quelconque sur le site et interagir avec lui. Aller ensuite voir si les données correspondantes ont bien été enregistrées dans notre MongoDB ATLAS, dans la collection <code>sdd.h5p</code>. Si pas, vérifier si ces mêmes données sont enregistrées dans H5PxAPIkatchu dans le tableau de bord Wordpress. Si c’est le cas, c’est un problème d’accès à la base de données MongoDB ATLAS, sinon, c’est un problème plus profond : est-ce que l’enregistrement xAPI est bien activé, et est-ce que les extensions bookdown nécessaires ont bien été injectées grâce à une configuration correcte de <a href="https://www.sciviews.org/learndown/">learndown</a> ? L’option de débogage de H5PxAPIkatchu sevrait s’avérer utile ici pour déterminer ce qui ne va pas, voir @reg(h5p).</p></li>
 </ul>
 </div>
 </div>
 <div class="footnotes">
 <hr />
-<ol start="1">
-<li id="fn1"><p>Je suis arrivé à créer <code>composer.lock</code> via la commande <code>composer update</code> en ayant été écrire à la main un <code>composer.json</code> qui contient les lignes minimales renseignées sur la page d’aide de <a href="https://docs.gandi.net/fr/simple_hosting/langages/php.html#sommaire">Gandi.net</a>, mais j’aboutis à une version trop ancienne du driver, et de toutes façons, c’est un bricolage qui ne me plaît pas !<a href="configuration-serveur-et-git.html#fnref1" class="footnote-back">↩︎</a></p></li>
+<ol start="2">
+<li id="fn2"><p>Je suis arrivé à créer <code>composer.lock</code> via la commande <code>composer update</code> en ayant été écrire à la main un <code>composer.json</code> qui contient les lignes minimales renseignées sur la page d’aide de <a href="https://docs.gandi.net/fr/simple_hosting/langages/php.html#sommaire">Gandi.net</a>, mais j’aboutis à une version trop ancienne du driver, et de toutes façons, c’est un bricolage qui ne me plaît pas !<a href="configuration-serveur-et-git.html#fnref2" class="footnote-back">↩︎</a></p></li>
 </ol>
 </div>
 <div id="disqus_thread"></div>

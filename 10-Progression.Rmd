@@ -23,13 +23,13 @@ vembedr::embed_youtube("xp0O2vi8DX4", width = 770, height = 433)
 
 Les aides et encouragements au travail que nous avons mis en place de manière utile sont\ :
 
-- L'*émulation personnelle* au travers de point reçu si l'on fait tous les exercices (les badges, et la "gamification" en général de l'apprentissage sont également à considérer sérieusement dans ce contexte),
+- L'*émulation personnelle* au travers de points reçus si l'on fait tous les exercices (les badges, et la "gamification" en général de l'apprentissage sont également à considérer sérieusement dans ce contexte),
 
 - La *valorisation d'un comportement ou d'un résultat positif au delà de la moyenne*  à l'aide de points bonus (on est toujours dans la gratification et la gamification ici),
 
-- Montrer que nous (en temps qu'enseignants), nous nous *intéressons réellement à leur travail*. Cela tient à des petits détails\ : des retours sous forme de courts commentaires, des relances, des questions, des encouragements, la reconnaissance de leurs progrès, ...
+- Montrer que nous (en qualité d'enseignants), nous nous *intéressons réellement à leur travail*. Cela tient à des petits détails\ : des retours sous forme de courts commentaires, des relances, des questions, des encouragements, la reconnaissance de leurs progrès, ...
 
-- l'*entre-aide*, faire expliquer les points difficiles par un collègue qui les ont compris est extrêmement efficace. En plus, cela permet de mitiger un aspect difficile à gérer\ : la différence de vitesse d'apprentissage entre les "bons" et les "mauvais" étudiants (non, il n'y a pas de bons et de mauvais étudiants, nous le savons, il y a juste des étudiants avec des facultés et des motivations différentes... mais certains sont quand même beaucoup plus lents et **énervants** que d'autres). Au lieu de se tourner les pouces, demander à ceux qui ont fini en avance d'expliquer aux autres permet d'utiliser efficacement le temps et les ressources humaine en classe.
+- l'*entre-aide*, faire expliquer les points difficiles par un collègue qui les ont compris est extrêmement efficace. En plus, cela permet de mitiger un aspect difficile à gérer\ : la différence de vitesse d'apprentissage entre les "bons" et les "mauvais" étudiants (non, il n'y a pas de bons et de mauvais étudiants, nous le savons, il y a juste des étudiants avec des facultés et des motivations différentes... mais certains sont quand même beaucoup plus lents et **énervants** que d'autres). Au lieu de se tourner les pouces, demander à ceux qui ont fini en avance d'expliquer aux autres permet d'utiliser efficacement le temps et les ressources humaines en classe.
 
 - Les *travaux de groupes*, les *challenges* (par exemple, les étudiants doivent reproduire un graphique difficile), les *compétitions* (une course contre le temps et/ou entre plusieurs groupes pour résoudre un problème) participent efficacement à dynamiser le travail en classe et à varier les activités.
 
