@@ -28,9 +28,24 @@ Comme l'organisation contient plusieurs centaines de dépôts, il est utile de l
 
 Nous utilisons [Github Classroom](https://classroom.github.com/classrooms) pour générer la distribution des travaux aux étudiants sous forme de dépôts Github.
 
-**TODO: Guyliann: les éléments importants de la gestion de Github Classroom sont à présenter ici...**
 
-**TODO: intégration de Github Classroom avec Moodle, voir** https://classroom.github.com/help/setup-moodle & https://classroom.github.com/help/import-roster-from-lms.
+Github Classroom se lie à une organisation Github. Il permet de réaliser différentes classes afin d'organiser les cohortes d'étudiants. Les conventions de noms sont similaire aux convention présentée précédemment. Par exemple, la classe sdd1-19m correspond au cours de Science des données biologiques I donné aux étudiants montois de l'année académique 2019-2020. 
+
+Au sein de chaque classe, il est possible de créer des exercices individuels ou par groupe que l'on nomme des assignations (*assignment* en anglais). Chaque nom d'assignation débute par le code lié à la classe. Cette nomenclature permet un gestion simplifié de l'organisation sur Github. Par exemple, l'assignation `sdd2-20m-mod8` porte sur un exercice ciblé sur le module 8 du cours de science des données biologiques 2 pour les étudiants montois suivant ce cours durant l'année académique 2020-2021. Si le dépôt est complexe et porte sur plusieurs modules, il portera un nom lié au travail comme `sdd2-20m-biometry`. 
+
+
+Les exercices peuvent employer un dépôt template afin de guider les étudiants. Nous fournissons toujours un dépôt template pour nos exercices. Un dépôt template est un dépôt Github reconnu comme *Template repository* sur Github (ce paramètre est sélectionnable dans les paramètres du dépôt). 
+
+Parmi les paramètres important de l'exercice, il est important de spécifier si le dépôtt est privée ou public.
+
+Un lien url est fourni pour chaque exercice afin d'inviter les étudiants à rejoindre l'exercice. Pour les exercices individuels, Github Classroom va créer un dépôt généré à partir du dépôt template dans l'organisation BioDataScience portant le nom de l'exercice suivi du nom d'utilisateur Github de l'étudiant ( sdd2-20m-mod8-GuyliannEngels). Les travaux de groupe portent le nom de l'exercice suivi du nom du groupe.
+
+
+Github Classroom est en évolution constant. De nouvelles fonctionnalités apparaissent régulièrement afin d'améliorer la gestion des classes et des exercices. Il développe par exemple l'[intégration de Github Classroom avec Moodle](https://classroom.github.com/help/setup-moodle). 
+
+
+Github Classroom propose également l'application [GitHub Classroom Assistant](https://classroom.github.com/assistant) afin de télécharger l'ensemble des dépôts lié à un exercice dans un dossier de notre choix.
+
 
 ```{block2, type='note'}
 Une autre ressource intéressante dans le contexte de l'utilisation de Github/Github Classroom pour l'enseignement est [Github Education](https://education.github.com).
