@@ -13,7 +13,7 @@
   <meta property="og:url" content="http://phgrosjean.sciviews.org/bookdown-test/" />
   <meta property="og:image" content="http://phgrosjean.sciviews.org/bookdown-test/images/front-cover.png" />
   <meta property="og:description" content="Administration de BioDataScience-Course." />
-  <meta name="github-repo" content="phgrosjean/bookdown-test" />
+  <meta name="github-repo" content="BioDataScience-Course/sdd-admin" />
 
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" content="Chapitre 6 Bookdown &amp; learndown | BioDataScience Administration" />
@@ -32,7 +32,7 @@
   
   
 <link rel="prev" href="quelques-contenus-h5p-utiles.html"/>
-<link rel="next" href="intégration-dans-wordpress.html"/>
+<link rel="next" href="création-dun-bookdownlearndown.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -365,8 +365,19 @@ code span.wa { color: #bf0303; } /* Warning */
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="6" data-path="bookdown.html"><a href="bookdown.html"><i class="fa fa-check"></i><b>6</b> Bookdown &amp; learndown</a><ul>
-<li class="chapter" data-level="6.1" data-path="intégration-dans-wordpress.html"><a href="intégration-dans-wordpress.html"><i class="fa fa-check"></i><b>6.1</b> Intégration dans Wordpress</a></li>
-<li class="chapter" data-level="6.2" data-path="contenu-h5p-dans-bookdown.html"><a href="contenu-h5p-dans-bookdown.html"><i class="fa fa-check"></i><b>6.2</b> Contenu H5P dans bookdown</a></li>
+<li class="chapter" data-level="6.1" data-path="création-dun-bookdownlearndown.html"><a href="création-dun-bookdownlearndown.html"><i class="fa fa-check"></i><b>6.1</b> Création d’un bookdown/learndown</a><ul>
+<li class="chapter" data-level="6.1.1" data-path="création-dun-bookdownlearndown.html"><a href="création-dun-bookdownlearndown.html#readme.md"><i class="fa fa-check"></i><b>6.1.1</b> README.md</a></li>
+<li class="chapter" data-level="6.1.2" data-path="création-dun-bookdownlearndown.html"><a href="création-dun-bookdownlearndown.html#bookdown.yml"><i class="fa fa-check"></i><b>6.1.2</b> _bookdown.yml</a></li>
+<li class="chapter" data-level="6.1.3" data-path="création-dun-bookdownlearndown.html"><a href="création-dun-bookdownlearndown.html#output.yml"><i class="fa fa-check"></i><b>6.1.3</b> _output.yml</a></li>
+<li class="chapter" data-level="6.1.4" data-path="création-dun-bookdownlearndown.html"><a href="création-dun-bookdownlearndown.html#index.html"><i class="fa fa-check"></i><b>6.1.4</b> index.html</a></li>
+<li class="chapter" data-level="6.1.5" data-path="création-dun-bookdownlearndown.html"><a href="création-dun-bookdownlearndown.html#header.html-header0.html"><i class="fa fa-check"></i><b>6.1.5</b> header.html &amp; header0.html</a></li>
+<li class="chapter" data-level="6.1.6" data-path="création-dun-bookdownlearndown.html"><a href="création-dun-bookdownlearndown.html#footer.html"><i class="fa fa-check"></i><b>6.1.6</b> footer.html</a></li>
+<li class="chapter" data-level="6.1.7" data-path="création-dun-bookdownlearndown.html"><a href="création-dun-bookdownlearndown.html#style.css-style0.css"><i class="fa fa-check"></i><b>6.1.7</b> style.css &amp; style0.css</a></li>
+<li class="chapter" data-level="6.1.8" data-path="création-dun-bookdownlearndown.html"><a href="création-dun-bookdownlearndown.html#setup.r"><i class="fa fa-check"></i><b>6.1.8</b> setup.R</a></li>
+<li class="chapter" data-level="6.1.9" data-path="création-dun-bookdownlearndown.html"><a href="création-dun-bookdownlearndown.html#contenu"><i class="fa fa-check"></i><b>6.1.9</b> Contenu</a></li>
+</ul></li>
+<li class="chapter" data-level="6.2" data-path="intégration-dans-wordpress.html"><a href="intégration-dans-wordpress.html"><i class="fa fa-check"></i><b>6.2</b> Intégration dans Wordpress</a></li>
+<li class="chapter" data-level="6.3" data-path="contenu-h5p-dans-bookdown.html"><a href="contenu-h5p-dans-bookdown.html"><i class="fa fa-check"></i><b>6.3</b> Contenu H5P dans bookdown</a></li>
 </ul></li>
 <li class="chapter" data-level="7" data-path="shiny.html"><a href="shiny.html"><i class="fa fa-check"></i><b>7</b> Shiny</a></li>
 <li class="chapter" data-level="8" data-path="moodle.html"><a href="moodle.html"><i class="fa fa-check"></i><b>8</b> Moodle</a><ul>
@@ -404,8 +415,18 @@ code span.wa { color: #bf0303; } /* Warning */
             <section class="normal" id="section-">
 <div id="bookdown" class="section level1">
 <h1><span class="header-section-number">Chapitre 6</span> Bookdown &amp; learndown</h1>
-<p>…</p>
-<p><strong>TODO: trouver un moyen simple de mettre à jour les pages statiques bookdown des cours dans Wordpress (ainsi que les données pour les rapports de progression des étudiants dans <code>/users</code>).</strong></p>
+<p>Un matériel pédagogique riche et varié est un plus indéniable pour un cours. La même matière présentée de différentes façon stimule les étudiants ayant des sensibilités différentes, et permet une certaine répétition non monotone du message, une des clé d’un apprentissage réussi. Cependant, lorsque nos avons commencé à produire des vidéos, des applications learnr, des dépôts Github, des présentations sous forme de diapositives, … les étudiants étaient un peu perdus dans la quantité de matériel disséminé en différents endroits. <strong>Il est important de centraliser et organiser de manière logique l’ensemble du matériel pédagogique !</strong> Il faut que cette centralisation propose <strong>un file conducteur</strong>, tout en permettant par la suite de <strong>retrouver facilement l’information</strong> souhaitée plus tard. La présentation sous forme de bookdown offre ces atouts :</p>
+<ul>
+<li>En organisant la matière par chapitres, et grâce à la table des matières présente à la gauche, l’étudiant appréhende immédiatement le fil conducteur du cours.</li>
+<li>La table des matières autant que l’outil de recherche dans le bookdown tout entier permet de retrouver plus tard l’information facilement<a href="#fn7" class="footnote-ref" id="fnref7"><sup>7</sup></a>.</li>
+</ul>
+<p>Le format bookdown est conçu principalement pour écrire des document de type “textbook” linéaires, même si au fil du temps, il permet d’intégrer des éléments plus interactifs et présentant la matière différemment comme des applications Shiny ou des vidéos. <strong>Les extensions à bookdown proposées par le package {learndown}</strong> complète encore les possibilités d’y inclure du matériel interactif et contextuel via H5P, les applications Shiny ou learnr qui peuvent être démarrées <em>in situ</em> à la demande, le contenu contextuel en fonction d’une institution ou d’un cours lié à l’étudiant, ou les zones de détail déroulantes. Mais toutes ces additions demandent une adaptation profonde du document bookdown. Le plus facile est donc de démarrer par un fork depuis le dépôt template <a href="https://github.com/phgrosjean/bookdown-test">bookdown-test</a>. La section suivante explique comment créer un nouveau site bookdown agrémenté des ajouts de {learndown} via ce fork, et explique ensuite comment l’intégrer dans un site Wordpress. Les fonctionnalités nouvelles offertes par {learndown} sont détaillées par après.</p>
+</div>
+<div class="footnotes">
+<hr />
+<ol start="7">
+<li id="fn7"><p>Un autre projet nommé <strong>do-it-yourstat</strong> vise à proposer également un tableau de bord complètement personnalisable afin d’organiser son matériel didactique librement et d’y accéder de différentes manières, y compris par cartes mentales, par mots clés, par diagramme décisionnel, …<a href="bookdown.html#fnref7" class="footnote-back">↩︎</a></p></li>
+</ol>
 </div>
 <div id="disqus_thread"></div>
 <script>
@@ -433,7 +454,7 @@ s.setAttribute('data-timestamp', +new Date());
         </div>
       </div>
 <a href="quelques-contenus-h5p-utiles.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="intégration-dans-wordpress.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="création-dun-bookdownlearndown.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

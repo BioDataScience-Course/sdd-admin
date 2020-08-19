@@ -13,7 +13,7 @@
   <meta property="og:url" content="http://phgrosjean.sciviews.org/bookdown-test/" />
   <meta property="og:image" content="http://phgrosjean.sciviews.org/bookdown-test/images/front-cover.png" />
   <meta property="og:description" content="Administration de BioDataScience-Course." />
-  <meta name="github-repo" content="phgrosjean/bookdown-test" />
+  <meta name="github-repo" content="BioDataScience-Course/sdd-admin" />
 
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" content="4.3 Configuration serveur et git | BioDataScience Administration" />
@@ -365,8 +365,19 @@ code span.wa { color: #bf0303; } /* Warning */
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="6" data-path="bookdown.html"><a href="bookdown.html"><i class="fa fa-check"></i><b>6</b> Bookdown &amp; learndown</a><ul>
-<li class="chapter" data-level="6.1" data-path="intégration-dans-wordpress.html"><a href="intégration-dans-wordpress.html"><i class="fa fa-check"></i><b>6.1</b> Intégration dans Wordpress</a></li>
-<li class="chapter" data-level="6.2" data-path="contenu-h5p-dans-bookdown.html"><a href="contenu-h5p-dans-bookdown.html"><i class="fa fa-check"></i><b>6.2</b> Contenu H5P dans bookdown</a></li>
+<li class="chapter" data-level="6.1" data-path="création-dun-bookdownlearndown.html"><a href="création-dun-bookdownlearndown.html"><i class="fa fa-check"></i><b>6.1</b> Création d’un bookdown/learndown</a><ul>
+<li class="chapter" data-level="6.1.1" data-path="création-dun-bookdownlearndown.html"><a href="création-dun-bookdownlearndown.html#readme.md"><i class="fa fa-check"></i><b>6.1.1</b> README.md</a></li>
+<li class="chapter" data-level="6.1.2" data-path="création-dun-bookdownlearndown.html"><a href="création-dun-bookdownlearndown.html#bookdown.yml"><i class="fa fa-check"></i><b>6.1.2</b> _bookdown.yml</a></li>
+<li class="chapter" data-level="6.1.3" data-path="création-dun-bookdownlearndown.html"><a href="création-dun-bookdownlearndown.html#output.yml"><i class="fa fa-check"></i><b>6.1.3</b> _output.yml</a></li>
+<li class="chapter" data-level="6.1.4" data-path="création-dun-bookdownlearndown.html"><a href="création-dun-bookdownlearndown.html#index.html"><i class="fa fa-check"></i><b>6.1.4</b> index.html</a></li>
+<li class="chapter" data-level="6.1.5" data-path="création-dun-bookdownlearndown.html"><a href="création-dun-bookdownlearndown.html#header.html-header0.html"><i class="fa fa-check"></i><b>6.1.5</b> header.html &amp; header0.html</a></li>
+<li class="chapter" data-level="6.1.6" data-path="création-dun-bookdownlearndown.html"><a href="création-dun-bookdownlearndown.html#footer.html"><i class="fa fa-check"></i><b>6.1.6</b> footer.html</a></li>
+<li class="chapter" data-level="6.1.7" data-path="création-dun-bookdownlearndown.html"><a href="création-dun-bookdownlearndown.html#style.css-style0.css"><i class="fa fa-check"></i><b>6.1.7</b> style.css &amp; style0.css</a></li>
+<li class="chapter" data-level="6.1.8" data-path="création-dun-bookdownlearndown.html"><a href="création-dun-bookdownlearndown.html#setup.r"><i class="fa fa-check"></i><b>6.1.8</b> setup.R</a></li>
+<li class="chapter" data-level="6.1.9" data-path="création-dun-bookdownlearndown.html"><a href="création-dun-bookdownlearndown.html#contenu"><i class="fa fa-check"></i><b>6.1.9</b> Contenu</a></li>
+</ul></li>
+<li class="chapter" data-level="6.2" data-path="intégration-dans-wordpress.html"><a href="intégration-dans-wordpress.html"><i class="fa fa-check"></i><b>6.2</b> Intégration dans Wordpress</a></li>
+<li class="chapter" data-level="6.3" data-path="contenu-h5p-dans-bookdown.html"><a href="contenu-h5p-dans-bookdown.html"><i class="fa fa-check"></i><b>6.3</b> Contenu H5P dans bookdown</a></li>
 </ul></li>
 <li class="chapter" data-level="7" data-path="shiny.html"><a href="shiny.html"><i class="fa fa-check"></i><b>7</b> Shiny</a></li>
 <li class="chapter" data-level="8" data-path="moodle.html"><a href="moodle.html"><i class="fa fa-check"></i><b>8</b> Moodle</a><ul>
@@ -421,7 +432,7 @@ code span.wa { color: #bf0303; } /* Warning */
 <li><p>Nous avons aussi utilisé l’outil de sécurité et d’audit de Chrome dans les outils développeurs pour détecter les failles éventuelles et les erreurs côté client (Javascript, CSS, …), et nous assurer que le site est sain. Globalement, il n’y a pas de failles majeures, mais certains aspects pourraient être améliorés pour avoir un site plus rapide, par exemple. Nous examinerons ces points plus tard.</p></li>
 </ul>
 </div>
-<div id="utilisation-de-git" class="section level4">
+<div id="wordpress-git" class="section level4">
 <h4><span class="header-section-number">4.3.0.2</span> Utilisation de git</h4>
 <p>Il faut git et un client SSH installé (pas de problèmes pour le Mac ou Linux). Les infos pour utiliser git sont dans la page de gestion du site <code>wp.sciviews.org</code> sur Gandi.net. Dans un premier temps, l’identification se fait via un mot de passe. Voici comment cloner le dépôt git à partir d’un répertoire racine de votre choix, mais nous aurons absolument besoin que ce répertoire racine soit le même que celui où les dépôts Github de BioDataScience-Course sont également placés (sur le Mac, il est facile de s’y placer en tapant <code>cd</code> suivi d’une espace, et puis en allant faire un drag&amp;drop du dossier depuis le Finder vers le terminal, puis d’exécuter cette commande).</p>
 <pre><code># Placez-vous dans le bon dossier

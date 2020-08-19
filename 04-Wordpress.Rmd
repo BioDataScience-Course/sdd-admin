@@ -105,7 +105,7 @@ RewriteRule ^xmlrpc\.php$ "http\:\/\/0\.0\.0\.0\/" [R=301,L]
 
 - Nous avons aussi utilisé l'outil de sécurité et d'audit de Chrome dans les outils développeurs pour détecter les failles éventuelles et les erreurs côté client (Javascript, CSS, ...), et nous assurer que le site est sain. Globalement, il n'y a pas de failles majeures, mais certains aspects pourraient être améliorés pour avoir un site plus rapide, par exemple. Nous examinerons ces points plus tard.
 
-#### Utilisation de git
+#### Utilisation de git {#wordpress-git}
 
 Il faut git et un client SSH installé (pas de problèmes pour le Mac ou Linux). Les infos pour utiliser git sont dans la page de gestion du site `wp.sciviews.org` sur Gandi.net. Dans un premier temps, l'identification se fait via un mot de passe. Voici comment cloner le dépôt git à partir d'un répertoire racine de votre choix, mais nous aurons absolument besoin que ce répertoire racine soit le même que celui où les dépôts Github de BioDataScience-Course sont également placés (sur le Mac, il est facile de s'y placer en tapant `cd` suivi d'une espace, et puis en allant faire un drag&drop du dossier depuis le Finder vers le terminal, puis d'exécuter cette commande).
 

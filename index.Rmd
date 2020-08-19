@@ -13,7 +13,7 @@ documentclass: book
 bibliography: [book.bib, packages.bib]
 biblio-style: apalike
 link-citations: yes
-github-repo: phgrosjean/bookdown-test
+github-repo: BioDataScience-Course/sdd-admin
 url: 'http\://phgrosjean.sciviews.org/bookdown-test/'
 description: "Administration de BioDataScience-Course."
 cover-image: "images/front-cover.png"

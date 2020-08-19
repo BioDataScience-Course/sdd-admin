@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>8.2 Badges | BioDataScience Administration</title>
+  <title>6.1 Création d’un bookdown/learndown | BioDataScience Administration</title>
   <meta name="description" content="Administration de BioDataScience-Course." />
   <meta name="generator" content="bookdown 0.18 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="8.2 Badges | BioDataScience Administration" />
+  <meta property="og:title" content="6.1 Création d’un bookdown/learndown | BioDataScience Administration" />
   <meta property="og:type" content="book" />
   <meta property="og:url" content="http://phgrosjean.sciviews.org/bookdown-test/" />
   <meta property="og:image" content="http://phgrosjean.sciviews.org/bookdown-test/images/front-cover.png" />
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="BioDataScience-Course/sdd-admin" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="8.2 Badges | BioDataScience Administration" />
+  <meta name="twitter:title" content="6.1 Création d’un bookdown/learndown | BioDataScience Administration" />
   
   <meta name="twitter:description" content="Administration de BioDataScience-Course." />
   <meta name="twitter:image" content="http://phgrosjean.sciviews.org/bookdown-test/images/front-cover.png" />
@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="gestion-des-cours.html"/>
-<link rel="next" href="notes.html"/>
+<link rel="prev" href="bookdown.html"/>
+<link rel="next" href="intégration-dans-wordpress.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -413,15 +413,84 @@ code span.wa { color: #bf0303; } /* Warning */
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="badges" class="section level2">
-<h2><span class="header-section-number">8.2</span> Badges</h2>
-<p>Les badges sont très utiles car ils matérialisent la progression des étudiants. C’est à la fois une façon ludique d’apprendre, et un moyen efficace de pousser un étudiant à travailler. Les badges sont générés dans Moodle, mais bien sûr, ils sont liés à des …. activités Moodle. Avec nos applications externes, nous ne pouvons fournir des badges que manuellement, ce qui devient très vite laborieux. <strong>TODO:</strong> trouver un moyen d’automatiser l’octroi de badges. Moodle peut se connecter à <a href="https://badgr.io" class="uri">https://badgr.io</a>, et nous pouvons peut-être travailler via son interface ? A creuser !</p>
-<p>Pour créer des badges, nous pouvons utiliser une <a href="https://www.openbadges.me/designer.html">application en ligne</a>. Il suffit d’indiquer son adresse email, et de concevoir son badge. La même interface peut d’ailleurs être utilisée pour concevoir visuellement des hex-stickers (à faible résolution toutefois puisque c’est des fichiers .png de 200x200 pixels). Voici un exemple de badge que nous pourrions utiliser dans nos cours :</p>
+<div id="création-dun-bookdownlearndown" class="section level2">
+<h2><span class="header-section-number">6.1</span> Création d’un bookdown/learndown</h2>
+<p>Les fonctions supplémentaires relatives à H5P et Shiny/learnr proposées par {learndown}, ainsi que l’intégration à Wordpress impliquent des modifications non triviales dans les paramètres de bookdown. Le plus simple est donc de partir sur la base d’un template fonctionnel. Ce template est fourni à partir du dépôt Github <a href="https://github.com/phgrosjean/bookdown-test">phgrosjean/bookdown-test</a>. La procédure suivante explique comment créer un nouveau bookdown sur base de ce template. Si par contre, l’objectif est de <em>transformer</em> un bookdown existant, alors comparez les différents fichiers par rapport à ce même dépôt et modifiez-les en conséquence.</p>
+<ol style="list-style-type: decimal">
+<li>Naviguez vers <a href="https://github.com/phgrosjean/bookdown-test">https://github.com/phgrosjean/bookdown-test</a> et cliquez sur le bouton <code>Use this template</code>.</li>
+</ol>
 <div class="figure">
-<img src="images/moodle/sdd1-02visualisation1.png" alt="" />
-<p class="caption">Exemple de badge</p>
+<img src="images/bookdown/bookdown-fork1.png" alt="" />
+<p class="caption">Partez du template Github <code>bookdown-test</code></p>
 </div>
-<p>Les images correspondant à nos différents badges sont sur p-Cloud, dans le sous-dossier <code>sdd_badges</code>.</p>
+<ol start="2" style="list-style-type: decimal">
+<li>Choisissez une organisation pour laquelle vous avez les droits suffisants sur Github, et indiquez un nom pour votre nouveau dépôt. Vous pouvez également ajouter une description, mettre le dépôt en privé. Il n’est pas utile d’inclure toutes les branches : seule la branche <code>master</code> nous intéresse. Ensuite, cliquez sur <code>Create repository from template</code>.</li>
+</ol>
+<div class="figure">
+<img src="images/bookdown/bookdown-fork2.png" alt="" />
+<p class="caption">Créez un nouveau dépôt</p>
+</div>
+<ol start="3" style="list-style-type: decimal">
+<li><p>Éditez les options du nouveau dépôt (bouton <code>Settings</code> dans la page principale). Le dépôt <code>bookdown-test</code> utilisait Github-pages pour servir directement le site bookdown à partir du sous-dossier <code>/docs</code> mais ici nous serons probablement amenés à inclure les pages du site dans Wordpress. Donc, n’activez donc pas GitHub Pages pour votre nouveau dépôt.</p></li>
+<li><p>Renommez le fichier <code>bookdown-test.Rproj</code> en fonction du nom de votre dépôt. Ouvrez-le dans GitHub, puis éditez-le. <em>Ne changez rien surtout dans le contenu</em>, mais modifiez sont nom au dessus de la boite d’édition et commitez directement ce changement.</p></li>
+<li><p>Clonez à présent ce nouveau dépôt localement sur votre ordinateur. Vous pouvez le faire à la ligne de commande, via GitHub Desktop, ou directement via RStudio si vous utilisez ce logiciel pour éditer votre bookdown. Dans RStudio, allez dans le menu <code>File -&gt; New Project...</code>, choisissez <code>Version Control</code> puis <code>Git</code> et placez-y l’URL de votre dépôt. Vérifier le dossier dans lequel le dépôt sera placé localement et cliquez sur <code>Create Project</code>.</p></li>
+</ol>
+<p><img src="images/bookdown/bookdown-create-project.png" /></p>
+<ol start="6" style="list-style-type: decimal">
+<li>Modifiez différents fichiers dans votre nouveau dépôt à partir de RStudio tel qu’expliqué ci-dessous… et éditez votre nouveau bookdown !</li>
+</ol>
+<div id="readme.md" class="section level3">
+<h3><span class="header-section-number">6.1.1</span> README.md</h3>
+<p>Le premier fichier à modifier est <code>README.md</code>. Il doit bien entendu être complètement réécrit en fonction du contexte de votre propre bookdown. Profitez-en pour vérifier la license que vous voulez proposer pour votre oeuvre, indiquez-le dans <code>README.md</code> et adaptez éventuellement le fichier <code>LICENSE</code> en conséquence.</p>
+</div>
+<div id="bookdown.yml" class="section level3">
+<h3><span class="header-section-number">6.1.2</span> _bookdown.yml</h3>
+<p>Le fichier <code>_bookdown.yml</code> contient une entrée cruciale pour l’intégration de votre bookdown à Wordpress: <code>output_dir</code>. Pour l’instant il est indiqué <code>output_dir: docs</code> ce qui signifie que le site bookdown est construit dans le sous-dossier <code>docs</code><a href="#fn8" class="footnote-ref" id="fnref8"><sup>8</sup></a> Vous allez indiquer un chemin relatif <em>en dehors du dépôt</em> (utilisez la notation <code>..</code> pour revenir un dossier en arrière). Vous allez pointer vers le sous-dossier <code>htdocs/nom_bookdown</code> où <code>nom_bookdown</code> est le nom de votre dépôt bookdown dans Wordpress. L’endroit où cela se trouve dépend de la façon dont vous gérez les fichiers de votre site web Wordpress. Dans notre exemple, nous proposns <a href="https://www.gandi.net/">Gandi.net</a> comme hébergeur car il combine nom de domaine, boites mails, certificats HTTPS renouvelés automatiquement et site Wordpress complètement préinstallé pour un coût modique. A la section <a href="configuration-serveur-et-git.html#wordpress-git">4.3.0.2</a> nous avons déjà réalisé un dépôt git associé à notre instance Wordpress. Nous y ajoutons donc le sous-dossier <code>htdocs</code>, et allons faire pointer <code>output_dir</code> vers le bon emplacement sous forme de chemin relatif. Par exemple dans notre cas, le dépôt bookdown Github s’appelle <code>sdd-umons3-2020</code> et le dépôt git Gandi.net pour notre Wordpress s’appelle <code>wp.sciviews.org</code> et ces deux dossiers sont placés dans le même répertoire. Dans ce cas, nous indiquerons <code>output_dir: '../wp.sciviews.org/htdocs/sdd-umons3-2020'</code>.</p>
+<p>Profitez-en pour éditer également les autres entrées dans <code>_bookdown.yml</code> :<code>book_filename</code>, <code>repo</code>, <code>clean</code> et les labels en fonction de la langue de votre œuvre.</p>
+<p>Une fois que c’est fait et que le fichier <code>_bookdown.yml</code> modifié est sauvegardé sur le disque, vous pouvez effacer tout le sous-répertoire <code>docs</code> dans le dépôt GitHub de votre bookdown car vous n’en avez plus besoin.</p>
+<p>Vérifiez que les fichiers de votre site bookdown vont se placer au bon endroit en le compilant : après avoir installé le package R {bookdown}, vous avez un addin <code>Preview Book</code> dans le menu déroulant <code>Addins</code> de RStudio. Sélectionnez-le et laisser le site se compiler. Ensuite, vérifiez que les fichiers correspondants ont bien été ajoutés dans le sous-dossier <code>htdocs/nom_bookdown</code> de votre dossier Wordpress (<code>wp.sciviews.org</code> dans notre exemple). Si pas, corrigez le chemin relatif dans <code>output_dir</code>.</p>
+</div>
+<div id="output.yml" class="section level3">
+<h3><span class="header-section-number">6.1.3</span> _output.yml</h3>
+<p>Ce fichier contient des entrées complémentaires pour paramétrer l’apparence de votre bookdown. Consultez <a href="https://bookdown.org/yihui/bookdown/">la documentation de bookdown</a> pour vous y aider. Vous voudrez certainement adapter les entrées <code>config: toc: before:</code>, <code>config: toc: after:</code>, <code>config: edit:</code> et <code>config: view:</code> en fonction du contexte de votre nouveau dépôt.</p>
+</div>
+<div id="index.html" class="section level3">
+<h3><span class="header-section-number">6.1.4</span> index.html</h3>
+<p>C’est le troisième fichier qui définit le contexte de votre bookdown.</p>
+<ul>
+<li>Adapter <code>title</code> et <code>author</code>.</li>
+<li>Modifiez <code>githut-repo</code> pour pointer vers votre dépôt Github.</li>
+<li>Modifiez l’<code>url</code> comme celle de votre site Worpress mais avec comme sous dossier <code>nom_bookdown</code>. Dans l’exemple, il s’agit de <code>'https\://wp.sciviews.org/sdd-umons3-2020/'</code>.</li>
+<li>Tant que vous y êtes, adaptez aussi <code>description</code>, éditez le contenu de la page et éventuellement aussi, modifiez l’image <code>front-cover.png</code> pour refléter le contenu de votre ouvrage.</li>
+</ul>
+</div>
+<div id="header.html-header0.html" class="section level3">
+<h3><span class="header-section-number">6.1.5</span> header.html &amp; header0.html</h3>
+<p>Le fichier <code>header.html</code> est généré automatiquement par {learndown} et <strong>il ne faut donc pas l’éditer</strong>. Si vous voulez rajouter du contenu dans l’entête, incluez-le dans le fichier <code>header0.html</code> et ce qui s’y trouve sera placé en bas de <code>header.html</code> par {learndown}. Vous pouvez effacer <code>header0.html</code> si vous ne souhaitez rien y rajouter.</p>
+</div>
+<div id="footer.html" class="section level3">
+<h3><span class="header-section-number">6.1.6</span> footer.html</h3>
+<p>Placez ici ce que vous désirez en bas de page. Le fichier contient (sous forme commentée), le code nécessaire pour rajouter une zone de discussion <a href="https://disqus.com/">Disqus</a> en bas de chaque page. Vous pouvez laisser le fichier en l’état ou l’effacer si vous ne souhaitez rien rajouter en bas de page… ou l’éditer en fonction des besoins.</p>
+</div>
+<div id="style.css-style0.css" class="section level3">
+<h3><span class="header-section-number">6.1.7</span> style.css &amp; style0.css</h3>
+<p>La même logique est d’application pour <code>style.css</code> (généré automatiquement par {learndown} et à ne pas éditer) et <code>style0.css</code> qui contient des styles CSS complémentaires. Le fichier <code>style0.css</code> présente un exemple de compléments… à éditer en fonction du contexte. Dans cet exemple le style et les couleurs sont légèrement modifiés, et des icônes sont rajoutées pour divers blocs spéciaux. Adaptez ceci à votre propre contexte.</p>
+</div>
+<div id="setup.r" class="section level3">
+<h3><span class="header-section-number">6.1.8</span> setup.R</h3>
+<p>Le fichier <code>setup.R</code> est utilisé par {learndown} pour configurer votre bookdown et pour redéfinir les fonctions telles que <code>launch_shiny()</code> et <code>h5p()</code>. Voyez dans le code et éditez en fonction (des messages en français sont en commentaires).</p>
+</div>
+<div id="contenu" class="section level3">
+<h3><span class="header-section-number">6.1.9</span> Contenu</h3>
+<p>En outre, ce template est prévu pour être utilisé en anglais au départ, mais les entrées qu’il faut éditer ont été rajoutées explicitement dans les fichiers de configuration pour vous aider à changer de langue. A noter que les chapitres sont dénommés “modules” et sont supposés correspondre aux différents modules d’apprentissage de votre cours.</p>
+<p>Enfin, bien entendu, vous devez modifier le contenu ainsi que les images dans le dossier <code>images</code> et ses sous-dossiers. L’image <code>front-cover.png</code> est celle affichée en début de document, et les images <code>block-xxxx.png</code> sont les icônes affichées pour les différents blocs spéciaux. Les sous-dossies <code>intro</code>et <code>shinyapps</code> de <code>images</code> contiennent des images relatives au contenu d’exemple dans <code>01-introduction.Rmd</code> et peuvent être effacée et/ou replacées en même temps que ce contenu.</p>
+</div>
+</div>
+<div class="footnotes">
+<hr />
+<ol start="8">
+<li id="fn8"><p>Vous pouvez laisser votre bookdown à cet endroit-là et le servir à l’aide de GitHub Pages si vous voulez, mais alors l’intégration à Wordpress, y compris l’identification des utilisateurs, et l’enregistrement des évènements H5P ne seront pas possibles.<a href="création-dun-bookdownlearndown.html#fnref8" class="footnote-back">↩︎</a></p></li>
+</ol>
 </div>
 <div id="disqus_thread"></div>
 <script>
@@ -448,8 +517,8 @@ s.setAttribute('data-timestamp', +new Date());
           </div>
         </div>
       </div>
-<a href="gestion-des-cours.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="notes.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="bookdown.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="intégration-dans-wordpress.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -480,7 +549,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/BioDataScience-Course/sdd-admin/edit/master/08-Moodle.Rmd",
+"link": "https://github.com/BioDataScience-Course/sdd-admin/edit/master/06-Bookdown.Rmd",
 "text": "Editer"
 },
 "history": {
