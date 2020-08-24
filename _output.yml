@@ -14,6 +14,7 @@ bookdown::gitbook:
         <br/>
         <li><a href="https://github.com/rstudio/bookdown" target="blank">Publié avec bookdown</a></li>
     edit: https://github.com/BioDataScience-Course/sdd-admin/edit/master/%s
+    view: https://github.com/BioDataScience-Course/sdd-admin/blob/master/%s
     #download: ["pdf", "epub"]
 bookdown::pdf_book:
   includes:

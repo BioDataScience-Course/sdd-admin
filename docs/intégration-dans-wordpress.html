@@ -24,7 +24,7 @@
 <meta name="author" content="Philippe Grosjean &amp; Guyliann Engels" />
 
 
-<meta name="date" content="2020-08-19" />
+<meta name="date" content="2020-08-24" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -415,11 +415,43 @@ code span.wa { color: #bf0303; } /* Warning */
             <section class="normal" id="section-">
 <div id="intégration-dans-wordpress" class="section level2">
 <h2><span class="header-section-number">6.2</span> Intégration dans Wordpress</h2>
-<p><strong>TODO:</strong> cette partie doit être ùise-à-jour ét complétée !</p>
-<p>Pour l’instant, il y a deux versions :</p>
+<p>Le format gitbook de {bookdown} qui est le format le plus utilisé pour les tutoriels, les cours et les manuels (type “textbook”) en ligne n’est pas prévu pour s’intégrer à Wordpress. Cependant, grâce à {learndown}, il est possible d’obtenir un résultat indiscernable visuellement d’un réelle intégration via l’inclusion du bookdown dans un iframe à l’intérieur d’une page Wordpress. De plus, {learndown} transfère des informations relatives à l’utilisateur Wordpress enregistré, et aux fonctions côté serveur pour l’enregistrement des données H5P. Ainsi, l’intégration est complète puisque les applications H5P incluses dans le bookdown bénéficient des mêmes fonctionnalités que si elles étaient directement affichées à l’intérieur d’une page Wordpress. Les mêmes fonctions de détection de l’utilisateur et d’enregistrement des évènements générés par les applications Shiny et learnr sont également implémentées dans {learndown}. La partie à modifier dans le bookdown pour réaliser cette intégration ayant été abordée ci-dessus, voyons maintenant ce que nous devons faire du côté du serveur Wordpress pour la finaliser.</p>
+<ol style="list-style-type: decimal">
+<li>Inclusion des pages du bookdown dans le serveur Wordpress</li>
+</ol>
+<p>Les pages du bookdown ont été générées dans un sous-dossier dans le dépôt git <code>wp.sciviews.org</code> dans notre exemple. Nous devons maintenant effectuer un commit, un push sur Gandi.net, et enfin un deploy. Ceci peut se faire dans un premier temps à la ligne de commande pour test :</p>
+<pre><code>cd &lt;path_to_wp.sciviews.org&gt;
+git add .
+git commit -m &quot;New version of sdd-umons3-2020&quot;
+git push origin master
+ssh 3693753@git.sd3.gpaas.net &#39;deploy wp.sciviews.org.git&#39;</code></pre>
+<p><strong>TODO:</strong> Automatiser ceci, plus utiliser correctement l’instruction <code>clean</code> de Gandi.net.</p>
+<ol start="2" style="list-style-type: decimal">
+<li>Créer une page contenant uniquement un iframe dans Wordpress</li>
+</ol>
+<p>Avec un compte ayant des droits en édition, aller dans le tableau de bord de Wordpress, ensuite dans <code>Pages</code>-&gt; <code>Ajouter</code>. Dans l’éditeur, n’indiquez aucun titre, mais ajouter un bloc en dessous et sélectionner le type <code>HTML personnalisé</code>.</p>
+<p><img src="images/bookdown/bookdown-add-page1.png" /></p>
+<p>Collez-y le code ci-dessous et adaptez le contenu de <code>src</code> en fonction de votre propre page, ainsi que la hauteur de la barre supérieure en pixels dans <code>height="calc(100vh - 50px)"</code> (ici, 50 pixels).</p>
+<pre><code>[advanced_iframe  id=&quot;bookdown&quot; name=&quot;bookdown&quot; src=&quot;https://wp.sciviews.org/sdd-umons3-2020&quot;
+width=&quot;100%&quot; height=&quot;calc(100vh - 50px)&quot; use_shortcode_attributes_only=&quot;true&quot;
+map_parameter_to_url=&quot;iframe&quot; add_iframe_url_as_param=&quot;same&quot; show_iframe_loader=&quot;true&quot;
+enable_responsive_iframe=&quot;true&quot; hide_elements=&quot;.tg-site-footer-bar,.entry-footer&quot;
+additional_height=&quot;100&quot; multi_domain_enabled=&quot;false&quot; use_post_message=&quot;false&quot;]</code></pre>
+<p>Appuyez sur le bouton <code>Publier</code>. Vous devez obtenir quelque chose qui se rapproche de ceci :</p>
+<p><img src="images/bookdown/bookdown-add-page2.png" /></p>
+<ol start="3" style="list-style-type: decimal">
+<li>Allez dans l’onglet <code>Document</code>, puis <code>Permalien</code>-&gt; <code>Slug d'URL</code> et choisissez un nom de la page <em>qui diffère de celui du dépôt GitHub</em> (donc dans notre cas, pas <code>sdd-umons3-2020</code>). Par exemple, <code>sdd3-2020</code>.</li>
+</ol>
+<p><img src="images/bookdown/bookdown-add-page3.png" /></p>
+<ol start="4" style="list-style-type: decimal">
+<li><p>Enfin, allez tout en bas de l’éditeur dans <code>Réglages de la page</code> -&gt; <code>Général</code> et sélectionnez la mise en page la plus simple en bas à droite et cochez également <code>Supprimer la marge du contenu</code>.</p></li>
+<li><p>Cliquez sur le bouton <code>Mettre à jour</code>. Visualisez votre page et naviguez dans la section <code>Introduction</code> du bookdown pour tester les différentes fonctionnalités.</p></li>
+<li><p>A partir d’un compte administrateur Wordpress, cliquez sur <code>Personnaliser</code> dans la barre noire supérieure. Ensuite, éditez le menu qui apparait à gauche pour y inclure un lien vers la page que nous venons de créer.</p></li>
+</ol>
+<p>Au final, le bookdown se présente sous deux formes :</p>
 <ul>
-<li><p>Les pages affichées telles quelles. Nous avons une présentation bookdown classique. Les informations de l’identité de l’étudiant sont transmise via <code>localStorage</code>, mais le bandeau supérieur du site et la barre noire supérieure de gestion Wordpress ne sont pas affichés. Le bookdown n’est pas vraiment intégré dans le site. Cette représentation est utile pour l"utilisation du bookdown dans un contexte hors cours UMONS.</p></li>
-<li><p>Les même page du bookdown, <strong>mais intégrées sous forme d’iframe</strong> dans une page de Wordpress dédiée. Nous utilisons le plugin <em>Advanced iFrame Pro</em> qui permet de contrôler la taille de l’iframe, de lui passer des paramètres et encore d’autres choses. Cela donne pas mal, et l’utilisateur conserve la barre d’outils supérieure (accès à Moodle, Discord, etc.) ainsi que la barre noire supérieure de contrôle Wordpress qui permet aussi de vérifier d’un coup d’œil que l’on est connecté, et sous quelle identité nous le sommes. S’il veut lire le contenu du bookdown sans voir la bannière haute, le lecteur peut faire coulisser la page jusque tout en bas et cette bannière viendra se cacher derrière la barre noire supérieure Wordpress (qui, elle, reste toujours visible tant que l’utilisateur est connecté au site).</p></li>
+<li><p>Les pages affichées telles quelles via une URL reprenant le nom du dépôt GitHub (dans notre cas, il s’agit de <code>https://wp.sciviews.org/sdd-umons3-2020/</code>). Nous avons une présentation bookdown classique. Les informations de l’identité de l’étudiant sont transmise via <code>localStorage</code>, mais le bandeau supérieur du site et la barre noire supérieure de gestion Wordpress ne sont pas affichés. Le bookdown n’est pas vraiment intégré dans le site et les évènements xAPI de H5P ne sont pas renvoyés au serveur Wordpress. Cette représentation est utile pour l"utilisation du bookdown dans un contexte hors cours UMONS.</p></li>
+<li><p>Les même page du bookdown, <strong>mais intégrées sous forme d’iframe</strong> dans une page de Wordpress dédiée à partir du lien de la page Wordpress (dans notre exemple, <code>https://wp.sciviews.org/sdd3-2020</code>). La page conserve des éléments issus de Wordpress comme la barre d’outils supérieure (accès à Moodle, Discord, etc.) ainsi que la barre noire supérieure de contrôle Wordpress qui permet aussi de vérifier d’un coup d’œil que l’on est connecté, et sous quelle identité nous le sommes. S’il veut lire le contenu du bookdown sans voir la bannière haute, le lecteur peut faire coulisser la page jusque tout en bas et cette bannière viendra se cacher derrière la barre noire supérieure Wordpress (qui, elle, reste toujours visible tant que l’utilisateur est connecté au site).</p></li>
 </ul>
 </div>
 <div id="disqus_thread"></div>
@@ -487,7 +519,7 @@ gitbook.start({
 "text": null
 },
 "view": {
-"link": null,
+"link": "https://github.com/BioDataScience-Course/sdd-admin/blob/master/06-Bookdown.Rmd",
 "text": null
 },
 "download": ["sdd-admin.pdf"],

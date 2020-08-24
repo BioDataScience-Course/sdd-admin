@@ -89,25 +89,67 @@ Nous vons conseillons dans un premier temps de *ne pas* modifier la page `01-Int
 
 ## Intégration dans Wordpress
 
-**TODO:** cette partie doit être ùise-à-jour ét complétée\ !
+Le format gitbook de {bookdown} qui est le format le plus utilisé pour les tutoriels, les cours et les manuels (type "textbook") en ligne n'est pas prévu pour s'intégrer à Wordpress. Cependant, grâce à {learndown}, il est possible d'obtenir un résultat indiscernable visuellement d'un réelle intégration via l'inclusion du bookdown dans un iframe à l'intérieur d'une page Wordpress. De plus, {learndown} transfère des informations relatives à l'utilisateur Wordpress enregistré, et aux fonctions côté serveur pour l'enregistrement des données H5P. Ainsi, l'intégration est complète puisque les applications H5P incluses dans le bookdown bénéficient des mêmes fonctionnalités que si elles étaient directement affichées à l'intérieur d'une page Wordpress. Les mêmes fonctions de détection de l'utilisateur et d'enregistrement des évènements générés par les applications Shiny et learnr sont également implémentées dans {learndown}. La partie à modifier dans le bookdown pour réaliser cette intégration ayant été abordée ci-dessus, voyons maintenant ce que nous devons faire du côté du serveur Wordpress pour la finaliser.
 
-Pour l'instant, il y a deux versions\ :
+1. Inclusion des pages du bookdown dans le serveur Wordpress
 
-- Les pages affichées telles quelles. Nous avons une présentation bookdown classique. Les informations de l'identité de l'étudiant sont transmise via `localStorage`, mais le bandeau supérieur du site et la barre noire supérieure de gestion Wordpress ne sont pas affichés. Le bookdown n'est pas vraiment intégré dans le site. Cette représentation est utile pour l"utilisation du bookdown dans un contexte hors cours UMONS.
+Les pages du bookdown ont été générées dans un sous-dossier dans le dépôt git `wp.sciviews.org` dans notre exemple. Nous devons maintenant effectuer un commit, un push sur Gandi.net, et enfin un deploy. Ceci peut se faire dans un premier temps à la ligne de commande pour test\ :
 
-- Les même page du bookdown, **mais intégrées sous forme d'iframe** dans une page de Wordpress dédiée. Nous utilisons le plugin *Advanced iFrame Pro* qui permet de contrôler la taille de l'iframe, de lui passer des paramètres et encore d'autres choses. Cela donne pas mal, et l'utilisateur conserve la barre d'outils supérieure (accès à Moodle, Discord, etc.) ainsi que la barre noire supérieure de contrôle Wordpress qui permet aussi de vérifier d'un coup d'œil que l'on est connecté, et sous quelle identité nous le sommes. S'il veut lire le contenu du bookdown sans voir la bannière haute, le lecteur peut faire coulisser la page jusque tout en bas et cette bannière viendra se cacher derrière la barre noire supérieure Wordpress (qui, elle, reste toujours visible tant que l'utilisateur est connecté au site).
+```
+cd <path_to_wp.sciviews.org>
+git add .
+git commit -m "New version of sdd-umons3-2020"
+git push origin master
+ssh 3693753@git.sd3.gpaas.net 'deploy wp.sciviews.org.git'
+```
+
+**TODO:** Automatiser ceci, plus utiliser correctement l'instruction `clean` de Gandi.net.
+
+2. Créer une page contenant uniquement un iframe dans Wordpress
+
+Avec un compte ayant des droits en édition, aller dans le tableau de bord de Wordpress, ensuite dans `Pages`-> `Ajouter`. Dans l'éditeur, n'indiquez aucun titre, mais ajouter un bloc en dessous et sélectionner le type `HTML personnalisé`.
+
+![](images/bookdown/bookdown-add-page1.png)
+
+Collez-y le code ci-dessous et adaptez le contenu de `src` en fonction de votre propre page, ainsi que la hauteur de la barre supérieure en pixels dans `height="calc(100vh - 50px)"` (ici, 50 pixels).
+
+```
+[advanced_iframe  id="bookdown" name="bookdown" src="https://wp.sciviews.org/sdd-umons3-2020"
+width="100%" height="calc(100vh - 50px)" use_shortcode_attributes_only="true"
+map_parameter_to_url="iframe" add_iframe_url_as_param="same" show_iframe_loader="true"
+enable_responsive_iframe="true" hide_elements=".tg-site-footer-bar,.entry-footer"
+additional_height="100" multi_domain_enabled="false" use_post_message="false"]
+```
+
+Appuyez sur le bouton `Publier`. Vous devez obtenir quelque chose qui se rapproche de ceci\ :
+
+![](images/bookdown/bookdown-add-page2.png)
+
+3. Allez dans l'onglet `Document`, puis `Permalien`-> `Slug d'URL` et choisissez un nom de la page *qui diffère de celui du dépôt GitHub* (donc dans notre cas, pas `sdd-umons3-2020`). Par exemple, `sdd3-2020`.
+
+![](images/bookdown/bookdown-add-page3.png)
+
+4. Enfin, allez tout en bas de l'éditeur dans `Réglages de la page` -> `Général` et sélectionnez la mise en page la plus simple en bas à droite et cochez également `Supprimer la marge du contenu`.
+
+5. Cliquez sur le bouton `Mettre à jour`. Visualisez votre page et naviguez dans la section `Introduction` du bookdown pour tester les différentes fonctionnalités.
+
+6. A partir d'un compte administrateur Wordpress, cliquez sur `Personnaliser` dans la barre noire supérieure. Ensuite, éditez le menu qui apparait à gauche pour y inclure un lien vers la page que nous venons de créer.
+
+Au final, le bookdown se présente sous deux formes\ :
+
+- Les pages affichées telles quelles via une URL reprenant le nom du dépôt GitHub (dans notre cas, il s'agit de `https://wp.sciviews.org/sdd-umons3-2020/`). Nous avons une présentation bookdown classique. Les informations de l'identité de l'étudiant sont transmise via `localStorage`, mais le bandeau supérieur du site et la barre noire supérieure de gestion Wordpress ne sont pas affichés. Le bookdown n'est pas vraiment intégré dans le site et les évènements xAPI de H5P ne sont pas renvoyés au serveur Wordpress. Cette représentation est utile pour l"utilisation du bookdown dans un contexte hors cours UMONS.
+
+- Les même page du bookdown, **mais intégrées sous forme d'iframe** dans une page de Wordpress dédiée à partir du lien de la page Wordpress (dans notre exemple, `https://wp.sciviews.org/sdd3-2020`). La page conserve des éléments issus de Wordpress comme la barre d'outils supérieure (accès à Moodle, Discord, etc.) ainsi que la barre noire supérieure de contrôle Wordpress qui permet aussi de vérifier d'un coup d'œil que l'on est connecté, et sous quelle identité nous le sommes. S'il veut lire le contenu du bookdown sans voir la bannière haute, le lecteur peut faire coulisser la page jusque tout en bas et cette bannière viendra se cacher derrière la barre noire supérieure Wordpress (qui, elle, reste toujours visible tant que l'utilisateur est connecté au site).
 
 ## Contenu H5P dans bookdown
 
-Nous avons déjà vu que le contenu H5P s'affiche dans un iframe dans un document principal. Il lui transmet les événements xAPI, et c'est donc ce document principal qui doit les traiter. Nous avons ici une impossibilité à le faire si nous sommes dans un cas où H5P est servi par un serveur différent que notre bookdown. En effet, les accès en "Cross-Origin Resource Sharing" ou CORS sont restreintes pour éviter des attaques de site évidentes. Ainsi un iframe issu d'un serveur différent de la page qui l'héberge ne peut communiquer librement avec la page qui le contient si elle provient d'un site différent. Or, nous avons besoin de cette communication pour transmettre les événements xAPI...
+Nous avons déjà vu que le contenu H5P s'affiche dans un iframe dans un document principal. Il lui transmet les évènements xAPI, et c'est donc ce document principal qui doit les traiter. Nous avons ici une impossibilité à le faire si nous sommes dans un cas où H5P est servi par un serveur différent que notre bookdown. En effet, les accès en "Cross-Origin Resource Sharing" ou CORS sont restreintes pour éviter des attaques de site évidentes. Ainsi un iframe issu d'un serveur différent de la page qui l'héberge ne peut communiquer librement avec la page qui le contient si elle provient d'un site différent. Or, nous avons besoin de cette communication pour transmettre les événements xAPI...
 
-La solution que nous avons trouvée est d'ajouter le dossier qui contient nos pages statiques du bookdown à Wordpress directement. Ainsi les deux sont maintenant servis à partir de la même adresse https://wp.sciviews.org. Pour l'instant, nous copions simplement ces fichiers dans un sous-dossier `sdd-umons` dans `lamp0/web/vhosts/wp.sciviews.org/htdocs`. Ainsi, le bookdown en question est servi par Wordpress à l'adresse https://wp.sciviews.org/sdd-umons. Et à présent, la communication des xAPI H5P est possible... à condition d'ajouter le code nécessaire dans bookdown, mais cela, nous l'avons expliqué dans le chapitre consacré à H5P (\@ref(h5p)).
-
-Il nous faut maintenant inclure facilement les contenus H5P depuis Wordpress dans nos pages bookdown. Ces contenus sont identifiés par un numéro (ID) dans Wordpress. Cet ID apparaît clairement dans la liste des contenus H5P dans le tableau de bord. Il suffit de noter le numéro ID correspondant au contenu que l'on souhaite inclure.
+La solution que nous avons trouvée est d'ajouter le dossier qui contient nos pages statiques du bookdown à Wordpress directement. Ainsi les deux sont maintenant servis à partir de la même adresse `https://wp.sciviews.org`. Une fois que c'est fait, l'inclusion d'applications H5P dans le bookdown est facile. Il suffit d'utiliser la fonction `h5p()` de {learndown} en indiquant juste le numéro ID de l'application H5P tel qu'affiché dans le tableau de bord de Wordpress avec un code du type `learndown::h5p(6, baseurl = "https://wp.sciviews.org")` dans du code inline dans notre bookdown (ici, l'ID serait '6', ce qui correspond à l'application H5P nommée "drag-words" dans la copie d'écran ci-dessous). On peut éventuellement repréciser `width =`ou `height = ` pour changer la taille de l'iframe hébergeant l'application H5P.
 
 ![H5P Content dans Wordpress. Les widgets sont identifiés par leur **ID** (ici, 6, 7, 8, 9 & 10).](images/wordpress/h5p-content.png)
 
-Nous devons créer un iframe dans la page bookdown, mais nous pouvons déléguer ce travail à une fonction R. Cette fonction est incluse dans le package `learndown` dans une forme plus complète, mais pour comprendre ce qu'elle fait, nous pouvons nous concentrer sur la version simplifiée ci-dessous\ :
+Pour comprendre ce que la fonction `learndown::h5p()` fait, nous pouvons nous concentrer sur la version simplifiée suivante\ :
 
 ```{r, eval=FALSE}
 h5p <- function(id, width = 780, height = 500) {
@@ -125,4 +167,4 @@ Ainsi programmé notre contenu H5P se comporte comme suit\ :
 
 Ceci est un inconfort mineur pour un utilisateur anonyme et permet l'utilisation des contenus H5P de manière optimale pour nos étudiants dûment enregistrés, tout en permettant une libre utilisation par d'autres visiteurs sans polluer notre base de données.
 
-Nous avons également tenté de passer des arguments supplémentaires via l'URL qui lance la page bookdown, et qui les tranfèrent vers l'iframe H5P, mais sans succès car apparemment Worpress réécrit l'URL et laisse tomber ces arguments supplémentaires. Mais de toutes façons, ce n'est pas important pour l'instant car nous pouvons tracer nos utilisateurs enregistrés dans Wordpress telle que c'est actuellement implémenté.
+Nous avons également tenté de passer des arguments supplémentaires via l'URL qui lance la page bookdown, et qui les tranfère vers l'iframe H5P, mais sans succès car apparemment Worpress réécrit l'URL et laisse tomber ces arguments supplémentaires. Mais de toutes façons, ce n'est pas important pour l'instant car nous pouvons tracer nos utilisateurs enregistrés dans Wordpress telle que c'est actuellement implémenté.

@@ -24,7 +24,7 @@
 <meta name="author" content="Philippe Grosjean &amp; Guyliann Engels" />
 
 
-<meta name="date" content="2020-08-19" />
+<meta name="date" content="2020-08-24" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -445,7 +445,7 @@ code span.wa { color: #bf0303; } /* Warning */
 </div>
 <div id="bookdown.yml" class="section level3">
 <h3><span class="header-section-number">6.1.2</span> _bookdown.yml</h3>
-<p>Le fichier <code>_bookdown.yml</code> contient une entrée cruciale pour l’intégration de votre bookdown à Wordpress: <code>output_dir</code>. Pour l’instant il est indiqué <code>output_dir: docs</code> ce qui signifie que le site bookdown est construit dans le sous-dossier <code>docs</code><a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a> Vous allez indiquer un chemin relatif <em>en dehors du dépôt</em> (utilisez la notation <code>..</code> pour revenir un dossier en arrière). Vous allez pointer vers le sous-dossier <code>htdocs/nom_bookdown</code> où <code>nom_bookdown</code> est le nom de votre dépôt bookdown dans Wordpress. L’endroit où cela se trouve dépend de la façon dont vous gérez les fichiers de votre site web Wordpress. Dans notre exemple, nous proposns <a href="https://www.gandi.net/">Gandi.net</a> comme hébergeur car il combine nom de domaine, boites mails, certificats HTTPS renouvelés automatiquement et site Wordpress complètement préinstallé pour un coût modique. A la section <a href="configuration-serveur-et-git.html#wordpress-git">4.3.0.2</a> nous avons déjà réalisé un dépôt git associé à notre instance Wordpress. Nous y ajoutons donc le sous-dossier <code>htdocs</code>, et allons faire pointer <code>output_dir</code> vers le bon emplacement sous forme de chemin relatif. Par exemple dans notre cas, le dépôt bookdown Github s’appelle <code>sdd-umons3-2020</code> et le dépôt git Gandi.net pour notre Wordpress s’appelle <code>wp.sciviews.org</code> et ces deux dossiers sont placés dans le même répertoire. Dans ce cas, nous indiquerons <code>output_dir: '../wp.sciviews.org/htdocs/sdd-umons3-2020'</code>.</p>
+<p>Le fichier <code>_bookdown.yml</code> contient une entrée cruciale pour l’intégration de votre bookdown à Wordpress: <code>output_dir</code>. Pour l’instant il est indiqué <code>output_dir: docs</code> ce qui signifie que le site bookdown est construit dans le sous-dossier <code>docs</code><a href="#fn7" class="footnote-ref" id="fnref7"><sup>7</sup></a> Vous allez indiquer un chemin relatif <em>en dehors du dépôt</em> (utilisez la notation <code>..</code> pour revenir un dossier en arrière). Vous allez pointer vers le sous-dossier <code>htdocs/nom_bookdown</code> où <code>nom_bookdown</code> est le nom de votre dépôt bookdown dans Wordpress. L’endroit où cela se trouve dépend de la façon dont vous gérez les fichiers de votre site web Wordpress. Dans notre exemple, nous proposns <a href="https://www.gandi.net/">Gandi.net</a> comme hébergeur car il combine nom de domaine, boites mails, certificats HTTPS renouvelés automatiquement et site Wordpress complètement préinstallé pour un coût modique. A la section <a href="configuration-serveur-et-git.html#wordpress-git">4.3.0.2</a> nous avons déjà réalisé un dépôt git associé à notre instance Wordpress. Nous y ajoutons donc le sous-dossier <code>htdocs</code>, et allons faire pointer <code>output_dir</code> vers le bon emplacement sous forme de chemin relatif. Par exemple dans notre cas, le dépôt bookdown Github s’appelle <code>sdd-umons3-2020</code> et le dépôt git Gandi.net pour notre Wordpress s’appelle <code>wp.sciviews.org</code> et ces deux dossiers sont placés dans le même répertoire. Dans ce cas, nous indiquerons <code>output_dir: '../wp.sciviews.org/htdocs/sdd-umons3-2020'</code>.</p>
 <p>Profitez-en pour éditer également les autres entrées dans <code>_bookdown.yml</code> :<code>book_filename</code>, <code>repo</code>, <code>clean</code> et les labels en fonction de la langue de votre œuvre.</p>
 <p>Une fois que c’est fait et que le fichier <code>_bookdown.yml</code> modifié est sauvegardé sur le disque, vous pouvez effacer tout le sous-répertoire <code>docs</code> dans le dépôt GitHub de votre bookdown car vous n’en avez plus besoin.</p>
 <p>Vérifiez que les fichiers de votre site bookdown vont se placer au bon endroit en le compilant : après avoir installé le package R {bookdown}, vous avez un addin <code>Preview Book</code> dans le menu déroulant <code>Addins</code> de RStudio. Sélectionnez-le et laisser le site se compiler. Ensuite, vérifiez que les fichiers correspondants ont bien été ajoutés dans le sous-dossier <code>htdocs/nom_bookdown</code> de votre dossier Wordpress (<code>wp.sciviews.org</code> dans notre exemple). Si pas, corrigez le chemin relatif dans <code>output_dir</code>.</p>
@@ -493,8 +493,8 @@ Nous vons conseillons dans un premier temps de <em>ne pas</em> modifier la page 
 </div>
 <div class="footnotes">
 <hr />
-<ol start="2">
-<li id="fn2"><p>Vous pouvez laisser votre bookdown à cet endroit-là et le servir à l’aide de GitHub Pages si vous voulez, mais alors l’intégration à Wordpress, y compris l’identification des utilisateurs, et l’enregistrement des évènements H5P ne seront pas possibles.<a href="création-dun-bookdownlearndown.html#fnref2" class="footnote-back">↩︎</a></p></li>
+<ol start="7">
+<li id="fn7"><p>Vous pouvez laisser votre bookdown à cet endroit-là et le servir à l’aide de GitHub Pages si vous voulez, mais alors l’intégration à Wordpress, y compris l’identification des utilisateurs, et l’enregistrement des évènements H5P ne seront pas possibles.<a href="création-dun-bookdownlearndown.html#fnref7" class="footnote-back">↩︎</a></p></li>
 </ol>
 </div>
 <div id="disqus_thread"></div>
@@ -562,7 +562,7 @@ gitbook.start({
 "text": null
 },
 "view": {
-"link": null,
+"link": "https://github.com/BioDataScience-Course/sdd-admin/blob/master/06-Bookdown.Rmd",
 "text": null
 },
 "download": ["sdd-admin.pdf"],

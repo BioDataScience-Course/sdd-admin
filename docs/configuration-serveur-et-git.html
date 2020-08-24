@@ -24,7 +24,7 @@
 <meta name="author" content="Philippe Grosjean &amp; Guyliann Engels" />
 
 
-<meta name="date" content="2020-08-19" />
+<meta name="date" content="2020-08-24" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -477,7 +477,7 @@ sudo reboot</code></pre>
 <li>Il se peut que la machine virtuelle rebascule en QWERTY. Vérifier et corriger à nouveau. Ensuite, installer PHP et ses dépendances nécessaires :</li>
 </ul>
 <pre><code>sudo apt install php7.3-cli php7.3-dev php-pear php-mongodb composer</code></pre>
-<p>Ensuite, nous devrions pouvoir créer les fichiers nécessaires via la commande <code>composer require mongodb/mongodb</code>, mais cela ne fonctionne pas lorsque <code>php-mongodb</code> est installé via le package Ubuntu. Nous devons le compiler nous-même avec <code>pecl</code> sur la machine<a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a> :</p>
+<p>Ensuite, nous devrions pouvoir créer les fichiers nécessaires via la commande <code>composer require mongodb/mongodb</code>, mais cela ne fonctionne pas lorsque <code>php-mongodb</code> est installé via le package Ubuntu. Nous devons le compiler nous-même avec <code>pecl</code> sur la machine<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a> :</p>
 <pre><code># Créer un répertoire dans le dossier partagé et s&#39;y placer
 mkdir /media/sf_MacDesktop/php-mongodb
 cd /media/sf_MacDesktop/php-mongodb
@@ -493,8 +493,8 @@ composer require mongodb/mongodb</code></pre>
 </div>
 <div class="footnotes">
 <hr />
-<ol start="2">
-<li id="fn2"><p>Je suis arrivé à créer <code>composer.lock</code> via la commande <code>composer update</code> en ayant été écrire à la main un <code>composer.json</code> qui contient les lignes minimales renseignées sur la page d’aide de <a href="https://docs.gandi.net/fr/simple_hosting/langages/php.html#sommaire">Gandi.net</a>, mais j’aboutis à une version trop ancienne du driver, et de toutes façons, c’est un bricolage qui ne me plaît pas !<a href="configuration-serveur-et-git.html#fnref2" class="footnote-back">↩︎</a></p></li>
+<ol start="1">
+<li id="fn1"><p>Je suis arrivé à créer <code>composer.lock</code> via la commande <code>composer update</code> en ayant été écrire à la main un <code>composer.json</code> qui contient les lignes minimales renseignées sur la page d’aide de <a href="https://docs.gandi.net/fr/simple_hosting/langages/php.html#sommaire">Gandi.net</a>, mais j’aboutis à une version trop ancienne du driver, et de toutes façons, c’est un bricolage qui ne me plaît pas !<a href="configuration-serveur-et-git.html#fnref1" class="footnote-back">↩︎</a></p></li>
 </ol>
 </div>
 <div id="disqus_thread"></div>
@@ -562,7 +562,7 @@ gitbook.start({
 "text": null
 },
 "view": {
-"link": null,
+"link": "https://github.com/BioDataScience-Course/sdd-admin/blob/master/04-Wordpress.Rmd",
 "text": null
 },
 "download": ["sdd-admin.pdf"],
