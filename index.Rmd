@@ -27,7 +27,7 @@ knitr::opts_chunk$set(comment = "#", fig.align = "center")
 knitr::write_bib(c(.packages(), 'bookdown', 'knitr', 'rmarkdown'), 'packages.bib')
 ```
 
-Notre organisation **BioDataScience-Course** sur Github devient de plus en plus complexe avec le temps car nous combinons plusieurs outils différents pour fournir à nos étudiants un environnement de travail et du matériel pédagogique riches et variés. Ce bookdown centralise l'information nécessaire pour les enseignants et les administrateurs de ces outils.
+Notre organisation **BioDataScience-Course** sur Github devient de plus en plus complexe avec le temps (plus de 1300 dépôts fin aout 2020). De même, nos cours interactifs en ligne recourent à des solutions logicielles toujours plus complètes, mais aussi plus complexes, car nous combinons plusieurs outils différents pour fournir à nos étudiants un environnement de travail et du matériel pédagogique riches et variés. Ce bookdown centralise l'information nécessaire pour les enseignants et les administrateurs de ces outils.
 
 ![](images/front-cover.png)
 

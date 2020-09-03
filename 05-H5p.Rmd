@@ -11,16 +11,15 @@ Dans cette section, nous reprendrons les choix techniques, l'installation, la co
 
 ## Installation de H5P
 
-
 H5P ne peut fonctionner seul. Il doit être inclus dans un serveur plus large, soit un LMS (Learning Management System ou plateforme d'apprentissage en ligne comme), soit un CMS (Content Management System, système de gestion de contenu).
 
 L'un des LMS les plus populaires est [Moodle](https://moodle.com/fr/) qui a été choisi à l'UMONS comme [outil institutionnel d'apprentissage en ligne](http://moodle.umons.ac.be/). H5P est compatible avec Moodle (il peut être installé comme plugin). Ce serait donc parfaitement logique de l'utiliser de cette manière. Un  test avait été fait en 2019. Si cela fonctionne, nous avons pu constater que le contenu H5P n'est **pas** utilisable ailleurs que dans Moodle lui-même, en tous cas de la façon dont le serveur test était configuré, avec les sécurités nécessaires pour protéger le site. Or, notre souhait est d'intéger le contenu H5P dans un bookdown qui ne peut être hébergé sur Moodle^[D'un point de vue technique, le contenu H5P s'affiche dans un iframe. Or les possibilités des iframes inter-sites sont limitées par le protocole HTML5 sous-jacent lui-même pour éviter les abus. Il nous faut donc le bookdown (pages statiques) et le contenu H5P (devant être lié à un serveur LMS ou CMS) servis par le *même* site.]. L'essai qui a été réalisé à l'UMONS en 2019 n'a pas été concrétisé dans le serveur Moodle en production. Or, il nous fallait intégrer du contenu H5P dans nos bookdown, et ce, dès 2020-2021. Donc, nous avons recherché une autre option.
 
 Cette autre option consiste à utiliser soit [Wordpress](https://fr.wordpress.com/), soit [Drupal](https://www.drupal.org/) pour lesquels H5P est également compatible. Après comparaison des possibilités des deux, nous avons opté pour Wordpress, plus largement utilisé.
 
-H5P permet de récupérer des informations concernant l'activité des étudiants dans les exercices sous forme de requêtes [xAPI](https://xapi.com/overview/). xAPI est un standard développé pour permettre l'interaction entre un LMS comme Moodle qui produit des événements xAPI, et un LRS (Learning Record Store) une base de données chargée d'enregistrer les traces de l'apprentissage au format standardisé xAPI. En complément de H5P lui-même et de Wordpress comme serveur principal, il nous faut donc un LRS et un plugin qui fasse le pont entre H5P et ce LRS. Enfin, l'information n'est utile que si elle est identifiable comme provenant d'un étudiant en particulier. Le serveur doit donc gérer l'authentification des utilisateurs et transmettre l'identité de l'étudiant au travers de la requête xAPI. Si tout cela parait très compliqué, voici un petit schéma qui résume l'ensemble (à noter que nous avons choisi l'authentification via Github parce que nos étudiants ont également d'autres activités sur Github/Github Classroom, et il est dès lors plus facile de gérer une identité commune à toutes ces activités, même si l'identité UMONS est, hors contexte, la plus logique ici)\ :
+H5P permet de récupérer des informations concernant l'activité des étudiants dans les exercices sous forme de requêtes [xAPI](https://xapi.com/overview/). xAPI est un standard développé pour permettre l'interaction entre un LMS comme Moodle qui produit des événements xAPI, et un LRS (Learning Record Store) une base de données chargée d'enregistrer les traces de l'apprentissage au format standardisé xAPI. En complément de H5P lui-même et de Wordpress comme serveur principal, il nous faut donc un LRS et un plugin qui fasse le pont entre H5P et ce LRS. Enfin, l'information n'est utile que si elle est identifiable comme provenant d'un étudiant en particulier. Le serveur doit donc gérer l'authentification des utilisateurs et transmettre l'identité de l'étudiant au travers de la requête xAPI. Si tout cela parait très compliqué, voici un petit schéma qui résume l'ensemble (à noter que nous avons choisi l'authentification via GitHub parce que nos étudiants ont également d'autres activités sur GitHub/GitHub Classroom, et il est dès lors plus facile de gérer une identité commune à toutes ces activités, même si l'identité UMONS est, hors contexte, la plus logique ici)\ :
 
-![H5P et bookdown sont intégrés dans le même serveur Wordpress, ce qui permet l'affichage en iframe sans contraintes. Les informations de l'utilisateur proviennent d'une authentification Github, plus des données issues de Moodle via URL ou LTI. L'activité des étudiants H5P peut ainsi être enregistrée dans le LRS de notre choix via le protocole standard xAPI avec une identification univoque.](images/h5p/h5p-general.png)
+![H5P et bookdown sont intégrés dans le même serveur Wordpress, ce qui permet l'affichage en iframe sans contraintes. Les informations de l'utilisateur proviennent d'une authentification GitHub, plus des données issues de Moodle via URL ou LTI. L'activité des étudiants H5P peut ainsi être enregistrée dans le LRS de notre choix via le protocole standard xAPI avec une identification univoque.](images/h5p/h5p-general.png)
 
 ### Installation du plugin H5P
 
@@ -40,7 +39,7 @@ C'est fait\ ! H5P est installé, mais aucune forme de contenu n'est encore dispo
 
 Le panneau de configuration est accessible pour l'administrateur Wordpress depuis le tableau de bord -> Réglages -> H5P. Voici une copie d'écran de la configuration choisie.
 
-![](images/h5p/h5p-configuration.png)
+![Tableau de configuration du plugin H5P dans Wordpress.](images/h5p/h5p-configuration.png)
  
 - La barre d'outils H5P en dessous du contenu est désactivée par défaut ("Controlled by author" non coché). Cette barre d'outils permet le partage et la réutilisation de contenu. Nous la garderions bien activées, mais le bouton de réemploi doit apparemment être activé pour que l'inclusion dans un bookdown soit possible. Or, si ce bouton est activé, tout le monde peut inclure le contenu dans d'autres sites... et impacter notre quotas d'utilisation de requêtes. Nous ne le souhaitons bien évidemment pas. *Pour récupérer un contenu sous forme de fichier .h5p, il faut réactiver cette option temporairement dans le tableau de bord, et seul l'administrateur du site peut le faire (voir Gestion des contenus H5P plus loin).*
 
@@ -138,35 +137,65 @@ Voilà, avec tout cela, nous recompilons le bookdown, plaçons tout le contenu d
 En dépis de sa simplicité, H5PxAPIkatchu ne convient *pas* tel quel pour l'objectif que nous poursuivons. Nous avons imaginé étendre le plugin pour enregistrer les données dans notre base de données MongoDB Atlas comme première solution. Cela a nécessité du développement PHP et l'utilisation d'une librairie PHP mongodb qu'il faut installer sur le serveur. Une autre solution consiste à utiliser un autre plugin et à passer par un véritable LRS. Ceci est envisagé dans le paragraphe suivant.
 ```
 
-Il s'avère que, une fois l'incorporation du driver mongodb dans PHP effectuée (c'est en fait la partie la plus difficile), le code en PHP qu'il faut ajouter à H5PxAPIkatchu pour effectuer l'enregistrement dans notre base MongoDB est assez succinct. Un fork du dépôt Github [H5PxAPIkjatchu](https://github.com/otacke/h5pxapikatchu) dans SciViews, nous permet d'inclure le patch.
+Il s'avère que, une fois l'incorporation du driver mongodb dans PHP effectuée (c'est en fait la partie la plus difficile), le code en PHP qu'il faut ajouter à H5PxAPIkatchu pour effectuer l'enregistrement dans notre base MongoDB est assez succinct. Une demande à l'auteur de [H5PxAPIkjatchu](https://github.com/otacke/h5pxapikatchu) pour permettre l'enregistrement des données ailleurs via une fonction PHP a été rapidement honorée. Ainsi, nous avons pu facilement écrire le code complémentaire pour enregistrer l'information dans notre base de données MongoDB ATLAS (ce code est placé dans la zone dédie du plugin **My custom functions**)\ :
 
 ```php
-// If fuction h5pxapikatchu_custom_insert_data exists, delegate
-// Added in version 0.4.3
-if (function_exists('h5pxapikatchu_custom_insert_data')) {
-	if ( h5pxapikatchu_custom_insert_data( $actor, $verb, $object, $result, $xapi ) ) {
-		wp_die();
-	}
+// Custom h5pxapikatchu data insertion
+function h5pxapi_actor( $actor ) {
+  global $doc;
+  $doc['actor'] = $actor;
+  return $actor;
 }
-$ok = Database::insert_data( $actor, $verb, $object, $result, $xapi );
-```
+add_filter( 'h5pxapikatchu_insert_data_actor', 'h5pxapi_actor' );
 
-Dans `h5pxapikatchu.php`. Ensuite, le dépôt est récupéré au format ZIP, l'ancien plugin est éliminé de Wordpress et cette version est téléversée. Il ne reste plus qu'à ajouter notre fonction personnalisée `h5pxapikatchu_custom_insert_data()` dans "My Custom Function", avec ceci (l'url vers MongoDB Atlas est ici replacée par `.....`) et le tour est joué.
+function h5pxapi_verb( $verb ) {
+  global $doc;
+  $doc['verb'] = $verb;
+  return $verb;
+}
+add_filter( 'h5pxapikatchu_insert_data_verb', 'h5pxapi_verb' );
 
-```php
-function h5pxapikatchu_custom_insert_data( $actor, $verb, $object, $result, $xapi ) {
+function h5pxapi_object( $object ) {
+  global $doc;
+  $doc['object'] = $object;
+  return $object;
+}
+add_filter( 'h5pxapikatchu_insert_data_object', 'h5pxapi_object' );
+
+function h5pxapi_result( $result ) {
+  global $doc;
+  $doc['result'] = $result;
+  // Added by PhG
+  // Note: 'time' is like recorded in MySQL, but truncated down to second
+  //$doc['time'] = current_time( 'mysql' );
+  $doc['date'] = current_time( 'Y-m-d H:i:s.u', $gmt = 1 );
+  return $result;
+}
+add_filter( 'h5pxapikatchu_insert_data_result', 'h5pxapi_result' );
+
+function h5pxapi_xapi( $xapi ) {
+  global $doc;
+  $doc['xapi'] = $xapi;
+  return $xapi;
+}
+add_filter( 'h5pxapikatchu_insert_data_xapi', 'h5pxapi_xapi' );
+
+//function h5pxapikatchu_custom_insert_data( $actor, $verb, $object, $result, $xapi ) {
+function h5pxapi_custom_insert_data() {
+  global $doc;
   $response = false;
 
   try {
-    $manager = new MongoDB\Driver\Manager( 'mongodb://.....' );
+    $manager = new MongoDB\Driver\Manager( 'mongodb://sdd-wordpress:Pseud0chr0mis-pacagnellae@sdd-umons-shard-00-00-umnnw.mongodb.net:27017,sdd-umons-shard-00-01-umnnw.mongodb.net:27017,sdd-umons-shard-00-02-umnnw.mongodb.net:27017/test?ssl=true&replicaSet=sdd-umons-shard-0&authSource=admin' );
     $bulk = new MongoDB\Driver\BulkWrite;
-    $doc = [
-      'actor' => $actor,
-      'verb' => $verb,
-      'object' => $object,
-      'result' => $result,
-      'xapi' => $xapi,
-    ];
+    //$doc = [
+    //  'actor' => $actor,
+    //  'verb' => $verb,
+    //  'object' => $object,
+    //  'result' => $result,
+    // Added by PhG: 'time' => $time,
+    //  'xapi' => $xapi,
+    //];
     $bulk->insert( $doc );
     $result = $manager->executeBulkWrite( 'sdd.h5p', $bulk );
     $response = true;
@@ -174,11 +203,15 @@ function h5pxapikatchu_custom_insert_data( $actor, $verb, $object, $result, $xap
 	//echo "Catured Throwable: " . $e->getMessage() . PHP_EOL;
     // Manage error here...
   }
+  if ($response) {
+    wp_die();
+  }
   return $response;
 }
+add_action( 'h5pxapikatchu_insert_data_pre_database', 'h5pxapi_custom_insert_data' );
 ```
 
-Cela fonctionne, mais pour une utilisation plus robuste, il nous faudra passer les paramètres nécessaires à la requête AJAX sur Wordpress de manière dynamique à nos pages bookdown.
+Cela fonctionne, mais pour une utilisation plus robuste, il nous faudra passer les paramètres nécessaires à la requête AJAX sur Wordpress de manière dynamique à nos pages bookdown. C'est ce que nous avons implémenté dans le package R {learndown}, voir chapitre \@ref(bookdown).
 
 ### wp-h5p-xapi et LRS
 
@@ -192,16 +225,15 @@ En allant sur leur site, on se rend compte qu'il n'est pas possible de créer un
 
 - [H5P CSS Editor](https://fr-be.wordpress.org/plugins/h5p-css-editor/) adapte le look de l'éditeur H5P à celui du site Wordpress, ... mais ce plugin n'a pas été mis à jour depuis plus de 3 ans. Nous ne l'avons pas testé.
 
-- [Gamipress](https://gamipress.com/) est une solution Open Source et entièrement gratuite de gamification de sites Worpress (l'utilisateur est encouragé à utiliser le site en gagnant des points, des bagdes, un ranking des utilisateurs peut être affiché, etc.). Ils proposent aussi un plugin qui permet d'obtenir des points avec les [activités H5P](https://fr-be.wordpress.org/plugins/gamipress-h5p-integration/). Les badges et la gamification de l'apprentissage est une piste très intéressante que nous devrions développer pour stimuler nos étudiants. Donc, nous explorerons cette piste plus tard (voir aussi la section sur les badges dans Moodle \@ref(moodle)).
+- [Gamipress](https://gamipress.com/) est une solution Open Source et entièrement gratuite de gamification de sites Worpress (l'utilisateur est encouragé à utiliser le site en gagnant des points, des bagdes, un ranking des utilisateurs peut être affiché, etc.). Ils proposent aussi un plugin qui permet d'obtenir des points avec les [activités H5P](https://fr-be.wordpress.org/plugins/gamipress-h5p-integration/). Les badges et la gamification de l'apprentissage est une piste très intéressante que nous devrions développer pour stimuler nos étudiants. Donc, nous explorerons cette piste plus tard (voir aussi la section sur les badges dans le chapitre \@ref(moodle)).
 
 ### Solution finale choisie
 
-Nous avons vu l'extrême complexité à faire fonctionner H5P/Wordpress avec bookdown. Cependant, nos développements ont abouti à une solution fonctionnelle via le plugin H5PxAPIkatchu paché et du code Javascript rajouté dans le bookdown. Nous avons donc décidé de finaliser cette implémentation de la façon suivante\ :
+Nous avons vu l'extrême complexité à faire fonctionner H5P/Wordpress avec bookdown. Cependant, nos développements ont abouti à une solution fonctionnelle via le plugin H5PxAPIkatchu paché, puis complété par son auteur. Nous avons donc décidé de finaliser cette implémentation de la façon suivante\ :
 
-- Suite à un pull request, l'auteur de H5PxAPIkatchu a modifié son plugin pour permettre de faire appel à une fonction personnalisée pour entegistrer les événements xAPI de H5P où bon nous semble. Nous l'utilisons via une fonction écrite en PHP dans Wordpress pour enregistrer ces informations dans MongoDB ATLAS
+- Suite à un pull request, l'auteur de H5PxAPIkatchu a modifié son plugin pour permettre de faire appel à une fonction personnalisée pour enregistrer les évènements xAPI de H5P où bon nous semble. Nous l'utilisons via une fonction écrite en PHP dans Wordpress pour enregistrer ces informations dans MongoDB ATLAS, comme expliqué plus haut.
 
-- Toute la machinerie Javascript nécessaire dans la page qui inclus un composant H5P dans un iframe est fournie au bookdown via l'extension [learndown](https://www.sciviews.org/learndown/). Ceci est discuté dans la section correspondante (voir \@ref(bookdown)).
-
+- Toute la machinerie Javascript nécessaire dans la page qui inclus un composant H5P dans un iframe est fournie au bookdown via l'extension dans le package R {[learndown](https://www.sciviews.org/learndown/)}. Ceci est discuté dans la section correspondante (voir chapitre \@ref(bookdown)).
 
 ## Gestion des contenus H5P
 
@@ -216,21 +248,21 @@ Voici un exemple avec le contenu de type "True/False".
 
 ![Dans son compte sur h5p.org aller dans "Contents" -> "Create New Content", et choisir le type de contenu que l'on veut créer (ici True/False question).](images/h5p/h5p-new-content1.png)
 
-![Créer le contenu et l'enregister).](images/h5p/h5p-new-content2.png)
+![Créer le contenu et l'enregister.](images/h5p/h5p-new-content2.png)
 
 ![Une fois le contenu terminé, il suffit de cliquer sur "Reuse" (flèche rouge) et de cliquer sur "Download as an .h5p file" pour récupérer le fichier .h5p.](images/h5p/h5p-new-content3.png)
 
-Ensuite, dans le tableau de bord de Wordpress (en ayant pris soin de s'être enregistré en qualité d'administrateur), aller dans H5P Content -> Add New. Sélectionner "Téléverser" et indiquer le fichier `.h5p` que l'on vient de sauver, puis "Utiliser".
+Ensuite, dans le tableau de bord de Wordpress (en ayant pris soin de s'être enregistré comme administrateur), aller dans H5P Content -> Add New. Sélectionner "Téléverser" et indiquer le fichier `.h5p` que l'on vient de sauver, puis "Utiliser".
 
 ![Ajout du contenu H5P sur le site Worpress par téléversement du fichier .h5p.](images/h5p/h5p-new-content4.png)
 
-Une fois que c'est fait, non seulement le contenu est téléversé, mais les librairies requises sont également ajoutées. De cette façon, un autre contenu de ce type peut maintenant être créé *directement* depuis la tableau de bord de Wordpress, H5P content -> Add New par n'importe quel utilisateur qui a les droits d'édition sur le site (donc, les profs).
+Une fois que c'est fait, non seulement le contenu est téléversé, mais les librairies requises sont également ajoutées. De cette façon, un autre contenu de ce type peut maintenant être créé *directement* depuis la tableau de bord de Wordpress, H5P content -> Add New par n'importe quel utilisateur qui a les droits d'édition sur le site (donc, les enseignants).
 
 ### Backup H5P
 
 Le backup du site entier Wordpress est effectué. Par contre, il est utile d'avoir une copie de nos différents contenus H5P au format de fichier `.h5p`. Pour cela, un administrateur de site doit au préalable temporairement cocher l'option "Toolbar Below Content" dans les paramètres du plugin H5P de Wordpress (tableau de bord), de sorte que le bouton "Reuse" apparaisse en dessus d'un contenu H5P. Pour chaque contenu que l'on souhaite sauvegarder, l'afficher, et cliquer sur son bouton "Reuse" pour récupérer le fichier `.h5p`. Ensuite, placer les fichiers `.h5p` sur p-Cloud dans le répertoire `sdd_h5p_backup`.
 
-**TODO:** une solution de récupération automatisée des fichiers `.h5p` d'un site devrait être développée à la place, cette procédure ne devrait être utilisée que ponctuellement pour récupérer un ou un petit nombre de contenus H5P.
+**TODO:** une solution de récupération automatisée des fichiers `.h5p` d'un site devrait être développée à la place, la procédure décrite ci-dessus ne devrait être utilisée que ponctuellement pour récupérer un ou un petit nombre de contenus H5P.
 
 ## Quelques contenus H5P utiles
 
@@ -268,7 +300,7 @@ La visualisation des données impose de développer deux compétences en parall�
 
 ### Autoévaluation
 
-Les learnrs sont des outils de choix que nous appliquons avec succès pour l'autoévaluation des étudiants. Cependant, une autoévaluation plus rapide et plus proche du matériel pédagogique lui-même est encore plus efficace en première ligne (suivi en seconde ligne par des learnrs avec un niveau de difficulté supérieur, en troisième ligne des exercices guidés sur données réelles dans un projet RStudio *via* Github Classroom et enfin en quatrième ligne, des analyses à faire *via* Github Classroom mais avec un guidage minimal). Nous venons de voir que H5P permet cette autoévaluation directement à l'intérieur des vidéos et des présentations. Il nous manque l'équivalent pour les développements textuels. Les contenus suivants fournissent ce dont nous avons besoin à ce niveau.
+Les learnrs sont des outils de choix que nous appliquons avec succès pour l'autoévaluation des étudiants. Cependant, une autoévaluation plus rapide et plus proche du matériel pédagogique lui-même est encore plus efficace en première ligne (suivi en seconde ligne par des learnrs avec un niveau de difficulté supérieur, en troisième ligne des exercices guidés sur données réelles dans un projet RStudio *via* GitHub Classroom et enfin en quatrième ligne, des analyses à faire *via* GitHub Classroom mais avec un guidage minimal). Nous venons de voir que H5P permet cette autoévaluation directement à l'intérieur des vidéos et des présentations. Il nous manque l'équivalent pour les développements textuels. Les contenus suivants fournissent ce dont nous avons besoin à ce niveau.
 
 - [Quizzs](https://h5p.org/question-set) permet de rassembler plusieurs questions successives en un contenu unique avec une note finale pour l'ensemble du genre 4/6 questions répondues correctement.
 

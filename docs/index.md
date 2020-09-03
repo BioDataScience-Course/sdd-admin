@@ -1,7 +1,7 @@
 --- 
 title: "BioDataScience Administration"
 author: "Philippe Grosjean & Guyliann Engels"
-date: "2020-08-30"
+date: "2020-09-03"
 site: bookdown::bookdown_site
 output:
   bookdown::gitbook:
@@ -23,7 +23,7 @@ cover-image: "images/front-cover.png"
 
 
 
-Notre organisation **BioDataScience-Course** sur Github devient de plus en plus complexe avec le temps car nous combinons plusieurs outils différents pour fournir à nos étudiants un environnement de travail et du matériel pédagogique riches et variés. Ce bookdown centralise l'information nécessaire pour les enseignants et les administrateurs de ces outils.
+Notre organisation **BioDataScience-Course** sur Github devient de plus en plus complexe avec le temps (plus de 1300 dépôts fin aout 2020). De même, nos cours interactifs en ligne recourent à des solutions logicielles toujours plus complètes, mais aussi plus complexes, car nous combinons plusieurs outils différents pour fournir à nos étudiants un environnement de travail et du matériel pédagogique riches et variés. Ce bookdown centralise l'information nécessaire pour les enseignants et les administrateurs de ces outils.
 
 ![](images/front-cover.png)
 
@@ -54,7 +54,7 @@ sessioninfo::session_info()
 #  collate  en_US.UTF-8                 
 #  ctype    en_US.UTF-8                 
 #  tz       Europe/Brussels             
-#  date     2020-08-30                  
+#  date     2020-09-03                  
 # 
 # ─ Packages ───────────────────────────────────────────────────────────────────
 #  package     * version    date       lib source                            
