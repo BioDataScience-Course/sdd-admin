@@ -37,6 +37,8 @@ Les divers outils logiciels que nous utilisons pour créer un environnement d'ap
 Ces nombreux outils et services devant collaborer entre eux pour fournir un environnement d'apprentissage complet et cohérent, il est important de les configurer et de les inter-connecter correctement. C'est le but principal du présent document que de documenter ces opérations d'administration de l'écosystème logiciel utilisé.
 ```
 
+![Vue générale des logiciels utilisés pour implémenter le contenu interactif dans nos cours et les liens entre eux.](images/general/tools.png)
+
 Les sections suivantes détaillent l'installation et la configuration de différents outils logiciels tandis que les paragraphes suivants dans la présente section reprennent quelques informations générales utiles.
 
 ## RGPD, droit d'auteur & plagiat
