@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019) (preloaded format=xelatex 2019.9.8)  3 SEP 2020 17:14
+This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019) (preloaded format=xelatex 2019.9.8)  9 SEP 2020 00:44
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1384,32 +1384,67 @@ Chapter 9.
 Chapter 10.
 File: images/block-warning.png Graphic file (type bmp)
 <images/block-warning.png>
-[79] [80]
-Appendix A.
-[81
+[79] [80] [81] [82]
+Overfull \hbox (3.10065pt too wide) in paragraph at lines 2058--2059
+[]\TU/lmr/m/n/10 L’utilisateur 
+ []
 
-] [82
+
+Overfull \hbox (3.10065pt too wide) in paragraph at lines 2069--2070
+[]\TU/lmr/m/n/10 L’utilisateur 
+ []
+
+
+Overfull \hbox (3.10065pt too wide) in paragraph at lines 2080--2081
+[]\TU/lmr/m/n/10 L’utilisateur 
+ []
+
+
+Overfull \hbox (7.11064pt too wide) in paragraph at lines 2091--2092
+[]\TU/lmr/m/n/10 L’application 
+ []
+
+
+Overfull \hbox (3.10065pt too wide) in paragraph at lines 2102--2103
+[]\TU/lmr/m/n/10 L’utilisateur 
+ []
+
+
+Overfull \hbox (3.10065pt too wide) in paragraph at lines 2113--2114
+[]\TU/lmr/m/n/10 L’utilisateur 
+ []
+
+
+Overfull \hbox (7.33745pt too wide) in paragraph at lines 2151--2152
+[]\TU/lmr/m/n/10 reset_question_submission|  
+ []
+
+[83] [84] [85] [86
+
+]
+Appendix A.
+[87] [88
 
 ]
 Appendix B.
-[83] [84
+[89] [90
 
 ]
 No file sdd-admin.bbl.
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1948.
-[85]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 1948.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 2276.
+[91]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 2276.
 (./sdd-admin.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 1948.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 1948.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 2276.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 2276.
  ) 
 Here is how much of TeX's memory you used:
- 28683 strings out of 492909
- 521081 string characters out of 6132924
- 852378 words of memory out of 5000000
- 32408 multiletter control sequences out of 15000+600000
+ 28693 strings out of 492909
+ 521239 string characters out of 6132924
+ 852830 words of memory out of 5000000
+ 32418 multiletter control sequences out of 15000+600000
  538804 words of font info for 86 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  58i,8n,115p,29637b,468s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on sdd-admin.pdf (85 pages).
+Output written on sdd-admin.pdf (91 pages).
