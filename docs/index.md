@@ -1,0 +1,84 @@
+--- 
+title: "BioDataScience Administration"
+author: "Philippe Grosjean & Guyliann Engels"
+date: "2020-11-09"
+site: bookdown::bookdown_site
+output:
+  bookdown::gitbook:
+    info: yes
+    includes:
+      in_header: header.html
+      after_body: footer.html
+documentclass: book
+bibliography: [book.bib, packages.bib]
+biblio-style: apalike
+link-citations: yes
+github-repo: BioDataScience-Course/sdd-admin
+url: 'http\://phgrosjean.sciviews.org/bookdown-test/'
+description: "Administration de BioDataScience-Course."
+cover-image: "images/front-cover.png"
+---
+
+# Préambule {-}
+
+
+
+Notre organisation **BioDataScience-Course** sur Github devient de plus en plus complexe avec le temps (plus de 1300 dépôts fin aout 2020). De même, nos cours interactifs en ligne recourent à des solutions logicielles toujours plus complètes, mais aussi plus complexes, car nous combinons plusieurs outils différents pour fournir à nos étudiants un environnement de travail et du matériel pédagogique riches et variés. Ce bookdown centralise l'information nécessaire pour les enseignants et les administrateurs de ces outils.
+
+![](images/front-cover.png)
+
+----
+
+_Le matériel dans cet ouvrage est distribué sous licence [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.fr)._
+
+----
+
+<details>
+<summary>Détails concernant le système utilisé pour compiler ce bookdown...</summary>
+
+##### Information système {-}
+
+
+```r
+sessioninfo::session_info()
+```
+
+```
+# ─ Session info ───────────────────────────────────────────────────────────────
+#  setting  value                       
+#  version  R version 3.6.3 (2020-02-29)
+#  os       macOS Catalina 10.15.7      
+#  system   x86_64, darwin15.6.0        
+#  ui       X11                         
+#  language (EN)                        
+#  collate  en_US.UTF-8                 
+#  ctype    en_US.UTF-8                 
+#  tz       Europe/Brussels             
+#  date     2020-11-09                  
+# 
+# ─ Packages ───────────────────────────────────────────────────────────────────
+#  package     * version    date       lib source                            
+#  assertthat    0.2.1      2019-03-21 [1] CRAN (R 3.6.0)                    
+#  bookdown      0.18       2020-03-05 [1] CRAN (R 3.6.0)                    
+#  cli           2.0.2      2020-02-28 [1] CRAN (R 3.6.0)                    
+#  crayon        1.3.4.9000 2020-08-27 [1] Github (r-lib/crayon@6b3f0c6)     
+#  digest        0.6.25     2020-02-23 [1] CRAN (R 3.6.0)                    
+#  evaluate      0.14       2019-05-28 [1] CRAN (R 3.6.0)                    
+#  fansi         0.4.1      2020-01-08 [1] CRAN (R 3.6.0)                    
+#  glue          1.4.0      2020-04-03 [1] CRAN (R 3.6.2)                    
+#  htmltools     0.5.0.9000 2020-08-27 [1] Github (rstudio/htmltools@e35c3fa)
+#  knitr         1.28       2020-02-06 [1] CRAN (R 3.6.0)                    
+#  magrittr      1.5        2014-11-22 [1] CRAN (R 3.6.0)                    
+#  rlang         0.4.5      2020-03-01 [1] CRAN (R 3.6.0)                    
+#  rmarkdown     2.1        2020-01-20 [1] CRAN (R 3.6.0)                    
+#  sessioninfo   1.1.1      2018-11-05 [1] CRAN (R 3.6.0)                    
+#  stringi       1.4.6      2020-02-17 [1] CRAN (R 3.6.0)                    
+#  stringr       1.4.0      2019-02-10 [1] CRAN (R 3.6.0)                    
+#  withr         2.2.0      2020-04-20 [1] CRAN (R 3.6.2)                    
+#  xfun          0.13       2020-04-13 [1] CRAN (R 3.6.2)                    
+#  yaml          2.2.1      2020-02-01 [1] CRAN (R 3.6.0)                    
+# 
+# [1] /Library/Frameworks/R.framework/Versions/3.6/Resources/library
+```
+
+</details>
