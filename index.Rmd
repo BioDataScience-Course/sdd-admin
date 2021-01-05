@@ -31,11 +31,10 @@ Notre organisation **BioDataScience-Course** sur Github devient de plus en plus 
 
 ![](images/front-cover.png)
 
-----
+
 
 _Le matériel dans cet ouvrage est distribué sous licence [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.fr)._
 
-----
 
 <details>
 <summary>Détails concernant le système utilisé pour compiler ce bookdown...</summary>

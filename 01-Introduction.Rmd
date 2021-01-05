@@ -155,7 +155,7 @@ Cette section reprends différents éléments important qui émergent des consta
 - Marcel Lebrun de l'UCL présente les différents types de classes inversées dans la vidéo suivante\ :
 
 ```{r, echo=FALSE}
-vembedr::embed_youtube("U8J24T-eY0U", width = 770, height = 433)
+knitr::include_url("https://www.youtube.com/embed/U8J24T-eY0U")
 ```
 
 À côté de l'approche traditionnelle cours ex-cathédras qui présentent la théorie suivis de séances d'exercices ou TP qui mettent en pratique, il y a\ :
@@ -189,7 +189,7 @@ L'esprit uhmain part d'un contexte pour ensuite généraliser (décontextualiser
 L'approche sous forme de classe renversée est donc la forme la plus extrême. Jean-Charles Cailliez de l'Université de Lille présente ce concept dans la vidéo TEDx suivante\ :
 
 ```{r, echo=FALSE}
-vembedr::embed_youtube("KMAONv3BPhs", width = 770, height = 433)
+knitr::include_url("https://www.youtube.com/embed/KMAONv3BPhs")
 ```
 
 Il ne faut pas copier son système, mais en reprendre des éléments et l'adapter au cours à la personnalité de l'enseignant, ...En tous cas, lui va très loin puisque ce sont les étudiants qui font tout (définir la matière, préparer le cours, l'exposer au prof, préparer les questions de devoirs et d'examens). Le prof fait les devoirs que les étudiants lui donne et offre ainsi un feedback sur la qualité du travail par cet intermédiaire. Il utilise notamment les QCM inversés\ : les étudiants produisent les question, le prof répond, les étudiants corrigent. Si la question est bien posée, le prof répond bien. Si elle est mal posée, le prof fait semblant de répondre n'importe quoi pour bien faire comprendre que la question est débile ou mal posée. Il utilise aussi le QCM "intelligent"\ : il ne suffit pas de dire quelles sont les bonnes réponses, mais il faut aussi justifier pourquoi les autres sont fausses pour avoir des points. Au début du cours, chaque équipe crée un tel QCM (5 questions). Ensuite les QCM passent à l'équipe suivante qui y répond. Enfin, les réponses sont données à une troisième équipe qui corrige (3min à chaque fois, suivi d'une petite discussion).
@@ -199,19 +199,19 @@ Cette approche permet aussi de mettre en œuvre le principe suivant\ : "enseigne
 - Intervention de Jean-Jacques Cailliez.
 
 ```{r, echo=FALSE}
-vembedr::embed_youtube("FtesVo3U4v0", width = 770, height = 433)
+knitr::include_url("https://www.youtube.com/embed/FtesVo3U4v0")
 ```
 
 - Intervention de Sébastien Bette.
 
 ```{r, echo=FALSE}
-vembedr::embed_youtube("CAXfg7PbRdY", width = 770, height = 433)
+knitr::include_url("https://www.youtube.com/embed/CAXfg7PbRdY")
 ```
 
 Questions croisées aux deux intervenants.
 
 ```{r, echo=FALSE}
-vembedr::embed_youtube("DIhp6P4HuB8", width = 770, height = 433)
+knitr::include_url("https://www.youtube.com/embed/DIhp6P4HuB8")
 ```
 
 #### Intelligence collective
@@ -219,7 +219,7 @@ vembedr::embed_youtube("DIhp6P4HuB8", width = 770, height = 433)
 François Taddei parle de la mobilisation de l'intelligence collective au service de nouvelles formes d'apprentissage ici\ :
 
 ```{r, echo=FALSE}
-vembedr::embed_youtube("Ckp4AvvhZ_A", width = 770, height = 433)
+knitr::include_url("https://www.youtube.com/embed/Ckp4AvvhZ_A")
 ```
 
 Parmi les points importants de l'innovation pédagogique est l'utilisation de l'intelligence collective. Jean-Jacques Cailliez (voir ci-dessus) fait travailler les étudiants par groupes de six (considéré comme la meilleure taille de groupe). Par contre, c'est lui qui crée les groupes. Après un test d'évaluation qui lui permet de déterminer qui est fort, moyen ou faible, il mets un fort, et un faible systématiquement dans chaque groupe. Ensuite, il demande que les étudiants s'attribuent à chacun un rôle au sein du groupe pour éviter que certains ne fassent rien. Au fil du temps, les responsabilités changent, mais ceci est important pour impliquer tout le monde dès le début. Si un ou plusieurs étudiants ne font rien au sein du groupe, cela plombe l'ambiance puisqu'il y a une partie de la note qui est commune à tout le groupe et ceux qui travaillent se sentent lésés.
@@ -269,7 +269,7 @@ On a tous tendance à utiliser des tournure comme "il suffit de ...", "cela se f
 Les enseignants doivent tenir compte également de la psychologie, et en particulier de tout ce qui peut accroître, ou au contraire, impacter la motivation des étudiants. Dans une présentation TEDx, Mark Rober introduit ce qu'il appelle l'"effet Super Mario".
 
 ```{r, echo=FALSE}
-vembedr::embed_youtube("9vJRopau0g0", width = 770, height = 433)
+knitr::include_url("https://www.youtube.com/embed/9vJRopau0g0")
 ```
 
 Le jeu Super Mario est très addictif, parce que le joueur est focalisé sur l'objectif à atteindre (terminer le jeu et sauver la princesse). Cela le détourne des nombreuses embûches qui parsèment le jeu. Au final, l'utilisateur ne fait qu'appuyer successivement sur une série de six boutons (sur la manette de jeu), et présenté autrement, on réalise à quel point la même action peut être perçue négativement. Mark présente six boutons et explique qu'il faudra les appuyer selon une séquence précise... très longue et pendant plus d'une heure pour passer un test. Vu comme cela, cela parait infaisable et totalement rébarbatif... pourtant c'est exactement ce qu'on fait dans le jeu Super Mario qui est pourtant, au contraire, addictif.
@@ -306,19 +306,19 @@ Il y a énormément plus de choses intéressantes dans cet ouvrage, et il faudra
 La présentation de type PowerPoint est partout et les enseignants ne peuvent plus s'en passer. Cependant, c'est un outil à double tranchant et une mauvaise utilisation de cet outil peut être désastreuse. C'est ce qu'on appelle la "mort par PowerPoint".
 
 ```{r, echo=FALSE}
-vembedr::embed_youtube("Iwpi1Lm6dFo", width = 770, height = 433)
+knitr::include_url("https://www.youtube.com/embed/Iwpi1Lm6dFo")
 ```
 
 Quelques conseils pour améliorer sa présentation PowerPoint ici\ :
 
 ```{r, echo=FALSE}
-vembedr::embed_youtube("U_HN7H8n8E", width = 770, height = 433)
+knitr::include_url("https://www.youtube.com/embed/-U_HN7H8n8E")
 ```
 
 Don McMillan est un humoriste qui réussit à faire passer le message d'une manière hilarante ici\ :
 
 ```{r, echo=FALSE}
-vembedr::embed_youtube("KbSPPFYxx3o", width = 770, height = 433)
+knitr::include_url("https://www.youtube.com/embed/KbSPPFYxx3o")
 ```
 
 ### Enseigner les statistiques comme les mathématiques
@@ -328,7 +328,7 @@ Douglas Andrews dans [the big mistake: teaching stat as though it were math](htt
 La vidéo suivante caricature les interactions entre un biologiste et un statisticien. Ceci montre l'importance de former des personnes capables de faire le lien entre les deux disciplines\ : les scientifiques des données ayant un "background" en biologie.
 
 ```{r, echo=FALSE}
-vembedr::embed_youtube("Hz1fyhVOjr4", width = 770, height = 433)
+knitr::include_url("https://www.youtube.com/embed/Hz1fyhVOjr4")
 ```
 
 ### "Gamification" de l'enseignement
@@ -339,7 +339,7 @@ L'apprentissage par le jeu est une approche intéressante et motivante. Le syst�
 
 - **course de relais**\ : un jeu de données à analyser, équipes de 4 (1h) ou 6 (1h30). Chaque étudiant a 1/4h pour travailler sur un dépôt GitHub puis fait un commit et passe le dépôt au suivant. Au bout du temps écoulé, nous évaluons le travail.
 
-- **ping pong**\ : par exemple concernant la réalisation de graphiques. Par deux (ou deux binômes) qui s'opposent. On commence avec `chart(data= ..., ... ~...)` pour poser le problème (un jeu de données et des variables à utiliser). Le premier doit ajouter une instruction, puis le second, et ainsi de suite. Celui qui perd a soit ajouté une mauvaise instruction, soit le graphique est fini et il n'y a plus rien à rajouter (ou le délias max est écoulé et l'étudiant n'a rien pu rajouter).
+- **ping pong**\ : par exemple concernant la réalisation de graphiques. Par deux (ou deux binômes) qui s'opposent. On commence avec `chart(data= ..., ... ~...)` pour poser le problème (un jeu de données et des variables à utiliser). Le premier doit ajouter une instruction, puis le second, et ainsi de suite. Celui qui perd a soit ajouté une mauvaise instruction, soit le graphique est fini et il n'y a plus rien à rajouter (ou le délais max est écoulé et l'étudiant n'a rien pu rajouter).
 
 - **correction contre la montre**\ : deux équipes s'affrontent. Chacune encode du code correct dans une app Shiny et propose une version avec une erreur cachée à l'autre équipe. Les corrections sont soumises à quelque chose comme `gradethis::grade_code()` ou des outils de testing qui comparent deux versions de code, la réponse soumise par rapport à la version correcte. La première équipe qui trouve l'erreur a gagné.
 
