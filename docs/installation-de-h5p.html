@@ -24,7 +24,7 @@
 <meta name="author" content="Philippe Grosjean &amp; Guyliann Engels" />
 
 
-<meta name="date" content="2020-11-09" />
+<meta name="date" content="2021-01-05" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -375,17 +375,17 @@ code span.wa { color: #bf0303; } /* Warning */
 <li class="chapter" data-level="6" data-path="bookdown.html"><a href="bookdown.html"><i class="fa fa-check"></i><b>6</b> Bookdown &amp; learndown</a><ul>
 <li class="chapter" data-level="6.1" data-path="création-dun-bookdownlearndown.html"><a href="création-dun-bookdownlearndown.html"><i class="fa fa-check"></i><b>6.1</b> Création d’un bookdown/learndown</a><ul>
 <li class="chapter" data-level="6.1.1" data-path="création-dun-bookdownlearndown.html"><a href="création-dun-bookdownlearndown.html#readme.md"><i class="fa fa-check"></i><b>6.1.1</b> README.md</a></li>
-<li><a href="création-dun-bookdownlearndown.html#bookdown.yml-_output.yml-index.html-header.html-header0.html-footer.html-style.css-style0.css-setup.r-contenu-intégration-dans-wordpress-contenu-h5p-dans-bookdown"><span class="toc-section-number">6.1.2</span> _bookdown.yml
-### _output.yml
-### index.html
-### header.html &amp; header0.html
-### footer.html
-### style.css &amp; style0.css
-### setup.R
-### Contenu
-## Intégration dans Wordpress
-## Contenu H5P dans bookdown</a></li>
+<li class="chapter" data-level="6.1.2" data-path="création-dun-bookdownlearndown.html"><a href="création-dun-bookdownlearndown.html#bookdown.yml"><i class="fa fa-check"></i><b>6.1.2</b> _bookdown.yml</a></li>
+<li class="chapter" data-level="6.1.3" data-path="création-dun-bookdownlearndown.html"><a href="création-dun-bookdownlearndown.html#output.yml"><i class="fa fa-check"></i><b>6.1.3</b> _output.yml</a></li>
+<li class="chapter" data-level="6.1.4" data-path="création-dun-bookdownlearndown.html"><a href="création-dun-bookdownlearndown.html#index.html"><i class="fa fa-check"></i><b>6.1.4</b> index.html</a></li>
+<li class="chapter" data-level="6.1.5" data-path="création-dun-bookdownlearndown.html"><a href="création-dun-bookdownlearndown.html#header.html-header0.html"><i class="fa fa-check"></i><b>6.1.5</b> header.html &amp; header0.html</a></li>
+<li class="chapter" data-level="6.1.6" data-path="création-dun-bookdownlearndown.html"><a href="création-dun-bookdownlearndown.html#footer.html"><i class="fa fa-check"></i><b>6.1.6</b> footer.html</a></li>
+<li class="chapter" data-level="6.1.7" data-path="création-dun-bookdownlearndown.html"><a href="création-dun-bookdownlearndown.html#style.css-style0.css"><i class="fa fa-check"></i><b>6.1.7</b> style.css &amp; style0.css</a></li>
+<li class="chapter" data-level="6.1.8" data-path="création-dun-bookdownlearndown.html"><a href="création-dun-bookdownlearndown.html#setup.r"><i class="fa fa-check"></i><b>6.1.8</b> setup.R</a></li>
+<li class="chapter" data-level="6.1.9" data-path="création-dun-bookdownlearndown.html"><a href="création-dun-bookdownlearndown.html#contenu"><i class="fa fa-check"></i><b>6.1.9</b> Contenu</a></li>
 </ul></li>
+<li class="chapter" data-level="6.2" data-path="intégration-dans-wordpress.html"><a href="intégration-dans-wordpress.html"><i class="fa fa-check"></i><b>6.2</b> Intégration dans Wordpress</a></li>
+<li class="chapter" data-level="6.3" data-path="contenu-h5p-dans-bookdown.html"><a href="contenu-h5p-dans-bookdown.html"><i class="fa fa-check"></i><b>6.3</b> Contenu H5P dans bookdown</a></li>
 </ul></li>
 <li class="chapter" data-level="7" data-path="shiny.html"><a href="shiny.html"><i class="fa fa-check"></i><b>7</b> Shiny</a></li>
 <li class="chapter" data-level="8" data-path="moodle.html"><a href="moodle.html"><i class="fa fa-check"></i><b>8</b> Moodle</a><ul>
@@ -433,7 +433,7 @@ code span.wa { color: #bf0303; } /* Warning */
 <div id="installation-de-h5p" class="section level2">
 <h2><span class="header-section-number">5.1</span> Installation de H5P</h2>
 <p>H5P ne peut fonctionner seul. Il doit être inclus dans un serveur plus large, soit un LMS (Learning Management System ou plateforme d’apprentissage en ligne comme), soit un CMS (Content Management System, système de gestion de contenu).</p>
-<p>L’un des LMS les plus populaires est <a href="https://moodle.com/fr/">Moodle</a> qui a été choisi à l’UMONS comme <a href="http://moodle.umons.ac.be/">outil institutionnel d’apprentissage en ligne</a>. H5P est compatible avec Moodle (il peut être installé comme plugin). Ce serait donc parfaitement logique de l’utiliser de cette manière. Un test avait été fait en 2019. Si cela fonctionne, nous avons pu constater que le contenu H5P n’est <strong>pas</strong> utilisable ailleurs que dans Moodle lui-même, en tous cas de la façon dont le serveur test était configuré, avec les sécurités nécessaires pour protéger le site. Or, notre souhait est d’intéger le contenu H5P dans un bookdown qui ne peut être hébergé sur Moodle<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a>. L’essai qui a été réalisé à l’UMONS en 2019 n’a pas été concrétisé dans le serveur Moodle en production. Or, il nous fallait intégrer du contenu H5P dans nos bookdown, et ce, dès 2020-2021. Donc, nous avons recherché une autre option.</p>
+<p>L’un des LMS les plus populaires est <a href="https://moodle.com/fr/">Moodle</a> qui a été choisi à l’UMONS comme <a href="http://moodle.umons.ac.be/">outil institutionnel d’apprentissage en ligne</a>. H5P est compatible avec Moodle (il peut être installé comme plugin). Ce serait donc parfaitement logique de l’utiliser de cette manière. Un test avait été fait en 2019. Si cela fonctionne, nous avons pu constater que le contenu H5P n’est <strong>pas</strong> utilisable ailleurs que dans Moodle lui-même, en tous cas de la façon dont le serveur test était configuré, avec les sécurités nécessaires pour protéger le site. Or, notre souhait est d’intéger le contenu H5P dans un bookdown qui ne peut être hébergé sur Moodle<a href="#fn5" class="footnote-ref" id="fnref5"><sup>5</sup></a>. L’essai qui a été réalisé à l’UMONS en 2019 n’a pas été concrétisé dans le serveur Moodle en production. Or, il nous fallait intégrer du contenu H5P dans nos bookdown, et ce, dès 2020-2021. Donc, nous avons recherché une autre option.</p>
 <p>Cette autre option consiste à utiliser soit <a href="https://fr.wordpress.com/">Wordpress</a>, soit <a href="https://www.drupal.org/">Drupal</a> pour lesquels H5P est également compatible. Après comparaison des possibilités des deux, nous avons opté pour Wordpress, plus largement utilisé.</p>
 <p>H5P permet de récupérer des informations concernant l’activité des étudiants dans les exercices sous forme de requêtes <a href="https://xapi.com/overview/">xAPI</a>. xAPI est un standard développé pour permettre l’interaction entre un LMS comme Moodle qui produit des évènements xAPI, et un LRS (Learning Record Store) une base de données chargée d’enregistrer les traces de l’apprentissage au format standardisé xAPI. En complément de H5P lui-même et de Wordpress comme serveur principal, il nous faut donc un LRS et un plugin qui fasse le pont entre H5P et ce LRS. Enfin, l’information n’est utile que si elle est identifiable comme provenant d’un étudiant en particulier. Le serveur doit donc gérer l’authentification des utilisateurs et transmettre l’identité de l’étudiant au travers de la requête xAPI. Si tout cela parait très compliqué, voici un petit schéma qui résume l’ensemble (à noter que nous avons choisi l’authentification via GitHub parce que nos étudiants ont également d’autres activités sur GitHub/GitHub Classroom, et il est dès lors plus facile de gérer une identité commune à toutes ces activités, même si l’identité UMONS est, hors contexte, la plus logique ici) :</p>
 <div class="figure">
@@ -471,8 +471,8 @@ code span.wa { color: #bf0303; } /* Warning */
 </div>
 <div class="footnotes">
 <hr />
-<ol start="1">
-<li id="fn1"><p>D’un point de vue technique, le contenu H5P s’affiche dans un iframe. Or les possibilités des iframes inter-sites sont limitées par le protocole HTML5 sous-jacent lui-même pour éviter les abus. Il nous faut donc le bookdown (pages statiques) et le contenu H5P (devant être lié à un serveur LMS ou CMS) servis par le <em>même</em> site.<a href="installation-de-h5p.html#fnref1" class="footnote-back">↩︎</a></p></li>
+<ol start="5">
+<li id="fn5"><p>D’un point de vue technique, le contenu H5P s’affiche dans un iframe. Or les possibilités des iframes inter-sites sont limitées par le protocole HTML5 sous-jacent lui-même pour éviter les abus. Il nous faut donc le bookdown (pages statiques) et le contenu H5P (devant être lié à un serveur LMS ou CMS) servis par le <em>même</em> site.<a href="installation-de-h5p.html#fnref5" class="footnote-back">↩︎</a></p></li>
 </ol>
 </div>
 <div id="disqus_thread"></div>

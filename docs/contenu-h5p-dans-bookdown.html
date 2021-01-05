@@ -24,7 +24,7 @@
 <meta name="author" content="Philippe Grosjean &amp; Guyliann Engels" />
 
 
-<meta name="date" content="2020-11-09" />
+<meta name="date" content="2021-01-05" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -399,7 +399,8 @@ code span.wa { color: #bf0303; } /* Warning */
 <li class="chapter" data-level="10.2" data-path="les-données.html"><a href="les-données.html"><i class="fa fa-check"></i><b>10.2</b> Les données</a><ul>
 <li class="chapter" data-level="10.2.1" data-path="les-données.html"><a href="les-données.html#base-interne"><i class="fa fa-check"></i><b>10.2.1</b> Base interne</a></li>
 <li class="chapter" data-level="10.2.2" data-path="les-données.html"><a href="les-données.html#base-externe"><i class="fa fa-check"></i><b>10.2.2</b> Base externe</a></li>
-<li class="chapter" data-level="10.2.3" data-path="les-données.html"><a href="les-données.html#format-des-données"><i class="fa fa-check"></i><b>10.2.3</b> Format des données</a></li>
+<li class="chapter" data-level="10.2.3" data-path="les-données.html"><a href="les-données.html#gestion-des-utilisateurs"><i class="fa fa-check"></i><b>10.2.3</b> Gestion des utilisateurs</a></li>
+<li class="chapter" data-level="10.2.4" data-path="les-données.html"><a href="les-données.html#format-des-données"><i class="fa fa-check"></i><b>10.2.4</b> Format des données</a></li>
 </ul></li>
 </ul></li>
 <li class="appendix"><span><b>Appendices</b></span></li>
@@ -438,9 +439,9 @@ code span.wa { color: #bf0303; } /* Warning */
 <p class="caption">H5P Content dans Wordpress. Les widgets sont identifiés par leur <strong>ID</strong> (ici, 6, 7, 8, 9 &amp; 10).</p>
 </div>
 <p>Pour comprendre ce que la fonction <code>learndown::h5p()</code> fait, nous pouvons nous concentrer sur la version simplifiée suivante :</p>
-<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="contenu-h5p-dans-bookdown.html#cb17-1"></a>h5p &lt;-<span class="st"> </span><span class="cf">function</span>(id, <span class="dt">width =</span> <span class="dv">780</span>, <span class="dt">height =</span> <span class="dv">500</span>) {</span>
-<span id="cb17-2"><a href="contenu-h5p-dans-bookdown.html#cb17-2"></a>  glue<span class="op">::</span><span class="kw">glue</span>(<span class="st">&quot;</span><span class="ch">\n</span><span class="st">&lt;iframe src=</span><span class="ch">\&quot;</span><span class="st">https://wp.sciviews.org/wp-admin/admin-ajax.php?action=h5p_embed&amp;id={id}</span><span class="ch">\&quot;</span><span class="st"> width=</span><span class="ch">\&quot;</span><span class="st">{width}</span><span class="ch">\&quot;</span><span class="st"> height=</span><span class="ch">\&quot;</span><span class="st">{height}</span><span class="ch">\&quot;</span><span class="st"> frameborder=</span><span class="ch">\&quot;</span><span class="st">0</span><span class="ch">\&quot;</span><span class="st"> allowfullscreen=</span><span class="ch">\&quot;</span><span class="st">allowfullscreen</span><span class="ch">\&quot;</span><span class="st"> class=</span><span class="ch">\&quot;</span><span class="st">h5p</span><span class="ch">\&quot;</span><span class="st">&gt;&lt;/iframe&gt;&lt;script src=</span><span class="ch">\&quot;</span><span class="st">https://wp.sciviews.org/wp-content/plugins/h5p/h5p-php-library/js/h5p-resizer.js</span><span class="ch">\&quot;</span><span class="st"> charset=</span><span class="ch">\&quot;</span><span class="st">UTF-8</span><span class="ch">\&quot;</span><span class="st">&gt;&lt;/script&gt;</span><span class="ch">\n</span><span class="st">&quot;</span>)</span>
-<span id="cb17-3"><a href="contenu-h5p-dans-bookdown.html#cb17-3"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="contenu-h5p-dans-bookdown.html#cb18-1"></a>h5p &lt;-<span class="st"> </span><span class="cf">function</span>(id, <span class="dt">width =</span> <span class="dv">780</span>, <span class="dt">height =</span> <span class="dv">500</span>) {</span>
+<span id="cb18-2"><a href="contenu-h5p-dans-bookdown.html#cb18-2"></a>  glue<span class="op">::</span><span class="kw">glue</span>(<span class="st">&quot;</span><span class="ch">\n</span><span class="st">&lt;iframe src=</span><span class="ch">\&quot;</span><span class="st">https://wp.sciviews.org/wp-admin/admin-ajax.php?action=h5p_embed&amp;id={id}</span><span class="ch">\&quot;</span><span class="st"> width=</span><span class="ch">\&quot;</span><span class="st">{width}</span><span class="ch">\&quot;</span><span class="st"> height=</span><span class="ch">\&quot;</span><span class="st">{height}</span><span class="ch">\&quot;</span><span class="st"> frameborder=</span><span class="ch">\&quot;</span><span class="st">0</span><span class="ch">\&quot;</span><span class="st"> allowfullscreen=</span><span class="ch">\&quot;</span><span class="st">allowfullscreen</span><span class="ch">\&quot;</span><span class="st"> class=</span><span class="ch">\&quot;</span><span class="st">h5p</span><span class="ch">\&quot;</span><span class="st">&gt;&lt;/iframe&gt;&lt;script src=</span><span class="ch">\&quot;</span><span class="st">https://wp.sciviews.org/wp-content/plugins/h5p/h5p-php-library/js/h5p-resizer.js</span><span class="ch">\&quot;</span><span class="st"> charset=</span><span class="ch">\&quot;</span><span class="st">UTF-8</span><span class="ch">\&quot;</span><span class="st">&gt;&lt;/script&gt;</span><span class="ch">\n</span><span class="st">&quot;</span>)</span>
+<span id="cb18-3"><a href="contenu-h5p-dans-bookdown.html#cb18-3"></a>}</span></code></pre></div>
 <p>La fonction construit un fragment HTML qui ajoute un iframe et un script pour gérer l’inclusion du contenu H5P dans notre bookdown. A partir d’ici, ajouter un contenu H5P est aussi simple que d’ajouter <code>h5p(id)</code> dans du code R en ligne où “id” est l’ID que nous avons noté. On peut aussi jouer sur les arguments <code>width=</code> et <code>height=</code> pour ajuster l’emplacement et la taille du contenu H5P dans la page.</p>
 <p>Ainsi programmé notre contenu H5P se comporte comme suit :</p>
 <ul>
