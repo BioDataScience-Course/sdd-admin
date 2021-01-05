@@ -303,6 +303,6 @@ L'apprentissage par le jeu est une approche intéressante et motivante. Le syst�
 
 - **quoi d'autre\ ?** ...
 
-### Le them eat the cake
+### Let them eat the cake
 
-Le tout début d'un cours (la première heure, voire même les 10 premières minutes) sont déterminants pour la suite.
+Le tout début d'un cours (la première heure, voire même les 10 premières minutes) sont déterminants pour la suite. Donc, il faut leur faire voir le résultat final et en tous cas, quelque chose de très motivant pour la suite. C'est la méthode prônée par Mine Cetinkaya-Rundel [ici](https://speakerdeck.com/minecr/let-them-eat-cake-first-0a3bbf75-f6f1-42d5-8d2f-ac2ff741611f).
