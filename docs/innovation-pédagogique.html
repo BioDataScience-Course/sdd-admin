@@ -24,7 +24,7 @@
 <meta name="author" content="Philippe Grosjean &amp; Guyliann Engels" />
 
 
-<meta name="date" content="2021-01-06" />
+<meta name="date" content="2021-01-07" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -332,6 +332,7 @@ code span.wa { color: #bf0303; } /* Warning */
 <li class="chapter" data-level="1.3.11" data-path="innovation-pédagogique.html"><a href="innovation-pédagogique.html#enseigner-les-statistiques-comme-les-mathématiques"><i class="fa fa-check"></i><b>1.3.11</b> Enseigner les statistiques comme les mathématiques</a></li>
 <li class="chapter" data-level="1.3.12" data-path="innovation-pédagogique.html"><a href="innovation-pédagogique.html#gamification-de-lenseignement"><i class="fa fa-check"></i><b>1.3.12</b> “Gamification” de l’enseignement</a></li>
 <li class="chapter" data-level="1.3.13" data-path="innovation-pédagogique.html"><a href="innovation-pédagogique.html#let-them-eat-the-cake"><i class="fa fa-check"></i><b>1.3.13</b> Let them eat the cake</a></li>
+<li class="chapter" data-level="1.3.14" data-path="innovation-pédagogique.html"><a href="innovation-pédagogique.html#differents-type-de-documents"><i class="fa fa-check"></i><b>1.3.14</b> Differents type de documents</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="general.html"><a href="general.html"><i class="fa fa-check"></i><b>2</b> Organisation générale</a><ul>
@@ -600,6 +601,28 @@ Donc, préciser et rappeler les buts ultimes (vous serez de bons sicentifiques d
 <div id="let-them-eat-the-cake" class="section level3">
 <h3><span class="header-section-number">1.3.13</span> Let them eat the cake</h3>
 <p>Le tout début d’un cours (la première heure, voire même les 10 premières minutes) sont déterminants pour la suite. Donc, il faut leur faire voir le résultat final et en tous cas, quelque chose de très motivant pour la suite. C’est la méthode prônée par Mine Cetinkaya-Rundel <a href="https://speakerdeck.com/minecr/let-them-eat-cake-first-0a3bbf75-f6f1-42d5-8d2f-ac2ff741611f">ici</a>.</p>
+</div>
+<div id="differents-type-de-documents" class="section level3">
+<h3><span class="header-section-number">1.3.14</span> Differents type de documents</h3>
+<p>Dans <a href="https://third-bit.com/2019/08/08/documentation-types/">documentation types</a> Gregory Wilson propose une classification des différents types de documents en fonction du public et du but visé par le document.</p>
+<ul>
+<li>Le <em>novice</em> n’a pas encore de modèle mental du domaine. Il ne sait pas ce qu’il ignore et ne connait pas le jargon.</li>
+<li>L’<em>utilisateur compétent</em> possède un modèle mental du domaine. Il peut exécuter des tâches routinières, peut trouver l’information et est capable de déterminer si ce qu’on lui présente est la solution à son problème ou non.</li>
+<li>L’<em>expert</em> a une vision dense et richement connectée du domaine. Il est capables de résoudre de nombreux problèmes facilement.</li>
+</ul>
+<p>Le graphique suivant, <a href="https://third-bit.com/2019/08/08/documentation-types/">tiré du blog de Gregory Wilson</a> présente différents types de documentations en fonction des connaissances générales (axe X) <em>versus</em> les connaissances spécifiques sur la question posée (axe Y). Les flèches indiquent dans quelle direction la documentation amène cet utilisateur. Les types de documentations repris dans le schéma sont décrits plus en détails dans le blog d’origine.</p>
+<p><img src="images/introduction/doctypes.png" /></p>
+<p>Il faut noter que des documents de type <strong>livre</strong> ou <strong>vignette</strong> ne sont pas inclus dans le diagramme car en réalité, ce sont des documents composites qui contiennent généralement plusieurs sections apparentées à l’un des types repris dans le diagramme. L’<strong>aide-mémoire</strong> est un type particulier de documentation de référence synthétisée en une ou deux pages. Enfin les <strong>bloc-notes informatiques</strong> (comme le R Notebook) sont caractérisés par l’inclusion de code exécutable directement dans le document, mais à part cela, ils peuvent être de n’importe quel autre type.</p>
+<p>Par rapport à l’enseignement de la science des données, ce sont les trois types qui visent le novice qui nous intéressent en premier :</p>
+<ul>
+<li><p>Le <strong>tutoriel</strong> correspond au type de document à privilégier dans notre matériel pédagogique. Son objectif est de <strong>construire un modèle mental du domaine</strong> ainsi qu’à acquérir quelques compétences de bases permettant de progresser et devenir un utilisateur compétent.</p></li>
+<li><p>L’<strong>overview</strong> (vue d’ensemble) peut être un webinaire, un premier cours, un “elevator pitch”, du matériel de marketing, … Il informe essentiellement de l’existence de quelque chose, mais sans apporter de compétences supplémentaires (l’utilisation n’apprend pas à résoudre des problèmes). Par rapport au schéma d’apprentissage, ce type de document est utile (et même indispensable) pour éveiller l’intérêt et donc, pour capter l’attention de l’étudiant.</p></li>
+<li><p>Le <strong>how-to</strong> (guide pratique) est une recette étape par étape pour résoudre un problème particulier. Il n’est pas nécessaire de comprendre le pourquoi pour pouvoir l’utiliser. Par contre, c’est le type de documentation qui permettra de résoudre un problème particulier le plus vite possible, mais ne change rien aux connaissances générales du domaine de l’utilisateur.</p></li>
+</ul>
+<p>Nous voyons donc que les vues d’ensembles et les guides pratiques sont à réserver à des situation particulières : éveil de l’intérêt en début de cours ou de module pour les premiers, résoudre rapidement un problème pour pouvoir passer à autre chose pour les seconds (par exemple : installer le logiciel requis le plus vite possible pour pouvoir se concentrer sur les exercices ensuite). Sinon globalement, le matériel pédagogique doit se structurer essentiellement comme un tutoriel.</p>
+<p>Cependant, il ne faut pas négliger non plus de la documentation complémentaire qui sera utile lorsque l’étudiant deviendra compétent : le matériel de <strong>référence</strong> (dont les aides-mémoires, foires aux questions, cartes mentales, aides en ligne des fonctions de R) et les résolutions de cas (<strong>worked examples</strong> dont les check-listes et les snippets font partie). En effet, une fois qu’il a assimilé les notions, le document de type tutoriel qu’il a utilisé jusqu’ici ne présente <em>pas</em> l’information d’une manière telle qu’elle soit facile à retrouver. Les points importants sont trop délayés (développement étape par étape, mélange d’exemples et de théorie, etc.). Donc, il faut <em>résumer</em> les notions importantes dans des documents de référence également fournis aux étudiants et leur apprendre à les utiliser et à passer des uns (tutoriels) aux autres (références). <strong>Fournir seulement un syllabus bien construit comme un tutoriel ne suffit pas car le novice devenu utilisateur compétent à son usage se retrouve alors face à un document qui est inadapté comme documentation de référence.</strong> Une approche à expérimenter serait de faire élaborer (au moins partiellement) le matériel de référence par les étudiants. Ceci va dans le sens de la pédagogie active et du concept de classe renversée, mais tout en guidant plus fortement la matière à étudier puisqu’on part d’un syllabus/tutoriel qui cadre le travail.</p>
+<p>La scénarisation du cours est importante, mais également la scénarisation du matériel pédagogique. Un point de vue qui paraît essentiel ici est de bien définir le type de documentation pour chaque partie d’un chapitre <em>avant</em> de l’écrire et ensuite de se tenir au style et aux objectifs relatifs à ce type de documentation. L’illustration suivante est une tentative de scénarisation d’un module en fonction de quatre <strong>types de documents</strong>, présentés ici en couleurs différentes. Ceci semble complémentaire à la définition du contenu en terme de <strong>notions à enseigner</strong> et d’<strong>acquis d’apprentissage</strong> visés par le module qui définissent <em>quoi</em> enseigner, alors que la présentation par types de documents indique <em>comment</em> l’enseigner.</p>
+<p><img src="images/introduction/doctypes_scenario.png" /></p>
 
 </div>
 </div>

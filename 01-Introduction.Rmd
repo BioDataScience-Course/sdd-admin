@@ -348,3 +348,33 @@ L'apprentissage par le jeu est une approche intéressante et motivante. Le syst�
 ### Let them eat the cake
 
 Le tout début d'un cours (la première heure, voire même les 10 premières minutes) sont déterminants pour la suite. Donc, il faut leur faire voir le résultat final et en tous cas, quelque chose de très motivant pour la suite. C'est la méthode prônée par Mine Cetinkaya-Rundel [ici](https://speakerdeck.com/minecr/let-them-eat-cake-first-0a3bbf75-f6f1-42d5-8d2f-ac2ff741611f).
+
+### Differents type de documents
+
+Dans [documentation types](https://third-bit.com/2019/08/08/documentation-types/) Gregory Wilson propose une classification des différents types de documents en fonction du public et du but visé par le document.
+
+- Le *novice* n'a pas encore de modèle mental du domaine. Il ne sait pas ce qu'il ignore et ne connait pas le jargon.
+- L'*utilisateur compétent* possède un modèle mental du domaine. Il peut exécuter des tâches routinières, peut trouver l'information et est capable de déterminer si ce qu'on lui présente est la solution à son problème ou non.
+- L'*expert* a une vision dense et richement connectée du domaine. Il est capables de résoudre de nombreux problèmes facilement.
+
+Le graphique suivant, [tiré du blog de Gregory Wilson](https://third-bit.com/2019/08/08/documentation-types/) présente différents types de documentations en fonction des connaissances générales (axe X) *versus* les connaissances spécifiques sur la question posée (axe Y). Les flèches indiquent dans quelle direction la documentation amène cet utilisateur. Les types de documentations repris dans le schéma sont décrits plus en détails dans le blog d'origine.
+
+![](images/introduction/doctypes.png)
+
+Il faut noter que des documents de type **livre** ou **vignette** ne sont pas inclus dans le diagramme car en réalité, ce sont des documents composites qui contiennent généralement plusieurs sections apparentées à l'un des types repris dans le diagramme. L'**aide-mémoire** est un type particulier de documentation de référence synthétisée en une ou deux pages. Enfin les **bloc-notes informatiques** (comme le R Notebook) sont caractérisés par l'inclusion de code exécutable directement dans le document, mais à part cela, ils peuvent être de n'importe quel autre type.
+
+Par rapport à l'enseignement de la science des données, ce sont les trois types qui visent le novice qui nous intéressent en premier\ :
+
+- Le **tutoriel** correspond au type de document à privilégier dans notre matériel pédagogique. Son objectif est de **construire un modèle mental du domaine** ainsi qu'à acquérir quelques compétences de bases permettant de progresser et devenir un utilisateur compétent.
+
+- L'**overview** (vue d'ensemble) peut être un webinaire, un premier cours, un "elevator pitch", du matériel de marketing, ... Il informe essentiellement de l'existence de quelque chose, mais sans apporter de compétences supplémentaires (l'utilisation n'apprend pas à résoudre des problèmes). Par rapport au schéma d'apprentissage, ce type de document est utile (et même indispensable) pour éveiller l'intérêt et donc, pour capter l'attention de l'étudiant.
+
+- Le **how-to** (guide pratique) est une recette étape par étape pour résoudre un problème particulier. Il n'est pas nécessaire de comprendre le pourquoi pour pouvoir l'utiliser. Par contre, c'est le type de documentation qui permettra de résoudre un problème particulier le plus vite possible, mais ne change rien aux connaissances générales du domaine de l'utilisateur.
+
+Nous voyons donc que les vues d'ensembles et les guides pratiques sont à réserver à des situation particulières\ : éveil de l'intérêt en début de cours ou de module pour les premiers, résoudre rapidement un problème pour pouvoir passer à autre chose pour les seconds (par exemple\ : installer le logiciel requis le plus vite possible pour pouvoir se concentrer sur les exercices ensuite). Sinon globalement, le matériel pédagogique doit se structurer essentiellement comme un tutoriel.
+
+Cependant, il ne faut pas négliger non plus de la documentation complémentaire qui sera utile lorsque l'étudiant deviendra compétent\ : le matériel de **référence** (dont les aides-mémoires, foires aux questions, cartes mentales, aides en ligne des fonctions de R) et les résolutions de cas (**worked examples** dont les check-listes et les snippets font partie). En effet, une fois qu'il a assimilé les notions, le document de type tutoriel qu'il a utilisé jusqu'ici ne présente *pas* l'information d'une manière telle qu'elle soit facile à retrouver. Les points importants sont trop délayés (développement étape par étape, mélange d'exemples et de théorie, etc.). Donc, il faut *résumer* les notions importantes dans des documents de référence également fournis aux étudiants et leur apprendre à les utiliser et à passer des uns (tutoriels) aux autres (références). **Fournir seulement un syllabus bien construit comme un tutoriel ne suffit pas car le novice devenu utilisateur compétent à son usage se retrouve alors face à un document qui est inadapté comme documentation de référence.** Une approche à expérimenter serait de faire élaborer (au moins partiellement) le matériel de référence par les étudiants. Ceci va dans le sens de la pédagogie active et du concept de classe renversée, mais tout en guidant plus fortement la matière à étudier puisqu'on part d'un syllabus/tutoriel qui cadre le travail.
+
+La scénarisation du cours est importante, mais également la scénarisation du matériel pédagogique. Un point de vue qui paraît essentiel ici est de bien définir le type de documentation pour chaque partie d'un chapitre *avant* de l'écrire et ensuite de se tenir au style et aux objectifs relatifs à ce type de documentation. L'illustration suivante est une tentative de scénarisation d'un module en fonction de quatre **types de documents**, présentés ici en couleurs différentes. Ceci semble complémentaire à la définition du contenu en terme de **notions à enseigner** et d'**acquis d'apprentissage** visés par le module qui définissent *quoi* enseigner, alors que la présentation par types de documents indique *comment* l'enseigner. 
+
+![](images/introduction/doctypes_scenario.png)

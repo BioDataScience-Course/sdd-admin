@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020) (preloaded format=xelatex 2021.1.3)  6 JAN 2021 16:39
+This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020) (preloaded format=xelatex 2021.1.3)  7 JAN 2021 10:03
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -982,109 +982,121 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 File: 01-Introduction_files/figure-latex/unnamed-chunk-20-1.pdf Graphic file (t
 ype pdf)
 <use 01-Introduction_files/figure-latex/unnamed-chunk-20-1.pdf>
-[24] [25] [26
+[24]
+File: images/introduction/doctypes.png Graphic file (type bmp)
+<images/introduction/doctypes.png>
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+[25] [26]
+File: images/introduction/doctypes_scenario.png Graphic file (type bmp)
+<images/introduction/doctypes_scenario.png>
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+[27] [28]
+Chapter 2.
+[29
 
 ]
-Chapter 2.
-[27]
 File: images/general/svbox-launcher.png Graphic file (type bmp)
 <images/general/svbox-launcher.png>
-[28] [29]
+[30] [31]
 File: images/block-info.png Graphic file (type bmp)
 <images/block-info.png>
 File: images/general/tools.png Graphic file (type bmp)
 <images/general/tools.png>
-[30] [31] [32] [33] [34
+[32] [33] [34] [35] [36
 
 ]
 Chapter 3.
 
-Overfull \hbox (7.76407pt too wide) in paragraph at lines 817--819
+Overfull \hbox (7.76407pt too wide) in paragraph at lines 857--859
 \TU/lmr/m/n/10 comme préfixe pour être plus explicite (ex. : \TU/lmtt/m/n/10 Bi
 oDataScience1\TU/lmr/m/n/10 , \TU/lmtt/m/n/10 BioDataScienceData\TU/lmr/m/n/10 
 ,
  []
 
-[35]
+[37]
 File: images/block-note.png Graphic file (type bmp)
 <images/block-note.png>
-[36]
+[38]
 File: images/git/git-delete-branch.png Graphic file (type bmp)
 <images/git/git-delete-branch.png>
-[37]
+[39]
 File: images/block-warning.png Graphic file (type bmp)
 <images/block-warning.png>
-[38]
+[40]
 Chapter 4.
 File: images/block-note.png Graphic file (type bmp)
 <images/block-note.png>
-[39
+[41
 
 ]
 File: images/wordpress/login-github.png Graphic file (type bmp)
 <images/wordpress/login-github.png>
 
-LaTeX Warning: Float too large for page by 6.23712pt on input line 921.
+LaTeX Warning: Float too large for page by 6.23712pt on input line 961.
 
 File: images/wordpress/non-enregistre.png Graphic file (type bmp)
 <images/wordpress/non-enregistre.png>
 File: images/wordpress/enregistre.png Graphic file (type bmp)
 <images/wordpress/enregistre.png>
-[40] [41] [42] [43]
+[42] [43] [44] [45]
 File: images/block-warning.png Graphic file (type bmp)
 <images/block-warning.png>
 
-Overfull \hbox (58.17908pt too wide) in paragraph at lines 944--945
+Overfull \hbox (58.17908pt too wide) in paragraph at lines 984--985
 []\TU/lmr/m/n/10 L’adresse mail utilisée est celle renseignée par Moodle, soit 
 \TU/lmtt/m/n/10 prénom.nom@[student.]umons.ac.be\TU/lmr/m/n/10 .
  []
 
-[44] [45]
-Underfull \hbox (badness 10000) in paragraph at lines 989--991
+[46] [47]
+Underfull \hbox (badness 10000) in paragraph at lines 1029--1031
 \TU/lmtt/m/n/10 lamp0/web/vhosts/wp.sciviews.org/htdocs/wp-content/updraft\TU/l
 mr/m/n/10 , mais il
  []
 
-[46] [47] [48]
-Overfull \hbox (12.32704pt too wide) in paragraph at lines 1108--1108
+[48] [49] [50]
+Overfull \hbox (12.32704pt too wide) in paragraph at lines 1148--1148
 []\TU/lmtt/m/n/10 # Rendre le dossier partagé VirtualBox accessible pour l[]uti
 lisateur oxboxes[] 
  []
 
-[49] [50]
+[51] [52]
 File: images/wordpress/dashboard-user-h5p.png Graphic file (type bmp)
 <images/wordpress/dashboard-user-h5p.png>
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-[51]
+[53]
 File: images/wordpress/h5pxapi.png Graphic file (type bmp)
 <images/wordpress/h5pxapi.png>
-[52] [53]
+[54] [55]
 File: images/block-note.png Graphic file (type bmp)
 <images/block-note.png>
-[54]
+[56]
 Chapter 5.
-[55
+[57
 
 ]
 File: images/h5p/h5p-general.png Graphic file (type bmp)
 <images/h5p/h5p-general.png>
-[56]
+[58]
 File: images/h5p/h5p-configuration.png Graphic file (type bmp)
 <images/h5p/h5p-configuration.png>
-[57]
+[59]
 File: images/h5p/h5pikatchu-config.png Graphic file (type bmp)
 <images/h5p/h5pikatchu-config.png>
 File: images/h5p/h5pikatchu-results.png Graphic file (type bmp)
 <images/h5p/h5pikatchu-results.png>
-[58]
+[60]
 File: images/h5p/h5p-xapi.png Graphic file (type bmp)
 <images/h5p/h5p-xapi.png>
-[59] [60]
+[61] [62]
 File: images/block-warning.png Graphic file (type bmp)
 <images/block-warning.png>
-[61] [62] [63] [64]
+[63] [64] [65] [66]
 File: images/h5p/h5p-new-content1.png Graphic file (type bmp)
 <images/h5p/h5p-new-content1.png>
 File: images/h5p/h5p-new-content2.png Graphic file (type bmp)
@@ -1093,29 +1105,29 @@ File: images/h5p/h5p-new-content3.png Graphic file (type bmp)
 <images/h5p/h5p-new-content3.png>
 File: images/h5p/h5p-new-content4.png Graphic file (type bmp)
 <images/h5p/h5p-new-content4.png>
-[65] [66] [67] [68] [69] [70
+[67] [68] [69] [70] [71] [72
 
 ]
 Chapter 6.
 
 Underfull \vbox (badness 7256) has occurred while \output is active []
 
-[71]
+[73]
 File: images/bookdown/bookdown-fork1.png Graphic file (type bmp)
 <images/bookdown/bookdown-fork1.png>
 File: images/bookdown/bookdown-fork2.png Graphic file (type bmp)
 <images/bookdown/bookdown-fork2.png>
-[72] [73]
+[74] [75]
 File: images/bookdown/bookdown-create-project.png Graphic file (type bmp)
 <images/bookdown/bookdown-create-project.png>
-[74]
-Underfull \hbox (badness 3954) in paragraph at lines 1823--1824
+[76]
+Underfull \hbox (badness 3954) in paragraph at lines 1863--1864
 \TU/lmr/m/n/10 certainement adapter les entrées \TU/lmtt/m/n/10 config: toc: be
 fore:\TU/lmr/m/n/10 , \TU/lmtt/m/n/10 config: toc: after:\TU/lmr/m/n/10 ,
  []
 
 
-Overfull \hbox (50.77905pt too wide) in paragraph at lines 1837--1839
+Overfull \hbox (50.77905pt too wide) in paragraph at lines 1877--1879
 \TU/lmtt/m/n/10 nom_bookdown\TU/lmr/m/n/10 . Dans l’exemple, il s’agit de []\TU
 /lmtt/m/n/10 https\://wp.sciviews.org/sdd-umons3-2020/[]\TU/lmr/m/n/10 . 
  []
@@ -1123,47 +1135,47 @@ Overfull \hbox (50.77905pt too wide) in paragraph at lines 1837--1839
 
 Underfull \vbox (badness 1281) has occurred while \output is active []
 
-[75]
+[77]
 File: images/block-warning.png Graphic file (type bmp)
 <images/block-warning.png>
 
-Underfull \hbox (badness 1137) in paragraph at lines 1870--1871
+Underfull \hbox (badness 1137) in paragraph at lines 1910--1911
 []\TU/lmr/m/n/10 Nous vons conseillons dans un premier temps de \TU/lmr/m/it/10
  ne pas \TU/lmr/m/n/10 modifier la page
  []
 
-[76]
+[78]
 File: images/bookdown/bookdown-add-page1.png Graphic file (type bmp)
 <images/bookdown/bookdown-add-page1.png>
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-[77]
-Overfull \hbox (101.57704pt too wide) in paragraph at lines 1917--1917
+[79]
+Overfull \hbox (101.57704pt too wide) in paragraph at lines 1957--1957
 []\TU/lmtt/m/n/10 [advanced_iframe  id="bookdown" name="bookdown" src="https://
 wp.sciviews.org/sdd-umons3-2020"[] 
  []
 
 
-Overfull \hbox (17.57704pt too wide) in paragraph at lines 1917--1917
+Overfull \hbox (17.57704pt too wide) in paragraph at lines 1957--1957
 []\TU/lmtt/m/n/10 width="100%" height="calc(100vh - 50px)" use_shortcode_attrib
 utes_only="true"[] 
  []
 
 
-Overfull \hbox (64.82704pt too wide) in paragraph at lines 1917--1917
+Overfull \hbox (64.82704pt too wide) in paragraph at lines 1957--1957
 []\TU/lmtt/m/n/10 map_parameter_to_url="iframe" add_iframe_url_as_param="same" 
 show_iframe_loader="true"[] 
  []
 
 
-Overfull \hbox (38.57704pt too wide) in paragraph at lines 1917--1917
+Overfull \hbox (38.57704pt too wide) in paragraph at lines 1957--1957
 []\TU/lmtt/m/n/10 enable_responsive_iframe="true" hide_elements=".tg-site-foote
 r-bar,.entry-footer"[] 
  []
 
 
-Overfull \hbox (22.82704pt too wide) in paragraph at lines 1917--1917
+Overfull \hbox (22.82704pt too wide) in paragraph at lines 1957--1957
 []\TU/lmtt/m/n/10 additional_height="100" multi_domain_enabled="false" use_post
 _message="false"][] 
  []
@@ -1173,103 +1185,103 @@ File: images/bookdown/bookdown-add-page2.png Graphic file (type bmp)
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-[78]
+[80]
 File: images/bookdown/bookdown-add-page3.png Graphic file (type bmp)
 <images/bookdown/bookdown-add-page3.png>
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-[79] [80]
+[81] [82]
 File: images/wordpress/h5p-content.png Graphic file (type bmp)
 <images/wordpress/h5p-content.png>
-[81] [82] [83] [84
+[83] [84] [85] [86
 
 ]
 Chapter 7.
-[85] [86
+[87] [88
 
 ]
 Chapter 8.
-[87]
+[89]
 File: images/moodle/sdd1-02visualisation1.png Graphic file (type bmp)
 <images/moodle/sdd1-02visualisation1.png>
-[88]
+[90]
 Chapter 9.
-[89
+[91
 
-] [90
+] [92
 
 ]
 Chapter 10.
 File: images/block-warning.png Graphic file (type bmp)
 <images/block-warning.png>
-[91] [92] [93]
-Underfull \hbox (badness 2158) in paragraph at lines 2220--2221
+[93] [94] [95]
+Underfull \hbox (badness 2158) in paragraph at lines 2260--2261
 []\TU/lmr/m/n/10 La récupération des données des utilisateurs est détaillée dan
 s le dépôt privé
  []
 
-[94] [95]
-Overfull \hbox (3.10065pt too wide) in paragraph at lines 2328--2329
+[96] [97]
+Overfull \hbox (3.10065pt too wide) in paragraph at lines 2368--2369
 []\TU/lmr/m/n/10 L’utilisateur 
  []
 
 
-Overfull \hbox (3.10065pt too wide) in paragraph at lines 2339--2340
+Overfull \hbox (3.10065pt too wide) in paragraph at lines 2379--2380
 []\TU/lmr/m/n/10 L’utilisateur 
  []
 
 
-Overfull \hbox (3.10065pt too wide) in paragraph at lines 2350--2351
+Overfull \hbox (3.10065pt too wide) in paragraph at lines 2390--2391
 []\TU/lmr/m/n/10 L’utilisateur 
  []
 
 
-Overfull \hbox (7.11064pt too wide) in paragraph at lines 2361--2362
+Overfull \hbox (7.11064pt too wide) in paragraph at lines 2401--2402
 []\TU/lmr/m/n/10 L’application 
  []
 
 
-Overfull \hbox (3.10065pt too wide) in paragraph at lines 2372--2373
+Overfull \hbox (3.10065pt too wide) in paragraph at lines 2412--2413
 []\TU/lmr/m/n/10 L’utilisateur 
  []
 
 
-Overfull \hbox (3.10065pt too wide) in paragraph at lines 2383--2384
+Overfull \hbox (3.10065pt too wide) in paragraph at lines 2423--2424
 []\TU/lmr/m/n/10 L’utilisateur 
  []
 
 
-Overfull \hbox (7.33745pt too wide) in paragraph at lines 2421--2422
+Overfull \hbox (7.33745pt too wide) in paragraph at lines 2461--2462
 []\TU/lmr/m/n/10 reset_question_submission|  
  []
 
-[96] [97] [98]
+[98] [99] [100]
 Appendix A.
-[99
+[101
 
-] [100
+] [102
 
 ]
 Appendix B.
-[101] [102
+[103] [104
 
 ]
 No file sdd-admin.bbl.
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 2546.
-[103]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 2546.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 2586.
+[105]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 2586.
 (./sdd-admin.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 2546.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 2546.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 2586.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 2586.
  ) 
 Here is how much of TeX's memory you used:
- 19944 strings out of 479418
- 356429 string characters out of 5884586
- 902676 words of memory out of 5000000
- 37099 multiletter control sequences out of 15000+600000
+ 19957 strings out of 479418
+ 356881 string characters out of 5884586
+ 902865 words of memory out of 5000000
+ 37110 multiletter control sequences out of 15000+600000
  538869 words of font info for 87 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  58i,8n,118p,29637b,478s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on sdd-admin.pdf (103 pages).
+Output written on sdd-admin.pdf (105 pages).
