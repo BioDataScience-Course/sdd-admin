@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapitre 5 H5P | BioDataScience Administration</title>
+  <title>4.6 Redirection d’URL d’iframe bookdown | BioDataScience Administration</title>
   <meta name="description" content="Administration de BioDataScience-Course." />
   <meta name="generator" content="bookdown 0.18 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapitre 5 H5P | BioDataScience Administration" />
+  <meta property="og:title" content="4.6 Redirection d’URL d’iframe bookdown | BioDataScience Administration" />
   <meta property="og:type" content="book" />
   <meta property="og:url" content="http://phgrosjean.sciviews.org/bookdown-test/" />
   <meta property="og:image" content="http://phgrosjean.sciviews.org/bookdown-test/images/front-cover.png" />
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="BioDataScience-Course/sdd-admin" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapitre 5 H5P | BioDataScience Administration" />
+  <meta name="twitter:title" content="4.6 Redirection d’URL d’iframe bookdown | BioDataScience Administration" />
   
   <meta name="twitter:description" content="Administration de BioDataScience-Course." />
   <meta name="twitter:image" content="http://phgrosjean.sciviews.org/bookdown-test/images/front-cover.png" />
@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="redirection-durl-diframe-bookdown.html"/>
-<link rel="next" href="installation-de-h5p.html"/>
+<link rel="prev" href="var-context.html"/>
+<link rel="next" href="h5p.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -447,11 +447,16 @@ code span.wa { color: #bf0303; } /* Warning */
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="h5p" class="section level1">
-<h1><span class="header-section-number">Chapitre 5</span> H5P</h1>
-<p><a href="https://h5p.org/">H5P</a> permet de “créer, partager et réutiliser du contenu interactif HTML5 dans un browser Web”, d’après la page d’introduction du site Web. Il s’agit d’un ensemble de contenus HTML5 (html + css + javascript) permettant d’afficher et d’interagir avec des exercices et des présentations sous plusieurs formes. Plus de 40 contenus différents sont disponibles. H5P est distribué sous forme de logiciel libre (gratuit et Open Source) qu’il est possible d’installer sur son propre serveur. De plus, <a href="https://h5p.org/user/register?destination=welcome-to-the-h5p-community">h5p.org</a> propose l’hébergement de contenus gratuits <strong>à des fins de test uniquement</strong>, et offre en complément une formule payante sur <a href="https://h5p.com/">h5p.com</a>, mais le tarif n’est pas renseigné.</p>
-<p>Dans cette section, nous reprendrons les choix techniques, l’installation, la configuration et le déploiement de H5P dans le cadre de nos cours de science des données à l’UMONS, ainsi que les principaux contenus H5P qui sont disponibles.</p>
+<div id="redirection-durl-diframe-bookdown" class="section level2">
+<h2><span class="header-section-number">4.6</span> Redirection d’URL d’iframe bookdown</h2>
+<p>Les contenus de type {bookdown} forment l’essentiel de l’information contenue dans le site. Cependant, ces pages sont générées indépendamment des pages Wordpress. Elles sont servies à partir du même domaine, mais pas réellement intégrées dans le site Wordpress. Pourtant, visuellement, elles apparaissent comme faisant partie intégrante du site. Leur intégration se fait via un iframe géré par le plugin “Advanced Iframe Pro” qui fait des merveilles pour cette intégration.</p>
+<p>Une conséquence visible de cette organisation est l’URL qui présente de manière explicite le fait que la page bookdown est contenue dans un iframe. Par exemple pour <a href="https://wp.sciviews.org/sdd-umons-2020/nuage-de-points.html" class="uri">https://wp.sciviews.org/sdd-umons-2020/nuage-de-points.html</a> en présentation directe hors iframe, la même page est intégrée au site Wordpress à l’intérieur d’un iframe à l’adresse URL suivante : <a href="https://wp.sciviews.org/sdd-umons/?iframe=wp.sciviews.org/sdd-umons-2020/nuage-de-points.html" class="uri">https://wp.sciviews.org/sdd-umons/?iframe=wp.sciviews.org/sdd-umons-2020/nuage-de-points.html</a>. Jusqu’ici tout va bien. L’adresse est un peu longue, mais ce n’est pas tellement grave en pratique.</p>
+<p>Tout fonctionne bien, à part une petite subtilité concernant les <strong>ancres</strong>. Une ancre est un signet placé dans une page et qui permet de l’afficher à partir de cet endroit au lieu d’afficher juste le haut de la page. Par exemple, la page <code>nuage-de-points.html</code> ci-dessus peut être affichée à partir du point “2.1.1 Echelles de graphiques” correspondant à l’ancre <code>echelles-de-graphiques</code> à l’aide de l’URL suivante : <a href="https://wp.sciviews.org/sdd-umons-2020/nuage-de-points.html#echelles-de-graphiques" class="uri">https://wp.sciviews.org/sdd-umons-2020/nuage-de-points.html#echelles-de-graphiques</a>. Mais si nous rajoutons <code>#echelles-de-graphiques</code> à la fin de l’URL avec iframe, il ne se passe rien. La page s’affiche au début, et non pas au point 2.1.1 comme demandé. En fait l’ancre est interprétée pour la page de base Wordpress, pas pour la page contenue dans l’iframe. Pour corriger cela, il faut <strong>URLencoder</strong> l’ancre, qui consiste à remplacer le <code>#</code> par son code qui est <code>%23</code>. Ainsi, si on écrit <a href="https://wp.sciviews.org/sdd-umons/?iframe=wp.sciviews.org/sdd-umons-2020/nuage-de-points.html%23echelles-de-graphiques" class="uri">https://wp.sciviews.org/sdd-umons/?iframe=wp.sciviews.org/sdd-umons-2020/nuage-de-points.html%23echelles-de-graphiques</a>, alors l’ancre fait maintenant partie de l’URL de l’iframe et cela fonctionne comme prévu.</p>
+<p>Vous noterez aussi que les ancres ne sont pas rajoutées automatiquement à l’URL lorsque vous cliquez dessus dans une page {bookdown} contenue dans un iframe. <strong>Vous devez donc effectuer le rajout à la main si nécessaire pour enregistrer correctement cette URL.</strong> En effet, “Advanced Iframe Pro” ne gère pas encore correctement les ancres de manière automatique. Une façon simple de découvrir l’identifiant d’une ancre consiste à cliquer bouton droit dessus et à choisir “Ouvrir dans un nouvel onglet” dans le menu contextuel. A ce moment, la redirection du lien cliqué dans l’iframe s’affiche dans une page séparée <em>hors iframe</em>, avec son URL complète, y compris son ancre. Copiez cette ancre et collez-là à la fin de l’URL de la page de départ avec iframe après modification du <code>#</code> en <code>%23</code>, et le tour est joué.</p>
+<p>A part ces petits tracas relatifs aux ancres, les pages {bookdown} dans les iframes se comportent très bien par ailleurs et permettent de combiner le meilleur des deux mondes : Wordpress et ses nombreuses fonctions et plugins et {bookdown} pour un contenu riche créé à partir de documents R Markddown.</p>
+
 </div>
+<!-- </div> -->
 <div id="disqus_thread"></div>
 <script>
 
@@ -477,8 +482,8 @@ s.setAttribute('data-timestamp', +new Date());
           </div>
         </div>
       </div>
-<a href="redirection-durl-diframe-bookdown.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="installation-de-h5p.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="var-context.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="h5p.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -509,7 +514,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/BioDataScience-Course/sdd-admin/edit/master/05-H5p.Rmd",
+"link": "https://github.com/BioDataScience-Course/sdd-admin/edit/master/04-Wordpress.Rmd",
 "text": "Editer"
 },
 "history": {
@@ -517,7 +522,7 @@ gitbook.start({
 "text": null
 },
 "view": {
-"link": "https://github.com/BioDataScience-Course/sdd-admin/blob/master/05-H5p.Rmd",
+"link": "https://github.com/BioDataScience-Course/sdd-admin/blob/master/04-Wordpress.Rmd",
 "text": null
 },
 "download": ["sdd-admin.pdf"],

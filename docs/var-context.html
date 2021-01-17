@@ -24,7 +24,7 @@
 <meta name="author" content="Philippe Grosjean &amp; Guyliann Engels" />
 
 
-<meta name="date" content="2021-01-08" />
+<meta name="date" content="2021-01-17" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -32,7 +32,7 @@
   
   
 <link rel="prev" href="agencement-du-site.html"/>
-<link rel="next" href="h5p.html"/>
+<link rel="next" href="redirection-durl-diframe-bookdown.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -365,6 +365,7 @@ code span.wa { color: #bf0303; } /* Warning */
 <li class="chapter" data-level="4.4.2" data-path="agencement-du-site.html"><a href="agencement-du-site.html#gestion-des-événements-xapi"><i class="fa fa-check"></i><b>4.4.2</b> Gestion des événements xAPI</a></li>
 </ul></li>
 <li class="chapter" data-level="4.5" data-path="var-context.html"><a href="var-context.html"><i class="fa fa-check"></i><b>4.5</b> Variables contextuelles</a></li>
+<li class="chapter" data-level="4.6" data-path="redirection-durl-diframe-bookdown.html"><a href="redirection-durl-diframe-bookdown.html"><i class="fa fa-check"></i><b>4.6</b> Redirection d’URL d’iframe bookdown</a></li>
 </ul></li>
 <li class="chapter" data-level="5" data-path="h5p.html"><a href="h5p.html"><i class="fa fa-check"></i><b>5</b> H5P</a><ul>
 <li class="chapter" data-level="5.1" data-path="installation-de-h5p.html"><a href="installation-de-h5p.html"><i class="fa fa-check"></i><b>5.1</b> Installation de H5P</a><ul>
@@ -533,6 +534,16 @@ code span.wa { color: #bf0303; } /* Warning */
 <td align="left">Titre du cours (ex. Science des Données I: visualisation)</td>
 <td align="left">Moodle <code>ictitle</code> =</td>
 </tr>
+<tr class="odd">
+<td align="left">icflag</td>
+<td align="left">Indicateur pour les étudiants suivants plusieurs cours simultanément</td>
+<td align="left">WP (éditeur des utilisateurs en mode admin)</td>
+</tr>
+<tr class="even">
+<td align="left">user_login2</td>
+<td align="left">Second login GitHub pour le même utilisateur</td>
+<td align="left">WP (éditeur des utilisateurs en mode admin)</td>
+</tr>
 </tbody>
 </table>
 <p>A noter que nous croisons différentes sources (Moodle, GitHub, Wordpress), et les infos peuvent différer entre ces sources. Considérant un étudiant qui a “installé” ses outils correctement, à savoir :</p>
@@ -550,9 +561,7 @@ Faut-il <em>forcer</em> le login de l’étudiant dans Wordpress ? Autrement di
 
 <p>Toutes les informations de son compte sont accessibles à l’étudiant dans Wordpress, et il peut librement les modifier dans le tableau de bord, sauf son <code>login</code>. Donc, cela signifie que l’information cruciale pour identifier un étudiant est <code>login</code> qui est par ailleurs toujours le même que le login GitHub, et <code>iemail</code>, son adresse email de l’UMONS fournie par Moodle. Nous avons éventuellement besoin aussi de <code>email</code>, son email Wordpress sous lequel les activités H5P sont enregistrées.</p>
 <p>Si nous continuons à utiliser Discord, ce serait bien d’avoir le login Discord de l’étudiant aussi. Mais ici, il a le droit d’y poser des questions de manière anonymisée (c’est notre souhait). Néanmoins, il serait utile d’avoir un champ où nous pouvons éventuellement rentrer cette info à la main si souhaité dans la liste des utilisateurs enregistrés dans Wordpress (TODO: vérifier si c’est possible). Une autre colonne <code>comment</code> serait aussi utile. Nous pourrions y indiquer par exemple si un étudiant a des difficultés particulières, ou la date de son arrivée pour les étudiants étrangers en passerelle, par exemple.</p>
-
 </div>
-<!-- </div> -->
 <div class="footnotes">
 <hr />
 <ol start="3">
@@ -586,7 +595,7 @@ s.setAttribute('data-timestamp', +new Date());
         </div>
       </div>
 <a href="agencement-du-site.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="h5p.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="redirection-durl-diframe-bookdown.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
