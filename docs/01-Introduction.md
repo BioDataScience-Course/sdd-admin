@@ -142,7 +142,8 @@ Cette section reprends différents éléments important qui émergent des consta
 
 - Marcel Lebrun de l'UCL présente les différents types de classes inversées dans la vidéo suivante\ :
 
-<iframe src="https://www.youtube.com/embed/U8J24T-eY0U" width="672" height="400px"></iframe>
+
+\begin{center}\href{https://www.youtube.com/embed/U8J24T-eY0U}{\includegraphics{01-Introduction_files/figure-latex/unnamed-chunk-6-1} }\end{center}
 
 À côté de l'approche traditionnelle cours ex-cathédras qui présentent la théorie suivis de séances d'exercices ou TP qui mettent en pratique, il y a\ :
 
@@ -170,7 +171,8 @@ L'esprit uhmain part d'un contexte pour ensuite généraliser (décontextualiser
 
 L'approche sous forme de classe renversée est donc la forme la plus extrême. Jean-Charles Cailliez de l'Université de Lille présente ce concept dans la vidéo TEDx suivante\ :
 
-<iframe src="https://www.youtube.com/embed/KMAONv3BPhs" width="672" height="400px"></iframe>
+
+\begin{center}\href{https://www.youtube.com/embed/KMAONv3BPhs}{\includegraphics{01-Introduction_files/figure-latex/unnamed-chunk-9-1} }\end{center}
 
 Il ne faut pas copier son système, mais en reprendre des éléments et l'adapter au cours à la personnalité de l'enseignant, ...En tous cas, lui va très loin puisque ce sont les étudiants qui font tout (définir la matière, préparer le cours, l'exposer au prof, préparer les questions de devoirs et d'examens). Le prof fait les devoirs que les étudiants lui donne et offre ainsi un feedback sur la qualité du travail par cet intermédiaire. Il utilise notamment les QCM inversés\ : les étudiants produisent les question, le prof répond, les étudiants corrigent. Si la question est bien posée, le prof répond bien. Si elle est mal posée, le prof fait semblant de répondre n'importe quoi pour bien faire comprendre que la question est débile ou mal posée. Il utilise aussi le QCM "intelligent"\ : il ne suffit pas de dire quelles sont les bonnes réponses, mais il faut aussi justifier pourquoi les autres sont fausses pour avoir des points. Au début du cours, chaque équipe crée un tel QCM (5 questions). Ensuite les QCM passent à l'équipe suivante qui y répond. Enfin, les réponses sont données à une troisième équipe qui corrige (3min à chaque fois, suivi d'une petite discussion).
 
@@ -178,21 +180,25 @@ Cette approche permet aussi de mettre en œuvre le principe suivant\ : "enseigne
 
 - Intervention de Jean-Jacques Cailliez.
 
-<iframe src="https://www.youtube.com/embed/FtesVo3U4v0" width="672" height="400px"></iframe>
+
+\begin{center}\href{https://www.youtube.com/embed/FtesVo3U4v0}{\includegraphics{01-Introduction_files/figure-latex/unnamed-chunk-10-1} }\end{center}
 
 - Intervention de Sébastien Bette.
 
-<iframe src="https://www.youtube.com/embed/CAXfg7PbRdY" width="672" height="400px"></iframe>
+
+\begin{center}\href{https://www.youtube.com/embed/CAXfg7PbRdY}{\includegraphics{01-Introduction_files/figure-latex/unnamed-chunk-11-1} }\end{center}
 
 Questions croisées aux deux intervenants.
 
-<iframe src="https://www.youtube.com/embed/DIhp6P4HuB8" width="672" height="400px"></iframe>
+
+\begin{center}\href{https://www.youtube.com/embed/DIhp6P4HuB8}{\includegraphics{01-Introduction_files/figure-latex/unnamed-chunk-12-1} }\end{center}
 
 #### Intelligence collective
 
 François Taddei parle de la mobilisation de l'intelligence collective au service de nouvelles formes d'apprentissage ici\ :
 
-<iframe src="https://www.youtube.com/embed/Ckp4AvvhZ_A" width="672" height="400px"></iframe>
+
+\begin{center}\href{https://www.youtube.com/embed/Ckp4AvvhZ_A}{\includegraphics{01-Introduction_files/figure-latex/unnamed-chunk-13-1} }\end{center}
 
 Parmi les points importants de l'innovation pédagogique est l'utilisation de l'intelligence collective. Jean-Jacques Cailliez (voir ci-dessus) fait travailler les étudiants par groupes de six (considéré comme la meilleure taille de groupe). Par contre, c'est lui qui crée les groupes. Après un test d'évaluation qui lui permet de déterminer qui est fort, moyen ou faible, il mets un fort, et un faible systématiquement dans chaque groupe. Ensuite, il demande que les étudiants s'attribuent à chacun un rôle au sein du groupe pour éviter que certains ne fassent rien. Au fil du temps, les responsabilités changent, mais ceci est important pour impliquer tout le monde dès le début. Si un ou plusieurs étudiants ne font rien au sein du groupe, cela plombe l'ambiance puisqu'il y a une partie de la note qui est commune à tout le groupe et ceux qui travaillent se sentent lésés.
 
@@ -238,7 +244,8 @@ On a tous tendance à utiliser des tournure comme "il suffit de ...", "cela se f
 
 Les enseignants doivent tenir compte également de la psychologie, et en particulier de tout ce qui peut accroître, ou au contraire, impacter la motivation des étudiants. Dans une présentation TEDx, Mark Rober introduit ce qu'il appelle l'"effet Super Mario".
 
-<iframe src="https://www.youtube.com/embed/9vJRopau0g0" width="672" height="400px"></iframe>
+
+\begin{center}\href{https://www.youtube.com/embed/9vJRopau0g0}{\includegraphics{01-Introduction_files/figure-latex/unnamed-chunk-15-1} }\end{center}
 
 Le jeu Super Mario est très addictif, parce que le joueur est focalisé sur l'objectif à atteindre (terminer le jeu et sauver la princesse). Cela le détourne des nombreuses embûches qui parsèment le jeu. Au final, l'utilisateur ne fait qu'appuyer successivement sur une série de six boutons (sur la manette de jeu), et présenté autrement, on réalise à quel point la même action peut être perçue négativement. Mark présente six boutons et explique qu'il faudra les appuyer selon une séquence précise... très longue et pendant plus d'une heure pour passer un test. Vu comme cela, cela parait infaisable et totalement rébarbatif... pourtant c'est exactement ce qu'on fait dans le jeu Super Mario qui est pourtant, au contraire, addictif.
 
@@ -271,15 +278,18 @@ Il y a énormément plus de choses intéressantes dans cet ouvrage, et il faudra
 
 La présentation de type PowerPoint est partout et les enseignants ne peuvent plus s'en passer. Cependant, c'est un outil à double tranchant et une mauvaise utilisation de cet outil peut être désastreuse. C'est ce qu'on appelle la "mort par PowerPoint".
 
-<iframe src="https://www.youtube.com/embed/Iwpi1Lm6dFo" width="672" height="400px"></iframe>
+
+\begin{center}\href{https://www.youtube.com/embed/Iwpi1Lm6dFo}{\includegraphics{01-Introduction_files/figure-latex/unnamed-chunk-17-1} }\end{center}
 
 Quelques conseils pour améliorer sa présentation PowerPoint ici\ :
 
-<iframe src="https://www.youtube.com/embed/-U_HN7H8n8E" width="672" height="400px"></iframe>
+
+\begin{center}\href{https://www.youtube.com/embed/-U_HN7H8n8E}{\includegraphics{01-Introduction_files/figure-latex/unnamed-chunk-18-1} }\end{center}
 
 Don McMillan est un humoriste qui réussit à faire passer le message d'une manière hilarante ici\ :
 
-<iframe src="https://www.youtube.com/embed/KbSPPFYxx3o" width="672" height="400px"></iframe>
+
+\begin{center}\href{https://www.youtube.com/embed/KbSPPFYxx3o}{\includegraphics{01-Introduction_files/figure-latex/unnamed-chunk-19-1} }\end{center}
 
 ### Enseigner les statistiques comme les mathématiques
 
@@ -287,7 +297,8 @@ Douglas Andrews dans [the big mistake: teaching stat as though it were math](htt
 
 La vidéo suivante caricature les interactions entre un biologiste et un statisticien. Ceci montre l'importance de former des personnes capables de faire le lien entre les deux disciplines\ : les scientifiques des données ayant un "background" en biologie.
 
-<iframe src="https://www.youtube.com/embed/Hz1fyhVOjr4" width="672" height="400px"></iframe>
+
+\begin{center}\href{https://www.youtube.com/embed/Hz1fyhVOjr4}{\includegraphics{01-Introduction_files/figure-latex/unnamed-chunk-20-1} }\end{center}
 
 ### "Gamification" de l'enseignement
 
