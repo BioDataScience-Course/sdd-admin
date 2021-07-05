@@ -27,7 +27,8 @@ knitr::opts_chunk$set(comment = "#", fig.align = "center")
 knitr::write_bib(c(.packages(), 'bookdown', 'knitr', 'rmarkdown'), 'packages.bib')
 ```
 
-Notre organisation **BioDataScience-Course** sur Github devient de plus en plus complexe avec le temps (plus de 1300 dépôts fin aout 2020). De même, nos cours interactifs en ligne recourent à des solutions logicielles toujours plus complètes, mais aussi plus complexes, car nous combinons plusieurs outils différents pour fournir à nos étudiants un environnement de travail et du matériel pédagogique riches et variés. Ce bookdown centralise l'information nécessaire pour les enseignants et les administrateurs de ces outils.
+Cet ouvrage détaille le développement, la maintenance et la création de contenu sur notre plateforme autour du package R {learnitdown} que nous avons créé à l'Université de Mons en Belgique pour nos outils pédagogiques relatifs à nos cours de Science des Données Biologiques. Ce sont, avant tout, des notes pour nous-mêmes. Désolé, donc, si vous y lirez de temps en temps des informations qui ne sont utiles **que** dans le cadre spécifiquement de nos cours. Notre objectif est quand même de faire migrer progressivement cet ouvrage vers un usage plus large pour permettre de déployer une plateforme pédagogique similaire dans un autre contexte...
+
 
 ![](images/front-cover.png)
 

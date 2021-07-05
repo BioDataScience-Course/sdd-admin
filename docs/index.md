@@ -1,7 +1,7 @@
 --- 
 title: "BioDataScience Administration"
 author: "Philippe Grosjean & Guyliann Engels"
-date: "2021-01-25"
+date: "2021-07-05"
 site: bookdown::bookdown_site
 output:
   bookdown::gitbook:
@@ -23,7 +23,8 @@ cover-image: "images/front-cover.png"
 
 
 
-Notre organisation **BioDataScience-Course** sur Github devient de plus en plus complexe avec le temps (plus de 1300 dépôts fin aout 2020). De même, nos cours interactifs en ligne recourent à des solutions logicielles toujours plus complètes, mais aussi plus complexes, car nous combinons plusieurs outils différents pour fournir à nos étudiants un environnement de travail et du matériel pédagogique riches et variés. Ce bookdown centralise l'information nécessaire pour les enseignants et les administrateurs de ces outils.
+Cet ouvrage détaille le développement, la maintenance et la création de contenu sur notre plateforme autour du package R {learnitdown} que nous avons créé à l'Université de Mons en Belgique pour nos outils pédagogiques relatifs à nos cours de Science des Données Biologiques. Ce sont, avant tout, des notes pour nous-mêmes. Désolé, donc, si vous y lirez de temps en temps des informations qui ne sont utiles **que** dans le cadre spécifiquement de nos cours. Notre objectif est quand même de faire migrer progressivement cet ouvrage vers un usage plus large pour permettre de déployer une plateforme pédagogique similaire dans un autre contexte...
+
 
 ![](images/front-cover.png)
 
@@ -40,41 +41,43 @@ sessioninfo::session_info()
 ```
 
 ```
-# - Session info ---------------------------------------------------------------
-#  setting  value                       
-#  version  R version 3.6.3 (2020-02-29)
-#  os       macOS Catalina 10.15.7      
-#  system   x86_64, darwin15.6.0        
-#  ui       X11                         
-#  language (EN)                        
-#  collate  en_US.UTF-8                 
-#  ctype    en_US.UTF-8                 
-#  tz       Europe/Brussels             
-#  date     2021-01-25                  
+# ─ Session info ───────────────────────────────────────────────────────────────
+#  setting  value                                      
+#  version  R version 4.0.5 Patched (2021-03-31 r80240)
+#  os       macOS Catalina 10.15.7                     
+#  system   x86_64, darwin17.0                         
+#  ui       X11                                        
+#  language (EN)                                       
+#  collate  en_US.UTF-8                                
+#  ctype    en_US.UTF-8                                
+#  tz       Europe/Brussels                            
+#  date     2021-07-05                                 
 # 
-# - Packages -------------------------------------------------------------------
-#  package     * version    date       lib source                            
-#  assertthat    0.2.1      2019-03-21 [1] CRAN (R 3.6.0)                    
-#  bookdown      0.18       2020-03-05 [1] CRAN (R 3.6.0)                    
-#  cli           2.0.2      2020-02-28 [1] CRAN (R 3.6.0)                    
-#  crayon        1.3.4.9000 2020-08-27 [1] Github (r-lib/crayon@6b3f0c6)     
-#  digest        0.6.25     2020-02-23 [1] CRAN (R 3.6.0)                    
-#  evaluate      0.14       2019-05-28 [1] CRAN (R 3.6.0)                    
-#  fansi         0.4.1      2020-01-08 [1] CRAN (R 3.6.0)                    
-#  glue          1.4.0      2020-04-03 [1] CRAN (R 3.6.2)                    
-#  htmltools     0.5.0.9000 2020-08-27 [1] Github (rstudio/htmltools@e35c3fa)
-#  knitr         1.28       2020-02-06 [1] CRAN (R 3.6.0)                    
-#  magrittr      1.5        2014-11-22 [1] CRAN (R 3.6.0)                    
-#  rlang         0.4.5      2020-03-01 [1] CRAN (R 3.6.0)                    
-#  rmarkdown     2.1        2020-01-20 [1] CRAN (R 3.6.0)                    
-#  sessioninfo   1.1.1      2018-11-05 [1] CRAN (R 3.6.0)                    
-#  stringi       1.4.6      2020-02-17 [1] CRAN (R 3.6.0)                    
-#  stringr       1.4.0      2019-02-10 [1] CRAN (R 3.6.0)                    
-#  withr         2.2.0      2020-04-20 [1] CRAN (R 3.6.2)                    
-#  xfun          0.13       2020-04-13 [1] CRAN (R 3.6.2)                    
-#  yaml          2.2.1      2020-02-01 [1] CRAN (R 3.6.0)                    
+# ─ Packages ───────────────────────────────────────────────────────────────────
+#  package     * version     date       lib source                            
+#  bookdown      0.22        2021-04-22 [1] CRAN (R 4.0.2)                    
+#  bslib         0.2.5       2021-05-12 [1] CRAN (R 4.0.5)                    
+#  cli           2.5.0       2021-04-26 [1] CRAN (R 4.0.2)                    
+#  digest        0.6.27      2020-10-24 [1] CRAN (R 4.0.2)                    
+#  evaluate      0.14        2019-05-28 [1] CRAN (R 4.0.0)                    
+#  fastmap       1.1.0       2021-01-25 [1] CRAN (R 4.0.2)                    
+#  htmltools     0.5.1.9005  2021-05-19 [1] Github (rstudio/htmltools@8a6defc)
+#  jquerylib     0.1.4       2021-04-26 [1] CRAN (R 4.0.2)                    
+#  jsonlite      1.7.2       2020-12-09 [1] CRAN (R 4.0.2)                    
+#  knitr         1.33        2021-04-24 [1] CRAN (R 4.0.2)                    
+#  magrittr      2.0.1       2020-11-17 [1] CRAN (R 4.0.2)                    
+#  R6            2.5.0       2020-10-28 [1] CRAN (R 4.0.2)                    
+#  rlang         0.4.11.9000 2021-05-19 [1] Github (r-lib/rlang@7021ebe)      
+#  rmarkdown     2.8         2021-05-07 [1] CRAN (R 4.0.2)                    
+#  sass          0.4.0       2021-05-12 [1] CRAN (R 4.0.2)                    
+#  sessioninfo   1.1.1       2018-11-05 [1] CRAN (R 4.0.2)                    
+#  stringi       1.6.1       2021-05-10 [1] CRAN (R 4.0.2)                    
+#  stringr       1.4.0       2019-02-10 [1] CRAN (R 4.0.0)                    
+#  withr         2.4.2       2021-04-18 [1] CRAN (R 4.0.2)                    
+#  xfun          0.23        2021-05-15 [1] CRAN (R 4.0.2)                    
+#  yaml          2.2.1       2020-02-01 [1] CRAN (R 4.0.0)                    
 # 
-# [1] /Library/Frameworks/R.framework/Versions/3.6/Resources/library
+# [1] /Library/Frameworks/R.framework/Versions/4.0/Resources/library
 ```
 
 </details>

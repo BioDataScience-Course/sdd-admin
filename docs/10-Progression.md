@@ -12,7 +12,7 @@ Les outils qui peuvent être mis en place sont\ :
 
 La vidéo suivante explique d'ailleurs pourquoi le coercitif ne fonctionne pas bien et pourquoi il faut plutôt **valoriser le travail effectué** plutôt que de punir s'il n'est pas fait. Il faut aussi **une récompense immédiate**, et favoriser l'**émulation individuelle** (se dépasser soi-même), et **de groupe** (se comparer à la progression générale de la classe).
 
-<!--html_preserve--><iframe src="https://www.youtube.com/embed/xp0O2vi8DX4" width="770" height="433" frameborder="0" allowfullscreen=""></iframe><!--/html_preserve-->
+<iframe src="https://www.youtube.com/embed/xp0O2vi8DX4" width="672" height="400px"></iframe>
 
 Les aides et encouragements au travail que nous avons mis en place de manière utile sont\ :
 
@@ -99,9 +99,9 @@ La récupération des données des utilisateurs est détaillée dans le dépôt 
 
 ### Format des données
 
-A partir de 2020, avec l'apparition de {learndown}, nous diversifions l'offre d'exercices enregistrés. Préalablement, il s'agissait uniquement de learnr exécutés dans la SciViews Box. A présent, les H5P et les applications Shiny peuvent également être enregistrées.
+A partir de 2020, avec l'apparition de {learnitdown}, nous diversifions l'offre d'exercices enregistrés. Préalablement, il s'agissait uniquement de learnr exécutés dans la SciViews Box. A présent, les H5P et les applications Shiny peuvent également être enregistrées.
 
-Afin d'éviter la multiplication des formats de données, nous avons donc homogénéisé leur présentation entre les différentes applications dans {learndown}. Ces données sont toutefois enregistrées dans des collections différentes (**h5p**, **learnr** et **shiny**) dans la base **sdd**. Chaque entrée contient les champs suivants\ :
+Afin d'éviter la multiplication des formats de données, nous avons donc homogénéisé leur présentation entre les différentes applications dans {learnitdown}. Ces données sont toutefois enregistrées dans des collections différentes (**h5p**, **learnr** et **shiny**) dans la base **sdd**. Chaque entrée contient les champs suivants\ :
 
 - **_id:** C'est l'identifiant unique du document MongoDB attribué automatiquement lors de l'insertion de chaque entrée
 

@@ -1,4 +1,4 @@
-# Bookdown & learndown {#bookdown}
+# Bookdown & learnitdown {#bookdown}
 
 ```{r setup, include=FALSE, echo=FALSE, message=FALSE, results='hide'}
 knitr::opts_chunk$set(comment = '#', fig.align = "center")
@@ -10,11 +10,11 @@ Un matériel pédagogique riche et varié est un plus indéniable pour un cours.
 - En organisant la matière par chapitres, et grâce à la table des matières présente à la gauche, l'étudiant appréhende immédiatement le fil conducteur du cours.
 - La table des matières autant que l'outil de recherche dans le bookdown tout entier permet de retrouver plus tard l'information facilement^[Un autre projet nommé **do-it-yourstat** vise à proposer également un tableau de bord complètement personnalisable afin d'organiser son matériel didactique librement et d'y accéder de différentes manières, y compris par cartes mentales, par mots clés, par diagramme décisionnel, ...].
 
-Le format bookdown est conçu principalement pour écrire des document de type "textbook" linéaires, même si au fil du temps, il permet d'intégrer des éléments plus interactifs et présentant la matière différemment comme des applications Shiny ou des vidéos. **Les extensions à bookdown proposées par le package {learndown}** complète encore les possibilités d'y inclure du matériel interactif et contextuel via H5P, les applications Shiny ou learnr qui peuvent être démarrées *in situ* à la demande, le contenu contextuel en fonction d'une institution ou d'un cours lié à l'étudiant, ou les zones de détail déroulantes. Mais toutes ces additions demandent une adaptation profonde du document bookdown. Le plus facile est donc de démarrer par un fork depuis le dépôt template [bookdown-test](https://github.com/phgrosjean/bookdown-test). La section suivante explique comment créer un nouveau site bookdown agrémenté des ajouts de {learndown} via ce fork, et explique ensuite comment l'intégrer dans un site Wordpress. Les fonctionnalités nouvelles offertes par {learndown} sont détaillées par après.
+Le format bookdown est conçu principalement pour écrire des document de type "textbook" linéaires, même si au fil du temps, il permet d'intégrer des éléments plus interactifs et présentant la matière différemment comme des applications Shiny ou des vidéos. **Les extensions à bookdown proposées par le package {learnitdown}** complète encore les possibilités d'y inclure du matériel interactif et contextuel via H5P, les applications Shiny ou learnr qui peuvent être démarrées *in situ* à la demande, le contenu contextuel en fonction d'une institution ou d'un cours lié à l'étudiant, ou les zones de détail déroulantes. Mais toutes ces additions demandent une adaptation profonde du document bookdown. Le plus facile est donc de démarrer par un fork depuis le dépôt template [bookdown-test](https://github.com/phgrosjean/bookdown-test). La section suivante explique comment créer un nouveau site bookdown agrémenté des ajouts de {learnitdown} via ce fork, et explique ensuite comment l'intégrer dans un site Wordpress. Les fonctionnalités nouvelles offertes par {learnitdown} sont détaillées par après.
 
-## Création d'un bookdown/learndown
+## Création d'un bookdown/learnitdown
 
-Les fonctions supplémentaires relatives à H5P et Shiny/learnr proposées par {learndown}, ainsi que l'intégration à Wordpress impliquent des modifications non triviales dans les paramètres de bookdown. Le plus simple est donc de partir sur la base d'un template fonctionnel. Ce template est fourni à partir du dépôt GitHub [phgrosjean/bookdown-test](https://github.com/phgrosjean/bookdown-test). La procédure suivante explique comment créer un nouveau bookdown sur base de ce template. Si par contre, l'objectif est de *transformer* un bookdown existant, alors comparez les différents fichiers par rapport à ce même dépôt et modifiez-les en conséquence.
+Les fonctions supplémentaires relatives à H5P et Shiny/learnr proposées par {learnitdown}, ainsi que l'intégration à Wordpress impliquent des modifications non triviales dans les paramètres de bookdown. Le plus simple est donc de partir sur la base d'un template fonctionnel. Ce template est fourni à partir du dépôt GitHub [phgrosjean/bookdown-test](https://github.com/phgrosjean/bookdown-test). La procédure suivante explique comment créer un nouveau bookdown sur base de ce template. Si par contre, l'objectif est de *transformer* un bookdown existant, alors comparez les différents fichiers par rapport à ce même dépôt et modifiez-les en conséquence.
 
 1. Naviguez vers [https://github.com/phgrosjean/bookdown-test](https://github.com/phgrosjean/bookdown-test) et cliquez sur le bouton `Use this template`.
 
@@ -63,7 +63,7 @@ C'est le troisième fichier qui définit le contexte de votre bookdown.
 
 ### header.html & header0.html
 
-Le fichier `header.html` est généré automatiquement par {learndown} et **il ne faut donc pas l'éditer**. Si vous voulez rajouter du contenu dans l'entête, incluez-le dans le fichier `header0.html` et ce qui s'y trouve sera placé en bas de `header.html` par {learndown}. Vous pouvez effacer `header0.html` si vous ne souhaitez rien y rajouter.
+Le fichier `header.html` est généré automatiquement par {learnitdown} et **il ne faut donc pas l'éditer**. Si vous voulez rajouter du contenu dans l'entête, incluez-le dans le fichier `header0.html` et ce qui s'y trouve sera placé en bas de `header.html` par {learnitdown}. Vous pouvez effacer `header0.html` si vous ne souhaitez rien y rajouter.
 
 ### footer.html
 
@@ -71,11 +71,11 @@ Placez ici ce que vous désirez en bas de page. Le fichier contient (sous forme 
 
 ### style.css & style0.css
 
-La même logique est d'application pour `style.css` que pour `header.html` (généré automatiquement par {learndown} et à ne pas éditer) et `style0.css` qui contient des styles CSS complémentaires. Le fichier `style0.css` présente un exemple de compléments... à éditer en fonction du contexte. Dans cet exemple le style et les couleurs sont légèrement modifiés, et des icônes sont rajoutées pour divers blocs spéciaux. Adaptez ceci à votre propre contexte.
+La même logique est d'application pour `style.css` que pour `header.html` (généré automatiquement par {learnitdown} et à ne pas éditer) et `style0.css` qui contient des styles CSS complémentaires. Le fichier `style0.css` présente un exemple de compléments... à éditer en fonction du contexte. Dans cet exemple le style et les couleurs sont légèrement modifiés, et des icônes sont rajoutées pour divers blocs spéciaux. Adaptez ceci à votre propre contexte.
 
 ### setup.R
 
-Le fichier `setup.R` est utilisé par {learndown} pour configurer votre bookdown et pour redéfinir les fonctions telles que `launch_shiny()` et `h5p()`. Voyez dans le code et éditez en fonction (des messages en français sont en commentaires).
+Le fichier `setup.R` est utilisé par {learnitdown} pour configurer votre bookdown et pour redéfinir les fonctions telles que `launch_shiny()` et `h5p()`. Voyez dans le code et éditez en fonction (des messages en français sont en commentaires).
 
 ### Contenu
 
@@ -89,7 +89,7 @@ Nous vons conseillons dans un premier temps de *ne pas* modifier la page `01-Int
 
 ## Intégration dans Wordpress
 
-Le format gitbook de {bookdown} qui est le format le plus utilisé pour les tutoriels, les cours et les manuels (type "textbook") en ligne n'est pas prévu pour s'intégrer à Wordpress. Cependant, grâce à {learndown}, il est possible d'obtenir un résultat indiscernable visuellement d'un réelle intégration via l'inclusion du bookdown dans un iframe à l'intérieur d'une page Wordpress. De plus, {learndown} transfère des informations relatives à l'utilisateur Wordpress enregistré, et aux fonctions côté serveur pour l'enregistrement des données H5P. Ainsi, l'intégration est complète puisque les applications H5P incluses dans le bookdown bénéficient des mêmes fonctionnalités que si elles étaient directement affichées à l'intérieur d'une page Wordpress. Les mêmes fonctions de détection de l'utilisateur et d'enregistrement des évènements générés par les applications Shiny et learnr sont également implémentées dans {learndown}. La partie à modifier dans le bookdown pour réaliser cette intégration ayant été abordée ci-dessus, voyons maintenant ce que nous devons faire du côté du serveur Wordpress pour la finaliser.
+Le format gitbook de {bookdown} qui est le format le plus utilisé pour les tutoriels, les cours et les manuels (type "textbook") en ligne n'est pas prévu pour s'intégrer à Wordpress. Cependant, grâce à {learnitdown}, il est possible d'obtenir un résultat indiscernable visuellement d'un réelle intégration via l'inclusion du bookdown dans un iframe à l'intérieur d'une page Wordpress. De plus, {learnitdown} transfère des informations relatives à l'utilisateur Wordpress enregistré, et aux fonctions côté serveur pour l'enregistrement des données H5P. Ainsi, l'intégration est complète puisque les applications H5P incluses dans le bookdown bénéficient des mêmes fonctionnalités que si elles étaient directement affichées à l'intérieur d'une page Wordpress. Les mêmes fonctions de détection de l'utilisateur et d'enregistrement des évènements générés par les applications Shiny et learnr sont également implémentées dans {learnitdown}. La partie à modifier dans le bookdown pour réaliser cette intégration ayant été abordée ci-dessus, voyons maintenant ce que nous devons faire du côté du serveur Wordpress pour la finaliser.
 
 1. Inclusion des pages du bookdown dans le serveur Wordpress
 
@@ -145,11 +145,11 @@ Au final, le bookdown se présente sous deux formes\ :
 
 Nous avons déjà vu que le contenu H5P s'affiche dans un iframe dans un document principal. Il lui transmet les évènements xAPI, et c'est donc ce document principal qui doit les traiter. Nous avons ici une impossibilité à le faire si nous sommes dans un cas où H5P est servi par un serveur différent que notre bookdown. En effet, les accès en "Cross-Origin Resource Sharing" ou CORS sont restreintes pour éviter des attaques de site évidentes. Ainsi un iframe issu d'un serveur différent de la page qui l'héberge ne peut communiquer librement avec la page qui le contient si elle provient d'un site différent. Or, nous avons besoin de cette communication pour transmettre les événements xAPI...
 
-La solution que nous avons trouvée est d'ajouter le dossier qui contient nos pages statiques du bookdown à Wordpress directement. Ainsi les deux sont maintenant servis à partir de la même adresse `https://wp.sciviews.org`. Une fois que c'est fait, l'inclusion d'applications H5P dans le bookdown est facile. Il suffit d'utiliser la fonction `h5p()` de {learndown} en indiquant juste le numéro ID de l'application H5P tel qu'affiché dans le tableau de bord de Wordpress avec un code du type `learndown::h5p(6, baseurl = "https://wp.sciviews.org")` dans du code inline dans notre bookdown (ici, l'ID serait '6', ce qui correspond à l'application H5P nommée "drag-words" dans la copie d'écran ci-dessous). On peut éventuellement repréciser `width =`ou `height = ` pour changer la taille de l'iframe hébergeant l'application H5P.
+La solution que nous avons trouvée est d'ajouter le dossier qui contient nos pages statiques du bookdown à Wordpress directement. Ainsi les deux sont maintenant servis à partir de la même adresse `https://wp.sciviews.org`. Une fois que c'est fait, l'inclusion d'applications H5P dans le bookdown est facile. Il suffit d'utiliser la fonction `h5p()` de {learnitdown} en indiquant juste le numéro ID de l'application H5P tel qu'affiché dans le tableau de bord de Wordpress avec un code du type `learnitdown::h5p(6, baseurl = "https://wp.sciviews.org")` dans du code inline dans notre bookdown (ici, l'ID serait '6', ce qui correspond à l'application H5P nommée "drag-words" dans la copie d'écran ci-dessous). On peut éventuellement repréciser `width =`ou `height = ` pour changer la taille de l'iframe hébergeant l'application H5P.
 
 ![H5P Content dans Wordpress. Les widgets sont identifiés par leur **ID** (ici, 6, 7, 8, 9 & 10).](images/wordpress/h5p-content.png)
 
-Pour comprendre ce que la fonction `learndown::h5p()` fait, nous pouvons nous concentrer sur la version simplifiée suivante\ :
+Pour comprendre ce que la fonction `learnitdown::h5p()` fait, nous pouvons nous concentrer sur la version simplifiée suivante\ :
 
 ```{r, eval=FALSE}
 h5p <- function(id, width = 780, height = 500) {

@@ -23,7 +23,7 @@ Les divers outils logiciels que nous utilisons pour créer un environnement d'ap
 
 - [Moodle](https://moodle.umons.ac.be) est la plateforme d'apprentissage en ligne utilisée par notre université, l'UMONS. Si elle offre de nombreuses possibilités, il n'est pas possible d'y intégrer les outils d'apprentissage liés à R comme les learnrs et les ouvrages en ligne au format bookdown, voire encore des documents R Markdown. Nous essayons d'intégrer autant que possible nos outils dans cette plateforme, mais nous sommes obligés de recourir à d'autres solutions pour pouvoir couvrir le panel des fonctionnalités qui nous sont nécessaires.
 
-- [Bookdown](https://bookdown.org) est un type de sortie R Markdown multi-documents qui permet d'intégrer également des calculs et graphiques de R. Nous l'utilisons comme moyen de centraliser tout notre matériel pédagogique et l'organiser en modules qui sont autant de chapitres différents du bookdown. Nous avons également développé différentes extensions pour compléter le package R {bookdown} afin d'y intégrer tout ce dont nous avons besoin (voir \@ref(bookdown)), et notamment des applications Shiny (voir \@ref(shiny)) et des widgets H5P (voir \@ref(h5p)). Toutes ces extensions sont rassemblées dans le package R {learndown}. Un chapitre entier y est donc consacré.
+- [Bookdown](https://bookdown.org) est un type de sortie R Markdown multi-documents qui permet d'intégrer également des calculs et graphiques de R. Nous l'utilisons comme moyen de centraliser tout notre matériel pédagogique et l'organiser en modules qui sont autant de chapitres différents du bookdown. Nous avons également développé différentes extensions pour compléter le package R {bookdown} afin d'y intégrer tout ce dont nous avons besoin (voir \@ref(bookdown)), et notamment des applications Shiny (voir \@ref(shiny)) et des widgets H5P (voir \@ref(h5p)). Toutes ces extensions sont rassemblées dans le package R {learnitdown}. Un chapitre entier y est donc consacré.
 
 - [Shiny](https://shiny.rstudio.com) permet de créer des applications sous R avec interface graphique dans un browser web. Les possibilités sont pratiquement sans limites pour créer des applications interactives et démontrer les concepts "en live" à nos étudiants. Les applications Shiny sont intégrables dans bookdown, mais elles doivent être exécutées sur un serveur dédié. Un type particulier d'application Shiny est constitué par les [learnr](https://rstudio.github.io/learnr/index.html)s. Ces documents interactifs présentent des exercices dans R et des choix multiples aux étudiants. Ces learnrs forment la base des outils d'apprentissage à domicile et aussi des examens théoriques de nos cours.
 
@@ -41,7 +41,7 @@ Ces nombreux outils et services devant collaborer entre eux pour fournir un envi
 
 Les sections suivantes détaillent l'installation et la configuration de différents outils logiciels tandis que les paragraphes suivants dans la présente section reprennent quelques informations générales utiles.
 
-## RGPD, droit d'auteur & plagiat
+## RGPD et droit d'auteur
 
 Les questions relatives aux données d'un point de vue plus légal sont traitées ici.
 
@@ -59,13 +59,4 @@ L'anonymisation des données est de mise lorsque ces données servent à une ét
 
 ...TODO: discuter le choix de la licence pour notre contenu en ligne.
 
-### Plagiat
-
-L'UMONS s'est doté d'un outil de détection du plagiat intégré à Moodle. Il reconnaît les fichiers Word, PowerPoint et PDF. Malheureusement, il ne reconnaît pas les PDF générés via LaTeX. Donc, il faut sortir soit en Word, soit faire un PDF depuis Word à partir de documents R Markdown. Il faut intégrer les documents sous forme de devoirs dans Moodle pour pouvoir bénéficier de cette fonction, ce qui est très contraignants pour nous.
-
 **TODO: réfléchir à des façons plus pratiques de mettre en œuvre l'anti-plagiat dans nos cours de Science des données.**
-
-## Infos utiles concernant le DSI UMONS
-
-- Les documents **[Comment\ ?](https://alumniumonsac.sharepoint.com/sites/DirectiondesServicesInformatiques/Comment/Forms/AllItems.aspx)** expliquent comment réaliser différentes tâches liées à l'utilisation des outils informatiques à l'UMONS (connexion, gestion des mails, partage de fichiers, etc.). Ces documents sont disponibles depuis l'Intranet UMONS uniquement.
-
