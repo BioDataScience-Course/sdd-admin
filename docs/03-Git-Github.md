@@ -37,7 +37,9 @@ Un lien URL est fourni pour chaque exercice afin d'inviter les étudiants à rej
 
 GitHub Classroom est en évolution constante. De nouvelles fonctionnalités apparaissent régulièrement afin d'améliorer la gestion des classes et des exercices. Par exemple l'[intégration de GitHub Classroom avec Moodle](https://classroom.github.com/help/setup-moodle) est en cours de développement. GitHub Classroom propose également l'application [GitHub Classroom Assistant](https://classroom.github.com/assistant) afin de télécharger l'ensemble des dépôts lié à un exercice dans un dossier de notre choix. Bien pratique pour les enseignants au moment d'évaluer les travaux des étudiants.
 
-\BeginKnitrBlock{note}<div class="note">Une autre ressource intéressante dans le contexte de l'utilisation de GitHub/GitHub Classroom pour l'enseignement est [GitHub Education](https://education.github.com).</div>\EndKnitrBlock{note}
+\BeginKnitrBlock{note}
+Une autre ressource intéressante dans le contexte de l'utilisation de GitHub/GitHub Classroom pour l'enseignement est [GitHub Education](https://education.github.com).
+\EndKnitrBlock{note}
 
 ## Astuces Git et GitHub
 
@@ -51,6 +53,8 @@ Quelques astuces qui nous sont utiles...
 
 - Il est utile d'enregistrer le matériel pédagogique tel qu'il se présente chaque année, d'une part à des fins d'archivage, et d'autre part afin que plus tard les étudiants puissent éventuellement retrouver ce matériel tel qu'il était lorsqu'il a suivi le cours. Différentes stratégies sont possibles\ : utilisation de branches, de releases, ... Cependant pour les bookdowns il n'est possible de présenter le site correspondant que de la dernière version pour un dépôt GitHub donné. Dans ce cas, il est plus intéressant d'archiver le bookdown relatif à une année académique sous forme d'un dépôt séparé, permettant ainsi d'accéder au site web correspondant depuis GitHub Pages. Pour cela, il ne faut pas forker le dépôt, mais en faire une copie miroir. La procédure pour réaliser cela est expliquée [ici](https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/duplicating-a-repository). En pratique, nous ajoutons l'année de chaque version au nom du dépôt (par exemple, `sdd-umons-2018`, `sdd-umons-2019`, ...). La version correspondant à l'année académique 2018-2019 est `sdd-umons-2018` et c'est aussi la version de la SciViews Box associée, la svbox2018. Ensuite, il faut bien entendu éditer le dépôt ainsi copié en miroir pour indiquer dans le préambule que c'est une ancienne version, et aussi remplacer les liens vers des assignations GitHub Classroom obsolètes vers des suggestions de forker les dépôts templates correspondants afin que les anciens exercices puissent toujours être accédés, mais cette fois-ci, en dehors du contexte de GitHub Classroom.
 
-\BeginKnitrBlock{warning}<div class="warning">
+\BeginKnitrBlock{warning}
+
 A partir de l'année académique 2020-2021, le dépôt de travail, ainsi que le lien sur le site web https://wp.sciviews.org comportent directement le renseignement de l'année. Ainsi, les modifications nécessaires sont minimales pour archiver le bookdown et la copie en mirior se fait vers le nouveau nom en début d'année.
-</div>\EndKnitrBlock{warning}
+
+\EndKnitrBlock{warning}

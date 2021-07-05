@@ -14,15 +14,19 @@ Le schéma suivant résume comment l'apprentissage se fait dans notre cerveau.
 
 - Nos organes des sens sont noyés en permanence dans un flux d'informations. Il est impossible de toutes les traiter avec la même attention. Ainsi, un tri est réalisé très tôt et (presque) inconscient. Tout ce qui n'est pas conservé est bien entendu perdu. Les critères qui motivent le tri de l'information considérée comme utile sont la **motivation** et l'**intérêt**. Par exemple, donner une longue explication à des étudiants *avant* d'avoir suscité leur motivation ou leur intérêt est contre-productif, car cette information sera filtrée et éliminée très tôt sans même être traitée\ ! C'est le coup classique\ : s'arrêter en pleine explication et demander à un étudiant au hasard, ou à un étudiant manifestement peu concentré ce qu'on vient de dire... et il est incapable de répéter ce qui vient d'être dit\ ! Donc, arriver à cette situation *est en partie de la faute du professeur*. Il faut qu'il prenne soin de susciter l'intérêt et/ou la motivation *avant* de donner des explications compliquées. Cela peut-être par une phrase du genre\ : **attention, ce que je vais vous expliquer maintenant vous servira pour faire X ou Y plus tard...** ou **soyez bien attentifs, la procédure suivante est cruciale pour la réussite de l'exercice...**. Cela est également valable dans le matériel pédagogique où il faut bien préciser les objectifs en début de section (et que ces objectifs fassent écho -motivation ou intérêt- dans la tête des étudiants).
 
-\BeginKnitrBlock{note}<div class="note">
+\BeginKnitrBlock{note}
+
 Ce qui n'est pas perçu comme "utile" par l'étudiant au moment où cela est formulé est *immédiatement* oublié... C'est ce processus de tri de l'information pertinente qui en est responsable\ !
-</div>\EndKnitrBlock{note}
+
+\EndKnitrBlock{note}
 
 - Une fois le filtre du tri franchi, l'information à traiter arrive dans la mémoire de travail à court terme. Cette mémoire permet un traitement rapide l'information, **mais elle est limitée\ !** Selon les individus et/ou les circonstances, elle ne dépasse pas l'équivalent de 7-9 cases maximum. Il vaut mieux même coinsidérer **cinq cases** disponibles. Chaque case est capable d'accueillir une information à traiter. Cela signifie qu'il faut éviter d'amener trop de difficultés à la fois. si le problème est complexe et nécessite l'assimilation de nombreuses nouvelles notions, il faut alors découper le problème en plusieurs étapes plus simples. Il faut aussi faire attention qu'un certain nombre de ces cases peuvent se remplir par des éléments parasites. Par exemple, un étudiant qui doit installer un logiciel sur l'ordinateur de la salle de TP, mais se bat avec l'écran de login parce qu'il ne l'entre pas correctement, ou parce qu'il n'arrive pas à retrouver son mot de passe va concentrer son attention et une partie de son "espace de travail" à résoudre ce problème de login. Ensuite, l'espace de travail utilisé ne sera pas directement réutilisable pour la tâche désirée (installation du logiciel), et l'étudiant va se sentir débordé par les informations et en conclura qu'il est nul en informatique. Si le même étudiant avait pu se logger directement sans problèmes, il n'éprouverait peut-être pas de telles difficultés.
 
-\BeginKnitrBlock{note}<div class="note">
+\BeginKnitrBlock{note}
+
 Il faut toujours garder à l'esprit la taille très limitée de l'espace de travail dans notre cerveau, et ne jamais amener trop de notions nouvelles et/ou difficiles d'un coup. Il faut aussi apprendre à identifier les situations où les étudiants sont saturés d'information. Dans les deux cas, il faut décomposer alors le problème en étapes successives plus simples et attaquer étape par étape.
-</div>\EndKnitrBlock{note}
+
+\EndKnitrBlock{note}
 
 - Si l'information arrive dans l'espace de travail du cerveau de l'étudiant, ce n'est pas encore gagné pour autant. Il faut en effet bien évidemment qu'il soit capable de traiter le problème. S'il est dans une impasse, tout s'arrête-là\ ! **Donc, il faut adapter le niveau de difficulté aux connaissances et au potentiel de l'étudiant.** La difficulté ici, c'est qu'une classe est hétérogène. Donc, le niveau de difficulté acceptable n'est pas le même pour tous. Varier le matériel pédagogique de niveau de difficulté différent permet de résoudre ce casse-tête, mais c'est aussi crucial pour l'apprentissage pour une autre raison (voir ci-dessous).
 
@@ -30,23 +34,29 @@ Il faut toujours garder à l'esprit la taille très limitée de l'espace de trav
 
 - Ainsi une des conditions nécessaires pour que le concept étudié soit transféré dans la mémoire à long terme est qu'il soit raisonnablement difficile (sinon, il ne sera pas digne d'être mémorisé), mais pas trop (si l'étudiant ne peut pas résoudre le problème auquel il fait face, il ne peut rien mémoriser d'utile bien évidemment).
 
-\BeginKnitrBlock{note}<div class="note">
+\BeginKnitrBlock{note}
+
 Adapter le niveau de difficulté des activités proposées est à la fois complexe (à cause de l'hétérogénéité des classes) et **indispensable** pour que le mécanisme d'apprentissage s'enclenche. Une façon d'arriver à un niveau de difficulté adéquat, ni trop simple, ni trop difficile, consiste à reporter partiellement cette tâche sur l'étudiant lui-même. Si l'étudiant devient (partiellement) responsable de son processus d'apprentissage, il pourra ajuster de lui-même son niveau de difficulté.
 
 Une approche complémentaire indispensable consiste à varier le niveau de difficulté des exercices proposés autour d'un même concept. Les étudiants les moins performants apprendront avec les exercices les plus simples, même s'ils bloqueront probablement sur les cas les plus complexes. D'un autre côté, le génie survolera ces exercices simples sans rien apprendre, mais s'attardera de manière utile sur les exercices plus difficiles, et c'est là qu'il apprendra le mieux.
-</div>\EndKnitrBlock{note}
+
+\EndKnitrBlock{note}
 
 - Une autre condition indispensable pour que le mécanisme d'apprentissage s'enclenche, c'est d'être **actif**. Or, écouter un professeur déblatérer sa matière devant un grand auditoire, visionner une vidéo, et parfois même, lire un long texte continu, ce n'est **pas** être actif. L'information "glisse". On dit quelle "entre par une oreille et ressort par l'autre". Et c'est vraiment pratiquement comme cela que cela se passe\ : le mécanisme d'apprentissage n'est pas activé. Par contre si l'étudiant fait quelque chose pendant ce temps-là, quand il est actif, alors il apprend. Le paradoxe, c'est que l'activité ne doit pas nécessairement être liée à la matière à apprendre. Par exemple, un parent qui cherche à aider son enfant pour apprendre ses devoirs en répétant avec lui sera énervé si l'enfant joue à un jeu vidéo en même temps... Pourtant, c'est l'enfant qui a raison\ : il est actif (sur son jeu), donc il apprend (sa matière)\ ! Ce n'est pas logique, mais ainsi fonctionne notre cerveau.
 
-\BeginKnitrBlock{note}<div class="note">
+\BeginKnitrBlock{note}
+
 La pédagogie active vise à activer ce mécanisme d'apprentissage par l'activité autant qu'elle reporte la responsabilité de choix de difficulté et de mécanisme d'apprentissage sur l'étudiant lui-même qui doit développer une certaine autonomie pour mettre en place les conditions qui font que, pour lui, l'apprentissage sera optimal. Les enseignants doivent encourager cela. Certains psychopédagogues modernes sont très critiques sur l'enseignement via les grands cours ex-catédras en Université, et disent que c'est la meilleure méthode pour que la matière passe directement du PowerPoint du prof à la feuille de notes de l'étudiant sans passer par le cerveau du professeur, ni par celui de l'étudiant. **Le mécanisme d'apprentissage est pratiquement inexistant ici, et c'est plus tard, en remettant de l'ordre dans ses notes _de manière active_ que l'étudiant apprendra véritablement la matière.**
-</div>\EndKnitrBlock{note}
+
+\EndKnitrBlock{note}
 
 - Un dernier point important pour l'apprentissage est la **répétition**. Pour qu'un concept s'imprime durablement dans le cerveau, il faut que les connexions synaptiques soient activées et réactivées *plusieurs fois*. Ceci est un concept connu depuis longtemps en pédagogie, mais qui est parfois mal appliqué. Car si cette répétition est monotone, elle est ennuyeuse. Et alors, la motivation et l'intérêt de l'étudiant sont en chute libre... au point que l'information répétée peut très bien ne plus passer la première barrière du tri. Dans ce cas, la répétition ne sera plus d'aucun effet bénéfique.
 
-\BeginKnitrBlock{note}<div class="note">
+\BeginKnitrBlock{note}
+
 Il faut répéter les concepts pour qu'ils s'ancrent durablement dans le cerveau des apprenants. Mais cette répétition ne doit pas être monotone. Donc, il faut multiplier les méthodes de transmission du concept. Le multimédia permet de varier (texte, image, son). On peut aussi diversifier les exercices, approcher de manière ludique par le jeu, inventer des challenges, etc. **Donc, cette répétiton passe encore une fois par la diversité du matériel pédagogique fourni à l'étudiant autour d'un même concept.**
-</div>\EndKnitrBlock{note}
+
+\EndKnitrBlock{note}
 
 Un leitmotiv, on le voit très clairement ici, qui ressort de tout ceci est qu'il faut **diversifier le matériel pédagogique** autant que possible. C'est notre objectif dans le cours de science des données, et c'est pour cela que nous ne nous limitons pas à un syllabus qui contient du texte et des images statiques, accompagné de PowerPoints qui contiennent aussi du texte et des images statiques (ou pire, des "animations" qui n'apportent rien à l'apprentissage... la fameuse [mort par PowerPoint](https://openclassrooms.com/fr/courses/3013891-ameliorez-limpact-de-vos-presentations/4172811-evitez-la-mort-par-powerpoint)). Nous voulons aussi proposer des vidéos, du contenu interactif, des exercices présentés sous différentes formes, etc. Pour y arriver, nous devons intégrer des outils comme H5P, learnr et des applications Shiny. Nous verrons comment dans les chapitres suivants.
 
@@ -142,7 +152,8 @@ Cette section reprends différents éléments important qui émergent des consta
 
 - Marcel Lebrun de l'UCL présente les différents types de classes inversées dans la vidéo suivante\ :
 
-<iframe src="https://www.youtube.com/embed/U8J24T-eY0U" width="672" height="400px"></iframe>
+
+\begin{center}\href{https://www.youtube.com/embed/U8J24T-eY0U}{\includegraphics{01-Introduction_files/figure-latex/unnamed-chunk-6-1} }\end{center}
 
 À côté de l'approche traditionnelle cours ex-cathédras qui présentent la théorie suivis de séances d'exercices ou TP qui mettent en pratique, il y a\ :
 
@@ -152,9 +163,11 @@ Cette section reprends différents éléments important qui émergent des consta
 
 - la classe inversée de type 3 mélange les deux dans un processus itératif de contextualisation -> décontextualisation -> recontextualisation.
 
-\BeginKnitrBlock{note}<div class="note">
+\BeginKnitrBlock{note}
+
 Il n'y a pas qu'un seul type de classe inversée. On pezut renverser les lieux sans toucher au processus (type 1), mais on peut aussi changer les rôles avec la classe renversée où ce sont les étudiants qui élaborent et expliquent le cours au prof (classe renversée). Bienb sûr, on peut aussi panacher les deux avec d'autres parties en forme plus classique cours ex-cathédras suivis d'exercices.
-</div>\EndKnitrBlock{note}
+
+\EndKnitrBlock{note}
 
 Les différents types de classes inversées peuvent se définir par rapport aux savoirs (qui apporte l'info, le prof ou les élèves\ ?), et par rapport aux rôles (qui est actif, le prof ou les élèves\ ?)
 
@@ -162,15 +175,18 @@ Les différents types de classes inversées peuvent se définir par rapport aux 
 
 Dans son exposé (voir ci-dessus), Marcel Lebrun fait remarquer que l'enseignement classique expliquer *d'abord* la théorie et passe *ensuite* aux applications. La théorie est une **décontextualisation** du savoir, tandis que les problèmes et applications pratiques en sont une **contextualisation**. Il fait remarquer que cela inverse le processus naturel hors classe, ou l'humain rencontre un problème (le contexte) et cherche à le résoudre en l'étudiant et en cherchant à la généraliser pour ne plus le rencontrer, ou du moins y réagir plus efficacement s'il se reproduit (décontextualisation). L'enseignement traditionnel et les classes inversées de type 1 travaillent donc dans le mauvais ordre, alors que la classe renversée part bien du contexte pour décontextualiser ensuite. Au sein du matériel pédagogique, nous pouvons décider de partir de la théorie vers les applications, ou bien, de partir d'un problème concret et de raisonner à son sujet pour aboutir à de la théorie. Il semble que cette dernière approche soit plus efficace.
 
-\BeginKnitrBlock{note}<div class="note">
+\BeginKnitrBlock{note}
+
 L'esprit uhmain part d'un contexte pour ensuite généraliser (décontextualiser). L'enseignement classique, en présentant la théorie avant les applications inverse ce processus (décontextualisation avant contextualisation). De nombreux indicateurs montrent que ce n'est pas une bonne idée. Donc, l'innovation pédagogique cherche aussi à renverser l'ordre dans le flux d'apprentissage.
-</div>\EndKnitrBlock{note}
+
+\EndKnitrBlock{note}
 
 ### Classe renversée
 
 L'approche sous forme de classe renversée est donc la forme la plus extrême. Jean-Charles Cailliez de l'Université de Lille présente ce concept dans la vidéo TEDx suivante\ :
 
-<iframe src="https://www.youtube.com/embed/KMAONv3BPhs" width="672" height="400px"></iframe>
+
+\begin{center}\href{https://www.youtube.com/embed/KMAONv3BPhs}{\includegraphics{01-Introduction_files/figure-latex/unnamed-chunk-9-1} }\end{center}
 
 Il ne faut pas copier son système, mais en reprendre des éléments et l'adapter au cours à la personnalité de l'enseignant, ...En tous cas, lui va très loin puisque ce sont les étudiants qui font tout (définir la matière, préparer le cours, l'exposer au prof, préparer les questions de devoirs et d'examens). Le prof fait les devoirs que les étudiants lui donne et offre ainsi un feedback sur la qualité du travail par cet intermédiaire. Il utilise notamment les QCM inversés\ : les étudiants produisent les question, le prof répond, les étudiants corrigent. Si la question est bien posée, le prof répond bien. Si elle est mal posée, le prof fait semblant de répondre n'importe quoi pour bien faire comprendre que la question est débile ou mal posée. Il utilise aussi le QCM "intelligent"\ : il ne suffit pas de dire quelles sont les bonnes réponses, mais il faut aussi justifier pourquoi les autres sont fausses pour avoir des points. Au début du cours, chaque équipe crée un tel QCM (5 questions). Ensuite les QCM passent à l'équipe suivante qui y répond. Enfin, les réponses sont données à une troisième équipe qui corrige (3min à chaque fois, suivi d'une petite discussion).
 
@@ -178,21 +194,25 @@ Cette approche permet aussi de mettre en œuvre le principe suivant\ : "enseigne
 
 - Intervention de Jean-Jacques Cailliez.
 
-<iframe src="https://www.youtube.com/embed/FtesVo3U4v0" width="672" height="400px"></iframe>
+
+\begin{center}\href{https://www.youtube.com/embed/FtesVo3U4v0}{\includegraphics{01-Introduction_files/figure-latex/unnamed-chunk-10-1} }\end{center}
 
 - Intervention de Sébastien Bette.
 
-<iframe src="https://www.youtube.com/embed/CAXfg7PbRdY" width="672" height="400px"></iframe>
+
+\begin{center}\href{https://www.youtube.com/embed/CAXfg7PbRdY}{\includegraphics{01-Introduction_files/figure-latex/unnamed-chunk-11-1} }\end{center}
 
 Questions croisées aux deux intervenants.
 
-<iframe src="https://www.youtube.com/embed/DIhp6P4HuB8" width="672" height="400px"></iframe>
+
+\begin{center}\href{https://www.youtube.com/embed/DIhp6P4HuB8}{\includegraphics{01-Introduction_files/figure-latex/unnamed-chunk-12-1} }\end{center}
 
 #### Intelligence collective
 
 François Taddei parle de la mobilisation de l'intelligence collective au service de nouvelles formes d'apprentissage ici\ :
 
-<iframe src="https://www.youtube.com/embed/Ckp4AvvhZ_A" width="672" height="400px"></iframe>
+
+\begin{center}\href{https://www.youtube.com/embed/Ckp4AvvhZ_A}{\includegraphics{01-Introduction_files/figure-latex/unnamed-chunk-13-1} }\end{center}
 
 Parmi les points importants de l'innovation pédagogique est l'utilisation de l'intelligence collective. Jean-Jacques Cailliez (voir ci-dessus) fait travailler les étudiants par groupes de six (considéré comme la meilleure taille de groupe). Par contre, c'est lui qui crée les groupes. Après un test d'évaluation qui lui permet de déterminer qui est fort, moyen ou faible, il mets un fort, et un faible systématiquement dans chaque groupe. Ensuite, il demande que les étudiants s'attribuent à chacun un rôle au sein du groupe pour éviter que certains ne fassent rien. Au fil du temps, les responsabilités changent, mais ceci est important pour impliquer tout le monde dès le début. Si un ou plusieurs étudiants ne font rien au sein du groupe, cela plombe l'ambiance puisqu'il y a une partie de la note qui est commune à tout le groupe et ceux qui travaillent se sentent lésés.
 
@@ -226,9 +246,11 @@ Quoi qu'il en soit, on ne peut pas contenter tout le monde. Il faut s'attendre e
 
 L'enseignement basé sur les objectifs définit *d'abord* les objectifs d'apprentissage et les savoir à acquérir, les concepts à maîtriser. Ensuite, le cours et le matériel pédagogique sont construits progressivement autour des notions clés qui auront été dégagées. Il est possible d'écrire des exercices et des questions pour mettre en pratique et (auto-)évaluer l'acquisition des concepts. Ensuite la partie théorique vient chapeauter le tout sans se perdre dans des digressions inutiles par rapport aux objectifs. 
 
-\BeginKnitrBlock{note}<div class="note">
+\BeginKnitrBlock{note}
+
 Le leitmotiv de l'enseignezment basé sur les objectifs consiste à définir précisément les objectifs d'abord, et ensuite à rester focaliser sur ces objectifs tout au long de l'élaboration du matériel pédagogique et du cours.
-</div>\EndKnitrBlock{note}
+
+\EndKnitrBlock{note}
 
 ### Attention à la formulation
 
@@ -238,7 +260,8 @@ On a tous tendance à utiliser des tournure comme "il suffit de ...", "cela se f
 
 Les enseignants doivent tenir compte également de la psychologie, et en particulier de tout ce qui peut accroître, ou au contraire, impacter la motivation des étudiants. Dans une présentation TEDx, Mark Rober introduit ce qu'il appelle l'"effet Super Mario".
 
-<iframe src="https://www.youtube.com/embed/9vJRopau0g0" width="672" height="400px"></iframe>
+
+\begin{center}\href{https://www.youtube.com/embed/9vJRopau0g0}{\includegraphics{01-Introduction_files/figure-latex/unnamed-chunk-15-1} }\end{center}
 
 Le jeu Super Mario est très addictif, parce que le joueur est focalisé sur l'objectif à atteindre (terminer le jeu et sauver la princesse). Cela le détourne des nombreuses embûches qui parsèment le jeu. Au final, l'utilisateur ne fait qu'appuyer successivement sur une série de six boutons (sur la manette de jeu), et présenté autrement, on réalise à quel point la même action peut être perçue négativement. Mark présente six boutons et explique qu'il faudra les appuyer selon une séquence précise... très longue et pendant plus d'une heure pour passer un test. Vu comme cela, cela parait infaisable et totalement rébarbatif... pourtant c'est exactement ce qu'on fait dans le jeu Super Mario qui est pourtant, au contraire, addictif.
 
@@ -246,9 +269,11 @@ Il transpose cela aux problèmes de la vie quotidienne. Si on se focalise sur le
 
 Mark a aussi étudié le cas d'un problème à résoudre soumis à Internet avec un grand nombre de réponses obtenues, qui permettent d'étudier la motivation vers le succès de manière statistique. Il a comparé deux sous-population (même question, mais avec une variante subtile). Le premier groupe reçoit 200 points fictifs dès qu'il réussit, quel que soit le nombre d'essais pour y arriver. Le second groupe "perds" cinq points fictifs à chaque tentative infructueuse. Le premier groupe réussi plus souvent et avec une moyenne de 12 tentatives, par rapport à la moyenne de 5 tentatives pour le second groupe. En absolu, la pénalité est très faible et purement fictive (pas de perte d'argent ou autre conséquence quelconque dans la vie réelle). Cependant, la simple idée de "perdre" quelque chose influence profondément les utilisateurs.
 
-\BeginKnitrBlock{note}<div class="note">Les aspects psychologiques clés autour de la motivation qui fait qu'on résoud un problème ou qu'on le laisse tomber sont cruciaux. L'effet Super Mario montre que la façon dont le problème est présenté, et le but lointain qu'on vise ou non ont un profond impact sur la motivation. De même, l'idée de perdre quelque chose à chaque tentative infructueuse, aussi infime soit cette perte, a un impact non négligeable sur la motivation.
+\BeginKnitrBlock{note}
+Les aspects psychologiques clés autour de la motivation qui fait qu'on résoud un problème ou qu'on le laisse tomber sont cruciaux. L'effet Super Mario montre que la façon dont le problème est présenté, et le but lointain qu'on vise ou non ont un profond impact sur la motivation. De même, l'idée de perdre quelque chose à chaque tentative infructueuse, aussi infime soit cette perte, a un impact non négligeable sur la motivation.
 
-Donc, préciser et rappeler les buts ultimes (vous serez de bons sicentifiques des données dans votre carrière) aide à surmonter les petites difficultés du quotidien. De même, nous devons éviter des cotations qui sanctionnent les étudiantsd via des pertes de points, et promouvoir l'émulation par le gain de points à chaque fois que l'étudiant progress, au contraire.</div>\EndKnitrBlock{note}
+Donc, préciser et rappeler les buts ultimes (vous serez de bons sicentifiques des données dans votre carrière) aide à surmonter les petites difficultés du quotidien. De même, nous devons éviter des cotations qui sanctionnent les étudiantsd via des pertes de points, et promouvoir l'émulation par le gain de points à chaque fois que l'étudiant progress, au contraire.
+\EndKnitrBlock{note}
 
 ### Teaching tech together
 
@@ -271,15 +296,18 @@ Il y a énormément plus de choses intéressantes dans cet ouvrage, et il faudra
 
 La présentation de type PowerPoint est partout et les enseignants ne peuvent plus s'en passer. Cependant, c'est un outil à double tranchant et une mauvaise utilisation de cet outil peut être désastreuse. C'est ce qu'on appelle la "mort par PowerPoint".
 
-<iframe src="https://www.youtube.com/embed/Iwpi1Lm6dFo" width="672" height="400px"></iframe>
+
+\begin{center}\href{https://www.youtube.com/embed/Iwpi1Lm6dFo}{\includegraphics{01-Introduction_files/figure-latex/unnamed-chunk-17-1} }\end{center}
 
 Quelques conseils pour améliorer sa présentation PowerPoint ici\ :
 
-<iframe src="https://www.youtube.com/embed/-U_HN7H8n8E" width="672" height="400px"></iframe>
+
+\begin{center}\href{https://www.youtube.com/embed/-U_HN7H8n8E}{\includegraphics{01-Introduction_files/figure-latex/unnamed-chunk-18-1} }\end{center}
 
 Don McMillan est un humoriste qui réussit à faire passer le message d'une manière hilarante ici\ :
 
-<iframe src="https://www.youtube.com/embed/KbSPPFYxx3o" width="672" height="400px"></iframe>
+
+\begin{center}\href{https://www.youtube.com/embed/KbSPPFYxx3o}{\includegraphics{01-Introduction_files/figure-latex/unnamed-chunk-19-1} }\end{center}
 
 ### Enseigner les statistiques comme les mathématiques
 
@@ -287,7 +315,8 @@ Douglas Andrews dans [the big mistake: teaching stat as though it were math](htt
 
 La vidéo suivante caricature les interactions entre un biologiste et un statisticien. Ceci montre l'importance de former des personnes capables de faire le lien entre les deux disciplines\ : les scientifiques des données ayant un "background" en biologie.
 
-<iframe src="https://www.youtube.com/embed/Hz1fyhVOjr4" width="672" height="400px"></iframe>
+
+\begin{center}\href{https://www.youtube.com/embed/Hz1fyhVOjr4}{\includegraphics{01-Introduction_files/figure-latex/unnamed-chunk-20-1} }\end{center}
 
 ### "Gamification" de l'enseignement
 

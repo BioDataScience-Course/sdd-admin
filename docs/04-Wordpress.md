@@ -4,14 +4,16 @@
 
 Nous utilisons [Wordpress](https://wordpress.org) principalement pour gérer nos contenus **H5P**. Cependant, étant basé sur un serveur LAMP (Linux-Apache-MySQL-PHP), il permet également d'implémenter des fonctions basées sur des scripts côté serveur qui seraient difficiles, voire impossibles avec un site statique tel que l'offre {bookdown}, par exemple. Ainsi, nous pouvons aussi y intégrer un enregistrement de l'utilisateur via GitHub (protocole OAuth2). Ceci est bien pratique pour faire le lien entre le compte UMONS/Moodle et le compte Github de l'étudiant.
 
-\BeginKnitrBlock{note}<div class="note">Nous avons choisi de privilégier l'authentification GitHub à celle de l'UMONS pour les raisons suivantes\ :
+\BeginKnitrBlock{note}
+Nous avons choisi de privilégier l'authentification GitHub à celle de l'UMONS pour les raisons suivantes\ :
 
 - Certains étudiants arrivent au cours sans être encore complètement inscrits, avec leur propre PC portable. Ils n'ont pas encore de login UMONS et ne pourraient rien faire si on dépendait exclusivement de ce login pour travailler. Avec Github, ils créent leur compte librement et sont immédiatement opérationnels.
 - Nos outils sont prêts et utilisables en dehors du contexte de l'UMONS également (si nécessaire, par exemple, pour une formation dans le cadre d'un workshop international).
 - Comme GitHub et GitHub Classroom occupent une place importante dans les outils d'apprentissage de nos cours, les étudiants doivent de toute façon créer et utiliser un compte GitHub. L'authentification via GitHub permet d'être certain que ce compte est créé et fonctionnel et que l'étudiant fournit effectivement son propre login.
 
 Toutes ces raisons sont suffisantes pour que l'authentification GitHub soit considérées comme l'élément clé dans le contexte de nos cours de Science des Données. Ainsi pour éviter de multiplier les logins, l'identifiant Wordpress de l'étudiant sera toujours identique à son login GitHub avec cette approche.
-</div>\EndKnitrBlock{note}
+
+\EndKnitrBlock{note}
 
 En 2018-2019 et 2019-2020, nous avons travaillé uniquement avec un serveur statique {bookdown} hébergé sur GitHub. Si le résultat est correct, nous avons noté plusieurs problèmes\ :
 
@@ -41,10 +43,12 @@ Afin d'éviter que n'importe qui ayant un compte GitHub ne s'enregistre dans Wor
 
 Dès que l'étudiant s'est enregistré, les données utiles venant de Github sont rentrées dans la table des utilisateurs Wordpress. Nous pouvons donc combiner cette information avec les données provenant de Moodle pour établir un profil complet de l'étudiant dans notre site Wordpress automatiquement. A noter que Wordpress tente de récupérer aussi d'autres informations venant de GitHub, dont l'email. Cependant, ce dernier peut être caché dans le compte GitHub (c'est d'ailleurs le cas par défaut), et n'est donc pas accessible. La plupart du temps, nous n'avons donc que l'email UMONS à disposition. **Nous avons donc décidé d'utiliser l'email Wordpress, l'email UMONS, ou le login Github de manière interchangeable selon le contexte comme identifiant**, mais seule la présence du login est vérifiée pour activer l'enregistrement de l'activité dans H5P/learnr/Shiny. Comme l'email git est mis à celui de l'UMONS lorsque RStudio Serveur est accédé via Moodle, l'étudiant se doit d'indiquer le *même* email dans son compte GitHub, sans quoi, ses commits à partir de la SciViews Box ne pourront pas lui être attribués dans GitHub. *C'est de sa responsabilité et actuellement, nous n'avons aucune visiblité sur l'email utilisé sous GitHub par l'étudiant dans l'implémentation mise en place^[Pour les enseignants, lors des premiers commits réalisés par vos étudiants, veuillez vérifier s'ils sont clairement identifiables. Sinon, faites corriger l'information dans la SciViews Box (identifiant git et email renseignés en haut à droite dans la boite de dialogue de configuration de la SciViews Box).].*
 
-\BeginKnitrBlock{warning}<div class="warning">Le changement automatique d'email git dans la SciViews Box (à partir de la version 2020) ne se fait *que* si RStudio est accédé depuis le lien dans Moodle UMONS. Ainsi, un externe peut très bien utiliser n'importe quelle autre adresse mail sans problèmes.
+\BeginKnitrBlock{warning}
+Le changement automatique d'email git dans la SciViews Box (à partir de la version 2020) ne se fait *que* si RStudio est accédé depuis le lien dans Moodle UMONS. Ainsi, un externe peut très bien utiliser n'importe quelle autre adresse mail sans problèmes.
 
 L'adresse mail utilisée est celle renseignée par Moodle, soit `prénom.nom@[student.]umons.ac.be`. Cependant, dans de rares cas, l'adresse UMONS utilise des caractères qui posent problèmes ailleurs (GitHub en particulier), comme une apostrophe dans le nom. Dans ce cas, il faut basculer  sur l'adresse alternative `matricule@umons.ac.be`.
-</div>\EndKnitrBlock{warning}
+
+\EndKnitrBlock{warning}
 
 **TODO:** Utiliser un autre plugin OAuth2 et implémenter l'ajout de l'email lorsqu'un nouveau compte est créé depuis Github.
 
@@ -264,7 +268,9 @@ A noter que nous croisons différentes sources (Moodle, GitHub, Wordpress), et l
 
 A ce moment-là, tout sera en place pour gérer correctement son identité dans les différents matériels pédagogiques (bookdown, H5P, learnrs, apps Shiny, etc.). Le seul point sur lequel il faudra rester vigilant est l'identifiant de l'étudiant pour ses commits, pour lequel nous n'avons pas de contrôle automatique pour l'instant. Il ne lui restera plus alors qu'à installer la SciViews Box pour être pleinement opérationnel. Cela semble être un nombre important d'opérations à réaliser pour arriver à cela, mais l'étudiant est guidé de manière naturelle\ : il va dans Moodle, se connecte et sélectionne le cours dans la liste (il a déjà l'habitude). A partir de là, il clique naturellement sur "Cours", d'où la page qui l'enregistre et lui propose de créer un compte GitHub. Une fois que c'est fait, il peut cliquer sur le gros bouton bleu "GitHub/BioDataScience" pour se connecter dans le site "Science des Données Biologiques", et il sélectionne le manuel correspondant à son cours dans la liste. A ce stade, c'est fait. Il est enregistré^[Il est conseillé aux enseignants de tester la procédure auparavant pour vérifier qu'ils en maîtrisent bien la logique.]\ !
 
-\BeginKnitrBlock{note}<div class="note">Faut-il *forcer* le login de l'étudiant dans Wordpress\ ? Autrement dit, il n'aurait accès aux cours que s'il est connecté. Il existe des plugins Wordpress qui permettent de faire cela, et aussi d'exclure les pages qui peuvent être vues par tous. Un de ces plugins est **[Force login](https://wordpress.org/plugins/wp-force-login/)**. Nous verrons à l'usage...</div>\EndKnitrBlock{note}
+\BeginKnitrBlock{note}
+Faut-il *forcer* le login de l'étudiant dans Wordpress\ ? Autrement dit, il n'aurait accès aux cours que s'il est connecté. Il existe des plugins Wordpress qui permettent de faire cela, et aussi d'exclure les pages qui peuvent être vues par tous. Un de ces plugins est **[Force login](https://wordpress.org/plugins/wp-force-login/)**. Nous verrons à l'usage...
+\EndKnitrBlock{note}
 
 Toutes les informations de son compte sont accessibles à l'étudiant dans Wordpress, et il peut librement les modifier dans le tableau de bord, sauf son `login`. Donc, cela signifie que l'information cruciale pour identifier un étudiant est `login` qui est par ailleurs toujours le même que le login GitHub, et `iemail`, son adresse email de l'UMONS fournie par Moodle. Nous avons éventuellement besoin aussi de `email`, son email Wordpress sous lequel les activités H5P sont enregistrées.
 

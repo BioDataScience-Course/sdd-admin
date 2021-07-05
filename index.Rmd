@@ -1,5 +1,5 @@
 --- 
-title: "BioDataScience Administration"
+title: "Plateforme pédagogique BioDataScience"
 author: "Philippe Grosjean & Guyliann Engels"
 date: "`r Sys.Date()`"
 site: bookdown::bookdown_site

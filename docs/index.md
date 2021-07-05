@@ -1,5 +1,5 @@
 --- 
-title: "BioDataScience Administration"
+title: "Plateforme pédagogique BioDataScience"
 author: "Philippe Grosjean & Guyliann Engels"
 date: "2021-07-05"
 site: bookdown::bookdown_site
@@ -41,7 +41,7 @@ sessioninfo::session_info()
 ```
 
 ```
-# ─ Session info ───────────────────────────────────────────────────────────────
+# - Session info ---------------------------------------------------------------
 #  setting  value                                      
 #  version  R version 4.0.5 Patched (2021-03-31 r80240)
 #  os       macOS Catalina 10.15.7                     
@@ -53,23 +53,18 @@ sessioninfo::session_info()
 #  tz       Europe/Brussels                            
 #  date     2021-07-05                                 
 # 
-# ─ Packages ───────────────────────────────────────────────────────────────────
+# - Packages -------------------------------------------------------------------
 #  package     * version     date       lib source                            
 #  bookdown      0.22        2021-04-22 [1] CRAN (R 4.0.2)                    
-#  bslib         0.2.5       2021-05-12 [1] CRAN (R 4.0.5)                    
 #  cli           2.5.0       2021-04-26 [1] CRAN (R 4.0.2)                    
 #  digest        0.6.27      2020-10-24 [1] CRAN (R 4.0.2)                    
 #  evaluate      0.14        2019-05-28 [1] CRAN (R 4.0.0)                    
 #  fastmap       1.1.0       2021-01-25 [1] CRAN (R 4.0.2)                    
 #  htmltools     0.5.1.9005  2021-05-19 [1] Github (rstudio/htmltools@8a6defc)
-#  jquerylib     0.1.4       2021-04-26 [1] CRAN (R 4.0.2)                    
-#  jsonlite      1.7.2       2020-12-09 [1] CRAN (R 4.0.2)                    
 #  knitr         1.33        2021-04-24 [1] CRAN (R 4.0.2)                    
 #  magrittr      2.0.1       2020-11-17 [1] CRAN (R 4.0.2)                    
-#  R6            2.5.0       2020-10-28 [1] CRAN (R 4.0.2)                    
 #  rlang         0.4.11.9000 2021-05-19 [1] Github (r-lib/rlang@7021ebe)      
 #  rmarkdown     2.8         2021-05-07 [1] CRAN (R 4.0.2)                    
-#  sass          0.4.0       2021-05-12 [1] CRAN (R 4.0.2)                    
 #  sessioninfo   1.1.1       2018-11-05 [1] CRAN (R 4.0.2)                    
 #  stringi       1.6.1       2021-05-10 [1] CRAN (R 4.0.2)                    
 #  stringr       1.4.0       2019-02-10 [1] CRAN (R 4.0.0)                    
