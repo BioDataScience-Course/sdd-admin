@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>6.3 Contenu H5P dans bookdown | BioDataScience Administration</title>
+  <title>6.3 Contenu H5P dans bookdown | Plateforme pédagogique BioDataScience</title>
   <meta name="description" content="Administration de BioDataScience-Course." />
   <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="6.3 Contenu H5P dans bookdown | BioDataScience Administration" />
+  <meta property="og:title" content="6.3 Contenu H5P dans bookdown | Plateforme pédagogique BioDataScience" />
   <meta property="og:type" content="book" />
   <meta property="og:url" content="http://phgrosjean.sciviews.org/bookdown-test/" />
   <meta property="og:image" content="http://phgrosjean.sciviews.org/bookdown-test//images/front-cover.png" />
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="BioDataScience-Course/sdd-admin" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="6.3 Contenu H5P dans bookdown | BioDataScience Administration" />
+  <meta name="twitter:title" content="6.3 Contenu H5P dans bookdown | Plateforme pédagogique BioDataScience" />
   
   <meta name="twitter:description" content="Administration de BioDataScience-Course." />
   <meta name="twitter:image" content="http://phgrosjean.sciviews.org/bookdown-test//images/front-cover.png" />
@@ -24,7 +24,7 @@
 <meta name="author" content="Philippe Grosjean &amp; Guyliann Engels" />
 
 
-<meta name="date" content="2021-07-05" />
+<meta name="date" content="2022-01-05" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -33,7 +33,7 @@
   
 <link rel="prev" href="intégration-dans-wordpress.html"/>
 <link rel="next" href="shiny.html"/>
-<script src="libs/header-attrs-2.8/header-attrs.js"></script>
+<script src="libs/header-attrs-2.11.3/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -462,7 +462,7 @@ code span.wa { color: #bf0303; } /* Warning */
       <div class="body-inner">
         <div class="book-header" role="navigation">
           <h1>
-            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">BioDataScience Administration</a>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Plateforme pédagogique BioDataScience</a>
           </h1>
         </div>
 
@@ -479,9 +479,9 @@ code span.wa { color: #bf0303; } /* Warning */
 <p class="caption">H5P Content dans Wordpress. Les widgets sont identifiés par leur <strong>ID</strong> (ici, 6, 7, 8, 9 &amp; 10).</p>
 </div>
 <p>Pour comprendre ce que la fonction <code>learnitdown::h5p()</code> fait, nous pouvons nous concentrer sur la version simplifiée suivante :</p>
-<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="contenu-h5p-dans-bookdown.html#cb18-1" aria-hidden="true" tabindex="-1"></a>h5p <span class="ot">&lt;-</span> <span class="cf">function</span>(id, <span class="at">width =</span> <span class="dv">780</span>, <span class="at">height =</span> <span class="dv">500</span>) {</span>
-<span id="cb18-2"><a href="contenu-h5p-dans-bookdown.html#cb18-2" aria-hidden="true" tabindex="-1"></a>  glue<span class="sc">::</span><span class="fu">glue</span>(<span class="st">&quot;</span><span class="sc">\n</span><span class="st">&lt;iframe src=</span><span class="sc">\&quot;</span><span class="st">https://wp.sciviews.org/wp-admin/admin-ajax.php?action=h5p_embed&amp;id={id}</span><span class="sc">\&quot;</span><span class="st"> width=</span><span class="sc">\&quot;</span><span class="st">{width}</span><span class="sc">\&quot;</span><span class="st"> height=</span><span class="sc">\&quot;</span><span class="st">{height}</span><span class="sc">\&quot;</span><span class="st"> frameborder=</span><span class="sc">\&quot;</span><span class="st">0</span><span class="sc">\&quot;</span><span class="st"> allowfullscreen=</span><span class="sc">\&quot;</span><span class="st">allowfullscreen</span><span class="sc">\&quot;</span><span class="st"> class=</span><span class="sc">\&quot;</span><span class="st">h5p</span><span class="sc">\&quot;</span><span class="st">&gt;&lt;/iframe&gt;&lt;script src=</span><span class="sc">\&quot;</span><span class="st">https://wp.sciviews.org/wp-content/plugins/h5p/h5p-php-library/js/h5p-resizer.js</span><span class="sc">\&quot;</span><span class="st"> charset=</span><span class="sc">\&quot;</span><span class="st">UTF-8</span><span class="sc">\&quot;</span><span class="st">&gt;&lt;/script&gt;</span><span class="sc">\n</span><span class="st">&quot;</span>)</span>
-<span id="cb18-3"><a href="contenu-h5p-dans-bookdown.html#cb18-3" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="contenu-h5p-dans-bookdown.html#cb21-1" aria-hidden="true" tabindex="-1"></a>h5p <span class="ot">&lt;-</span> <span class="cf">function</span>(id, <span class="at">width =</span> <span class="dv">780</span>, <span class="at">height =</span> <span class="dv">500</span>) {</span>
+<span id="cb21-2"><a href="contenu-h5p-dans-bookdown.html#cb21-2" aria-hidden="true" tabindex="-1"></a>  glue<span class="sc">::</span><span class="fu">glue</span>(<span class="st">&quot;</span><span class="sc">\n</span><span class="st">&lt;iframe src=</span><span class="sc">\&quot;</span><span class="st">https://wp.sciviews.org/wp-admin/admin-ajax.php?action=h5p_embed&amp;id={id}</span><span class="sc">\&quot;</span><span class="st"> width=</span><span class="sc">\&quot;</span><span class="st">{width}</span><span class="sc">\&quot;</span><span class="st"> height=</span><span class="sc">\&quot;</span><span class="st">{height}</span><span class="sc">\&quot;</span><span class="st"> frameborder=</span><span class="sc">\&quot;</span><span class="st">0</span><span class="sc">\&quot;</span><span class="st"> allowfullscreen=</span><span class="sc">\&quot;</span><span class="st">allowfullscreen</span><span class="sc">\&quot;</span><span class="st"> class=</span><span class="sc">\&quot;</span><span class="st">h5p</span><span class="sc">\&quot;</span><span class="st">&gt;&lt;/iframe&gt;&lt;script src=</span><span class="sc">\&quot;</span><span class="st">https://wp.sciviews.org/wp-content/plugins/h5p/h5p-php-library/js/h5p-resizer.js</span><span class="sc">\&quot;</span><span class="st"> charset=</span><span class="sc">\&quot;</span><span class="st">UTF-8</span><span class="sc">\&quot;</span><span class="st">&gt;&lt;/script&gt;</span><span class="sc">\n</span><span class="st">&quot;</span>)</span>
+<span id="cb21-3"><a href="contenu-h5p-dans-bookdown.html#cb21-3" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
 <p>La fonction construit un fragment HTML qui ajoute un iframe et un script pour gérer l’inclusion du contenu H5P dans notre bookdown. A partir d’ici, ajouter un contenu H5P est aussi simple que d’ajouter <code>h5p(id)</code> dans du code R en ligne où “id” est l’ID que nous avons noté. On peut aussi jouer sur les arguments <code>width=</code> et <code>height=</code> pour ajuster l’emplacement et la taille du contenu H5P dans la page.</p>
 <p>Ainsi programmé notre contenu H5P se comporte comme suit :</p>
 <ul>

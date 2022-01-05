@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>6.2 Intégration dans Wordpress | BioDataScience Administration</title>
+  <title>6.2 Intégration dans Wordpress | Plateforme pédagogique BioDataScience</title>
   <meta name="description" content="Administration de BioDataScience-Course." />
   <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="6.2 Intégration dans Wordpress | BioDataScience Administration" />
+  <meta property="og:title" content="6.2 Intégration dans Wordpress | Plateforme pédagogique BioDataScience" />
   <meta property="og:type" content="book" />
   <meta property="og:url" content="http://phgrosjean.sciviews.org/bookdown-test/" />
   <meta property="og:image" content="http://phgrosjean.sciviews.org/bookdown-test//images/front-cover.png" />
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="BioDataScience-Course/sdd-admin" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="6.2 Intégration dans Wordpress | BioDataScience Administration" />
+  <meta name="twitter:title" content="6.2 Intégration dans Wordpress | Plateforme pédagogique BioDataScience" />
   
   <meta name="twitter:description" content="Administration de BioDataScience-Course." />
   <meta name="twitter:image" content="http://phgrosjean.sciviews.org/bookdown-test//images/front-cover.png" />
@@ -24,7 +24,7 @@
 <meta name="author" content="Philippe Grosjean &amp; Guyliann Engels" />
 
 
-<meta name="date" content="2021-07-05" />
+<meta name="date" content="2022-01-05" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -33,7 +33,7 @@
   
 <link rel="prev" href="création-dun-bookdownlearnitdown.html"/>
 <link rel="next" href="contenu-h5p-dans-bookdown.html"/>
-<script src="libs/header-attrs-2.8/header-attrs.js"></script>
+<script src="libs/header-attrs-2.11.3/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -462,7 +462,7 @@ code span.wa { color: #bf0303; } /* Warning */
       <div class="body-inner">
         <div class="book-header" role="navigation">
           <h1>
-            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">BioDataScience Administration</a>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Plateforme pédagogique BioDataScience</a>
           </h1>
         </div>
 
@@ -507,7 +507,7 @@ additional_height=&quot;100&quot; multi_domain_enabled=&quot;false&quot; use_pos
 </ol>
 <p>Au final, le bookdown se présente sous deux formes :</p>
 <ul>
-<li><p>Les pages affichées telles quelles via une URL reprenant le nom du dépôt GitHub (dans notre cas, il s’agit de <code>https://wp.sciviews.org/sdd-umons3-2020/</code>). Nous avons une présentation bookdown classique. Les informations de l’identité de l’étudiant sont transmise via <code>localStorage</code>, mais le bandeau supérieur du site et la barre noire supérieure de gestion Wordpress ne sont pas affichés. Le bookdown n’est pas vraiment intégré dans le site et les évènements xAPI de H5P ne sont pas renvoyés au serveur Wordpress. Cette représentation est utile pour l"utilisation du bookdown dans un contexte hors cours UMONS.</p></li>
+<li><p>Les pages affichées telles quelles via une URL reprenant le nom du dépôt GitHub (dans notre cas, il s’agit de <code>https://wp.sciviews.org/sdd-umons3-2020/</code>). Nous avons une présentation bookdown classique. Les informations de l’identité de l’étudiant sont transmise via <code>localStorage</code>, mais le bandeau supérieur du site et la barre noire supérieure de gestion Wordpress ne sont pas affichés. Le bookdown n’est pas vraiment intégré dans le site et les évènements xAPI de H5P ne sont pas renvoyés au serveur Wordpress. Cette représentation est utile pour l”utilisation du bookdown dans un contexte hors cours UMONS.</p></li>
 <li><p>Les même page du bookdown, <strong>mais intégrées sous forme d’iframe</strong> dans une page de Wordpress dédiée à partir du lien de la page Wordpress (dans notre exemple, <code>https://wp.sciviews.org/sdd3-2020</code>). La page conserve des éléments issus de Wordpress comme la barre d’outils supérieure (accès à Moodle, Discord, etc.) ainsi que la barre noire supérieure de contrôle Wordpress qui permet aussi de vérifier d’un coup d’œil que l’on est connecté, et sous quelle identité nous le sommes. S’il veut lire le contenu du bookdown sans voir la bannière haute, le lecteur peut faire coulisser la page jusque tout en bas et cette bannière viendra se cacher derrière la barre noire supérieure Wordpress (qui, elle, reste toujours visible tant que l’utilisateur est connecté au site).</p></li>
 </ul>
 </div>

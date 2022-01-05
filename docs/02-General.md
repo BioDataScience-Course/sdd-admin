@@ -30,9 +30,7 @@ Les divers outils logiciels que nous utilisons pour créer un environnement d'ap
 
 - Enfin, les données relatives à la progression des étudiants dans les learnrs sont collectées dans deux bases de données MongoDB hébergée sur le cloud [MongoDB Atlas](https://account.mongodb.com) pour celle qui est publiques et dans le même serveur que RStudio Connect pour la version qui collecte au final toutes les données. La progression peut être suivie grâce aux rapports de progression (\@ref(progression)) créés dans RStudio Connect à partir de cette dernière base de données.
 
-\BeginKnitrBlock{info}
-Ces nombreux outils et services devant collaborer entre eux pour fournir un environnement d'apprentissage complet et cohérent, il est important de les configurer et de les inter-connecter correctement. C'est le but principal du présent document que de documenter ces opérations d'administration de l'écosystème logiciel utilisé.
-\EndKnitrBlock{info}
+\BeginKnitrBlock{info}<div class="info">Ces nombreux outils et services devant collaborer entre eux pour fournir un environnement d'apprentissage complet et cohérent, il est important de les configurer et de les inter-connecter correctement. C'est le but principal du présent document que de documenter ces opérations d'administration de l'écosystème logiciel utilisé.</div>\EndKnitrBlock{info}
 
 ![Vue générale des logiciels utilisés pour implémenter le contenu interactif dans nos cours et les liens entre eux.](images/general/tools.png)
 

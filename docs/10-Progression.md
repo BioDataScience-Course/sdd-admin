@@ -4,9 +4,7 @@
 
 Un des gros problèmes des cours en classes inversées est d'arriver à **stimuler** les étudiants à faire le travail chez eux. Livrés à eux-mêmes, seulement un pourcentage trop faible d'entre eux va réaliser le travail demandé à domicile. Évidemment, c'est également préjudiciable au travail en classe, si ce dernier part du principe que la matière hors présentiel est censée être vue. Et si des travaux de groupe (conseillé) sont prévus, ceux qui n'ont rien fait apparaitront comme des boulets pour les autres.
 
-\BeginKnitrBlock{warning}
-En parallèle au déploiement du matériel d'e-learning hors présentiel, nous devons mettre également en place des outils pour permettre à l'étudiant de suivre sa progression d'apprentissage, et aussi pour le stimuler dans cet auto-apprentissage.
-\EndKnitrBlock{warning}
+\BeginKnitrBlock{warning}<div class="warning">En parallèle au déploiement du matériel d'e-learning hors présentiel, nous devons mettre également en place des outils pour permettre à l'étudiant de suivre sa progression d'apprentissage, et aussi pour le stimuler dans cet auto-apprentissage.</div>\EndKnitrBlock{warning}
 
 Les outils qui peuvent être mis en place sont\ :
 
@@ -14,8 +12,7 @@ Les outils qui peuvent être mis en place sont\ :
 
 La vidéo suivante explique d'ailleurs pourquoi le coercitif ne fonctionne pas bien et pourquoi il faut plutôt **valoriser le travail effectué** plutôt que de punir s'il n'est pas fait. Il faut aussi **une récompense immédiate**, et favoriser l'**émulation individuelle** (se dépasser soi-même), et **de groupe** (se comparer à la progression générale de la classe).
 
-
-\begin{center}\href{https://www.youtube.com/embed/xp0O2vi8DX4}{\includegraphics{10-Progression_files/figure-latex/unnamed-chunk-2-1} }\end{center}
+<iframe src="https://www.youtube.com/embed/xp0O2vi8DX4" width="672" height="400px"></iframe>
 
 Les aides et encouragements au travail que nous avons mis en place de manière utile sont\ :
 

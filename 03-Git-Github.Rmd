@@ -17,7 +17,7 @@ L'organisation GitHub [BioDataScience-Course](https://github.com/BioDataScience-
 
 ### Convention de noms
 
-Comme l'organisation contient plusieurs centaines de dépôts, il est utile de les nommer correctement pour s'y retrouver. Les dépôts créés via GitHub Classroom seront traités plus loin. Voici quelques règles\ :
+Comme l'organisation contient plusieurs milliers de dépôts, il est utile de les nommer correctement pour s'y retrouver. Les dépôts créés via GitHub Classroom seront traités plus loin. Voici quelques règles\ :
 
 - Les dépôts important (matériel pédagogique, gestion des étudiants et de leur progression, ...) commencent tous par `sdd` lorsque ces dépôts sont utilisés en interne (ex.\ : `sdd_lesson`, `sdd_movies`, `sdd-admin`, ...). **Attention\ : `sdd` est suivi d'un trait souligné (`sdd_`) pour les dépôts classiques comme par exemple `sdd_lesson`, mais d'un tiret (`sdd-`) pour les bookdowns comme par exemple `sdd-umons-2020`. Cette distinction est importante pour éviter de mélanger ces deux types de dépôts.
 
