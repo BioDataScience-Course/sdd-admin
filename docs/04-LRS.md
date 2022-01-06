@@ -8,7 +8,7 @@ Un "[Learning Record Store](https://xapi.com/learning-record-store/)" (LRS en ab
 
 ## Notre "LRS"
 
-Les évènements que nous enregistrons ne sont pas tous formatés en xAPI pour le moment. Ainsi, les données provenant de H5P le sont, mais pas celles provenant de Learnr, Shiny, ou Wooclap ne le sont pas. Nous avons décidé d'un format commun de table qui regroupe toutes ces données dans une base de données MongoDB. Plus tard, ce format pourra éventuelement évoluer vers un autre qui soit conforme à xAPI edt et qui puisse être utilisé dans un véritable LRS.
+Les évènements que nous enregistrons ne sont pas tous formatés en xAPI pour le moment. Ainsi, les données provenant de H5P le sont, mais pas celles provenant de Learnr, Shiny, ou Wooclap ne le sont pas. Nous avons décidé d'un format commun de table qui regroupe toutes ces données dans une base de données MongoDB. Plus tard, ce format pourra éventuellement évoluer vers un autre qui soit conforme à xAPI et qui puisse être utilisé dans un véritable LRS.
 
 Le choix de MongoDB a été motivé par plusieurs facteurs\ :
 
@@ -16,7 +16,7 @@ Le choix de MongoDB a été motivé par plusieurs facteurs\ :
 
 - La facilité d'installer un serveur MongoDB local uniquement (machine personnelle et RStudio Connect).
 
-- La simplicité de backup/restoration de données pour un même serveur ou entre serveurs avec `mongodump`/`mongorestore`.
+- La simplicité de backup/restauration de données pour un même serveur ou entre serveurs avec `mongodump`/`mongorestore`.
 
 - La facilité d'exportation des données avec `mongoexport`, ainsi que les drivers pour PHP (Wordpress/H5PxAPIKatchu) et pour R avec le package {mongolite}.
 

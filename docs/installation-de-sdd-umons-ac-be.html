@@ -228,6 +228,73 @@ var h5pContentTypes = [""];
 <script src='https://wp.sciviews.org/wp-content/plugins/h5p/h5p-php-library/js/request-queue.js'></script>
 
 
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    background-color: #ffffff;
+    color: #a0a0a0;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #a0a0a0;  padding-left: 4px; }
+div.sourceCode
+  { color: #1f1c1b; background-color: #ffffff; }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span { color: #1f1c1b; } /* Normal */
+code span.al { color: #bf0303; background-color: #f7e6e6; font-weight: bold; } /* Alert */
+code span.an { color: #ca60ca; } /* Annotation */
+code span.at { color: #0057ae; } /* Attribute */
+code span.bn { color: #b08000; } /* BaseN */
+code span.bu { color: #644a9b; font-weight: bold; } /* BuiltIn */
+code span.cf { color: #1f1c1b; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #924c9d; } /* Char */
+code span.cn { color: #aa5500; } /* Constant */
+code span.co { color: #898887; } /* Comment */
+code span.cv { color: #0095ff; } /* CommentVar */
+code span.do { color: #607880; } /* Documentation */
+code span.dt { color: #0057ae; } /* DataType */
+code span.dv { color: #b08000; } /* DecVal */
+code span.er { color: #bf0303; text-decoration: underline; } /* Error */
+code span.ex { color: #0095ff; font-weight: bold; } /* Extension */
+code span.fl { color: #b08000; } /* Float */
+code span.fu { color: #644a9b; } /* Function */
+code span.im { color: #ff5500; } /* Import */
+code span.in { color: #b08000; } /* Information */
+code span.kw { color: #1f1c1b; font-weight: bold; } /* Keyword */
+code span.op { color: #1f1c1b; } /* Operator */
+code span.ot { color: #006e28; } /* Other */
+code span.pp { color: #006e28; } /* Preprocessor */
+code span.re { color: #0057ae; background-color: #e0e9f8; } /* RegionMarker */
+code span.sc { color: #3daee9; } /* SpecialChar */
+code span.ss { color: #ff5500; } /* SpecialString */
+code span.st { color: #bf0303; } /* String */
+code span.va { color: #0057ae; } /* Variable */
+code span.vs { color: #bf0303; } /* VerbatimString */
+code span.wa { color: #bf0303; } /* Warning */
+</style>
 
 
 <link rel="stylesheet" href="style.css" type="text/css" />
@@ -441,19 +508,229 @@ var h5pContentTypes = [""];
 <li>RStudio Connect 1.8.8.2 + R 4.0.5 (licence 100 utilisateurs qui expire au 2022-05-06),</li>
 <li>Accessible par ssh seulement en interne (ou via le VPN UMONS).</li>
 </ul>
-<p>L’installation s’est fait comme suit :</p>
-<pre><code># Diagnostic script
-sudo /opt/rstudio-connect/scripts/run-diagnostics.sh /path/to/output/directory
+<p>L’installation s’est fait comme suit sur base d’un Xubuntu 16.04 qui a été upgradé à 18.04 :</p>
+<ul>
+<li>Installation de R 3.6.3 (équivalent à svbox2020) :</li>
+</ul>
+<pre><code>sudo apt install curl
+export R_VERSION=3.6.3
+curl -O https://cdn.rstudio.com/r/ubuntu-1804/pkgs/r-${R_VERSION}_1_amd64.deb
+sudo gdebi r-${R_VERSION}_1_amd64.deb</code></pre>
+<ul>
+<li>Installation de R 3.5.3 et 3.4.4, respectivement équivalents à svbox2019 et svbox2018 :</li>
+</ul>
+<pre><code>curl -O https://cdn.rstudio.com/r/ubuntu-1804/pkgs/r-3.5.3_1_amd64.deb
+sudo gdebi r-3.5.3_1_amd64.deb
+curl -O https://cdn.rstudio.com/r/ubuntu-1804/pkgs/r-3.4.4_1_amd64.deb
+sudo gdebi r-3.4.4_1_amd64.deb
 
-# Install the MongoDB database
-# Follow instructions at https://docs.mongodb.com/manual/tutorial/install-mongodb-on-ubuntu/ 
-sudo apt-get install gnupg
+# Test
+/opt/R/${R_VERSION}/bin/R --version</code></pre>
+<ul>
+<li>Configuration de Java pour R :</li>
+</ul>
+<pre><code>sudo /opt/R/3.6.3/bin/R CMD javareconf</code></pre>
+<ul>
+<li>Installation de RStudio Connect 1.8.2.1-12 :</li>
+</ul>
+<pre><code>cd ~/Downloads
+curl -LO https://rstudio-connect.s3.amazonaws.com/rsc-installer.sh
+sudo bash ./rsc-installer.sh 1.8.2.1-12
+# Clean up
+rm rsc-installer.sh
+sudo rm rstudio-connect_*.deb</code></pre>
+<ul>
+<li>Installation des dépendances :</li>
+</ul>
+<pre><code>sudo apt install build-essential libcurl4-gnutls-dev openjdk-7-* libxml2-dev libssl-dev texlive-full libev-dev
+# Pour les packages R
+sudo apt install libgmp10-dev libgsl0-dev libnetcdf6 libnetcdf-dev netcdf-bin libdigest-hmac-perl libgmp-dev libgmp3-dev
+sudo apt install libgl1-mesa-dev libglu1-mesa-dev libglpk-dev tdsodbc freetds-bin freetds-common freetds-dev
+sudo apt install odbc-postgresql libtiff-dev libsndfile1 libsndfile1-dev libtiff-dev tk8.5 tk8.5-dev tcl8.5 tcl8.5-dev libgsl0-dev libv8-dev</code></pre>
+<ul>
+<li>Configuration de RStudio Connect/ :</li>
+</ul>
+<pre><code>sudo mousepad /etc/rstudio-connect/rstudio-connect.gcfg
+# URL temporaire du server... https://rstudio-connect-sdd.umons.ac.be
+# SenderEmail = sdd@sciviews.org
+# Port :3939 (valeur par défaut)</code></pre>
+<ul>
+<li>Introduction de la clé d’activation :</li>
+</ul>
+<pre><code>sudo /opt/rstudio-connect/bin/license-manager deactivate
+sudo /opt/rstudio-connect/bin/license-manager activate YAG3-B2H5-MXQB-6HJS-E7WH-4G9Y-JITA</code></pre>
+<ul>
+<li>Redémarrage de RStudio Connect :</li>
+</ul>
+<pre><code>sudo systemctl restart rstudio-connect</code></pre>
+<ul>
+<li><p>Création du premier compte (admin). Naviguer vers <a href="http://en-coris.umons.ac.be:3939" class="uri">http://en-coris.umons.ac.be:3939</a>. S’enregistrer et créer le nouveau compte. Configuration également de l’envoi de mail (gandi.net SMTP serveur sur port 587 temporairement).</p></li>
+<li><p>Installation de Python :</p></li>
+</ul>
+<pre><code>[Python]
+Enabled = true
+; Python 2.7.12 installed with Ubuntu 16.04
+Executable = /usr/bin/python
+; Python 3.5.2 installed with Ubuntu 16.04 (and used by svbox2018)
+Executable = /usr/bin/python3</code></pre>
+<ul>
+<li>Packages Python supplémentaires (pip et pip3 déjà installés) :</li>
+</ul>
+<pre><code>sudo pip install setuptools
+sudo pip install virtualenv
+sudo pip3 install setuptools
+sudo pip3 install virtualenv</code></pre>
+<ul>
+<li>Il faut Python 3.6.7 pour svbox2019 =&gt; compilation depuis les sources :</li>
+</ul>
+<pre><code># Required dependencies
+sudo apt install libffi-dev libgdm-dev libsqlite3-dev libssl-dev zlib1g-dev
+
+# Download and extract source code
+cd ~/Downloads
+export VERSION=3.6.7 PYTHON_MAJOR=3
+wget https://www.python.org/ftp/python/${VERSION}/Python-${VERSION}.tgz
+tar -xzvf Python-${VERSION}.tgz
+cd Python-${VERSION}
+
+# Build Python from source
+./configure \
+    --prefix=/opt/Python/${VERSION} \
+    --enable-shared \
+    --enable-ipv6 \
+    LDFLAGS=-Wl,-rpath=/opt/Python/${VERSION}/lib,--disable-new-dtags \
+    --enable-optimizations
+make
+
+# Install Python
+sudo make install
+
+# Clean up
+cd ..
+sudo rm -rf Python-${VERSION}
+rm Python-${VERSION}.tgz
+
+# Check Python install
+/opt/Python/${VERSION}/bin/python${PYTHON_MAJOR} --version
+
+# Install pip, setuptools and virtualenv in this Python version
+wget https://bootstrap.pypa.io/get-pip.py
+sudo /opt/Python/${VERSION}/bin/python${PYTHON_MAJOR} get-pip.py
+rm get-pip.py
+sudo /opt/Python/${VERSION}/bin/pip install virtualenv
+sudo /opt/Python/${VERSION}/bin/pip install setuptools</code></pre>
+<ul>
+<li>Ajouter cette version de Python dans la configuration de RStudio Connect (ajouter <code>Executable = /opt/Python/3.6.7/bin/python3</code> dans la section “[Python]”) :</li>
+</ul>
+<pre><code>sudo mousepad /etc/rstudio-connect/rstudio-connect.gcfg</code></pre>
+<ul>
+<li>Redémarrer RStudio Connect :</li>
+</ul>
+<pre><code>sudo systemctl restart rstudio-connect</code></pre>
+<ul>
+<li>Installation du certificat SSL. Copie des fichiers <code>sdd_umons_ac_be.*</code> vers <code>/etc/ssl/private</code> et changement des droits d’accès :</li>
+</ul>
+<pre><code>sudo chmod o= /etc/ssl/private/sdd_umons_ac_be.cer|crt|csr|key|pfx</code></pre>
+<ul>
+<li>Le fichier <code>.cer</code> ne fonctionne pas, mais je peux créer un <code>.pem</code> à partir du <code>.crt</code> au format PKCS#7 :</li>
+</ul>
+<pre><code>sudo openssl pkcs7 -print_certs -in /etc/ssl/private/sdd_umons_ac_be.crt -out /etc/ssl/private/sdd_umons_ac_be.pem -outform PEM
+sudo chmod o-r /etc/ssl/private/sdd_umons_ac_be.pem</code></pre>
+<ul>
+<li>Modification du fichier de configuration de RStudio Connect. Utilisation du port <code>:443</code>, le <code>.key</code> comme clé privée et le <code>.pem</code> comme certificat, et TSL minimum 1.1 :</li>
+</ul>
+<pre><code>sudo mousepad /etc/rstudio-connect/rstudio-connect.gcfg</code></pre>
+<ul>
+<li>Redémarrage du serveur</li>
+</ul>
+<pre><code>sudo systemctl restart rstudio-connect</code></pre>
+<ul>
+<li>Vérification du fichier log</li>
+</ul>
+<pre><code>sudo cat /var/log/rstudio-connect.log</code></pre>
+<ul>
+<li>Synchronisation de <code>/data2/</code> avec <code>/data1/</code> :</li>
+</ul>
+<pre><code>sudo crontab -e</code></pre>
+<p>Édition du fichier en y ajoutant :</p>
+<pre><code># Sync /data1/ with /data2/ every hour:45
+45 * * * * /usr/bin/rsync -av --delete /data1/ /data2/ &amp;&gt; /data/datasync.log</code></pre>
+<ul>
+<li>Déplacement des données de RStudio Connect vers <code>/data1</code> :</li>
+</ul>
+<pre><code>sudo systemctl stop rstudio-connect
+sudo mkdir /data1/rstudio-connect
+sudo rsync -av --delete /var/lib/rstudio-connect/ /data1/rstudio-connect/</code></pre>
+<p>Éditer à nouveau le fichier de configuration de RStudio Connect (DataDir = /data1/rstudio-connect) :</p>
+<pre><code>sudo mousepad /etc/rstudio-connect/rstudio-connect.gcfg</code></pre>
+<p>Redémarrage de RStudio Connect :</p>
+<pre><code>sudo systemctl start rstudio-connect</code></pre>
+<ul>
+<li>Backup du système en utilisant <code>rear</code>, voir <a href="https://tecmint.com/rear-backup-and-recover-a-linux-system/" class="uri">https://tecmint.com/rear-backup-and-recover-a-linux-system/</a></li>
+</ul>
+<pre><code>sudo apt install rear extlinux</code></pre>
+<ul>
+<li>Formatage d’une clé USB :</li>
+</ul>
+<pre><code>sudo rear format /dev/sdX # In case of error rear format -- --efi /dev/sdX (in the server, it is /dev/sdc)</code></pre>
+<ul>
+<li>Changer <code>/etc/rear/local.conf</code> et y ajouter ceci :</li>
+</ul>
+<pre><code>OUTPUT=USB
+BACKUP=NETFS
+BACKUP_URL=&quot;usb:///dev/disk/by-label/REAR-000&quot;</code></pre>
+<ul>
+<li>Exécuter ceci pour voir la configuration actuelle :</li>
+</ul>
+<pre><code>sudo rear dump</code></pre>
+<ul>
+<li>Créer un disque de récupération (unmount REAR-000, puis …)</li>
+</ul>
+<pre><code>sudo rear -v mkrescue # Just a rescue disk
+sudo rear -v mkbackup # Rescue disk AND backup the system
+sudo rear -v mkbackuponly # Only backup the system</code></pre>
+<ul>
+<li><p>Pour restaurer le système, on boote depuis la clé USB. Lorsque le login est demandé, entrer <code>root</code>, puis <code>rear recover</code>. Redémarrer une fois la restauration terminée. Voir aussi <a href="http://relax-and-recover.org/usage/" class="uri">http://relax-and-recover.org/usage/</a></p></li>
+<li><p>Commandes utiles :</p></li>
+</ul>
+<pre><code># Changer la résolution d&#39;écran
+xrandr -fb 1920x1080 (-display:0)
+
+# Inspection du système
+inxi -GCS # General system info
+top (-i) # hit q to quit
+htop
+# Boot and BIOS info
+sudo dmidecode -t system
+sudo dmidecode -t bios
+uname -a # Basic system info
+# Detailed hardware info (including eno1 network (1Gb Intel)
+sudo lshw (-short)
+sudo lshw -html &gt; lshw.html
+lscpu # CPU info
+watch -n 2 sensors # CPU temperature
+lsblk # Storage info
+df -h
+sudo disk -l
+lsusb (-v)  # Info about USB devices
+# Reconfigure video driver
+sudo update -initramfs -U
+sudo dpkg reconfigure server-xorg
+lsmod | grep nouveau
+# Reconfigure locale
+localectl US-utf8
+# Diagnostic script for RStudio Connect
+sudo /opt/rstudio-connect/scripts/run-diagnostics.sh /path/to/output/directory</code></pre>
+<ul>
+<li>Installation du serveur MongoDB, voir <a href="https://docs.mongodb.com/manual/tutorial/install-mongodb-on-ubuntu/" class="uri">https://docs.mongodb.com/manual/tutorial/install-mongodb-on-ubuntu/</a> :</li>
+</ul>
+<pre><code>sudo apt-get install gnupg
 wget -qO - https://www.mongodb.org/static/pgp/server-4.4.asc | sudo apt-key add -
 echo &quot;deb [ arch=amd64,arm64 ] https://repo.mongodb.org/apt/ubuntu bionic/mongodb-org/4.4 multiverse&quot; | sudo tee /etc/apt/sources.list.d/mongodb-org-4.4.list
 sudo apt-get update
 # Either latest version
 sudo apt-get install -y mongodb-org
-# Specific version
+# ... or specific version
 #sudo apt-get install -y mongodb-org=4.4.0 mongodb-org-server=4.4.0 mongodb-org-shell=4.4.0 mongodb-org-mongos=4.4.0 mongodb-org-tools=4.4.0
 # Optionally freeze version
 #echo &quot;mongodb-org hold&quot; | sudo dpkg --set-selections
@@ -462,7 +739,7 @@ sudo apt-get install -y mongodb-org
 #echo &quot;mongodb-org-mongos hold&quot; | sudo dpkg --set-selections
 #echo &quot;mongodb-org-tools hold&quot; | sudo dpkg --set-selections
 # Determine if it is systemd or init that is used
- ps --no-headers -o comm 1 # systemd here
+ps --no-headers -o comm 1 # systemd here
 # Start mongodb
 sudo systemctl start mongod
 
@@ -492,8 +769,6 @@ q(&quot;no&quot;)
 # Quand c&#39;est bon, activer le service définitivement avec
 sudo systemctl enable mongod
 
-# Access the MongoDB database from commandline with &#39;mongo&#39;
-
 # Create a program supervisor for common environment variables (not done yet)
 mkdir -p /opt/scripts
 touch /opt/scripts/connect-env.sh
@@ -516,7 +791,7 @@ Add the following in /etc/rstudio-connect/rstudio-connect.gcfg
 [Applications]
 Supervisor = /opt/scripts/connect-env.sh</code></pre>
 <ul>
-<li>Il faut ensuite obtenir et installer (ou mettre à jour) un certificat pour pouvoir accéder au serveur en mode sécurisé :</li>
+<li>Après un an, il faut mettre à jour le certificat de sécurité :</li>
 </ul>
 <pre><code># Place sdd_umons_ac_be.cer|key in /etc/ssl/private. It seems both keys do not match:
 sudo openssl x509 -noout -modulus -in /etc/ssl/private/sdd_umons_ac_be.cer | openssl md5
@@ -548,7 +823,7 @@ sudo mv /data1/dump/sdd_umons_ac_be.pem /etc/ssl/private/sdd_umons_ac_be.pem
 sudo chown root:root /etc/ssl/private/sdd_umons_ac_be.pem
 sudo chmod 640 /etc/ssl/private/sdd_umons_ac_be.pem</code></pre>
 <ul>
-<li>In case there is a problem with the video driver :</li>
+<li>J’ai un problème avec le driver vidéo… voci ce que j’ai dû faire pour le résoudre :</li>
 </ul>
 <pre><code># Reconfigure the video driver
 sudo update -intiramfs -U
@@ -571,33 +846,13 @@ sudo update-alternatives --remove gl_conf /usr/lib/nvidia-current/ld.so.conf
 # Inactivate graph ics drivers repositories then ...
 sudo dpkg -P $(dpkg -l | grep nvidia-driver | awk &#39;{print $2}&#39;)
 sudo apt autoremove
-sudo apt install xserver-xorg-video-nouveau
-
-# To change screen resolution (e.g., in AnyDesk)
-xrandr -fb 1920x1080 (-display:0)</code></pre>
+sudo apt install xserver-xorg-video-nouveau</code></pre>
 <ul>
-<li><p>Reconfigure locale using <code>localectl US-utf8</code></p></li>
-<li><p>Backup and restore the system with Relax-and-Recover (ReaR), see <a href="https://www.tecmint.com/rear-backup-and-recover-a-linux-system/" class="uri">https://www.tecmint.com/rear-backup-and-recover-a-linux-system/</a>. “Create a bootable rescue system and/or system backup in various formats” Also as a migration tool, since it can restore on a different hardware :</p></li>
+<li>Reconfiguration de la localisation</li>
 </ul>
-<pre><code>sudo apt install rear extlinux`
-# Config directory is in /etc/rear/ (local.conf, site.conf, default.conf) + /var/log/rear/
-# First format an USB stick
-sudo rear format /dev/sdX # In case of error rear format -- --efi /dev/sdX (in the server, it is /dev/sdc)
-# Change /etc/rear/local.conf
-OUTPUT=USB
-BACKUP=NETFS
-BACKUP_URL=“usb:///dev/disk/by-label/REAR-000”
-# Run this to look at current configuration:
-sudo rear dump
-# Create a rescue disk (unmount REAR-000, then…)
-sudo rear -v mkrescue # Just a rescue disk
-sudo rear -v mkbackup # Rescue disk AND backup the system
-sudo rear -v mkbackuponly # Only backup the system
-
-# To restore/recover, boot from the USB stick… When login asked, type ‘root’, then type ‘rear recover’, reboot when done. See also http://relax-and-recover.org/usage/#recovery_from_usb</code></pre>
+<p>`<code>localectl US-utf8</code></p>
 <ul>
-<li><p>Install and test <code>mongodump</code>/<code>mongorestore</code> :</p></li>
-<li><p>Install latest version of R &amp; RStudio Connect, 2021-05-31</p></li>
+<li>Mise à jour de R et RStudio Connect pour svbox2021 et nouvelle licence, 2021-05-31 :</li>
 </ul>
 <pre><code># Current RStudio Connect is 1.8.2.1-12
 ls /opt/R # See R versions already installed (3.4.4, 3.5.3, 3.6.3)
@@ -666,7 +921,7 @@ sudo systemctl restart rstudio-connect
 curl -Lo rsc-installer.sh https://cdn.rstudio.com/connect/installer/installer-v1.9.1.sh
 sudo -E bash ./rsc-installer.sh 1.8.8.2</code></pre>
 <ul>
-<li>Install python 3.8.5</li>
+<li>Installation de Python 3.8.5 :</li>
 </ul>
 <pre><code>sudo mkdir /opt/python
 sudo curl -fsSL -o /opt/python/miniconda.sh https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh 
@@ -683,7 +938,7 @@ sudo /opt/python/miniconda/bin/conda create --quiet --yes \
 # Check
 /opt/python/&quot;${PYTHON_VERSION}&quot;/bin/python --version</code></pre>
 <ul>
-<li>Installation de packages Python supplémentaires</li>
+<li>Installation de packages Python supplémentaires :</li>
 </ul>
 <pre><code>sudo /opt/python/&quot;${PYTHON_VERSION}&quot;/bin/pip install altair beautifulsoup4 cloudpickle \
   cython dask gensim keras matplotlib nltk numpy pandas pillow pyarrow \
@@ -700,7 +955,7 @@ sudo /opt/python/miniconda/bin/conda create --quiet --yes \
 # Make Python available to reticulate
 nano ~/.Rprofile # Add Sys.setenv(RETICULATE_PYTHON = &quot;/opt/python/3.8.5/bin/python&quot;)</code></pre>
 <ul>
-<li>Solve the problem of pandoc: <code>loadlocale.c:130: _nl_intern_locale_data: Assertion</code>cnt &lt; (sizeof (_nl_value_type_LC_TIME) / sizeof (_nl_value_type_LC_TIME[0]))’ failed`.</li>
+<li>Résoudre le problème de Pandoc: <code>loadlocale.c:130: _nl_intern_locale_data: Assertion cnt &lt; (sizeof (_nl_value_type_LC_TIME) / sizeof (_nl_value_type_LC_TIME[0]))' failed</code> :</li>
 </ul>
 <pre><code>sudo mkdir -p /opt/scripts
 sudo nano /opt/scripts/rstudio-connect-env.sh
@@ -732,6 +987,249 @@ sudo systemctl restart rstudio-connect
 sudo mv /usr/lib/locale/locale-archive /usr/lib/locale/locale-archive.save
 sudo locale-gen --no-archive
 sudo locale-gen --no-archive en_US.UTF8</code></pre>
+<ul>
+<li>Configuration de RStudio Connect pour le rendre sécure dans le cadre de tutoriels learnrs :</li>
+</ul>
+<pre><code>sudo apt-get install -y libapparmor-dev apparmor-utils
+sudo R
+install.packages(&quot;RAppArmor&quot;)</code></pre>
+<ul>
+<li>Profil AppArmor :</li>
+</ul>
+<pre><code>#cd /usr/local/lib/R/site-library/RAppArmor/
+cd /opt/R/4.0.5/lib/R/library/RAppArmor/
+sudo cp -Rf profiles/debian/* /etc/apparmor.d/
+
+# Verify the profile
+sudo nano /etc/apparmor.d/rapparmor.d/r-user
+# Make sure there is /usr/lib/rstudio/bin/pandoc/* rix,
+
+#Load the profiles into the kernel
+sudo service apparmor restart
+
+#To disable enforcing the global R profile
+sudo aa-disable usr.bin.r
+
+#To start enforcing the standard R policy:
+sudo aa-enforce usr.bin.r
+
+# Set options for learnr tutorials
+sudo nano /opt/R/4.0.5/lib/R/etc/Rprofile.site</code></pre>
+<ul>
+<li>Ajouter ceci :</li>
+</ul>
+<pre><code>options(tutorial.exercise.evaluator.onstart = function(pid) {
+  # Import RAppArmor
+  require(RAppArmor, quietly = TRUE)
+  # Set process group to pid (allows kill of entire subtree in cleanup)
+  setpgid();
+  # Set nice priority
+  setpriority(10)
+  # Set rlimits as appropriate
+  rlimit_nproc(1000)
+  rlimit_as(100*1024*1024)
+  # Change to r-user profile
+  aa_change_profile(&quot;r-user&quot;)
+})
+
+options(tutorial.exercise.evaluator.oncleanup = function(pid) {
+  # Import RAppArmor
+  require(RAppArmor, quietly = TRUE)
+  # Kill entire process subtree. note that the second call works
+  # because the call to setpgid above sets our pgid (process group id)
+  # to our pid (process id)
+  kill(pid, tools::SIGKILL)
+  kill(-1 * pid, tools::SIGKILL)
+})</code></pre>
+<ul>
+<li>Le fichier r-user profile contient :</li>
+</ul>
+<pre><code>## Do not modify this file. Changes may be undone during upgrades. 
+## To play around, create a copy with a different profile name and
+## put it in: /etc/apparmor.d/rapparmor.d/
+
+profile r-user {
+        #include &lt;abstractions/base&gt;
+        #include &lt;abstractions/nameservice&gt;
+
+        capability kill,
+        capability setgid,
+        capability net_bind_service,
+        capability sys_tty_config,
+
+        @{HOME}/ r,
+        @{HOME}/.Rprofile r,
+        @{HOME}/R/ r,
+        @{HOME}/R/** rw,
+        @{HOME}/R/{i686,x86_64}-pc-linux-gnu-library/** mrwix,
+
+        @{PROC}/[0-9]*/attr/current r,
+
+        /bin/* rix,
+        /dev/tty r,
+        /etc/R/ r,
+        /etc/R/* r,
+        /etc/fonts/** mr,
+        /etc/resolv.conf r,
+        /etc/xml/* r,
+        /tmp/** mrwix,
+        /usr/bin/* rix,
+        /usr/include/** r,
+        /usr/lib/gcc/** rix,
+        /usr/lib/R/bin/* rix,
+        /usr/lib{,32,64}/** mr,
+        /usr/lib{,32,64}/R/bin/exec/R rix,
+        /usr/local/lib/R/** mr,
+        /usr/local/lib/R/site-library/** mrwix,
+        /usr/local/share/** mr,
+        /usr/share/** mr,
+        /usr/share/ca-certificates/** r,
+        /opt/rstudio-connect/ext/pandoc/** mrix,
+        /opt/rstudio-connect/ext/pandoc/2.9/* mrix,
+        /opt/rstudio-connect/ext/pandoc/2.11/* mrix,
+        /opt/rstudio-connect/** mrwix,
+        /opt/R/4.0.5/lib/R/** mr,
+        /opt/R/4.0.5/lib/R/library/** mrwix,
+        /opt/rstudio-connect/mnt/** mrwix,
+        /opt/rstudio-connect/mnt/app/packrat/lib/x86_64-pc-linux-gnu/4.0.5/** mrwix,
+}</code></pre>
+<ul>
+<li>Redémarrer avec le profil modifié :</li>
+</ul>
+<pre><code>sudo nano /etc/apparamor.d/rapparmor.d/r-user
+sudo service apparmor restart</code></pre>
+<ul>
+<li><p>Note : ceci doit être fait sur le PC où les learnrs sont développés : <code>install.packages(c("RAppArmor", "unix"))</code></p></li>
+<li><p>Utilisation d’une version différente de Pandoc (v 2.11 nécessaire à rstudio-connect) :</p></li>
+</ul>
+<pre><code>cd ~/Downloads
+wget https://github.com/jgm/pandoc/releases/download/2.11.4/pandoc-2.11.4-1-amd64.deb
+sudo dpkg -i pandoc-2.11.4-1-amd64.deb
+pandoc --version # Still version 1.17.2
+which pandoc # /usr/local/bin/pandoc
+/usr/bin/pandoc --version # 2.11.4
+/opt/rstudio-connect/ext/pandoc/2.11/pandoc --version # 2.11.2 with same options
+/usr/lib/rstudio/bin/pandoc/pandoc --version # Same 1.17.2 than pandoc --version
+
+#Sys.setenv(PATH = paste(&quot;/opt/rstudio-connect/ext/pandoc/2.11&quot;, Sys.getenv(&quot;PATH&quot;), sep = &quot;:&quot;))
+#Sys.setenv(PATH = paste(&quot;/usr/bin&quot;, Sys.getenv(&quot;PATH&quot;), sep = &quot;:&quot;))
+res &lt;- system(&quot;which pandoc&quot;, intern = TRUE,ignore.stderr = FALSE, ignore.stdout = FALSE)
+#stop(res)
+#stop(Sys.getenv(&quot;RSTUDIO_PANDOC&quot;))
+#stop(rmarkdown::pandoc_version())
+stop(rmarkdown::pandoc_available(error = TRUE))
+(v2 &lt;- ex$month[!duplicated(ex$month)])
+
+# May be problem with pandoc-citeproc? But apparently not needed any more
+which pandoc-citeproc # /usr/local/bin/pandoc-citeproc
+pandoc-citeproc --version # 0.10.1
+
+# pandoc-citeproc is missing from version 2.11... copy version from 2.9!
+sudo cp /opt/rstudio-connect/ext/pandoc/2.9/pandoc-citeproc /opt/rstudio-connect/ext/pandoc/2.11/pandoc-citeproc
+
+sudo cp /opt/rstudio-connect/ext/pandoc/2.11/pandoc /opt/rstudio-connect/ext/pandoc/2.11/pandoc-orig</code></pre>
+<ul>
+<li>Récupération des données depuis MongoDB ATLAS et backup des données (<strong>note : remplacer d’abord <PASSWORD> par le mot de passe/ !!!</strong>) :</li>
+</ul>
+<pre><code>echo $&#39;#!/bin/bash
+# Recuperation of MongoDB ATLAS data into local MongoDB database
+# must be executed as root
+# Copyright (c) 2021, Philippe Grosjean (phgrosjean@sciviews.org)
+
+# First check that major versions of MongoDB servers (ATLAS vs local, x.y)
+# match (otherwise, we may get corrupted data!)
+mongo_local_version=`mongo --quiet --eval &quot;db.version()&quot; | awk -F &quot;.&quot; \&#39;{print $1 &quot;.&quot; $2}\&#39;`
+mongo_atlas_version=`mongo --quiet --eval &quot;db.version()&quot; &quot;mongodb://sdd-teacher:&lt;PASSWORD&gt;@sdd-umons-shard-00-00-umnnw.mongodb.net:27017,sdd-umons-shard-00-01-umnnw.mongodb.net:27017,sdd-umons-shard-00-02-umnnw.mongodb.net:27017/sdd?ssl=true&amp;replicaSet=sdd-umons-shard-0&amp;authSource=admin&quot; | awk -F &quot;.&quot; \&#39;{print $1 &quot;.&quot; $2}\&#39;`
+if [ &quot;$mongo_local_version&quot; != &quot;$mongo_atlas_version&quot; ]; then
+  echo &quot;MongoDB versions mismatch: local=$mongo_local_version, ATLAS=$mongo_atlas_version&quot; &gt; /data1/VERSIONS_MISMATCH
+  exit 0 # Use a higher value to report the error
+else
+  rm -f /data1/VERSIONS_MISMATCH
+fi
+
+# Make sure /data1/dump directory exists
+cd /data1 &amp;&amp;
+mkdir -p /data1/dump &amp;&amp;
+chown econum:econum /data1/dump &amp;&amp;
+# Record current date (in UTC format)
+date -u &quot;+%Y-%m-%d %H:%M:%S&quot; &gt; cur_date &amp;&amp;
+# Is it a last_date file?
+if [ -f &quot;last_date&quot; ]; then
+  # Last date file exists, use it and get only data from that date
+  # Need to specify collection here =&gt; call 3x for h5p, shiny &amp; learnr
+  mongodump --quiet --uri=&quot;mongodb://sdd-teacher:&lt;PASSWORD&gt;@sdd-umons-shard-00-00-umnnw.mongodb.net:27017,sdd-umons-shard-00-01-umnnw.mongodb.net:27017,sdd-umons-shard-00-02-umnnw.mongodb.net:27017/sdd?ssl=true&amp;replicaSet=sdd-umons-shard-0&amp;authSource=admin&quot; --db=&quot;sdd&quot; --collection=&quot;h5p&quot; --query=&quot;{\\\&quot;date\\\&quot;:{\\\&quot;\$gte\\\&quot;:\\\&quot;$(cat last_date)\\\&quot;}}&quot;
+  mongodump --quiet --uri=&quot;mongodb://sdd-teacher:&lt;PASSWORD&gt;@sdd-umons-shard-00-00-umnnw.mongodb.net:27017,sdd-umons-shard-00-01-umnnw.mongodb.net:27017,sdd-umons-shard-00-02-umnnw.mongodb.net:27017/sdd?ssl=true&amp;replicaSet=sdd-umons-shard-0&amp;authSource=admin&quot; --db=&quot;sdd&quot; --collection=&quot;shiny&quot; --query=&quot;{\\\&quot;date\\\&quot;:{\\\&quot;\$gte\\\&quot;:\\\&quot;$(cat last_date)\\\&quot;}}&quot;
+  mongodump --quiet --uri=&quot;mongodb://sdd-teacher:&lt;PASSWORD&gt;@sdd-umons-shard-00-00-umnnw.mongodb.net:27017,sdd-umons-shard-00-01-umnnw.mongodb.net:27017,sdd-umons-shard-00-02-umnnw.mongodb.net:27017/sdd?ssl=true&amp;replicaSet=sdd-umons-shard-0&amp;authSource=admin&quot; --db=&quot;sdd&quot; --collection=&quot;learnr&quot; --query=&quot;{\\\&quot;date\\\&quot;:{\\\&quot;\$gte\\\&quot;:\\\&quot;$(cat last_date)\\\&quot;}}&quot;
+else
+  # No last_date file, get everything from MongoDB ATLAS
+  mongodump --quiet --uri=&quot;mongodb://sdd-teacher:&lt;PASSWORD&gt;@sdd-umons-shard-00-00-umnnw.mongodb.net:27017,sdd-umons-shard-00-01-umnnw.mongodb.net:27017,sdd-umons-shard-00-02-umnnw.mongodb.net:27017/sdd?ssl=true&amp;replicaSet=sdd-umons-shard-0&amp;authSource=admin&quot; --db=&quot;sdd&quot;
+fi
+
+# If something is collected, an sdd subdirectory is created
+if [ -d &quot;/data1/dump/sdd&quot; ]; then
+  # Backup last_restore
+  if [ -f &quot;last_restore&quot; ]; then
+    cp last_restore forelast_restore
+  fi
+  # Backup last_date too
+  if [ -f &quot;last_date&quot; ]; then
+    cp last_date forelast_date
+  fi
+  mongorestore &amp;&gt; last_restore &amp;&amp;
+  cp cur_date last_date
+fi
+
+# Clean up /data1/dump directory and go back to intial dir
+rm -rf /data1/dump/* &amp;&amp;
+cd - &gt; /dev/null
+&#39; | sudo tee /usr/local/bin/get_atlas_data &gt; /dev/null &amp;&amp;
+sudo chmod 755 /usr/local/bin/get_atlas_data &amp;&amp;
+sudo chmod +x /usr/local/bin/get_atlas_data</code></pre>
+<ul>
+<li>Réalise un backup quotidien roulant, ainsi qu’un backup permanent chaque samedi :</li>
+</ul>
+<pre><code># Regular daily backup 
+echo &#39;#!/bin/bash
+# Daily, temporary MongoDB database backup (overwritten next same day)
+DIR=`date +%a` &amp;&amp;
+DEST=/data1/backup/mongodb/$DIR &amp;&amp;
+rm -rf $DEST &amp;&amp;
+mkdir -p $DEST &amp;&amp;
+mongodump -o $DEST &amp;&amp;
+date -u &quot;+%Y-%m-%d %H:%M:%S&quot; &gt; $DEST/backup_date
+&#39; | sudo tee /usr/local/bin/backup_data_daily &gt; /dev/null &amp;&amp;
+sudo chmod 755 /usr/local/bin/backup_data_daily &amp;&amp;
+sudo chmod +x /usr/local/bin/backup_data_daily &amp;&amp;
+
+# Weekly, more permanent backup
+echo &#39;#!/bin/bash
+# Weekly, permanent MongoDB database backup
+DIR=`date +%Y%m%d` &amp;&amp;
+DEST=/data1/backup/mongodb/$DIR &amp;&amp;
+mkdir -p $DEST &amp;&amp;
+mongodump -o $DEST
+&#39; | sudo tee /usr/local/bin/backup_data_weekly &gt; /dev/null &amp;&amp;
+sudo chmod 755 /usr/local/bin/backup_data_weekly &amp;&amp;
+sudo chmod +x /usr/local/bin/backup_data_weekly</code></pre>
+<p>Vérifier ces scripts et ensuite, ajouter une entrée crontab :</p>
+<pre><code>sudo crontab -e</code></pre>
+<p>Éditer le fichier en y rajoutant :</p>
+<pre><code># Get data from MongoDB ATLAS every 5 min
+*/5 * * * * /usr/local/bin/get_atlas_data
+# Sync /data1/ with /data2/ every hour:47
+47 * * * * /usr/bin/rsync -av --delete /data1/ /data2/ &amp;&gt; /data/datasync.log
+# Create a daily (except saterday) and a weekly backup of the MongoDB database
+# on 03:41:00
+41 3 * * 6 /usr/local/bin/backup_data_weekly
+41 3 * * 0,1,2,3,4,5 /usr/local/bin/backup_data_daily</code></pre>
+<ul>
+<li>Ajout de capteurs matériels (contrôle de la température) :</li>
+</ul>
+<pre><code>sensors
+sudo apt install nvme-cli
+sudo nvme list
+sudo nvme smart-log /dev/nvme0
+sudo nvme smart-log /dev/nvme0 | grep temperature</code></pre>
 
 </div>
 <!-- </div> -->

@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>A.1 Mise à jour de MongoDB | Plateforme pédagogique BioDataScience</title>
+  <title>Chapitre 15 In Renku: | Plateforme pédagogique BioDataScience</title>
   <meta name="description" content="Administration de BioDataScience-Course." />
   <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="A.1 Mise à jour de MongoDB | Plateforme pédagogique BioDataScience" />
+  <meta property="og:title" content="Chapitre 15 In Renku: | Plateforme pédagogique BioDataScience" />
   <meta property="og:type" content="book" />
   <meta property="og:url" content="http://phgrosjean.sciviews.org/bookdown-test/" />
   <meta property="og:image" content="http://phgrosjean.sciviews.org/bookdown-test//images/front-cover.png" />
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="BioDataScience-Course/sdd-admin" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="A.1 Mise à jour de MongoDB | Plateforme pédagogique BioDataScience" />
+  <meta name="twitter:title" content="Chapitre 15 In Renku: | Plateforme pédagogique BioDataScience" />
   
   <meta name="twitter:description" content="Administration de BioDataScience-Course." />
   <meta name="twitter:image" content="http://phgrosjean.sciviews.org/bookdown-test//images/front-cover.png" />
@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="installation.html"/>
-<link rel="next" href="anonymisation.html"/>
+<link rel="prev" href="learnr-gradethis.html"/>
+<link rel="next" href="get-data-from-mongodb-atlas-and-backup-the-database.html"/>
 <script src="libs/header-attrs-2.11.3/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -228,73 +228,6 @@ var h5pContentTypes = [""];
 <script src='https://wp.sciviews.org/wp-content/plugins/h5p/h5p-php-library/js/request-queue.js'></script>
 
 
-<style type="text/css">
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-    background-color: #ffffff;
-    color: #a0a0a0;
-  }
-pre.numberSource { margin-left: 3em; border-left: 1px solid #a0a0a0;  padding-left: 4px; }
-div.sourceCode
-  { color: #1f1c1b; background-color: #ffffff; }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
-code span { color: #1f1c1b; } /* Normal */
-code span.al { color: #bf0303; background-color: #f7e6e6; font-weight: bold; } /* Alert */
-code span.an { color: #ca60ca; } /* Annotation */
-code span.at { color: #0057ae; } /* Attribute */
-code span.bn { color: #b08000; } /* BaseN */
-code span.bu { color: #644a9b; font-weight: bold; } /* BuiltIn */
-code span.cf { color: #1f1c1b; font-weight: bold; } /* ControlFlow */
-code span.ch { color: #924c9d; } /* Char */
-code span.cn { color: #aa5500; } /* Constant */
-code span.co { color: #898887; } /* Comment */
-code span.cv { color: #0095ff; } /* CommentVar */
-code span.do { color: #607880; } /* Documentation */
-code span.dt { color: #0057ae; } /* DataType */
-code span.dv { color: #b08000; } /* DecVal */
-code span.er { color: #bf0303; text-decoration: underline; } /* Error */
-code span.ex { color: #0095ff; font-weight: bold; } /* Extension */
-code span.fl { color: #b08000; } /* Float */
-code span.fu { color: #644a9b; } /* Function */
-code span.im { color: #ff5500; } /* Import */
-code span.in { color: #b08000; } /* Information */
-code span.kw { color: #1f1c1b; font-weight: bold; } /* Keyword */
-code span.op { color: #1f1c1b; } /* Operator */
-code span.ot { color: #006e28; } /* Other */
-code span.pp { color: #006e28; } /* Preprocessor */
-code span.re { color: #0057ae; background-color: #e0e9f8; } /* RegionMarker */
-code span.sc { color: #3daee9; } /* SpecialChar */
-code span.ss { color: #ff5500; } /* SpecialString */
-code span.st { color: #bf0303; } /* String */
-code span.va { color: #0057ae; } /* Variable */
-code span.vs { color: #bf0303; } /* VerbatimString */
-code span.wa { color: #bf0303; } /* Warning */
-</style>
 
 
 <link rel="stylesheet" href="style.css" type="text/css" />
@@ -450,15 +383,21 @@ code span.wa { color: #bf0303; } /* Warning */
 <ul>
 <li class="chapter" data-level="13.1" data-path="installation-de-sdd-umons-ac-be.html"><a href="installation-de-sdd-umons-ac-be.html"><i class="fa fa-check"></i><b>13.1</b> Installation de sdd.umons.ac.be</a></li>
 </ul></li>
-<li class="chapter" data-level="14" data-path="progression.html"><a href="progression.html"><i class="fa fa-check"></i><b>14</b> Rapport de progression</a>
+<li class="chapter" data-level="14" data-path="learnr-gradethis.html"><a href="learnr-gradethis.html"><i class="fa fa-check"></i><b>14</b> learnr &amp; gradethis</a></li>
+<li class="chapter" data-level="15" data-path="in-renku.html"><a href="in-renku.html"><i class="fa fa-check"></i><b>15</b> In Renku:</a></li>
+<li class="chapter" data-level="16" data-path="get-data-from-mongodb-atlas-and-backup-the-database.html"><a href="get-data-from-mongodb-atlas-and-backup-the-database.html"><i class="fa fa-check"></i><b>16</b> Get data from MongoDB ATLAS and backup the database</a>
 <ul>
-<li class="chapter" data-level="14.1" data-path="présentation-générale.html"><a href="présentation-générale.html"><i class="fa fa-check"></i><b>14.1</b> Présentation générale</a></li>
-<li class="chapter" data-level="14.2" data-path="les-données.html"><a href="les-données.html"><i class="fa fa-check"></i><b>14.2</b> Les données</a>
+<li class="chapter" data-level="16.1" data-path="hardware-sensors.html"><a href="hardware-sensors.html"><i class="fa fa-check"></i><b>16.1</b> Hardware sensors</a></li>
+</ul></li>
+<li class="chapter" data-level="17" data-path="progression.html"><a href="progression.html"><i class="fa fa-check"></i><b>17</b> Rapport de progression</a>
 <ul>
-<li class="chapter" data-level="14.2.1" data-path="les-données.html"><a href="les-données.html#base-interne"><i class="fa fa-check"></i><b>14.2.1</b> Base interne</a></li>
-<li class="chapter" data-level="14.2.2" data-path="les-données.html"><a href="les-données.html#base-externe"><i class="fa fa-check"></i><b>14.2.2</b> Base externe</a></li>
-<li class="chapter" data-level="14.2.3" data-path="les-données.html"><a href="les-données.html#gestion-des-utilisateurs"><i class="fa fa-check"></i><b>14.2.3</b> Gestion des utilisateurs</a></li>
-<li class="chapter" data-level="14.2.4" data-path="les-données.html"><a href="les-données.html#format-des-données"><i class="fa fa-check"></i><b>14.2.4</b> Format des données</a></li>
+<li class="chapter" data-level="17.1" data-path="présentation-générale.html"><a href="présentation-générale.html"><i class="fa fa-check"></i><b>17.1</b> Présentation générale</a></li>
+<li class="chapter" data-level="17.2" data-path="les-données.html"><a href="les-données.html"><i class="fa fa-check"></i><b>17.2</b> Les données</a>
+<ul>
+<li class="chapter" data-level="17.2.1" data-path="les-données.html"><a href="les-données.html#base-interne"><i class="fa fa-check"></i><b>17.2.1</b> Base interne</a></li>
+<li class="chapter" data-level="17.2.2" data-path="les-données.html"><a href="les-données.html#base-externe"><i class="fa fa-check"></i><b>17.2.2</b> Base externe</a></li>
+<li class="chapter" data-level="17.2.3" data-path="les-données.html"><a href="les-données.html#gestion-des-utilisateurs"><i class="fa fa-check"></i><b>17.2.3</b> Gestion des utilisateurs</a></li>
+<li class="chapter" data-level="17.2.4" data-path="les-données.html"><a href="les-données.html#format-des-données"><i class="fa fa-check"></i><b>17.2.4</b> Format des données</a></li>
 </ul></li>
 </ul></li>
 <li class="appendix"><span><b>Appendices</b></span></li>
@@ -491,14 +430,12 @@ code span.wa { color: #bf0303; } /* Warning */
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="mise-à-jour-de-mongodb-1" class="section level2" number="15.1">
-<h2><span class="header-section-number">A.1</span> Mise à jour de MongoDB</h2>
-<p>Notre système utilise deux serveurs MongoDB différents (et même trois, si on considère utiliser une version locale également dans la phase d’analyse des données). Un de ces serveurs est MongoDB ATLAS sous forme gratuite (et limitée à une taille de 512Mo). Ce serveur sert à collecter temporairement les données provenant des machines virtuelles des étudiants (learnrs et applications Shiny exécutées en local), ainsi que les données provenant des exercices H5P.</p>
-<p>L’accès à ces bases de données se fait via deux drivers différents : mongodb-php et {mongolite} pour R. De plus, le backup et le transfert des données d’une base à l’autre se fait via <code>mongodump</code> et <code>mongorestore</code>.</p>
-<p><strong>Les versions des différents serveurs aussi bien que les drivers et outils doivent tous être compatibles entre eux, nautrellement.</strong> Or, dans sa version gratuite, MongoDB ATLAS ne laisse pas le choix de la version, ni du moment où elle est mise à jour. Toutes les autres outils doivent par conséquent être alignés au bon moment.</p>
-
+<div id="in-renku" class="section level1" number="15">
+<h1><span class="header-section-number">Chapitre 15</span> In Renku:</h1>
+<p>learnr 0.10.1.9008
+gradethis 0.2.3.9000</p>
+<p>Upgrade to very last version of learnr &amp; gradethis. Now, it seems to work well.</p>
 </div>
-<!-- </div> -->
 <div id="disqus_thread"></div>
 <script>
 
@@ -525,8 +462,8 @@ s.setAttribute('data-timestamp', +new Date());
           </div>
         </div>
       </div>
-<a href="installation.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="anonymisation.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="learnr-gradethis.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="get-data-from-mongodb-atlas-and-backup-the-database.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -558,7 +495,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/BioDataScience-Course/sdd-admin/edit/master/A1-Installation.Rmd",
+"link": "https://github.com/BioDataScience-Course/sdd-admin/edit/master/13-RSConnect.Rmd",
 "text": "Editer"
 },
 "history": {
@@ -566,7 +503,7 @@ gitbook.start({
 "text": null
 },
 "view": {
-"link": "https://github.com/BioDataScience-Course/sdd-admin/blob/master/A1-Installation.Rmd",
+"link": "https://github.com/BioDataScience-Course/sdd-admin/blob/master/13-RSConnect.Rmd",
 "text": null
 },
 "download": ["sdd-admin.pdf"],
