@@ -2,4 +2,332 @@
 
 
 
-TODO: détailler l'utilisation de RStudio Connect dans la plateforme SDD...
+[RStudio Connect](https://www.rstudio.com/products/connect/) permet de partager des documents R Markdown, des applications Shiny eyt des tutoriels Learnrs facilement depuis un serveur centralisé. C'est pratique pour inclure ces items dans le cours en ligne et pour permettre aux étudiant d'effectuer des exercices sans qu'ils n'aient forcément accès à un système complet. RStudio Connect est payant (plusieurs dizaines de milliers de dollars par an), **mais est gratuit pour une utilisation dans un cadre académique. Il faut montrer via un syllabus que l'outil est utilisé dans le cours et que les étudiants apprennent à employer les outils RStudio. La License doit être renouvelée annuellement et n'est valable que pendant la durée du cours (mieux vaut donc avoir des cours qui couvrent toute l'année). À partir de 100 utilisateurs, il est aussi possible d'utiliser l'interface plumber API. Le logiciel doit être installé sur un serveur que l'on configure et administre nous-même.
+
+## Installation de sdd.umons.ac.be
+
+Nous avons opté pour un serveur sdd.umons.ac.be (193.190.194.75) ayant les caractéristiques suivantes\ :
+
+- CPU Intel Core i7-6900k 3,20GHz à 8 cœurs/16 threads,
+- 64Go de mémoire RAM DDR4 2.666Mhz,
+- Carte mère Asus X99-A,
+- 512Go de disque SSD NVMe Samsung Pro 960 + 2 fois 3To de HDD Toshiba P300 7200rpm SATA III,
+- AIO Thermaltake Water 3.0 Performer C,
+- Alimentation Coolermaster GM650 650W,
+- Carte graphique NVidia GeForce 710 1Go,
+- Boitier IPC server 3U-30248,
+- Xubuntu 18.04.5LTS,
+- MongoDB 4.4.11, MongoDB Tools 100.5.1,
+- RStudio Connect 1.8.8.2 + R 4.0.5 (licence 100 utilisateurs qui expire au 2022-05-06),
+- Accessible par ssh seulement en interne (ou via le VPN UMONS).
+
+L'installation s'est fait comme suit\ :
+
+```
+# Diagnostic script
+sudo /opt/rstudio-connect/scripts/run-diagnostics.sh /path/to/output/directory
+
+# Install the MongoDB database
+# Follow instructions at https://docs.mongodb.com/manual/tutorial/install-mongodb-on-ubuntu/ 
+sudo apt-get install gnupg
+wget -qO - https://www.mongodb.org/static/pgp/server-4.4.asc | sudo apt-key add -
+echo "deb [ arch=amd64,arm64 ] https://repo.mongodb.org/apt/ubuntu bionic/mongodb-org/4.4 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-4.4.list
+sudo apt-get update
+# Either latest version
+sudo apt-get install -y mongodb-org
+# Specific version
+#sudo apt-get install -y mongodb-org=4.4.0 mongodb-org-server=4.4.0 mongodb-org-shell=4.4.0 mongodb-org-mongos=4.4.0 mongodb-org-tools=4.4.0
+# Optionally freeze version
+#echo "mongodb-org hold" | sudo dpkg --set-selections
+#echo "mongodb-org-server hold" | sudo dpkg --set-selections
+#echo "mongodb-org-shell hold" | sudo dpkg --set-selections
+#echo "mongodb-org-mongos hold" | sudo dpkg --set-selections
+#echo "mongodb-org-tools hold" | sudo dpkg --set-selections
+# Determine if it is systemd or init that is used
+ ps --no-headers -o comm 1 # systemd here
+# Start mongodb
+sudo systemctl start mongod
+
+# By default, MongoDB only accept clients from same machine (what we want)
+# Data directory is /var/lib/mongodb, but we want /data1/mongodb
+sudo mkdir /data1/mongodb
+sudo chown -R mongodb:mongodb /data1/mongodb
+# Edit /etc/mongod.conf and adjust dbPath to /data1/mogodb
+sudo nano /etc/mongod.conf
+
+# Start the MongoDB server and test it from R
+sudo systemctl start mongod
+# If an error, first try sudo systemctl daemon-reload
+# Status (can also use start/stop/restart
+sudo systemctl status mongod
+R
+library(mongolite)
+con <- mongo(collection = "shiny", db = "sdd")
+con$insert(trees)
+trees2 <- con$find()
+all.equal(trees, trees2)
+con$drop()
+rm(con)
+gc()
+q("no")
+
+# Quand c'est bon, activer le service définitivement avec
+sudo systemctl enable mongod
+
+# Access the MongoDB database from commandline with 'mongo'
+
+# Create a program supervisor for common environment variables (not done yet)
+mkdir -p /opt/scripts
+touch /opt/scripts/connect-env.sh
+nano /opt/scripts/connect-env.sh
+
+# Add this in the file:
+
+#!/bin/bash
+
+echo arguments: “$@“ >&2
+echo >&2
+export MONGO_URL=“mongodb://sdd:sdd@sdd-umons-shard-00-00-umnnw.mongodb.net:27017,sdd-umons-shard-00-01-umnnw.mongodb.net:27017,sdd-umons-shard-00-02-umnnw.mongodb.net:27017/test?ssl=true&replicaSet=sdd-umons-shard-0&authSource=admin”
+export MONGO_BASE=“sdd”
+exec “$@“
+
+Then:
+chmod 755 /opts/scripts/connect-env.sh
+
+Add the following in /etc/rstudio-connect/rstudio-connect.gcfg
+[Applications]
+Supervisor = /opt/scripts/connect-env.sh
+```
+
+- Il faut ensuite obtenir et installer (ou mettre à jour) un certificat pour pouvoir accéder au serveur en mode sécurisé\ :
+
+```
+# Place sdd_umons_ac_be.cer|key in /etc/ssl/private. It seems both keys do not match:
+sudo openssl x509 -noout -modulus -in /etc/ssl/private/sdd_umons_ac_be.cer | openssl md5
+sudo openssl rsa -noout -modulus -in /etc/ssl/private/sdd_umons_ac_be.key | openssl md5
+# Maybe the PKCS#7 format is correct? So, the .crt with that format can be converted this way:
+sudo openssl pkcs7 -print_certs -in /etc/ssl/private/sdd_umons_ac_be.crt -out /etc/ssl/private/sdd_umons_ac_be.pem -outform PEM
+sudo chmod o-r /etc/ssl/private/sdd_umons_ac_be.pem
+sudo openssl x509 -noout -modulus -in /etc/ssl/private/sdd_umons_ac_be.pem | openssl md5
+# Now, this is correct!
+
+# Update the certificate: I receive a .zip file with both sdd_umons_ac_be.key and sdd_umons_ac_be.cer.
+# These files must be placed into /etc/ssl/private on the sdd server:
+# From MacOS
+scp ~/Desktop/sdd_certs_2021.zip econum@sdd.umons.ac.be:/data1/dump/cert.zip
+# Create .pem file that invert the order of the 4 certificates from the .cer file, then...
+scp ~/Desktop/sdd_umons_ac_be.pem econum@sdd.umons.ac.be:/data1/dump/sdd_umons_ac_be.pem
+# From sdd
+sudo ls -l /etc/ssl/private
+sudo mv /etc/ssl/private/sdd_umons_ac_be.cer /etc/ssl/private/sdd_umons_ac_be.cer.old
+sudo mv /etc/ssl/private/sdd_umons_ac_be.key /etc/ssl/private/sdd_umons_ac_be.key.old
+unzip /data1/dump/cert.zip
+rm /data1/dump/cert.zip
+sudo mv sdd_umons_ac_be.* /etc/ssl/private
+sudo chown root:root /etc/ssl/private/sdd_umons_ac_be.cer
+sudo chown root:root /etc/ssl/private/sdd_umons_ac_be.key
+sudo chmod 640 /etc/ssl/private/sdd_umons_ac_be.cer
+sudo chmod 640 /etc/ssl/private/sdd_umons_ac_be.key
+sudo mv /data1/dump/sdd_umons_ac_be.pem /etc/ssl/private/sdd_umons_ac_be.pem
+sudo chown root:root /etc/ssl/private/sdd_umons_ac_be.pem
+sudo chmod 640 /etc/ssl/private/sdd_umons_ac_be.pem
+```
+
+- In case there is a problem with the video driver\ :
+
+```
+# Reconfigure the video driver
+sudo update -intiramfs -U
+sudo dpkg reconfigure server-xorg
+lsmod | grep nouveau
+# Completely reconfigure the video driver if it gets stuck with Nvidia driver:
+# Start in recovery mode: type <shift> repeatedly while booting
+(sudo) update-initramfs -u
+
+# Solved temporarily => could boot in X11, then, remove Nvidia drivers completely. 
+sudo apt-get purge nvidia-*
+#sudo mv /etc/X11/xorg.conf /etc/X11/xorg.conf.bak
+sudo apt-get install --reinstall xserver-xorg-video-intel libgl1-mesa-glx libgl1-mesa-dri xserver-xorg-core
+sudo dpkg-reconfigure xserver-xorg
+
+# May not have any alternatives configured (ok to skip)
+sudo update-alternatives --remove gl_conf /usr/lib/nvidia-current/ld.so.conf
+# Does not change... still no keyboard
+
+# Inactivate graph ics drivers repositories then ...
+sudo dpkg -P $(dpkg -l | grep nvidia-driver | awk '{print $2}')
+sudo apt autoremove
+sudo apt install xserver-xorg-video-nouveau
+
+# To change screen resolution (e.g., in AnyDesk)
+xrandr -fb 1920x1080 (-display:0)
+```
+
+- Reconfigure locale using `localectl US-utf8`
+
+- Backup and restore the system with Relax-and-Recover (ReaR), see https://www.tecmint.com/rear-backup-and-recover-a-linux-system/. “Create a bootable rescue system and/or system backup in various formats” Also as a migration tool, since it can restore on a different hardware\ :
+
+```
+sudo apt install rear extlinux`
+# Config directory is in /etc/rear/ (local.conf, site.conf, default.conf) + /var/log/rear/
+# First format an USB stick
+sudo rear format /dev/sdX # In case of error rear format -- --efi /dev/sdX (in the server, it is /dev/sdc)
+# Change /etc/rear/local.conf
+OUTPUT=USB
+BACKUP=NETFS
+BACKUP_URL=“usb:///dev/disk/by-label/REAR-000”
+# Run this to look at current configuration:
+sudo rear dump
+# Create a rescue disk (unmount REAR-000, then…)
+sudo rear -v mkrescue # Just a rescue disk
+sudo rear -v mkbackup # Rescue disk AND backup the system
+sudo rear -v mkbackuponly # Only backup the system
+
+# To restore/recover, boot from the USB stick… When login asked, type ‘root’, then type ‘rear recover’, reboot when done. See also http://relax-and-recover.org/usage/#recovery_from_usb
+```
+
+- Install and test `mongodump`/`mongorestore`\ :
+
+- Install latest version of R & RStudio Connect, 2021-05-31
+
+```
+# Current RStudio Connect is 1.8.2.1-12
+ls /opt/R # See R versions already installed (3.4.4, 3.5.3, 3.6.3)
+export R_VERSION=4.0.5
+curl -O https://cdn.rstudio.com/r/ubuntu-1804/pkgs/r-${R_VERSION}_1_amd64.deb
+sudo gdebi r-${R_VERSION}_1_amd64.deb
+/opt/R/${R_VERSION}/bin/R --version # verification
+sudo ln -s /opt/R/${R_VERSION}/bin/R /usr/local/bin/R
+sudo ln -s /opt/R/${R_VERSION}/bin/Rscript /usr/local/bin/Rscript
+# Install R package
+sudo R
+repos <- getOption("repos")
+repos["CRAN"] <- "https://mran.microsoft.com/snapshot/2021-05-17"
+options(repos = repos)
+options(timeout = 300)
+
+update.packages()
+
+install.packages(c("tidyverse", "shiny", "bookdown", "data.table", "glue",
+"here", "mongolite", "keras", "pastecs", "mlearning", "usethis", "testthat",
+"covr", "sessioninfo", "reticulate", "remotes", "devtools", "knitr",
+"latticeExtra", "inline", "Hmisc", "gridExtra", "gridGraphics", "ggsci",
+"ggpubr", "GGally", "ggplotify", "ggrepel", "cowplot", "fs", "forcats", "purrr",
+"R6", "RColorBrewer", "Rcpp", "anytime", "zoo", "assertthat", "bench", "hms",
+"lubridate", "rsconnect", "RSQLite", "sos", "styler", "vctrs", "viridis",
+"viridisLite", "withr", "xts", "igraph", "pryr", "proto", "renv", "tsibble",
+"SciViews", "svMisc", "svGUI", "svDialogs", "extraDistr", "SuppDists", "lobstr",
+"import", "miniUI", "vegan", "shinydashboard"))
+
+install.packages("BiocManager")
+BiocManager::install(c("graph", "ComplexHeatmap", "Rgraphviz",
+  "RDRToolbox"), update = FALSE, ask = FALSE)
+
+remotes::install_github("SciViews/mlearning@v1.0.6", force = TRUE)
+# Fails! remotes::install_github("SciViews/tcltk2@v1.3.0", force = TRUE)
+remotes::install_github("SciViews/svMisc@v1.2.0", force = TRUE)
+remotes::install_github("SciViews/svGUI@v1.0.1", force = TRUE)
+remotes::install_github("SciViews/svDialogs@v1.0.3", force = TRUE)
+remotes::install_github("SciViews/svSweave@v1.0", force = TRUE)
+remotes::install_github("SciViews/flow@v1.1.0", force = TRUE)
+remotes::install_github("SciViews/data.io@v1.3.0", force = TRUE)
+remotes::install_github("SciViews/chart@v1.3", force = TRUE)
+remotes::install_github("SciViews/SciViews@v1.1.1", force = TRUE)
+
+remotes::install_github("phgrosjean/pastecs@v1.4.0", force = TRUE)
+remotes::install_github("phgrosjean/aurelhy@v1.0.8", force = TRUE)
+
+remotes::install_github("rstudio/gradethis@ced5541")
+remotes::install_github("r-lib/itdepends@f8d012b")
+
+# Warning in svbox2021, we don't use learndown anymore, but learnitdown instead!
+remotes::install_github("SciViews/learnitdown@v1.3.0")
+#remotes::install_github("BioDataScience-Course/BioDataScience@...")
+#remotes::install_github("BioDataScience-Course/BioDataScience1@...")
+#remotes::install_github("BioDataScience-Course/BioDataScience2@...")
+#remotes::install_github("BioDataScience-Course/BioDataScience3@...")
+
+# Check and update license
+sudo /opt/rstudio-connect/bin/license-manager status
+# (re)activate license
+sudo /opt/rstudio-connect/bin/license-manager deactivate 
+sudo /opt/rstudio-connect/bin/license-manager activate YAG3-B2H5-MXQB-6HJS-E7WH-4G9Y-JITA
+sudo systemctl restart rstudio-connect
+
+# Upgrade RStudio Connect to version 
+curl -Lo rsc-installer.sh https://cdn.rstudio.com/connect/installer/installer-v1.9.1.sh
+sudo -E bash ./rsc-installer.sh 1.8.8.2
+```
+
+- Install python 3.8.5
+
+```
+sudo mkdir /opt/python
+sudo curl -fsSL -o /opt/python/miniconda.sh https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh 
+sudo chmod 755 /opt/python/miniconda.sh
+sudo /opt/python/miniconda.sh -b -p /opt/python/miniconda
+
+export PYTHON_VERSION="3.8.5"
+
+sudo /opt/python/miniconda/bin/conda create --quiet --yes \
+      --prefix /opt/python/"${PYTHON_VERSION}" \
+      --channel conda-forge \
+      python="${PYTHON_VERSION}"  "pip<20.1"
+
+# Check
+/opt/python/"${PYTHON_VERSION}"/bin/python --version
+```
+
+- Installation de packages Python supplémentaires
+
+```
+sudo /opt/python/"${PYTHON_VERSION}"/bin/pip install altair beautifulsoup4 cloudpickle \
+  cython dask gensim keras matplotlib nltk numpy pandas pillow pyarrow \
+  requests scipy scikit-image scikit-learn scrapy seaborn spacy sqlalchemy \
+  statsmodels tensorflow xgboost
+
+# Add python to the system path (optional)
+# add PATH=/opt/python/"${PYTHON_VERSION}"/bin:$PATH in /etc/profile.d/python.sh
+
+# Make Python available as Jupyter Kernel (optional)
+#sudo /opt/python/${PYTHON_VERSION}/bin/pip install ipykernel
+#sudo /opt/python/${PYTHON_VERSION}/bin/python -m ipykernel install --name py${PYTHON_VERSION} --display-name "Python ${PYTHON_VERSION}"
+
+# Make Python available to reticulate
+nano ~/.Rprofile # Add Sys.setenv(RETICULATE_PYTHON = "/opt/python/3.8.5/bin/python")
+```
+
+- Solve the problem of pandoc: `loadlocale.c:130: _nl_intern_locale_data: Assertion `cnt < (sizeof (_nl_value_type_LC_TIME) / sizeof (_nl_value_type_LC_TIME[0]))' failed`.
+
+```
+sudo mkdir -p /opt/scripts
+sudo nano /opt/scripts/rstudio-connect-env.sh
+# Add this:
+
+#!/bin/bash
+echo arguments: "$@" >&2
+echo >&2
+export LC_ALL=C
+exec "$@"
+
+# Then:
+sudo chmod 755 /opt/scripts/rstudio-connect-env.sh
+
+# Then, change RSconnect config:
+sudo nano /etc/rstudio-connect/rstudio-connect.gcfg
+# In this section, change Supervisor=
+
+[Applications]
+Supervisor = /opt/scripts/rstudio-connect-env.sh
+
+# Then, restart RStudio connect
+sudo systemctl restart rstudio-connect
+# This does not work => reedit rstudio-connect.gcfg and comment out Supervisor= with ; and restart RStudio Connect
+
+# Need to rebuild the locales
+# In /etc/locale.gen, I have only one item: en_US.UTF-8 UTF-8
+# Then:
+sudo mv /usr/lib/locale/locale-archive /usr/lib/locale/locale-archive.save
+sudo locale-gen --no-archive
+sudo locale-gen --no-archive en_US.UTF8
+```

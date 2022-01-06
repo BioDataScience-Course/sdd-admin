@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapitre 4 Learning record store | Plateforme pédagogique BioDataScience</title>
+  <title>13.1 Installation de sdd.umons.ac.be | Plateforme pédagogique BioDataScience</title>
   <meta name="description" content="Administration de BioDataScience-Course." />
   <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapitre 4 Learning record store | Plateforme pédagogique BioDataScience" />
+  <meta property="og:title" content="13.1 Installation de sdd.umons.ac.be | Plateforme pédagogique BioDataScience" />
   <meta property="og:type" content="book" />
   <meta property="og:url" content="http://phgrosjean.sciviews.org/bookdown-test/" />
   <meta property="og:image" content="http://phgrosjean.sciviews.org/bookdown-test//images/front-cover.png" />
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="BioDataScience-Course/sdd-admin" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapitre 4 Learning record store | Plateforme pédagogique BioDataScience" />
+  <meta name="twitter:title" content="13.1 Installation de sdd.umons.ac.be | Plateforme pédagogique BioDataScience" />
   
   <meta name="twitter:description" content="Administration de BioDataScience-Course." />
   <meta name="twitter:image" content="http://phgrosjean.sciviews.org/bookdown-test//images/front-cover.png" />
@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="astuces-git-et-github.html"/>
-<link rel="next" href="notre-lrs.html"/>
+<link rel="prev" href="rsconnect.html"/>
+<link rel="next" href="progression.html"/>
 <script src="libs/header-attrs-2.11.3/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -379,7 +379,10 @@ var h5pContentTypes = [""];
 </ul></li>
 <li class="chapter" data-level="11" data-path="videos.html"><a href="videos.html"><i class="fa fa-check"></i><b>11</b> Vidéos</a></li>
 <li class="chapter" data-level="12" data-path="wooclap.html"><a href="wooclap.html"><i class="fa fa-check"></i><b>12</b> Wooclap</a></li>
-<li class="chapter" data-level="13" data-path="rsconnect.html"><a href="rsconnect.html"><i class="fa fa-check"></i><b>13</b> RStudio Connect</a></li>
+<li class="chapter" data-level="13" data-path="rsconnect.html"><a href="rsconnect.html"><i class="fa fa-check"></i><b>13</b> RStudio Connect</a>
+<ul>
+<li class="chapter" data-level="13.1" data-path="installation-de-sdd-umons-ac-be.html"><a href="installation-de-sdd-umons-ac-be.html"><i class="fa fa-check"></i><b>13.1</b> Installation de sdd.umons.ac.be</a></li>
+</ul></li>
 <li class="chapter" data-level="14" data-path="progression.html"><a href="progression.html"><i class="fa fa-check"></i><b>14</b> Rapport de progression</a>
 <ul>
 <li class="chapter" data-level="14.1" data-path="présentation-générale.html"><a href="présentation-générale.html"><i class="fa fa-check"></i><b>14.1</b> Présentation générale</a></li>
@@ -421,11 +424,317 @@ var h5pContentTypes = [""];
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="lrs" class="section level1" number="4">
-<h1><span class="header-section-number">Chapitre 4</span> Learning record store</h1>
-<p>Un “<a href="https://xapi.com/learning-record-store/">Learning Record Store</a>” (LRS en abbrégé) est une base de données un peu particulière configurée pour stocker toutes les données relatives au système d’apprentissage dans un format spécifique nommé <a href="https://xapi.com">xAPI</a>. Ce dernier format permet d’interconnecter différents systèmes qui produisent ou qui consomment des données entre eux. Il existe de nombreux outils payants <a href="https://learningpool.com/solutions/learning-locker-community-overview/">Learning Locker</a>, <a href="https://www.watershedlrs.com">Watershed LRS</a>, ou gratuits tel <a href="https://rusticisoftware.com/products/scorm-cloud/lrs/?_ga=2.47789487.923837694.1641462138-1391329406.1641462138">SCORM Cloud LRS</a> ou <a href="https://traxlrs.com">TRAX LRS</a> pour gérer ce type de base de données. Ces outils <a href="https://adopters.adlnet.gov/products/all/0">assurent la compatibilité nécessaire</a>.</p>
-<p><strong>Note : il existe aussi un autre (ancien) standard en plus de xAPI nommé SCORM. Une initiative cmi5 vise à fusionner les deux et à fournir une interface standardisée pour interopérer des outils diffé&amp;rents au sein d’un “Learning Management System” (LMS) hétérogène. En gros, cmi5 = xAPI + LMS, <a href="https://adlnet.gov/assets/uploads/cmi5%20Best%20Practices%20Guide%20-%20From%20Conception%20to%20Conformance.pdf">voir P.27 ici</a>.</strong></p>
+<div id="installation-de-sdd.umons.ac.be" class="section level2" number="13.1">
+<h2><span class="header-section-number">13.1</span> Installation de sdd.umons.ac.be</h2>
+<p>Nous avons opté pour un serveur sdd.umons.ac.be (193.190.194.75) ayant les caractéristiques suivantes :</p>
+<ul>
+<li>CPU Intel Core i7-6900k 3,20GHz à 8 cœurs/16 threads,</li>
+<li>64Go de mémoire RAM DDR4 2.666Mhz,</li>
+<li>Carte mère Asus X99-A,</li>
+<li>512Go de disque SSD NVMe Samsung Pro 960 + 2 fois 3To de HDD Toshiba P300 7200rpm SATA III,</li>
+<li>AIO Thermaltake Water 3.0 Performer C,</li>
+<li>Alimentation Coolermaster GM650 650W,</li>
+<li>Carte graphique NVidia GeForce 710 1Go,</li>
+<li>Boitier IPC server 3U-30248,</li>
+<li>Xubuntu 18.04.5LTS,</li>
+<li>MongoDB 4.4.11, MongoDB Tools 100.5.1,</li>
+<li>RStudio Connect 1.8.8.2 + R 4.0.5 (licence 100 utilisateurs qui expire au 2022-05-06),</li>
+<li>Accessible par ssh seulement en interne (ou via le VPN UMONS).</li>
+</ul>
+<p>L’installation s’est fait comme suit :</p>
+<pre><code># Diagnostic script
+sudo /opt/rstudio-connect/scripts/run-diagnostics.sh /path/to/output/directory
+
+# Install the MongoDB database
+# Follow instructions at https://docs.mongodb.com/manual/tutorial/install-mongodb-on-ubuntu/ 
+sudo apt-get install gnupg
+wget -qO - https://www.mongodb.org/static/pgp/server-4.4.asc | sudo apt-key add -
+echo &quot;deb [ arch=amd64,arm64 ] https://repo.mongodb.org/apt/ubuntu bionic/mongodb-org/4.4 multiverse&quot; | sudo tee /etc/apt/sources.list.d/mongodb-org-4.4.list
+sudo apt-get update
+# Either latest version
+sudo apt-get install -y mongodb-org
+# Specific version
+#sudo apt-get install -y mongodb-org=4.4.0 mongodb-org-server=4.4.0 mongodb-org-shell=4.4.0 mongodb-org-mongos=4.4.0 mongodb-org-tools=4.4.0
+# Optionally freeze version
+#echo &quot;mongodb-org hold&quot; | sudo dpkg --set-selections
+#echo &quot;mongodb-org-server hold&quot; | sudo dpkg --set-selections
+#echo &quot;mongodb-org-shell hold&quot; | sudo dpkg --set-selections
+#echo &quot;mongodb-org-mongos hold&quot; | sudo dpkg --set-selections
+#echo &quot;mongodb-org-tools hold&quot; | sudo dpkg --set-selections
+# Determine if it is systemd or init that is used
+ ps --no-headers -o comm 1 # systemd here
+# Start mongodb
+sudo systemctl start mongod
+
+# By default, MongoDB only accept clients from same machine (what we want)
+# Data directory is /var/lib/mongodb, but we want /data1/mongodb
+sudo mkdir /data1/mongodb
+sudo chown -R mongodb:mongodb /data1/mongodb
+# Edit /etc/mongod.conf and adjust dbPath to /data1/mogodb
+sudo nano /etc/mongod.conf
+
+# Start the MongoDB server and test it from R
+sudo systemctl start mongod
+# If an error, first try sudo systemctl daemon-reload
+# Status (can also use start/stop/restart
+sudo systemctl status mongod
+R
+library(mongolite)
+con &lt;- mongo(collection = &quot;shiny&quot;, db = &quot;sdd&quot;)
+con$insert(trees)
+trees2 &lt;- con$find()
+all.equal(trees, trees2)
+con$drop()
+rm(con)
+gc()
+q(&quot;no&quot;)
+
+# Quand c&#39;est bon, activer le service définitivement avec
+sudo systemctl enable mongod
+
+# Access the MongoDB database from commandline with &#39;mongo&#39;
+
+# Create a program supervisor for common environment variables (not done yet)
+mkdir -p /opt/scripts
+touch /opt/scripts/connect-env.sh
+nano /opt/scripts/connect-env.sh
+
+# Add this in the file:
+
+#!/bin/bash
+
+echo arguments: “$@“ &gt;&amp;2
+echo &gt;&amp;2
+export MONGO_URL=“mongodb://sdd:sdd@sdd-umons-shard-00-00-umnnw.mongodb.net:27017,sdd-umons-shard-00-01-umnnw.mongodb.net:27017,sdd-umons-shard-00-02-umnnw.mongodb.net:27017/test?ssl=true&amp;replicaSet=sdd-umons-shard-0&amp;authSource=admin”
+export MONGO_BASE=“sdd”
+exec “$@“
+
+Then:
+chmod 755 /opts/scripts/connect-env.sh
+
+Add the following in /etc/rstudio-connect/rstudio-connect.gcfg
+[Applications]
+Supervisor = /opt/scripts/connect-env.sh</code></pre>
+<ul>
+<li>Il faut ensuite obtenir et installer (ou mettre à jour) un certificat pour pouvoir accéder au serveur en mode sécurisé :</li>
+</ul>
+<pre><code># Place sdd_umons_ac_be.cer|key in /etc/ssl/private. It seems both keys do not match:
+sudo openssl x509 -noout -modulus -in /etc/ssl/private/sdd_umons_ac_be.cer | openssl md5
+sudo openssl rsa -noout -modulus -in /etc/ssl/private/sdd_umons_ac_be.key | openssl md5
+# Maybe the PKCS#7 format is correct? So, the .crt with that format can be converted this way:
+sudo openssl pkcs7 -print_certs -in /etc/ssl/private/sdd_umons_ac_be.crt -out /etc/ssl/private/sdd_umons_ac_be.pem -outform PEM
+sudo chmod o-r /etc/ssl/private/sdd_umons_ac_be.pem
+sudo openssl x509 -noout -modulus -in /etc/ssl/private/sdd_umons_ac_be.pem | openssl md5
+# Now, this is correct!
+
+# Update the certificate: I receive a .zip file with both sdd_umons_ac_be.key and sdd_umons_ac_be.cer.
+# These files must be placed into /etc/ssl/private on the sdd server:
+# From MacOS
+scp ~/Desktop/sdd_certs_2021.zip econum@sdd.umons.ac.be:/data1/dump/cert.zip
+# Create .pem file that invert the order of the 4 certificates from the .cer file, then...
+scp ~/Desktop/sdd_umons_ac_be.pem econum@sdd.umons.ac.be:/data1/dump/sdd_umons_ac_be.pem
+# From sdd
+sudo ls -l /etc/ssl/private
+sudo mv /etc/ssl/private/sdd_umons_ac_be.cer /etc/ssl/private/sdd_umons_ac_be.cer.old
+sudo mv /etc/ssl/private/sdd_umons_ac_be.key /etc/ssl/private/sdd_umons_ac_be.key.old
+unzip /data1/dump/cert.zip
+rm /data1/dump/cert.zip
+sudo mv sdd_umons_ac_be.* /etc/ssl/private
+sudo chown root:root /etc/ssl/private/sdd_umons_ac_be.cer
+sudo chown root:root /etc/ssl/private/sdd_umons_ac_be.key
+sudo chmod 640 /etc/ssl/private/sdd_umons_ac_be.cer
+sudo chmod 640 /etc/ssl/private/sdd_umons_ac_be.key
+sudo mv /data1/dump/sdd_umons_ac_be.pem /etc/ssl/private/sdd_umons_ac_be.pem
+sudo chown root:root /etc/ssl/private/sdd_umons_ac_be.pem
+sudo chmod 640 /etc/ssl/private/sdd_umons_ac_be.pem</code></pre>
+<ul>
+<li>In case there is a problem with the video driver :</li>
+</ul>
+<pre><code># Reconfigure the video driver
+sudo update -intiramfs -U
+sudo dpkg reconfigure server-xorg
+lsmod | grep nouveau
+# Completely reconfigure the video driver if it gets stuck with Nvidia driver:
+# Start in recovery mode: type &lt;shift&gt; repeatedly while booting
+(sudo) update-initramfs -u
+
+# Solved temporarily =&gt; could boot in X11, then, remove Nvidia drivers completely. 
+sudo apt-get purge nvidia-*
+#sudo mv /etc/X11/xorg.conf /etc/X11/xorg.conf.bak
+sudo apt-get install --reinstall xserver-xorg-video-intel libgl1-mesa-glx libgl1-mesa-dri xserver-xorg-core
+sudo dpkg-reconfigure xserver-xorg
+
+# May not have any alternatives configured (ok to skip)
+sudo update-alternatives --remove gl_conf /usr/lib/nvidia-current/ld.so.conf
+# Does not change... still no keyboard
+
+# Inactivate graph ics drivers repositories then ...
+sudo dpkg -P $(dpkg -l | grep nvidia-driver | awk &#39;{print $2}&#39;)
+sudo apt autoremove
+sudo apt install xserver-xorg-video-nouveau
+
+# To change screen resolution (e.g., in AnyDesk)
+xrandr -fb 1920x1080 (-display:0)</code></pre>
+<ul>
+<li><p>Reconfigure locale using <code>localectl US-utf8</code></p></li>
+<li><p>Backup and restore the system with Relax-and-Recover (ReaR), see <a href="https://www.tecmint.com/rear-backup-and-recover-a-linux-system/" class="uri">https://www.tecmint.com/rear-backup-and-recover-a-linux-system/</a>. “Create a bootable rescue system and/or system backup in various formats” Also as a migration tool, since it can restore on a different hardware :</p></li>
+</ul>
+<pre><code>sudo apt install rear extlinux`
+# Config directory is in /etc/rear/ (local.conf, site.conf, default.conf) + /var/log/rear/
+# First format an USB stick
+sudo rear format /dev/sdX # In case of error rear format -- --efi /dev/sdX (in the server, it is /dev/sdc)
+# Change /etc/rear/local.conf
+OUTPUT=USB
+BACKUP=NETFS
+BACKUP_URL=“usb:///dev/disk/by-label/REAR-000”
+# Run this to look at current configuration:
+sudo rear dump
+# Create a rescue disk (unmount REAR-000, then…)
+sudo rear -v mkrescue # Just a rescue disk
+sudo rear -v mkbackup # Rescue disk AND backup the system
+sudo rear -v mkbackuponly # Only backup the system
+
+# To restore/recover, boot from the USB stick… When login asked, type ‘root’, then type ‘rear recover’, reboot when done. See also http://relax-and-recover.org/usage/#recovery_from_usb</code></pre>
+<ul>
+<li><p>Install and test <code>mongodump</code>/<code>mongorestore</code> :</p></li>
+<li><p>Install latest version of R &amp; RStudio Connect, 2021-05-31</p></li>
+</ul>
+<pre><code># Current RStudio Connect is 1.8.2.1-12
+ls /opt/R # See R versions already installed (3.4.4, 3.5.3, 3.6.3)
+export R_VERSION=4.0.5
+curl -O https://cdn.rstudio.com/r/ubuntu-1804/pkgs/r-${R_VERSION}_1_amd64.deb
+sudo gdebi r-${R_VERSION}_1_amd64.deb
+/opt/R/${R_VERSION}/bin/R --version # verification
+sudo ln -s /opt/R/${R_VERSION}/bin/R /usr/local/bin/R
+sudo ln -s /opt/R/${R_VERSION}/bin/Rscript /usr/local/bin/Rscript
+# Install R package
+sudo R
+repos &lt;- getOption(&quot;repos&quot;)
+repos[&quot;CRAN&quot;] &lt;- &quot;https://mran.microsoft.com/snapshot/2021-05-17&quot;
+options(repos = repos)
+options(timeout = 300)
+
+update.packages()
+
+install.packages(c(&quot;tidyverse&quot;, &quot;shiny&quot;, &quot;bookdown&quot;, &quot;data.table&quot;, &quot;glue&quot;,
+&quot;here&quot;, &quot;mongolite&quot;, &quot;keras&quot;, &quot;pastecs&quot;, &quot;mlearning&quot;, &quot;usethis&quot;, &quot;testthat&quot;,
+&quot;covr&quot;, &quot;sessioninfo&quot;, &quot;reticulate&quot;, &quot;remotes&quot;, &quot;devtools&quot;, &quot;knitr&quot;,
+&quot;latticeExtra&quot;, &quot;inline&quot;, &quot;Hmisc&quot;, &quot;gridExtra&quot;, &quot;gridGraphics&quot;, &quot;ggsci&quot;,
+&quot;ggpubr&quot;, &quot;GGally&quot;, &quot;ggplotify&quot;, &quot;ggrepel&quot;, &quot;cowplot&quot;, &quot;fs&quot;, &quot;forcats&quot;, &quot;purrr&quot;,
+&quot;R6&quot;, &quot;RColorBrewer&quot;, &quot;Rcpp&quot;, &quot;anytime&quot;, &quot;zoo&quot;, &quot;assertthat&quot;, &quot;bench&quot;, &quot;hms&quot;,
+&quot;lubridate&quot;, &quot;rsconnect&quot;, &quot;RSQLite&quot;, &quot;sos&quot;, &quot;styler&quot;, &quot;vctrs&quot;, &quot;viridis&quot;,
+&quot;viridisLite&quot;, &quot;withr&quot;, &quot;xts&quot;, &quot;igraph&quot;, &quot;pryr&quot;, &quot;proto&quot;, &quot;renv&quot;, &quot;tsibble&quot;,
+&quot;SciViews&quot;, &quot;svMisc&quot;, &quot;svGUI&quot;, &quot;svDialogs&quot;, &quot;extraDistr&quot;, &quot;SuppDists&quot;, &quot;lobstr&quot;,
+&quot;import&quot;, &quot;miniUI&quot;, &quot;vegan&quot;, &quot;shinydashboard&quot;))
+
+install.packages(&quot;BiocManager&quot;)
+BiocManager::install(c(&quot;graph&quot;, &quot;ComplexHeatmap&quot;, &quot;Rgraphviz&quot;,
+  &quot;RDRToolbox&quot;), update = FALSE, ask = FALSE)
+
+remotes::install_github(&quot;SciViews/mlearning@v1.0.6&quot;, force = TRUE)
+# Fails! remotes::install_github(&quot;SciViews/tcltk2@v1.3.0&quot;, force = TRUE)
+remotes::install_github(&quot;SciViews/svMisc@v1.2.0&quot;, force = TRUE)
+remotes::install_github(&quot;SciViews/svGUI@v1.0.1&quot;, force = TRUE)
+remotes::install_github(&quot;SciViews/svDialogs@v1.0.3&quot;, force = TRUE)
+remotes::install_github(&quot;SciViews/svSweave@v1.0&quot;, force = TRUE)
+remotes::install_github(&quot;SciViews/flow@v1.1.0&quot;, force = TRUE)
+remotes::install_github(&quot;SciViews/data.io@v1.3.0&quot;, force = TRUE)
+remotes::install_github(&quot;SciViews/chart@v1.3&quot;, force = TRUE)
+remotes::install_github(&quot;SciViews/SciViews@v1.1.1&quot;, force = TRUE)
+
+remotes::install_github(&quot;phgrosjean/pastecs@v1.4.0&quot;, force = TRUE)
+remotes::install_github(&quot;phgrosjean/aurelhy@v1.0.8&quot;, force = TRUE)
+
+remotes::install_github(&quot;rstudio/gradethis@ced5541&quot;)
+remotes::install_github(&quot;r-lib/itdepends@f8d012b&quot;)
+
+# Warning in svbox2021, we don&#39;t use learndown anymore, but learnitdown instead!
+remotes::install_github(&quot;SciViews/learnitdown@v1.3.0&quot;)
+#remotes::install_github(&quot;BioDataScience-Course/BioDataScience@...&quot;)
+#remotes::install_github(&quot;BioDataScience-Course/BioDataScience1@...&quot;)
+#remotes::install_github(&quot;BioDataScience-Course/BioDataScience2@...&quot;)
+#remotes::install_github(&quot;BioDataScience-Course/BioDataScience3@...&quot;)
+
+# Check and update license
+sudo /opt/rstudio-connect/bin/license-manager status
+# (re)activate license
+sudo /opt/rstudio-connect/bin/license-manager deactivate 
+sudo /opt/rstudio-connect/bin/license-manager activate YAG3-B2H5-MXQB-6HJS-E7WH-4G9Y-JITA
+sudo systemctl restart rstudio-connect
+
+# Upgrade RStudio Connect to version 
+curl -Lo rsc-installer.sh https://cdn.rstudio.com/connect/installer/installer-v1.9.1.sh
+sudo -E bash ./rsc-installer.sh 1.8.8.2</code></pre>
+<ul>
+<li>Install python 3.8.5</li>
+</ul>
+<pre><code>sudo mkdir /opt/python
+sudo curl -fsSL -o /opt/python/miniconda.sh https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh 
+sudo chmod 755 /opt/python/miniconda.sh
+sudo /opt/python/miniconda.sh -b -p /opt/python/miniconda
+
+export PYTHON_VERSION=&quot;3.8.5&quot;
+
+sudo /opt/python/miniconda/bin/conda create --quiet --yes \
+      --prefix /opt/python/&quot;${PYTHON_VERSION}&quot; \
+      --channel conda-forge \
+      python=&quot;${PYTHON_VERSION}&quot;  &quot;pip&lt;20.1&quot;
+
+# Check
+/opt/python/&quot;${PYTHON_VERSION}&quot;/bin/python --version</code></pre>
+<ul>
+<li>Installation de packages Python supplémentaires</li>
+</ul>
+<pre><code>sudo /opt/python/&quot;${PYTHON_VERSION}&quot;/bin/pip install altair beautifulsoup4 cloudpickle \
+  cython dask gensim keras matplotlib nltk numpy pandas pillow pyarrow \
+  requests scipy scikit-image scikit-learn scrapy seaborn spacy sqlalchemy \
+  statsmodels tensorflow xgboost
+
+# Add python to the system path (optional)
+# add PATH=/opt/python/&quot;${PYTHON_VERSION}&quot;/bin:$PATH in /etc/profile.d/python.sh
+
+# Make Python available as Jupyter Kernel (optional)
+#sudo /opt/python/${PYTHON_VERSION}/bin/pip install ipykernel
+#sudo /opt/python/${PYTHON_VERSION}/bin/python -m ipykernel install --name py${PYTHON_VERSION} --display-name &quot;Python ${PYTHON_VERSION}&quot;
+
+# Make Python available to reticulate
+nano ~/.Rprofile # Add Sys.setenv(RETICULATE_PYTHON = &quot;/opt/python/3.8.5/bin/python&quot;)</code></pre>
+<ul>
+<li>Solve the problem of pandoc: <code>loadlocale.c:130: _nl_intern_locale_data: Assertion</code>cnt &lt; (sizeof (_nl_value_type_LC_TIME) / sizeof (_nl_value_type_LC_TIME[0]))’ failed`.</li>
+</ul>
+<pre><code>sudo mkdir -p /opt/scripts
+sudo nano /opt/scripts/rstudio-connect-env.sh
+# Add this:
+
+#!/bin/bash
+echo arguments: &quot;$@&quot; &gt;&amp;2
+echo &gt;&amp;2
+export LC_ALL=C
+exec &quot;$@&quot;
+
+# Then:
+sudo chmod 755 /opt/scripts/rstudio-connect-env.sh
+
+# Then, change RSconnect config:
+sudo nano /etc/rstudio-connect/rstudio-connect.gcfg
+# In this section, change Supervisor=
+
+[Applications]
+Supervisor = /opt/scripts/rstudio-connect-env.sh
+
+# Then, restart RStudio connect
+sudo systemctl restart rstudio-connect
+# This does not work =&gt; reedit rstudio-connect.gcfg and comment out Supervisor= with ; and restart RStudio Connect
+
+# Need to rebuild the locales
+# In /etc/locale.gen, I have only one item: en_US.UTF-8 UTF-8
+# Then:
+sudo mv /usr/lib/locale/locale-archive /usr/lib/locale/locale-archive.save
+sudo locale-gen --no-archive
+sudo locale-gen --no-archive en_US.UTF8</code></pre>
+
 </div>
+<!-- </div> -->
 <div id="disqus_thread"></div>
 <script>
 
@@ -452,8 +761,8 @@ s.setAttribute('data-timestamp', +new Date());
           </div>
         </div>
       </div>
-<a href="astuces-git-et-github.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="notre-lrs.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="rsconnect.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="progression.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -485,7 +794,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/BioDataScience-Course/sdd-admin/edit/master/04-LRS.Rmd",
+"link": "https://github.com/BioDataScience-Course/sdd-admin/edit/master/13-RSConnect.Rmd",
 "text": "Editer"
 },
 "history": {
@@ -493,7 +802,7 @@ gitbook.start({
 "text": null
 },
 "view": {
-"link": "https://github.com/BioDataScience-Course/sdd-admin/blob/master/04-LRS.Rmd",
+"link": "https://github.com/BioDataScience-Course/sdd-admin/blob/master/13-RSConnect.Rmd",
 "text": null
 },
 "download": ["sdd-admin.pdf"],

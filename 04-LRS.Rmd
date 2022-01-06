@@ -107,11 +107,45 @@ cd <dossier_racine>
 ./sdd_server_macos.sh ou ./sdd_server_win.bat
 ```
 
+TODO: Un script qui remplit le sous-dossier `bin` en fonction du système, et qui traite aussi le cas Linux Ubuntu.
+
 Et ainsi un démon MongoDB serveur local est lancé sur le port 127.0.0.1:27017 et sert les données présentes dans le sous-dossier `db`. Les messages du serveur sont directement affichés dans la fenêtre terminal. À partir de ce moment, on peut travailler tranquillement sur les données, les analyser et/ou prototyper des outils à déployer ensuite sur sdd.umons.ac.be sans craintes de casser la base de données principale. Ce serveur ne permet qu'un accès local. Donc, il est parfaitement sécurisé.
 
 **Note\ : Les versions du serveur et des outils doivent toujours être les mêmes que celles sur MongoDB ATLAS et sdd.umons.ac.be. En cas de changement de version, il faut donc bien penser à remplacer les exécutables du dossier `bin` par les nouvelles versions avant de continuer à travailler\ !**
 
 Pour échanger ce snapshot et ces outils entre ordinateurs, le dossier racine et son contenu peuvent être compressés (zippé) et partagés via le dossier `Crypto Folder` de p-Cloud. **Ne pas exécuter le serveur MongoDB directement depuis le dossier p-Cloud pour des raisons évidentes de perfomances**, mais copier le fichier et le dézipper sur un disque dur rapide qui contient suffisamment de place (5Go au moins).
+
+### Mise-à-jour de MongoDB
+
+La version de MongoDB serveur est dictée par celle installé dans MongoDB ATLAS. Par exemple, en février 2022, la version change de 4.4 à 5.0 et il faut adapter tous les outils en fonctions. Voici les étapes à réaliser\ :
+
+- Vérification de la compatibilité du driver PHP dans Wordpress et upgrade éventuel (voir la section sonsacrée à Wordpress). Ici, il a fallu passer de la version 1.6 à la version 1.9.
+
+- Vérification de la compatibilité de {mongolite}. La version installée avec la SciViews Box 2021 est la 2.3.1, et il faut au moins la 2.4.1 donc dans R\ :
+
+```
+packageVersion("mongolite")
+# If needed:
+#remotes::install_github("jeroen/mongolite@v2.4.1")
+```
+
+- Vérification de l'option "featureCompatibilityVersion" qui doit être mise à 4.4 (nous voulons pour l'instant rester compatible avec l'ancien sans utiliser les fonctions nouvelles de MongoDB 5.0), donc dans R\ :
+
+```
+library(mongolite)
+# Start the local server, then... check featureCompatibilityVersion (4.4)
+admin <- mongo(url = "mongodb://127.0.0.1:27017/admin")
+admin$run('{ "getParameter": 1, "featureCompatibilityVersion": 1 }')
+# If it is lower than 4.4, check first upgrade recommandations, then
+#admin$run('{ "setFeatureCompatibilityVersion": "4.4" }')
+```
+
+- Mettre à jour les versions de MongoDB Tools. Il nous faut la version 100.5.1 qui est déjà celle installée dans sdd.umons.ac.be. Faire cet upgrade sur les versions locales aussi.
+
+- Tester la compatibilite MongoDB 5.0 sur une version locale de la base de données et y exécuter les différents outils.
+
+- Le jour où MongoDB ATLAS passe sur MongoDB 5.0, installer les exécutables MongoDB 5.0 dans sdd.umons.ac.be ey les versions locales de MongoDB partout.
+
 
 ## Learning Analytics Platform
 

@@ -54,6 +54,15 @@ Quelques astuces qui nous sont utiles...
 
 ![La boite de dialogue d'élimination d'une branche dans GitHub Desktop.](images/git/git-delete-branch.png)
 
+- Changement de gestion de dépôts GitHub suite à l'impossibilité d'utiliser le login et mot de passe depuis septembre 2021. Lancer le shell git et ensuite\ :
+
+```
+git remote -v
+# Si on a quelque chose comme: origin https://github.com/org/repo.git c'est pas bon
+# faire:
+git remote set-url origin git@github.com:org/repo.git
+```
+
 - Il est utile d'enregistrer le matériel pédagogique tel qu'il se présente chaque année, d'une part à des fins d'archivage, et d'autre part afin que plus tard les étudiants puissent éventuellement retrouver ce matériel tel qu'il était lorsqu'il a suivi le cours. Différentes stratégies sont possibles\ : utilisation de branches, de releases, ... Cependant pour les bookdowns il n'est possible de présenter le site correspondant que de la dernière version pour un dépôt GitHub donné. Dans ce cas, il est plus intéressant d'archiver le bookdown relatif à une année académique sous forme d'un dépôt séparé, permettant ainsi d'accéder au site web correspondant depuis GitHub Pages. Pour cela, il ne faut pas forker le dépôt, mais en faire une copie miroir. La procédure pour réaliser cela est expliquée [ici](https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/duplicating-a-repository). En pratique, nous ajoutons l'année de chaque version au nom du dépôt (par exemple, `sdd-umons-2018`, `sdd-umons-2019`, ...). La version correspondant à l'année académique 2018-2019 est `sdd-umons-2018` et c'est aussi la version de la SciViews Box associée, la svbox2018. Ensuite, il faut bien entendu éditer le dépôt ainsi copié en miroir pour indiquer dans le préambule que c'est une ancienne version, et aussi remplacer les liens vers des assignations GitHub Classroom obsolètes vers des suggestions de forker les dépôts templates correspondants afin que les anciens exercices puissent toujours être accédés, mais cette fois-ci, en dehors du contexte de GitHub Classroom.
 
 ```{block2, type="warning"}
