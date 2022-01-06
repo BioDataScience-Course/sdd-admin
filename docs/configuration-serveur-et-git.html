@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>4.3 Configuration serveur et git | Plateforme pédagogique BioDataScience</title>
+  <title>5.3 Configuration serveur et git | Plateforme pédagogique BioDataScience</title>
   <meta name="description" content="Administration de BioDataScience-Course." />
   <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="4.3 Configuration serveur et git | Plateforme pédagogique BioDataScience" />
+  <meta property="og:title" content="5.3 Configuration serveur et git | Plateforme pédagogique BioDataScience" />
   <meta property="og:type" content="book" />
   <meta property="og:url" content="http://phgrosjean.sciviews.org/bookdown-test/" />
   <meta property="og:image" content="http://phgrosjean.sciviews.org/bookdown-test//images/front-cover.png" />
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="BioDataScience-Course/sdd-admin" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="4.3 Configuration serveur et git | Plateforme pédagogique BioDataScience" />
+  <meta name="twitter:title" content="5.3 Configuration serveur et git | Plateforme pédagogique BioDataScience" />
   
   <meta name="twitter:description" content="Administration de BioDataScience-Course." />
   <meta name="twitter:image" content="http://phgrosjean.sciviews.org/bookdown-test//images/front-cover.png" />
@@ -24,7 +24,7 @@
 <meta name="author" content="Philippe Grosjean &amp; Guyliann Engels" />
 
 
-<meta name="date" content="2022-01-05" />
+<meta name="date" content="2022-01-06" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -228,6 +228,73 @@ var h5pContentTypes = [""];
 <script src='https://wp.sciviews.org/wp-content/plugins/h5p/h5p-php-library/js/request-queue.js'></script>
 
 
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    background-color: #ffffff;
+    color: #a0a0a0;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #a0a0a0;  padding-left: 4px; }
+div.sourceCode
+  { color: #1f1c1b; background-color: #ffffff; }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span { color: #1f1c1b; } /* Normal */
+code span.al { color: #bf0303; background-color: #f7e6e6; font-weight: bold; } /* Alert */
+code span.an { color: #ca60ca; } /* Annotation */
+code span.at { color: #0057ae; } /* Attribute */
+code span.bn { color: #b08000; } /* BaseN */
+code span.bu { color: #644a9b; font-weight: bold; } /* BuiltIn */
+code span.cf { color: #1f1c1b; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #924c9d; } /* Char */
+code span.cn { color: #aa5500; } /* Constant */
+code span.co { color: #898887; } /* Comment */
+code span.cv { color: #0095ff; } /* CommentVar */
+code span.do { color: #607880; } /* Documentation */
+code span.dt { color: #0057ae; } /* DataType */
+code span.dv { color: #b08000; } /* DecVal */
+code span.er { color: #bf0303; text-decoration: underline; } /* Error */
+code span.ex { color: #0095ff; font-weight: bold; } /* Extension */
+code span.fl { color: #b08000; } /* Float */
+code span.fu { color: #644a9b; } /* Function */
+code span.im { color: #ff5500; } /* Import */
+code span.in { color: #b08000; } /* Information */
+code span.kw { color: #1f1c1b; font-weight: bold; } /* Keyword */
+code span.op { color: #1f1c1b; } /* Operator */
+code span.ot { color: #006e28; } /* Other */
+code span.pp { color: #006e28; } /* Preprocessor */
+code span.re { color: #0057ae; background-color: #e0e9f8; } /* RegionMarker */
+code span.sc { color: #3daee9; } /* SpecialChar */
+code span.ss { color: #ff5500; } /* SpecialString */
+code span.st { color: #bf0303; } /* String */
+code span.va { color: #0057ae; } /* Variable */
+code span.vs { color: #bf0303; } /* VerbatimString */
+code span.wa { color: #bf0303; } /* Warning */
+</style>
 
 
 <link rel="stylesheet" href="style.css" type="text/css" />
@@ -293,91 +360,108 @@ var h5pContentTypes = [""];
 <li class="chapter" data-level="3.3" data-path="github-classroom.html"><a href="github-classroom.html"><i class="fa fa-check"></i><b>3.3</b> GitHub Classroom</a></li>
 <li class="chapter" data-level="3.4" data-path="astuces-git-et-github.html"><a href="astuces-git-et-github.html"><i class="fa fa-check"></i><b>3.4</b> Astuces Git et GitHub</a></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="wordpress.html"><a href="wordpress.html"><i class="fa fa-check"></i><b>4</b> Wordpress</a>
+<li class="chapter" data-level="4" data-path="lrs.html"><a href="lrs.html"><i class="fa fa-check"></i><b>4</b> Learning record store</a>
 <ul>
-<li class="chapter" data-level="4.1" data-path="authentification-des-étudiants.html"><a href="authentification-des-étudiants.html"><i class="fa fa-check"></i><b>4.1</b> Authentification des étudiants</a></li>
-<li class="chapter" data-level="4.2" data-path="installation-wordpress.html"><a href="installation-wordpress.html"><i class="fa fa-check"></i><b>4.2</b> Installation Wordpress</a>
+<li class="chapter" data-level="4.1" data-path="notre-lrs.html"><a href="notre-lrs.html"><i class="fa fa-check"></i><b>4.1</b> Notre “LRS”</a>
 <ul>
-<li class="chapter" data-level="4.2.1" data-path="installation-wordpress.html"><a href="installation-wordpress.html#plugins-wordpress"><i class="fa fa-check"></i><b>4.2.1</b> Plugins Wordpress</a></li>
-<li class="chapter" data-level="4.2.2" data-path="installation-wordpress.html"><a href="installation-wordpress.html#thème-du-site"><i class="fa fa-check"></i><b>4.2.2</b> Thème du site</a></li>
+<li class="chapter" data-level="4.1.1" data-path="notre-lrs.html"><a href="notre-lrs.html#vue-générale"><i class="fa fa-check"></i><b>4.1.1</b> Vue générale</a></li>
+<li class="chapter" data-level="4.1.2" data-path="notre-lrs.html"><a href="notre-lrs.html#mongodb-atlas"><i class="fa fa-check"></i><b>4.1.2</b> MongoDB ATLAS</a></li>
+<li class="chapter" data-level="4.1.3" data-path="notre-lrs.html"><a href="notre-lrs.html#serveur-mongodb-local-associé-à-rsconnect"><i class="fa fa-check"></i><b>4.1.3</b> Serveur MongoDB local associé à RSConnect</a></li>
+<li class="chapter" data-level="4.1.4" data-path="notre-lrs.html"><a href="notre-lrs.html#serveur-local-macos-ou-windows"><i class="fa fa-check"></i><b>4.1.4</b> Serveur local MacOS ou Windows</a></li>
 </ul></li>
-<li class="chapter" data-level="4.3" data-path="configuration-serveur-et-git.html"><a href="configuration-serveur-et-git.html"><i class="fa fa-check"></i><b>4.3</b> Configuration serveur et git</a>
-<ul>
-<li class="chapter" data-level="4.3.1" data-path="configuration-serveur-et-git.html"><a href="configuration-serveur-et-git.html#ajout-de-mongodb-pour-php"><i class="fa fa-check"></i><b>4.3.1</b> Ajout de mongodb pour PHP</a></li>
+<li class="chapter" data-level="4.2" data-path="learning-analytics-platform.html"><a href="learning-analytics-platform.html"><i class="fa fa-check"></i><b>4.2</b> Learning Analytics Platform</a></li>
 </ul></li>
-<li class="chapter" data-level="4.4" data-path="agencement-du-site.html"><a href="agencement-du-site.html"><i class="fa fa-check"></i><b>4.4</b> Agencement du site</a>
+<li class="chapter" data-level="5" data-path="wordpress.html"><a href="wordpress.html"><i class="fa fa-check"></i><b>5</b> Wordpress</a>
 <ul>
-<li class="chapter" data-level="4.4.1" data-path="agencement-du-site.html"><a href="agencement-du-site.html#tableau-de-bord"><i class="fa fa-check"></i><b>4.4.1</b> Tableau de bord</a></li>
-<li class="chapter" data-level="4.4.2" data-path="agencement-du-site.html"><a href="agencement-du-site.html#gestion-des-événements-xapi"><i class="fa fa-check"></i><b>4.4.2</b> Gestion des événements xAPI</a></li>
+<li class="chapter" data-level="5.1" data-path="authentification-des-étudiants.html"><a href="authentification-des-étudiants.html"><i class="fa fa-check"></i><b>5.1</b> Authentification des étudiants</a></li>
+<li class="chapter" data-level="5.2" data-path="installation-wordpress.html"><a href="installation-wordpress.html"><i class="fa fa-check"></i><b>5.2</b> Installation Wordpress</a>
+<ul>
+<li class="chapter" data-level="5.2.1" data-path="installation-wordpress.html"><a href="installation-wordpress.html#plugins-wordpress"><i class="fa fa-check"></i><b>5.2.1</b> Plugins Wordpress</a></li>
+<li class="chapter" data-level="5.2.2" data-path="installation-wordpress.html"><a href="installation-wordpress.html#thème-du-site"><i class="fa fa-check"></i><b>5.2.2</b> Thème du site</a></li>
 </ul></li>
-<li class="chapter" data-level="4.5" data-path="var-context.html"><a href="var-context.html"><i class="fa fa-check"></i><b>4.5</b> Variables contextuelles</a></li>
-<li class="chapter" data-level="4.6" data-path="redirection-durl-diframe-bookdown.html"><a href="redirection-durl-diframe-bookdown.html"><i class="fa fa-check"></i><b>4.6</b> Redirection d’URL d’iframe bookdown</a></li>
+<li class="chapter" data-level="5.3" data-path="configuration-serveur-et-git.html"><a href="configuration-serveur-et-git.html"><i class="fa fa-check"></i><b>5.3</b> Configuration serveur et git</a>
+<ul>
+<li class="chapter" data-level="5.3.1" data-path="configuration-serveur-et-git.html"><a href="configuration-serveur-et-git.html#ajout-de-mongodb-pour-php"><i class="fa fa-check"></i><b>5.3.1</b> Ajout de mongodb pour PHP</a></li>
 </ul></li>
-<li class="chapter" data-level="5" data-path="h5p.html"><a href="h5p.html"><i class="fa fa-check"></i><b>5</b> H5P</a>
+<li class="chapter" data-level="5.4" data-path="agencement-du-site.html"><a href="agencement-du-site.html"><i class="fa fa-check"></i><b>5.4</b> Agencement du site</a>
 <ul>
-<li class="chapter" data-level="5.1" data-path="installation-de-h5p.html"><a href="installation-de-h5p.html"><i class="fa fa-check"></i><b>5.1</b> Installation de H5P</a>
-<ul>
-<li class="chapter" data-level="5.1.1" data-path="installation-de-h5p.html"><a href="installation-de-h5p.html#installation-du-plugin-h5p"><i class="fa fa-check"></i><b>5.1.1</b> Installation du plugin H5P</a></li>
-<li class="chapter" data-level="5.1.2" data-path="installation-de-h5p.html"><a href="installation-de-h5p.html#configuration-de-h5p"><i class="fa fa-check"></i><b>5.1.2</b> Configuration de H5P</a></li>
+<li class="chapter" data-level="5.4.1" data-path="agencement-du-site.html"><a href="agencement-du-site.html#tableau-de-bord"><i class="fa fa-check"></i><b>5.4.1</b> Tableau de bord</a></li>
+<li class="chapter" data-level="5.4.2" data-path="agencement-du-site.html"><a href="agencement-du-site.html#gestion-des-événements-xapi"><i class="fa fa-check"></i><b>5.4.2</b> Gestion des événements xAPI</a></li>
 </ul></li>
-<li class="chapter" data-level="5.2" data-path="enregistrement-h5p-xapi.html"><a href="enregistrement-h5p-xapi.html"><i class="fa fa-check"></i><b>5.2</b> Enregistrement H5P xAPI</a>
-<ul>
-<li class="chapter" data-level="5.2.1" data-path="enregistrement-h5p-xapi.html"><a href="enregistrement-h5p-xapi.html#h5pxapikatchu"><i class="fa fa-check"></i><b>5.2.1</b> H5PxAPIkatchu</a></li>
-<li class="chapter" data-level="5.2.2" data-path="enregistrement-h5p-xapi.html"><a href="enregistrement-h5p-xapi.html#wp-h5p-xapi-et-lrs"><i class="fa fa-check"></i><b>5.2.2</b> wp-h5p-xapi et LRS</a></li>
-<li class="chapter" data-level="5.2.3" data-path="enregistrement-h5p-xapi.html"><a href="enregistrement-h5p-xapi.html#autres-plugins-h5p"><i class="fa fa-check"></i><b>5.2.3</b> Autres plugins H5P</a></li>
-<li class="chapter" data-level="5.2.4" data-path="enregistrement-h5p-xapi.html"><a href="enregistrement-h5p-xapi.html#solution-finale-choisie"><i class="fa fa-check"></i><b>5.2.4</b> Solution finale choisie</a></li>
+<li class="chapter" data-level="5.5" data-path="var-context.html"><a href="var-context.html"><i class="fa fa-check"></i><b>5.5</b> Variables contextuelles</a></li>
+<li class="chapter" data-level="5.6" data-path="redirection-durl-diframe-bookdown.html"><a href="redirection-durl-diframe-bookdown.html"><i class="fa fa-check"></i><b>5.6</b> Redirection d’URL d’iframe bookdown</a></li>
 </ul></li>
-<li class="chapter" data-level="5.3" data-path="gestion-des-contenus-h5p.html"><a href="gestion-des-contenus-h5p.html"><i class="fa fa-check"></i><b>5.3</b> Gestion des contenus H5P</a>
+<li class="chapter" data-level="6" data-path="h5p.html"><a href="h5p.html"><i class="fa fa-check"></i><b>6</b> H5P</a>
 <ul>
-<li class="chapter" data-level="5.3.1" data-path="gestion-des-contenus-h5p.html"><a href="gestion-des-contenus-h5p.html#backup-h5p"><i class="fa fa-check"></i><b>5.3.1</b> Backup H5P</a></li>
+<li class="chapter" data-level="6.1" data-path="installation-de-h5p.html"><a href="installation-de-h5p.html"><i class="fa fa-check"></i><b>6.1</b> Installation de H5P</a>
+<ul>
+<li class="chapter" data-level="6.1.1" data-path="installation-de-h5p.html"><a href="installation-de-h5p.html#installation-du-plugin-h5p"><i class="fa fa-check"></i><b>6.1.1</b> Installation du plugin H5P</a></li>
+<li class="chapter" data-level="6.1.2" data-path="installation-de-h5p.html"><a href="installation-de-h5p.html#configuration-de-h5p"><i class="fa fa-check"></i><b>6.1.2</b> Configuration de H5P</a></li>
 </ul></li>
-<li class="chapter" data-level="5.4" data-path="quelques-contenus-h5p-utiles.html"><a href="quelques-contenus-h5p-utiles.html"><i class="fa fa-check"></i><b>5.4</b> Quelques contenus H5P utiles</a>
+<li class="chapter" data-level="6.2" data-path="enregistrement-h5p-xapi.html"><a href="enregistrement-h5p-xapi.html"><i class="fa fa-check"></i><b>6.2</b> Enregistrement H5P xAPI</a>
 <ul>
-<li class="chapter" data-level="5.4.1" data-path="quelques-contenus-h5p-utiles.html"><a href="quelques-contenus-h5p-utiles.html#apprentissage-du-code-r"><i class="fa fa-check"></i><b>5.4.1</b> Apprentissage du code R</a></li>
-<li class="chapter" data-level="5.4.2" data-path="quelques-contenus-h5p-utiles.html"><a href="quelques-contenus-h5p-utiles.html#apprentissage-des-graphiques"><i class="fa fa-check"></i><b>5.4.2</b> Apprentissage des graphiques</a></li>
-<li class="chapter" data-level="5.4.3" data-path="quelques-contenus-h5p-utiles.html"><a href="quelques-contenus-h5p-utiles.html#explications-générales"><i class="fa fa-check"></i><b>5.4.3</b> Explications générales</a></li>
-<li class="chapter" data-level="5.4.4" data-path="quelques-contenus-h5p-utiles.html"><a href="quelques-contenus-h5p-utiles.html#autoévaluation"><i class="fa fa-check"></i><b>5.4.4</b> Autoévaluation</a></li>
-<li class="chapter" data-level="5.4.5" data-path="quelques-contenus-h5p-utiles.html"><a href="quelques-contenus-h5p-utiles.html#take-home-message"><i class="fa fa-check"></i><b>5.4.5</b> “Take home message”</a></li>
+<li class="chapter" data-level="6.2.1" data-path="enregistrement-h5p-xapi.html"><a href="enregistrement-h5p-xapi.html#h5pxapikatchu"><i class="fa fa-check"></i><b>6.2.1</b> H5PxAPIkatchu</a></li>
+<li class="chapter" data-level="6.2.2" data-path="enregistrement-h5p-xapi.html"><a href="enregistrement-h5p-xapi.html#wp-h5p-xapi-et-lrs"><i class="fa fa-check"></i><b>6.2.2</b> wp-h5p-xapi et LRS</a></li>
+<li class="chapter" data-level="6.2.3" data-path="enregistrement-h5p-xapi.html"><a href="enregistrement-h5p-xapi.html#autres-plugins-h5p"><i class="fa fa-check"></i><b>6.2.3</b> Autres plugins H5P</a></li>
+<li class="chapter" data-level="6.2.4" data-path="enregistrement-h5p-xapi.html"><a href="enregistrement-h5p-xapi.html#solution-finale-choisie"><i class="fa fa-check"></i><b>6.2.4</b> Solution finale choisie</a></li>
+</ul></li>
+<li class="chapter" data-level="6.3" data-path="gestion-des-contenus-h5p.html"><a href="gestion-des-contenus-h5p.html"><i class="fa fa-check"></i><b>6.3</b> Gestion des contenus H5P</a>
+<ul>
+<li class="chapter" data-level="6.3.1" data-path="gestion-des-contenus-h5p.html"><a href="gestion-des-contenus-h5p.html#backup-h5p"><i class="fa fa-check"></i><b>6.3.1</b> Backup H5P</a></li>
+</ul></li>
+<li class="chapter" data-level="6.4" data-path="quelques-contenus-h5p-utiles.html"><a href="quelques-contenus-h5p-utiles.html"><i class="fa fa-check"></i><b>6.4</b> Quelques contenus H5P utiles</a>
+<ul>
+<li class="chapter" data-level="6.4.1" data-path="quelques-contenus-h5p-utiles.html"><a href="quelques-contenus-h5p-utiles.html#apprentissage-du-code-r"><i class="fa fa-check"></i><b>6.4.1</b> Apprentissage du code R</a></li>
+<li class="chapter" data-level="6.4.2" data-path="quelques-contenus-h5p-utiles.html"><a href="quelques-contenus-h5p-utiles.html#apprentissage-des-graphiques"><i class="fa fa-check"></i><b>6.4.2</b> Apprentissage des graphiques</a></li>
+<li class="chapter" data-level="6.4.3" data-path="quelques-contenus-h5p-utiles.html"><a href="quelques-contenus-h5p-utiles.html#explications-générales"><i class="fa fa-check"></i><b>6.4.3</b> Explications générales</a></li>
+<li class="chapter" data-level="6.4.4" data-path="quelques-contenus-h5p-utiles.html"><a href="quelques-contenus-h5p-utiles.html#autoévaluation"><i class="fa fa-check"></i><b>6.4.4</b> Autoévaluation</a></li>
+<li class="chapter" data-level="6.4.5" data-path="quelques-contenus-h5p-utiles.html"><a href="quelques-contenus-h5p-utiles.html#take-home-message"><i class="fa fa-check"></i><b>6.4.5</b> “Take home message”</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="6" data-path="bookdown.html"><a href="bookdown.html"><i class="fa fa-check"></i><b>6</b> Bookdown &amp; learnitdown</a>
+<li class="chapter" data-level="7" data-path="bookdown.html"><a href="bookdown.html"><i class="fa fa-check"></i><b>7</b> Bookdown &amp; learnitdown</a>
 <ul>
-<li class="chapter" data-level="6.1" data-path="création-dun-bookdownlearnitdown.html"><a href="création-dun-bookdownlearnitdown.html"><i class="fa fa-check"></i><b>6.1</b> Création d’un bookdown/learnitdown</a>
+<li class="chapter" data-level="7.1" data-path="création-dun-bookdownlearnitdown.html"><a href="création-dun-bookdownlearnitdown.html"><i class="fa fa-check"></i><b>7.1</b> Création d’un bookdown/learnitdown</a>
 <ul>
-<li class="chapter" data-level="6.1.1" data-path="création-dun-bookdownlearnitdown.html"><a href="création-dun-bookdownlearnitdown.html#readme.md"><i class="fa fa-check"></i><b>6.1.1</b> README.md</a></li>
-<li class="chapter" data-level="6.1.2" data-path="création-dun-bookdownlearnitdown.html"><a href="création-dun-bookdownlearnitdown.html#bookdown.yml"><i class="fa fa-check"></i><b>6.1.2</b> _bookdown.yml</a></li>
-<li class="chapter" data-level="6.1.3" data-path="création-dun-bookdownlearnitdown.html"><a href="création-dun-bookdownlearnitdown.html#output.yml"><i class="fa fa-check"></i><b>6.1.3</b> _output.yml</a></li>
-<li class="chapter" data-level="6.1.4" data-path="création-dun-bookdownlearnitdown.html"><a href="création-dun-bookdownlearnitdown.html#index.html"><i class="fa fa-check"></i><b>6.1.4</b> index.html</a></li>
-<li class="chapter" data-level="6.1.5" data-path="création-dun-bookdownlearnitdown.html"><a href="création-dun-bookdownlearnitdown.html#header.html-header0.html"><i class="fa fa-check"></i><b>6.1.5</b> header.html &amp; header0.html</a></li>
-<li class="chapter" data-level="6.1.6" data-path="création-dun-bookdownlearnitdown.html"><a href="création-dun-bookdownlearnitdown.html#footer.html"><i class="fa fa-check"></i><b>6.1.6</b> footer.html</a></li>
-<li class="chapter" data-level="6.1.7" data-path="création-dun-bookdownlearnitdown.html"><a href="création-dun-bookdownlearnitdown.html#style.css-style0.css"><i class="fa fa-check"></i><b>6.1.7</b> style.css &amp; style0.css</a></li>
-<li class="chapter" data-level="6.1.8" data-path="création-dun-bookdownlearnitdown.html"><a href="création-dun-bookdownlearnitdown.html#setup.r"><i class="fa fa-check"></i><b>6.1.8</b> setup.R</a></li>
-<li class="chapter" data-level="6.1.9" data-path="création-dun-bookdownlearnitdown.html"><a href="création-dun-bookdownlearnitdown.html#contenu"><i class="fa fa-check"></i><b>6.1.9</b> Contenu</a></li>
+<li class="chapter" data-level="7.1.1" data-path="création-dun-bookdownlearnitdown.html"><a href="création-dun-bookdownlearnitdown.html#readme.md"><i class="fa fa-check"></i><b>7.1.1</b> README.md</a></li>
+<li class="chapter" data-level="7.1.2" data-path="création-dun-bookdownlearnitdown.html"><a href="création-dun-bookdownlearnitdown.html#bookdown.yml"><i class="fa fa-check"></i><b>7.1.2</b> _bookdown.yml</a></li>
+<li class="chapter" data-level="7.1.3" data-path="création-dun-bookdownlearnitdown.html"><a href="création-dun-bookdownlearnitdown.html#output.yml"><i class="fa fa-check"></i><b>7.1.3</b> _output.yml</a></li>
+<li class="chapter" data-level="7.1.4" data-path="création-dun-bookdownlearnitdown.html"><a href="création-dun-bookdownlearnitdown.html#index.html"><i class="fa fa-check"></i><b>7.1.4</b> index.html</a></li>
+<li class="chapter" data-level="7.1.5" data-path="création-dun-bookdownlearnitdown.html"><a href="création-dun-bookdownlearnitdown.html#header.html-header0.html"><i class="fa fa-check"></i><b>7.1.5</b> header.html &amp; header0.html</a></li>
+<li class="chapter" data-level="7.1.6" data-path="création-dun-bookdownlearnitdown.html"><a href="création-dun-bookdownlearnitdown.html#footer.html"><i class="fa fa-check"></i><b>7.1.6</b> footer.html</a></li>
+<li class="chapter" data-level="7.1.7" data-path="création-dun-bookdownlearnitdown.html"><a href="création-dun-bookdownlearnitdown.html#style.css-style0.css"><i class="fa fa-check"></i><b>7.1.7</b> style.css &amp; style0.css</a></li>
+<li class="chapter" data-level="7.1.8" data-path="création-dun-bookdownlearnitdown.html"><a href="création-dun-bookdownlearnitdown.html#setup.r"><i class="fa fa-check"></i><b>7.1.8</b> setup.R</a></li>
+<li class="chapter" data-level="7.1.9" data-path="création-dun-bookdownlearnitdown.html"><a href="création-dun-bookdownlearnitdown.html#contenu"><i class="fa fa-check"></i><b>7.1.9</b> Contenu</a></li>
 </ul></li>
-<li class="chapter" data-level="6.2" data-path="intégration-dans-wordpress.html"><a href="intégration-dans-wordpress.html"><i class="fa fa-check"></i><b>6.2</b> Intégration dans Wordpress</a></li>
-<li class="chapter" data-level="6.3" data-path="contenu-h5p-dans-bookdown.html"><a href="contenu-h5p-dans-bookdown.html"><i class="fa fa-check"></i><b>6.3</b> Contenu H5P dans bookdown</a></li>
+<li class="chapter" data-level="7.2" data-path="intégration-dans-wordpress.html"><a href="intégration-dans-wordpress.html"><i class="fa fa-check"></i><b>7.2</b> Intégration dans Wordpress</a></li>
+<li class="chapter" data-level="7.3" data-path="contenu-h5p-dans-bookdown.html"><a href="contenu-h5p-dans-bookdown.html"><i class="fa fa-check"></i><b>7.3</b> Contenu H5P dans bookdown</a></li>
 </ul></li>
-<li class="chapter" data-level="7" data-path="shiny.html"><a href="shiny.html"><i class="fa fa-check"></i><b>7</b> Shiny</a></li>
-<li class="chapter" data-level="8" data-path="moodle.html"><a href="moodle.html"><i class="fa fa-check"></i><b>8</b> Moodle</a>
+<li class="chapter" data-level="8" data-path="learnr.html"><a href="learnr.html"><i class="fa fa-check"></i><b>8</b> Tutoriels learnrs</a></li>
+<li class="chapter" data-level="9" data-path="shiny.html"><a href="shiny.html"><i class="fa fa-check"></i><b>9</b> Shiny</a></li>
+<li class="chapter" data-level="10" data-path="moodle.html"><a href="moodle.html"><i class="fa fa-check"></i><b>10</b> Moodle</a>
 <ul>
-<li class="chapter" data-level="8.1" data-path="gestion-des-cours.html"><a href="gestion-des-cours.html"><i class="fa fa-check"></i><b>8.1</b> Gestion des cours</a></li>
-<li class="chapter" data-level="8.2" data-path="badges.html"><a href="badges.html"><i class="fa fa-check"></i><b>8.2</b> Badges</a></li>
-<li class="chapter" data-level="8.3" data-path="notes.html"><a href="notes.html"><i class="fa fa-check"></i><b>8.3</b> Notes</a></li>
+<li class="chapter" data-level="10.1" data-path="gestion-des-cours.html"><a href="gestion-des-cours.html"><i class="fa fa-check"></i><b>10.1</b> Gestion des cours</a></li>
+<li class="chapter" data-level="10.2" data-path="badges.html"><a href="badges.html"><i class="fa fa-check"></i><b>10.2</b> Badges</a></li>
+<li class="chapter" data-level="10.3" data-path="notes.html"><a href="notes.html"><i class="fa fa-check"></i><b>10.3</b> Notes</a></li>
 </ul></li>
-<li class="chapter" data-level="9" data-path="videos.html"><a href="videos.html"><i class="fa fa-check"></i><b>9</b> Vidéos</a></li>
-<li class="chapter" data-level="10" data-path="progression.html"><a href="progression.html"><i class="fa fa-check"></i><b>10</b> Rapport de progression</a>
+<li class="chapter" data-level="11" data-path="videos.html"><a href="videos.html"><i class="fa fa-check"></i><b>11</b> Vidéos</a></li>
+<li class="chapter" data-level="12" data-path="wooclap.html"><a href="wooclap.html"><i class="fa fa-check"></i><b>12</b> Wooclap</a></li>
+<li class="chapter" data-level="13" data-path="rsconnect.html"><a href="rsconnect.html"><i class="fa fa-check"></i><b>13</b> RStudio Connect</a></li>
+<li class="chapter" data-level="14" data-path="progression.html"><a href="progression.html"><i class="fa fa-check"></i><b>14</b> Rapport de progression</a>
 <ul>
-<li class="chapter" data-level="10.1" data-path="présentation-générale.html"><a href="présentation-générale.html"><i class="fa fa-check"></i><b>10.1</b> Présentation générale</a></li>
-<li class="chapter" data-level="10.2" data-path="les-données.html"><a href="les-données.html"><i class="fa fa-check"></i><b>10.2</b> Les données</a>
+<li class="chapter" data-level="14.1" data-path="présentation-générale.html"><a href="présentation-générale.html"><i class="fa fa-check"></i><b>14.1</b> Présentation générale</a></li>
+<li class="chapter" data-level="14.2" data-path="les-données.html"><a href="les-données.html"><i class="fa fa-check"></i><b>14.2</b> Les données</a>
 <ul>
-<li class="chapter" data-level="10.2.1" data-path="les-données.html"><a href="les-données.html#base-interne"><i class="fa fa-check"></i><b>10.2.1</b> Base interne</a></li>
-<li class="chapter" data-level="10.2.2" data-path="les-données.html"><a href="les-données.html#base-externe"><i class="fa fa-check"></i><b>10.2.2</b> Base externe</a></li>
-<li class="chapter" data-level="10.2.3" data-path="les-données.html"><a href="les-données.html#gestion-des-utilisateurs"><i class="fa fa-check"></i><b>10.2.3</b> Gestion des utilisateurs</a></li>
-<li class="chapter" data-level="10.2.4" data-path="les-données.html"><a href="les-données.html#format-des-données"><i class="fa fa-check"></i><b>10.2.4</b> Format des données</a></li>
+<li class="chapter" data-level="14.2.1" data-path="les-données.html"><a href="les-données.html#base-interne"><i class="fa fa-check"></i><b>14.2.1</b> Base interne</a></li>
+<li class="chapter" data-level="14.2.2" data-path="les-données.html"><a href="les-données.html#base-externe"><i class="fa fa-check"></i><b>14.2.2</b> Base externe</a></li>
+<li class="chapter" data-level="14.2.3" data-path="les-données.html"><a href="les-données.html#gestion-des-utilisateurs"><i class="fa fa-check"></i><b>14.2.3</b> Gestion des utilisateurs</a></li>
+<li class="chapter" data-level="14.2.4" data-path="les-données.html"><a href="les-données.html#format-des-données"><i class="fa fa-check"></i><b>14.2.4</b> Format des données</a></li>
 </ul></li>
 </ul></li>
 <li class="appendix"><span><b>Appendices</b></span></li>
-<li class="chapter" data-level="A" data-path="installation.html"><a href="installation.html"><i class="fa fa-check"></i><b>A</b> Installation</a></li>
+<li class="chapter" data-level="A" data-path="installation.html"><a href="installation.html"><i class="fa fa-check"></i><b>A</b> Installation</a>
+<ul>
+<li class="chapter" data-level="A.1" data-path="mise-à-jour-de-mongodb.html"><a href="mise-à-jour-de-mongodb.html"><i class="fa fa-check"></i><b>A.1</b> Mise à jour de MongoDB</a></li>
+</ul></li>
 <li class="chapter" data-level="B" data-path="anonymisation.html"><a href="anonymisation.html"><i class="fa fa-check"></i><b>B</b> Anonymisation des données</a></li>
 <li class="chapter" data-level="" data-path="références.html"><a href="références.html"><i class="fa fa-check"></i>Références</a></li>
 <li class="divider"></li>
@@ -403,16 +487,16 @@ var h5pContentTypes = [""];
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="configuration-serveur-et-git" class="section level2" number="4.3">
-<h2><span class="header-section-number">4.3</span> Configuration serveur et git</h2>
+<div id="configuration-serveur-et-git" class="section level2" number="5.3">
+<h2><span class="header-section-number">5.3</span> Configuration serveur et git</h2>
 <p>Simple hosting de Gandi.net permet d’accéder aux fichiers sur le serveur de trois façons :</p>
 <ul>
 <li>Par sFTP (TODO: détails)</li>
 <li>Par Console SSH (TODO: détails). La console n’est pas active en permanence. Il faut l’activer dans le panneau de configuration du simple hosting sur Gandi.net. Cette activation reste valable pour 2 heures seulement par sécurité.</li>
 <li>Via git. C’est le plus simple pour développer et synchroniser son site. C’est d’ailleurs aussi la seule façon de faire pour ajouter des dépendances à PHP via composer (et nous aurons besoin de rajouter une dépendance par rapport à MongoDB pour enregistrer les évènements H5P xAPI dans notre base de données).</li>
 </ul>
-<div id="sécurisation-du-site-wordpress" class="section level4" number="4.3.0.1">
-<h4><span class="header-section-number">4.3.0.1</span> Sécurisation du site Wordpress</h4>
+<div id="sécurisation-du-site-wordpress" class="section level4" number="5.3.0.1">
+<h4><span class="header-section-number">5.3.0.1</span> Sécurisation du site Wordpress</h4>
 <ul>
 <li>Modification du fichier <code>.htaccess</code> dans <code>htdocs</code>. Afin d’éviter des attaques de type <a href="https://perishablepress.com/wordpress-xmlrpc-pingback-vulnerability/">pingback xmlrpc</a> sur le site Wordpress, il faut rajouter la ligne suivante dans le fichier <code>.htaccess</code> :</li>
 </ul>
@@ -422,8 +506,8 @@ var h5pContentTypes = [""];
 <li><p>Nous avons aussi utilisé l’outil de sécurité et d’audit de Chrome dans les outils développeurs pour détecter les failles éventuelles et les erreurs côté client (Javascript, CSS, …), et nous assurer que le site est sain. Globalement, il n’y a pas de failles majeures, mais certains aspects pourraient être améliorés pour avoir un site plus rapide, par exemple. Nous examinerons ces points plus tard.</p></li>
 </ul>
 </div>
-<div id="wordpress-git" class="section level4" number="4.3.0.2">
-<h4><span class="header-section-number">4.3.0.2</span> Utilisation de git</h4>
+<div id="wordpress-git" class="section level4" number="5.3.0.2">
+<h4><span class="header-section-number">5.3.0.2</span> Utilisation de git</h4>
 <p>Il faut git et un client SSH installé (pas de problèmes pour le Mac ou Linux). Les infos pour utiliser git sont dans la page de gestion du site <code>wp.sciviews.org</code> sur Gandi.net. Dans un premier temps, l’identification se fait via un mot de passe. Voici comment cloner le dépôt git à partir d’un répertoire racine de votre choix, mais nous aurons absolument besoin que ce répertoire racine soit le même que celui où les dépôts GitHub de BioDataScience-Course sont également placés (sur le Mac, il est facile de s’y placer en tapant <code>cd</code> suivi d’une espace, et puis en allant faire un drag&amp;drop du dossier depuis le Finder vers le terminal, puis d’exécuter cette commande).</p>
 <pre><code># Placez-vous dans le bon dossier
 #cd &lt;dossier racine des dépôts BioDataScience-Course&gt;
@@ -441,8 +525,8 @@ ssh 3693753@git.sd3.gpaas.net &#39;deploy wp.sciviews.org.git&#39;</code></pre>
 <pre><code>ssh 3693753@git.sd3.gpaas.net &#39;clean wp.sciviews.org.git&#39;</code></pre>
 <p><strong>Attention qu’un fichier <code>.gitignore</code> correct est indispensable ici dans le dépôt wp.sciviews.org.</strong> Les fichiers concernés par le <code>.gitignore</code> ne seront pas effacés. Tout le reste oui (faire toujours une sauvegarde complète avant) !.</p>
 </div>
-<div id="ajout-de-mongodb-pour-php" class="section level3" number="4.3.1">
-<h3><span class="header-section-number">4.3.1</span> Ajout de mongodb pour PHP</h3>
+<div id="ajout-de-mongodb-pour-php" class="section level3" number="5.3.1">
+<h3><span class="header-section-number">5.3.1</span> Ajout de mongodb pour PHP</h3>
 <p>Le serveur sur Gandi.net n’autorise qu’une seule manière de rajouter des dépendances pour PHP : via git + ssh en utilisant <code>composer</code>. Et il faut créer les fichiers <code>composer.json</code> et <code>composer.lock</code> sur une machine locale avant de pouvoir faire un push sur le serveur. Cela signifie d’avoir PHP et la dépendance mongodb pour PHP installés localement. Ceci n’est pas facile, et il faut les mêmes versions que sur le serveur. Comme le PHP sous MacOS Catalina a la version 7.3 de PHP, j’ai d’abord essayé sur le Mac… sans succès car la puce de sécurité T2 du Mac empêche des modifications indispensables dans les dossiers <code>\usr\...</code> pour pouvoir compiler mongodb pour PHP. J’ai essayé aussi avec la SciViews Box 2019 (mais version PHP 7.2 trop ancienne) et une VirtualBox Ubuntu Server 20.04, mais version PHP 7.4 trop élevée. Gasp ! Finalement, j’ai pu le faire avec une VirtualBox Xubuntu 19.10. La procédure est détaillée ci-dessous pour mémoire (mais comme elle n’est nécessaire qu’une seule fois, il ne faut plus s’en préoccuper). Plus loin, je mets aussi la procédure utilisée sur un Xubuntu 20.04LTS pour une mise à jour de l’extension…</p>
 <ul>
 <li><p>Noter la version X.Y de PHP utilisée sur le serveur (ici 7.3). Il faudra la même en local.</p></li>
@@ -468,7 +552,7 @@ sudo reboot</code></pre>
 <li>Il se peut que la machine virtuelle rebascule en QWERTY. Vérifier et corriger à nouveau. Ensuite, installer PHP et ses dépendances nécessaires :</li>
 </ul>
 <pre><code>sudo apt install php7.3-cli php7.3-dev php-pear php-mongodb composer</code></pre>
-<p>Ensuite, nous devrions pouvoir créer les fichiers nécessaires via la commande <code>composer require mongodb/mongodb</code>, mais cela ne fonctionne pas lorsque <code>php-mongodb</code> est installé via le package Ubuntu. Nous devons le compiler nous-même avec <code>pecl</code> sur la machine<a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a> :</p>
+<p>Ensuite, nous devrions pouvoir créer les fichiers nécessaires via la commande <code>composer require mongodb/mongodb</code>, mais cela ne fonctionne pas lorsque <code>php-mongodb</code> est installé via le package Ubuntu. Nous devons le compiler nous-même avec <code>pecl</code> sur la machine<a href="#fn3" class="footnote-ref" id="fnref3"><sup>3</sup></a> :</p>
 <pre><code># Créer un répertoire dans le dossier partagé et s&#39;y placer
 mkdir /media/sf_MacDesktop/php-mongodb
 cd /media/sf_MacDesktop/php-mongodb
@@ -495,14 +579,14 @@ sudo pecl install mongodb-1.10.0
 composer require mongodb/mongodb ^1.9</code></pre>
 <p>Maintenant, j’ai les bons <code>composer.json</code> et <code>composer.lock</code> pour une version reconnue par MongoDB 5.0 (avec une limitation en lecture, mais ici, on n’accède que en écriture). Faire commit, push et deploy et vérifier que tout se passe bien.</p>
 <ul>
-<li>Faire un test dans Wordpress. Aller jusqu’à une contenu H5P quelconque sur le site et interagir avec lui. Aller ensuite voir si les données correspondantes ont bien été enregistrées dans notre MongoDB ATLAS, dans la collection <code>sdd.h5p</code>. Si pas, vérifier si ces mêmes données sont enregistrées dans H5PxAPIkatchu dans le tableau de bord Wordpress. Si c’est le cas, c’est un problème d’accès à la base de données MongoDB ATLAS, sinon, c’est un problème plus profond : est-ce que l’enregistrement xAPI est bien activé, et est-ce que les extensions bookdown nécessaires ont bien été injectées grâce à une configuration correcte de <a href="https://www.sciviews.org/learnitdown/">learnitdown</a> ? L’option de débogage de H5PxAPIkatchu devrait s’avérer utile ici pour déterminer ce qui ne va pas, voir <a href="h5p.html#h5p">5</a>.</li>
+<li>Faire un test dans Wordpress. Aller jusqu’à une contenu H5P quelconque sur le site et interagir avec lui. Aller ensuite voir si les données correspondantes ont bien été enregistrées dans notre MongoDB ATLAS, dans la collection <code>sdd.h5p</code>. Si pas, vérifier si ces mêmes données sont enregistrées dans H5PxAPIkatchu dans le tableau de bord Wordpress. Si c’est le cas, c’est un problème d’accès à la base de données MongoDB ATLAS, sinon, c’est un problème plus profond : est-ce que l’enregistrement xAPI est bien activé, et est-ce que les extensions bookdown nécessaires ont bien été injectées grâce à une configuration correcte de <a href="https://www.sciviews.org/learnitdown/">learnitdown</a> ? L’option de débogage de H5PxAPIkatchu devrait s’avérer utile ici pour déterminer ce qui ne va pas, voir <a href="h5p.html#h5p">6</a>.</li>
 </ul>
 </div>
 </div>
 <div class="footnotes">
 <hr />
-<ol start="2">
-<li id="fn2"><p>Je suis arrivé à créer <code>composer.lock</code> via la commande <code>composer update</code> en ayant été écrire à la main un <code>composer.json</code> qui contient les lignes minimales renseignées sur la page d’aide de <a href="https://docs.gandi.net/fr/simple_hosting/langages/php.html#sommaire">Gandi.net</a>, mais j’aboutis à une version trop ancienne du driver, et de toutes façons, c’est un bricolage qui ne me plaît pas !<a href="configuration-serveur-et-git.html#fnref2" class="footnote-back">↩︎</a></p></li>
+<ol start="3">
+<li id="fn3"><p>Je suis arrivé à créer <code>composer.lock</code> via la commande <code>composer update</code> en ayant été écrire à la main un <code>composer.json</code> qui contient les lignes minimales renseignées sur la page d’aide de <a href="https://docs.gandi.net/fr/simple_hosting/langages/php.html#sommaire">Gandi.net</a>, mais j’aboutis à une version trop ancienne du driver, et de toutes façons, c’est un bricolage qui ne me plaît pas !<a href="configuration-serveur-et-git.html#fnref3" class="footnote-back">↩︎</a></p></li>
 </ol>
 </div>
 <div id="disqus_thread"></div>
@@ -564,7 +648,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/BioDataScience-Course/sdd-admin/edit/master/04-Wordpress.Rmd",
+"link": "https://github.com/BioDataScience-Course/sdd-admin/edit/master/05-Wordpress.Rmd",
 "text": "Editer"
 },
 "history": {
@@ -572,7 +656,7 @@ gitbook.start({
 "text": null
 },
 "view": {
-"link": "https://github.com/BioDataScience-Course/sdd-admin/blob/master/04-Wordpress.Rmd",
+"link": "https://github.com/BioDataScience-Course/sdd-admin/blob/master/05-Wordpress.Rmd",
 "text": null
 },
 "download": ["sdd-admin.pdf"],

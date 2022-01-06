@@ -35,6 +35,13 @@ biodatascience-course
 convention-de-noms
 github-classroom
 astuces-git-et-github
+lrs
+notre-lrs
+vue-générale
+mongodb-atlas
+serveur-mongodb-local-associé-à-rsconnect
+serveur-local-macos-ou-windows
+learning-analytics-platform
 wordpress
 authentification-des-étudiants
 installation-wordpress
@@ -79,12 +86,15 @@ setup.r
 contenu
 intégration-dans-wordpress
 contenu-h5p-dans-bookdown
+learnr
 shiny
 moodle
 gestion-des-cours
 badges
 notes
 videos
+wooclap
+rsconnect
 progression
 présentation-générale
 les-données
@@ -95,4 +105,5 @@ format-des-données
 convention-de-nom-des-apps
 verbes-xapi
 installation
+mise-à-jour-de-mongodb
 anonymisation

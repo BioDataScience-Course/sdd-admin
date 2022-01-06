@@ -5,3 +5,12 @@
 
 
 **TODO:** installation des outils logiciels nécessaires pour déployer la plateforme pédagogique...
+
+## Mise à jour de MongoDB
+
+Notre système utilise deux serveurs MongoDB différents (et même trois, si on considère utiliser une version locale également dans la phase d'analyse des données). Un de ces serveurs est MongoDB ATLAS sous forme gratuite (et limitée à une taille de 512Mo). Ce serveur sert à collecter temporairement les données provenant des machines virtuelles des étudiants (learnrs et applications Shiny exécutées en local), ainsi que les données provenant des exercices H5P.
+
+L'accès à ces bases de données se fait via deux drivers différents\ : mongodb-php et {mongolite} pour R. De plus, le backup et le transfert des données d'une base à l'autre se fait via `mongodump` et `mongorestore`.
+
+**Les versions des différents serveurs aussi bien que les drivers et outils doivent tous être compatibles entre eux, nautrellement.** Or, dans sa version gratuite, MongoDB ATLAS ne laisse pas le choix de la version, ni du moment où elle est mise à jour. Toutes les autres outils doivent par conséquent être alignés au bon moment.
+

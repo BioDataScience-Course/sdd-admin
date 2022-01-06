@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>5.2 Installation Wordpress | Plateforme pédagogique BioDataScience</title>
+  <title>4.1 Notre “LRS” | Plateforme pédagogique BioDataScience</title>
   <meta name="description" content="Administration de BioDataScience-Course." />
   <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="5.2 Installation Wordpress | Plateforme pédagogique BioDataScience" />
+  <meta property="og:title" content="4.1 Notre “LRS” | Plateforme pédagogique BioDataScience" />
   <meta property="og:type" content="book" />
   <meta property="og:url" content="http://phgrosjean.sciviews.org/bookdown-test/" />
   <meta property="og:image" content="http://phgrosjean.sciviews.org/bookdown-test//images/front-cover.png" />
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="BioDataScience-Course/sdd-admin" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="5.2 Installation Wordpress | Plateforme pédagogique BioDataScience" />
+  <meta name="twitter:title" content="4.1 Notre “LRS” | Plateforme pédagogique BioDataScience" />
   
   <meta name="twitter:description" content="Administration de BioDataScience-Course." />
   <meta name="twitter:image" content="http://phgrosjean.sciviews.org/bookdown-test//images/front-cover.png" />
@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="authentification-des-étudiants.html"/>
-<link rel="next" href="configuration-serveur-et-git.html"/>
+<link rel="prev" href="lrs.html"/>
+<link rel="next" href="learning-analytics-platform.html"/>
 <script src="libs/header-attrs-2.11.3/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -487,39 +487,88 @@ code span.wa { color: #bf0303; } /* Warning */
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="installation-wordpress" class="section level2" number="5.2">
-<h2><span class="header-section-number">5.2</span> Installation Wordpress</h2>
-<p>Notre nom de domaine <code>sciviews.org</code> est géré par <a href="https://gandi.net" class="uri">https://gandi.net</a>. Ce fournisseur propose aussi un hébergement web Wordpress dans un serveur LAMP préconfiguré. Nous utilisons cette option. Le serveur utilise 1 cpu et 256Mo de RAM avec 20Go d’espace de stockage, et un quota de 300.000 pages vues par mois et 60Go par mois. Il peut être augmenté à tous niveaux à n’importe quel moment (plus de cpus ou de ram, plus de débit, et espace disque jusqu’à 1To). Cette configuration se comporte très bien en charge avec nos étudiants (&gt; 170 par an et 75 max par classe). Nous pourrons toujours passer vers un plan supérieur si des lenteurs sont constatées. Le certificat SSL pour avoir une adresse sécurisée en <code>https://</code> est inclut dans le pack. Nous ne migrerons pas vers une instance gérée par le Wordpress de l’UMONS car le sous-traitant impose des contraintes qui ne conviennent pas à notre usage (restriction sur les plugins et pas d’utilisation d’iframe). De plus, la gestion se fait vie le Département d’informatique qui dialogue avec le sous-traitant -pas d’échange direct avec le sous-traitant-, ce qui introduit un temps de latence insupportable de parfois plusieurs semaines avant d’obtenir une modification) !</p>
-<p>Le serveur est installé initialement avec <strong>PHP 7.3</strong> et une base de données <strong>MySQL 5.7</strong> ne permettant que des requêtes locales (impossible d’accès par l’extérieur par décision du fournisseur). En janvier 2022, PHP est passé à la version 7.4. <strong>Wordpress</strong> est installé initialement à la version <strong>5.4.2</strong>. Il a évalué progressivement vers la version <strong>5.8.2</strong> en fr_BE en janvier 2022 qui est la dernière version en date et qui recommande PHP 7.4 minimum et MySQL 5.7. Donc, on est bon. Le site utilise 4Go sur les 20Go disponibles.</p>
-<p>Le site est servi à l’adresse <a href="https://wp.sciviews.org" class="uri">https://wp.sciviews.org</a>. Les enseignants y sont enregistrés comme éditeurs. En outre, un compte administrateur est aussi créé. Le serveur est accessible par SSH (après activation provisoire de la console dans Gandi), sFTP et git/SSH. Toutes les informations nécessaires à la gestion de l’hébergement sont transmises aux intéressés par voie sécurisée.</p>
-<div id="plugins-wordpress" class="section level3" number="5.2.1">
-<h3><span class="header-section-number">5.2.1</span> Plugins Wordpress</h3>
-<p>Nous avons installé les extensions suivantes (les versions correspondent à la configuration de Wordpress au 05/01/2022 et sont toutes à jour à cette date) :</p>
+<div id="notre-lrs" class="section level2" number="4.1">
+<h2><span class="header-section-number">4.1</span> Notre “LRS”</h2>
+<p>Les évènements que nous enregistrons ne sont pas tous formatés en xAPI pour le moment. Ainsi, les données provenant de H5P le sont, mais pas celles provenant de Learnr, Shiny, ou Wooclap ne le sont pas. Nous avons décidé d’un format commun de table qui regroupe toutes ces données dans une base de données MongoDB. Plus tard, ce format pourra éventuelement évoluer vers un autre qui soit conforme à xAPI edt et qui puisse être utilisé dans un véritable LRS.</p>
+<p>Le choix de MongoDB a été motivé par plusieurs facteurs :</p>
 <ul>
-<li><p><strong><a href="https://fr.wordpress.org/plugins/h5p/">H5P</a> 1.15.3</strong>. Il faut installer les libraires séparément et les principales ont été rajoutées dès le départ. Les 5 ou 6 widgets H5P que nous avions déjà créés sont facilement importés en les exportant de leur site original au format <code>.h5p</code> en cliquant sur le bouton <code>Reuse</code> en bas à gauche du widget. Ensuite dans Wordpress, on va dans le tableau de bord -&gt; H5P Content, on clique <code>Add New</code> puis <code>Téléverser</code> et on sélectionne le ficher <code>.h5p</code>. Une sauvegarde de ces fichiers <code>.h5p</code> est également effectué sur p-Cloud dans le dossier <code>sdd_h5p_backup</code>. Le plugin est ensuite configuré pour ne pas montrer la bannière H5P en bas des widgets et pour générer tous les événements xAPI possibles (voir <a href="h5p.html#h5p">6</a>).</p></li>
-<li><p><strong><a href="https://fr.wordpress.org/plugins/h5pxapikatchu/">SNORDIAN’s H5PxAPIkatchu</a> 0.4.11</strong> capture les évènements xAPI générés par H5P et les stocke directement dans la base de données MySQL liée à Wordpress. Il y a une interface simpliste pour visualiser les tables, les filtrer et les exporter au format CSV. Nous avons patché cette version pour y rajouter l’enregistrement des évènements xAPI directement dans notre base de données MongoDB Atlas, et n’utiliser l’enregistrement local original que comme solution d’appoint au cas où l’enregistrement en MongoDB s’avère impossible pour une raison ou une autre (base saturée, indisponible, erreur, ou port 27017 de MongoDB bloqué). <strong>Attention : depuis la version 0.4.7, il faut activer l’option “Embed support,” sinon, les exercices H5P des pages bookdown ne sont pas enregistrées à partir de certains navigateur Web (testés avec la version 0.4.11 : Safari et Chrome sous MacOS Big Sur, Edge et Chrome sous Windows 10 et Chromium et Firefox sous Ubuntu 20.04LTS).</strong></p></li>
-<li><p><strong><a href="https://fr.wordpress.org/plugins/miniorange-login-with-eve-online-google-facebook/">OAuth Single Sign On</a> - SSO (OAuth Client) 6.21.6</strong> configuré pour enregistrer et connecter un utilisateur via son compte Github. Pour permettre ceci une application Github nommée <strong>BioDataScience</strong> a été créée sur Github. La configuration de ce plugin est disponible depuis le tableau de bord de Wordpress -&gt; miniOrange -&gt; OAuth.</p></li>
-<li><p><strong><a href="https://fr.wordpress.org/plugins/import-users-from-csv-with-meta/">Import and export users and customers 1.19.1.2</a></strong> permet d’exporter un tableau contenant tous les utilisateurs enregistrés dans Wordpress, accompagné des métadonnées. Ce tableau CSV est ensuite lu par la fonction <code>sdd_users()</code> pour créer les informations utilisateurs accessibles par RStudio Connect et les learnrs/apps Shiny exécutées directement dans la SciViews Box. Sa fonction d’importation des données permet de mettre à jour rapidement des données et métadonnées relatives à un grand nombre d’étudiants en une seule fois à partir d’un tableau CSV.</p></li>
-<li><p><strong><a href="https://fr.wordpress.org/plugins/advanced-iframe/">Advanced iFrame</a> Pro 2021.9</strong> permet d’insérer un iframe avec plein d’options : sécurisation, adaptation de la taille, passage de paramètres, réécriture d’URL, etc. Nous utilisons ce plugin pour intégrer les bookdowns dans le site Wordpress, et ainsi conserver la bannière supérieure de notre site tout en affichant le bookdown. La version standard est installée depuis le site plugins Wordpress, et puis nous avons payé $19 pour obtenir la version PRO qui propose des fonctionnalités en plus dont nous avons besoin pendant 6 mois (renouvellement de 6 mois = $10). Pour la mise-à-jour, on télécharge la nouvelle version sous forme de fichier zippé depuis Evanto, on supprime l’ancienne version (config conservée), et on installe la nouvelle version en téléversant le fichier .zip. La configuration est telle qu’elle correspond au code suivant (qui peut être utilisé tel quel sans modifier par ailleurs quoi que ce soit dans les boites de dialogue) :</p></li>
+<li><p>La possibilité d’utiliser gratuitement MongoDB ATLAS, un serveur sécurisé et fiabilisé contre les pannes sur le cloud pour y stocker (temporairement) jusqu’à 512Mo de données.</p></li>
+<li><p>La facilité d’installer un serveur MongoDB local uniquement (machine personnelle et RStudio Connect).</p></li>
+<li><p>La simplicité de backup/restoration de données pour un même serveur ou entre serveurs avec <code>mongodump</code>/<code>mongorestore</code>.</p></li>
+<li><p>La facilité d’exportation des données avec <code>mongoexport</code>, ainsi que les drivers pour PHP (Wordpress/H5PxAPIKatchu) et pour R avec le package {mongolite}.</p></li>
+<li><p>La rapidité de requêtes relativement complexes, et la possibilité de mettre au point de telles requêtes avec MongoDB Compass.</p></li>
 </ul>
-<pre><code>[advanced_iframe use_shortcode_attributes_only=&quot;true&quot;
-src=&quot;//www.tinywebgallery.com/blog/advanced-iframe&quot;
-width=&quot;100%&quot; height=&quot;600&quot; add_iframe_url_as_param=&quot;same&quot;
-show_iframe_loader=&quot;true&quot; enable_responsive_iframe=&quot;true&quot;
-hide_elements=&quot;.tg-site-footer-bar,.entry-footer&quot; additional_height=&quot;100&quot;
-multi_domain_enabled=&quot;false&quot; use_post_message=&quot;false&quot;]</code></pre>
+<p>Par contre, au niveau des points négatifs, nous avons :</p>
 <ul>
-<li><p><strong><a href="https://fr.wordpress.org/plugins/my-custom-functions/">My Custom Functions</a> 4.51</strong> permet de rajouter des fonctions PHP au site sans devoir créer de plugin Wordpress pour cela et sans “polluer” les autres fichiers (comme <code>functions.php</code> du thème). Les fonctions rajoutées créent des variables dans <code>localStorage</code> du browser web sur le client pour l’identification de l’étudiant entre bookdown, H5P et les applis Shiny/learnr, pour enregistrer les évènements H5P xAPI dans MongoDB Atlas via H5PxAPIkatchu, et pour modifier Wordpress de manière cosmétique (pas d’icône Wordpress dans la barre du haut, logo et lien BioDataScience dans la page de login).</p></li>
-<li><p><strong><a href="https://wordpress.org/plugins/wp-user-avatars/">WP User Avatars</a> 1.4.1</strong> permet de gérer les avatars des utilisateurs. Nous l’employons pour placer les photos de chaque étudiant issues des données UMONS. Pour l’instant, nous devons vérifier chaque utilisateur manuellement et rajouter ces photos à la main… mais au moins, ce plugin permet de le faire.</p></li>
-<li><p><strong><a href="https://fr.wordpress.org/plugins/updraftplus/">UpdraftPlus</a> 1.16.69</strong> comme système de sauvegarde de l’ensemble (fichiers Wordpress + base MySQL). Le backup se fait en local pour l’instant dans <code>lamp0/web/vhosts/wp.sciviews.org/htdocs/wp-content/updraft</code>, mais il est recopié manuellement par sFTP sur notre disque p-Cloud dans le dossier <code>sdd_site_backup</code>. <strong>TODO:</strong> il nous faudra à terme une solution de backup automatisé sur p-Cloud ou OneDrive UMONS.</p></li>
-<li><p>Quelques autres plugins ne sont pas essentiels, mais aident à gérer le site Wordpress : <strong><a href="https://fr.wordpress.org/plugins/broken-link-checker/">Broken Link Checker</a> 1.11.16</strong>, <strong><a href="https://fr.wordpress.org/plugins/health-check/">Health Check &amp; Troubleshooting</a> 1.4.5</strong>, <strong><a href="https://fr.wordpress.org/plugins/wp-optimize/">WP-Optimize</a> 3.2.1</strong>, <strong><a href="https://wordpress.org/plugins/wp-rollback/">WP Rollback</a> 1.7.1</strong> &amp; <strong><a href="https://wordpress.org/plugins/wp-rest-api-authentication/">WordPress REST API Authentication</a> 1.6.6</strong>.</p></li>
+<li><p>Utilisation d’un port particulier 27017 qui doit être ouvert. À l’UMONS ce port est fermé pour certains réseaux (Wifi étudiant) car il est aussi contenu dans une plage utilisée par des jeux. Or, il est nécessaire de limiter l’accès aux jeux sur le réseau du campus car sinon, cela saturerait la bande passante.</p></li>
+<li><p>Pas de possibilité d’utiliser un outil comme {dbplyr} pour définir les requêtes. Langage de requêtage spécifique.</p></li>
+<li><p>Plus complexe à déployer et utiliser en local que SQLite.</p></li>
+<li><p>Des solutions plus performantes et mieux intégrées à R et Python existent comme Spark au RAPIDS/BlazingSQL.</p></li>
+<li><p>Il faut utiliser un format de données différtent pour l’échange et la publication des données (Open Data).</p></li>
 </ul>
-<p>Tous ces plugins sont distribués sur le site plugins de Wordpress, sont à jour et activement maintenus, avec un grand nombre d’utilisateurs. Nous avons évité les plugins plus “confidentiels” pour lesquels nous ne sommes pas certains de la pérennité à plus long terme. <strong>Note/ : en janvier 2022, nous avons recherché la compatibilité PHP 8.0 de ces plugins dans la doc, mais sans les tester. Nous avons trouvé des indications de compatibilité pour tous sauf OAuth SSO, Wordpress REST API, WP Rollback, WP User Avatars &amp; Health Check &amp; Troubleshouting. Nous n’avons pas non plus trouvé d’indications de compatibilité pour le thème Zakra utilisé (voir ci-dessous). De plus, il faudra faire une mis-à-jour des fichiers composer pour l’extension MongoDB pour PHP !</strong></p>
+<p>Nous ne sommes donc pas définitivement fixés sur cette solution, mais elle a le mérite de fonctionner correctement jusqu’ici.</p>
+<div id="vue-générale" class="section level3" number="4.1.1">
+<h3><span class="header-section-number">4.1.1</span> Vue générale</h3>
+<ul>
+<li><p>Création d’un compte MongoDB ATLAS, une organisation UMONS et un serveur M0 SDD-COURS. Deux bases de données sont créées : “test” et “sdd.” La première ne contient rien d’important et sert… à des tests comme son nom l’indique. La seconde contient nos données avec les collections “h5p,” “learnr” et “shiny.”</p></li>
+<li><p>Création d’un serveur local uniquement sur sdd.umons.ac.be qui contient la base de données “sdd,” et des tables “users,” “h5p,” “learnr,” “shiny,” … Également, mise en place de scripts cron (voir plus loin) pour récupérer les données venant de MongoDB ATLAS toutes les 5min et pour faire des bakcups journaliers de la base de données.</p></li>
+<li><p>Utilisation d’un serveur MongoDB local sur une machine sous Windows ou MacOS avec un snapshot des données obtenu via <code>mongodump</code>/<code>mongorestore</code>. Ce sbnapshot, ainsi ques les programmes nécessaires pour l’utiliser sous MacOS et Windows est partagé via p-Cloud.</p></li>
+</ul>
+<p>Ces trois systèmes sont détaillés ci-dessous.</p>
 </div>
-<div id="thème-du-site" class="section level3" number="5.2.2">
-<h3><span class="header-section-number">5.2.2</span> Thème du site</h3>
-<p>Pour le thème, nous avons choisi <a href="https://fr.wordpress.org/themes/zakra/">Zakra</a> version “free,” à jour, activement maintenu et totalement personnalisable. En jouant sur les options uniquement, nous avons pu façonner le site de telle manière qu’il reprenne une identité et les couleurs UMONS, tout en restant le plus simple, intuitif et facile d’accès possible. En janvier 2022, la version 2.0.8 est utilisée (dernière en date).</p>
+<div id="mongodb-atlas" class="section level3" number="4.1.2">
+<h3><span class="header-section-number">4.1.2</span> MongoDB ATLAS</h3>
+<p>TODO: expliquer l’organisation de MongoDB ATLAS…</p>
 </div>
+<div id="serveur-mongodb-local-associé-à-rsconnect" class="section level3" number="4.1.3">
+<h3><span class="header-section-number">4.1.3</span> Serveur MongoDB local associé à RSConnect</h3>
+<p>TODO: installation et configuration dans sdd.umons.ac.be</p>
+</div>
+<div id="serveur-local-macos-ou-windows" class="section level3" number="4.1.4">
+<h3><span class="header-section-number">4.1.4</span> Serveur local MacOS ou Windows</h3>
+<p>Le principe de cet item est de regrouper dans un dossier tous les programmes et toutes les données relatives à un snapshot donné de notre LRS, afin de pouvoir manipuler tout cela de manière indépendante et sécurisée (accès local uniquement). Le dossier de base contient deux sous-dossiers : <code>bin</code> et <code>db</code>.</p>
+<p>Le dossier <code>bin</code> contient tous les exécutables MacOS et Windows nécessaires, soit <code>mongod</code> et <code>mongo</code> de la distribution 4.4.11 de MongoDB, et <code>bsondump</code>, <code>mongodump</code>, <code>mongoexport</code>, <code>mongofiles</code>, <code>mongoimport</code>, <code>mongorestore</code>, <code>mongostat</code> et <code>mongotop</code> des MongoDB Data Tools version 100.5.1. Ces versions sont choisies identiques à celles déployées sur sdd.umons.ac.be et la version majeure de MongoDB est alignée sur celle déployées sur MongoDB ATLAS<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a>. Ces différents exécutables sont récupérés depuis les installeurs (format .tgz ou .zip) MacOS et Windows depuis <a href="https://www.mongodb.com/try/download/community">MongoDB on-premises</a> et <a href="https://www.mongodb.com/try/download/database-tools">MongoDB tools</a>. L’ensemble de ces exécutables MacOS et Windows occupent un peu plus de 1Go dans le dossier <code>bin</code>.</p>
+<p>Le dossier <code>db</code> contient le snapshot de la base de données. Il est créé en réalisant un <code>mongorestore</code> à partir des données obtenues par <code>mongodump</code> depuis sdd.umons.ac.be comme ceci (exemple sous MacOS) :</p>
+<pre><code># On sdd.umons.ac.be, go to a emty folder, say &#39;/data1/dump/sdd&#39;, then:
+mongodump # Possibly restrict with --collection=&lt;col_name&gt; and/or --query=&#39;{&quot;x&quot;: {&quot;$gt&quot;:1}}&#39;
+# Compress this folder
+cd ..
+tar -czvf sdd.tar.gz sdd
+rm -rf sdd
+# Go back to your local machine, then:
+cd &lt;empty_temporary_dir&gt;
+scp econum@sdd.umons.ac.be:/data1/dump/sdd.tar.gz sdd.tar.gz # Enter password...
+tar -xzvf sdd.tar.gz
+rm sdd.tar.gz
+cd ..
+&lt;path_to&gt;/mongorestore # Of course, the local MongoDB server must be running here</code></pre>
+<p>En plus de ces deux sous-dossier, il y a également deux scripts qui permettent de lancer le serveur MongoDB sous MacOS ou sous Windows. Ces scripts sont :</p>
+<ul>
+<li><code>sdd_server_macos.sh</code> :</li>
+</ul>
+<pre><code>#!/bin/bash
+cd &quot;$(dirname &quot;$0&quot;)&quot;
+port=27017
+./bin/mongod --port $port --dbpath db</code></pre>
+<ul>
+<li><code>sdd_server_win.bat</code></li>
+</ul>
+<pre><code>@echo off
+set port=27017
+start cmd /c bin\mongod --port %port% --dbpath db</code></pre>
+<p>Ces deux scripts sont à exécuter dans un terminal MacOS ou une fenêtre Powershell Windows après avoir changé le répertoire par défaut vers le dossier racine :</p>
+<pre><code>cd &lt;dossier_racine&gt;
+./sdd_server_macos.sh ou ./sdd_server_win.bat</code></pre>
+<p>Et ainsi un démon MongoDB serveur local est lancé sur le port 127.0.0.1:27017 et sert les données présentes dans le sous-dossier <code>db</code>. Les messages du serveur sont directement affichés dans la fenêtre terminal. À partir de ce moment, on peut travailler tranquillement sur les données, les analyser et/ou prototyper des outils à déployer ensuite sur sdd.umons.ac.be sans craintes de casser la base de données principale. Ce serveur ne permet qu’un accès local. Donc, il est parfaitement sécurisé.</p>
+<p><strong>Note : Les versions du serveur et des outils doivent toujours être les mêmes que celles sur MongoDB ATLAS et sdd.umons.ac.be. En cas de changement de version, il faut donc bien penser à remplacer les exécutables du dossier <code>bin</code> par les nouvelles versions avant de continuer à travailler !</strong></p>
+<p>Pour échanger ce snapshot et ces outils entre ordinateurs, le dossier racine et son contenu peuvent être compressés (zippé) et partagés via le dossier <code>Crypto Folder</code> de p-Cloud. <strong>Ne pas exécuter le serveur MongoDB directement depuis le dossier p-Cloud pour des raisons évidentes de perfomances</strong>, mais copier le fichier et le dézipper sur un disque dur rapide qui contient suffisamment de place (5Go au moins).</p>
+</div>
+</div>
+<div class="footnotes">
+<hr />
+<ol start="1">
+<li id="fn1"><p>Aligner les versions majeurs de MongoDB avec MongoDB ATLAS nécessite de jongler un peu avec les mises à jour car nous n’avons aucuns contrôles des versions sur ATLAS. Par exemple, une migration de 4.4 vers 5.0 a été plannifiée début février 2022 et nous devons adapter tout le reste au même moment !<a href="notre-lrs.html#fnref1" class="footnote-back">↩︎</a></p></li>
+</ol>
 </div>
 <div id="disqus_thread"></div>
 <script>
@@ -547,8 +596,8 @@ s.setAttribute('data-timestamp', +new Date());
           </div>
         </div>
       </div>
-<a href="authentification-des-étudiants.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="configuration-serveur-et-git.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="lrs.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="learning-analytics-platform.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -580,7 +629,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/BioDataScience-Course/sdd-admin/edit/master/05-Wordpress.Rmd",
+"link": "https://github.com/BioDataScience-Course/sdd-admin/edit/master/04-LRS.Rmd",
 "text": "Editer"
 },
 "history": {
@@ -588,7 +637,7 @@ gitbook.start({
 "text": null
 },
 "view": {
-"link": "https://github.com/BioDataScience-Course/sdd-admin/blob/master/05-Wordpress.Rmd",
+"link": "https://github.com/BioDataScience-Course/sdd-admin/blob/master/04-LRS.Rmd",
 "text": null
 },
 "download": ["sdd-admin.pdf"],
