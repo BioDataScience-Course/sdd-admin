@@ -55,6 +55,16 @@ L'utilisateur doit avoir la possibilité d'effacer intégralement ses données p
 
 L'anonymisation des données est de mise lorsque ces données servent à une étude générale (par exemple, évolution des performances des cohortes d'étudiants avec les outils progressivement mis en place, études scientifiques, ...). Cela passe par l'effacement des données de toute information à caractère personnel. Le nom, numéro de matricule ou adresse email de l'étudiant sont remplacés par un identifiant générique, par exemple, "étudiant 1", "étudiant 2", etc. Nous mettons cette pratique en œuvre pour toutes les études rétrospectives générales visant à estimer l'impact pédagogique des outils mis en place (voir appendice \@ref(anonymisation)).
 
+##### Lien utiles {-}
+
+- [RGPD pour les développeurs](https://lincnil.github.io/Guide-RGPD-du-developpeur/) par la [CNIL](https://www.cnil.fr/professionnel) en France,
+
+- [Techniques d'anonymisation](https://www.cnil.fr/fr/le-g29-publie-un-avis-sur-les-techniques-danonymisation)
+
+- [Recommandation relative aux mots de passe](https://www.legifrance.gouv.fr/cnil/id/CNILTEXT000033929210/)
+
+- [Présentation de l'information RGPD aux utilisateurs](https://design.cnil.fr/concepts/information/)
+
 ### Droit d'auteur et licence
 
 ...TODO: discuter le choix de la licence pour notre contenu en ligne.

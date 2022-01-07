@@ -108,4 +108,7 @@ convention-de-nom-des-apps
 verbes-xapi
 installation
 mise-à-jour-de-mongodb-1
+maintenance
+maintenance-régulière
+nettoyage-à-la-fin-de-chaque-cours
 anonymisation

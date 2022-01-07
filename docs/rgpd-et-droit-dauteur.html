@@ -24,7 +24,7 @@
 <meta name="author" content="Philippe Grosjean &amp; Guyliann Engels" />
 
 
-<meta name="date" content="2022-01-06" />
+<meta name="date" content="2022-01-07" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -466,7 +466,12 @@ code span.wa { color: #bf0303; } /* Warning */
 <ul>
 <li class="chapter" data-level="A.1" data-path="mise-à-jour-de-mongodb-1.html"><a href="mise-à-jour-de-mongodb-1.html"><i class="fa fa-check"></i><b>A.1</b> Mise à jour de MongoDB</a></li>
 </ul></li>
-<li class="chapter" data-level="B" data-path="anonymisation.html"><a href="anonymisation.html"><i class="fa fa-check"></i><b>B</b> Anonymisation des données</a></li>
+<li class="chapter" data-level="B" data-path="maintenance.html"><a href="maintenance.html"><i class="fa fa-check"></i><b>B</b> Maintenance</a>
+<ul>
+<li class="chapter" data-level="B.1" data-path="maintenance-régulière.html"><a href="maintenance-régulière.html"><i class="fa fa-check"></i><b>B.1</b> Maintenance régulière</a></li>
+<li class="chapter" data-level="B.2" data-path="nettoyage-à-la-fin-de-chaque-cours.html"><a href="nettoyage-à-la-fin-de-chaque-cours.html"><i class="fa fa-check"></i><b>B.2</b> Nettoyage à la fin de chaque cours</a></li>
+</ul></li>
+<li class="chapter" data-level="C" data-path="anonymisation.html"><a href="anonymisation.html"><i class="fa fa-check"></i><b>C</b> Anonymisation des données</a></li>
 <li class="chapter" data-level="" data-path="références.html"><a href="références.html"><i class="fa fa-check"></i>Références</a></li>
 <li class="divider"></li>
 <li><a href="http://wp.sciviews.org">Site Web du cours</a></li>
@@ -499,7 +504,16 @@ code span.wa { color: #bf0303; } /* Warning */
 <p>Le <strong>Règlement Général sur la Protection des Données</strong> ou RGPD (n° 2016/679) adopté par l’Union Européenne en 2016 régit la façon dont les données à caractère personnel peuvent être collectées et utilisées. Ce règlement est en faveur de l’utilisateur (ici l’étudiant). Il faut notamment son accord pour collecter et utiliser ses données personnelles. Or de telles données sont indispensables pour suivre la progression des étudiants, pouvoir les noter, etc.</p>
 <p>A l’UMONS, l’étudiant signe le document adéquat lors de son inscription (<a href="https://web.umons.ac.be/fr/mentions-legales-et-protection-de-la-vie-privee/charte-vie-privee-umons-20190605/">charte de la vie privée</a>, complétée de documents disponibles sur l’Intranet UMONS). Ce document mets <strong>Moodle</strong> en conformité par rapport au RGPD, mais pas les outils externes dont les notres. Nous devons donc préciser exactement ce que nous devons faire pour être en conformité RGPD. Ce travail a été réalisé avec la juriste de l’UMONS en charge de cette question, ainsi qu’avec le conseiller à la sécurité des données informatiques en aout 2020. Il en résulte un document complémentaire affiché sur notre site (entrée <a href="https://wp.sciviews.org/politique-de-confidentialite/">Protection de la vie privée</a> dans le menu à gauche)qui informe et précise la façon dans les données à caractère personnel des étudiants sont utilisées. Et puisque ces données entre dans un cadre d’utilité publique et que l’usage est similaire à ce qui se fait sur Moodle, un accord supplémentaire (au delà des documents qu’il a déjà rempli à son inscription) n’est pas nécessaire de la part de l’étudiant.</p>
 <p>L’utilisateur doit avoir la possibilité d’effacer intégralement ses données personnelles s’il le souhaite lorsqu’il efface son compte d’un site. C’est indiqué explicitement dans le RGPD. Cependant, des restrictions à ceci sont indispensables pour la bonne gestion du suivi des étudiants à l’Université. C’est pour cela que l’étudiant a du signer un accord lors de son inscription. Afin d’être en conformité avec cette directive, nous avons rajouté un bouton <code>Effacer mes données personnelles</code> dans la première page des cours bookdown. S’il clique sur ce bouton, l’utilisateur peut ensuite lire le contenu de manière anonyme et les activités learnr/Shiny ne sont <strong>pas</strong> enregistrées. Par contre, H5P est toujours enregistré et les données historiques antérieures sont toujours dans notre base de données (TODO: voir plus tard comment éviter cela, et en tous cas, effacer régulièrement ces données pour l’instant).</p>
-<p>L’anonymisation des données est de mise lorsque ces données servent à une étude générale (par exemple, évolution des performances des cohortes d’étudiants avec les outils progressivement mis en place, études scientifiques, …). Cela passe par l’effacement des données de toute information à caractère personnel. Le nom, numéro de matricule ou adresse email de l’étudiant sont remplacés par un identifiant générique, par exemple, “étudiant 1,” “étudiant 2,” etc. Nous mettons cette pratique en œuvre pour toutes les études rétrospectives générales visant à estimer l’impact pédagogique des outils mis en place (voir appendice <a href="anonymisation.html#anonymisation">B</a>).</p>
+<p>L’anonymisation des données est de mise lorsque ces données servent à une étude générale (par exemple, évolution des performances des cohortes d’étudiants avec les outils progressivement mis en place, études scientifiques, …). Cela passe par l’effacement des données de toute information à caractère personnel. Le nom, numéro de matricule ou adresse email de l’étudiant sont remplacés par un identifiant générique, par exemple, “étudiant 1,” “étudiant 2,” etc. Nous mettons cette pratique en œuvre pour toutes les études rétrospectives générales visant à estimer l’impact pédagogique des outils mis en place (voir appendice <a href="anonymisation.html#anonymisation">C</a>).</p>
+<div id="lien-utiles" class="section level5 unnumbered">
+<h5>Lien utiles</h5>
+<ul>
+<li><p><a href="https://lincnil.github.io/Guide-RGPD-du-developpeur/">RGPD pour les développeurs</a> par la <a href="https://www.cnil.fr/professionnel">CNIL</a> en France,</p></li>
+<li><p><a href="https://www.cnil.fr/fr/le-g29-publie-un-avis-sur-les-techniques-danonymisation">Techniques d’anonymisation</a></p></li>
+<li><p><a href="https://www.legifrance.gouv.fr/cnil/id/CNILTEXT000033929210/">Recommandation relative aux mots de passe</a></p></li>
+<li><p><a href="https://design.cnil.fr/concepts/information/">Présentation de l’information RGPD aux utilisateurs</a></p></li>
+</ul>
+</div>
 </div>
 <div id="droit-dauteur-et-licence" class="section level3" number="2.1.2">
 <h3><span class="header-section-number">2.1.2</span> Droit d’auteur et licence</h3>
