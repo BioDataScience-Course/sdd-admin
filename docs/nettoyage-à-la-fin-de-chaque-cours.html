@@ -24,7 +24,7 @@
 <meta name="author" content="Philippe Grosjean &amp; Guyliann Engels" />
 
 
-<meta name="date" content="2022-01-07" />
+<meta name="date" content="2022-01-10" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -510,7 +510,8 @@ code span.wa { color: #bf0303; } /* Warning */
 <li><p>Récupération d’un backup de la base de données MySQL dans p-Cloud. Aller dans phpMyAdmin, exporter au format .sql (quick) dans /srv/data/tmp. Ensuite, récupérer le fichier, le zipper et le placer sur p-Cloud pour archivage</p></li>
 <li><p>Update éventuel WordPress après ces backups (PHP et/ou MySQL)</p></li>
 <li><p>Vérification de la synchronisation entre MongoDB ATLAS et MongoDB sdd.umons.ac.be et nettoyage des tables h5p, shiny et learnr sur MongoDB ATLAS</p></li>
-<li><p>Récupération et nettoyages des backups MongoDB depuis sdd.umons.ac.be et réalisation d’un snapshot local archivé sur p-Cloud</p></li>
+<li><p>Récupération et nettoyages des backups MongoDB depuis sdd.umons.ac.be et réalisation d’un snapshot local archivé sur p-Cloud. Pour récupérer les données entre deux dates seulement : <code>mongodump --query "{\"ts\":{\"\$gt\":{\"\$date\":</code>date -d 2011-08-10 +%s<code>000},\"\$lte\":{\"\$date\":</code>date -d 2011-08-11 +%s<code>000}}}"</code></p></li>
+<li><p>Récupération d’une copie des différentes bases de données SQLite liées aux challenges, et élimination de ces bases de données depuis sdd.umons.ac.be à la fin de chaque année académique. <code>sudo tar -czvf backup/challenges.tar.gz A04_challenge B04_challenge C03_challenge</code>, then from a local machine : <code>scp econum@sdd.umons.ac.be:/data1/backup/challenges.tar.gz challenges.tar.gz</code></p></li>
 <li><p>Mise à jour et vérification logicielle et matérielle de sdd.umons.ac.be</p></li>
 <li><p>Changement de tous les mots de passe et génération de nouveaux fichiers cryptés avec les informations de connexion (en début d’année académique uniquement)</p></li>
 <li><p>Remise à zéro de tous les flags d’utilisateurs dans WordPress</p></li>

@@ -30,7 +30,9 @@ En aout et en janvier, une maintenance supplémentaire est nécessaire pour pré
 
 - Vérification de la synchronisation entre MongoDB ATLAS et MongoDB sdd.umons.ac.be et nettoyage des tables h5p, shiny et learnr sur MongoDB ATLAS
 
-- Récupération et nettoyages des backups MongoDB depuis sdd.umons.ac.be et réalisation d'un snapshot local archivé sur p-Cloud
+- Récupération et nettoyages des backups MongoDB depuis sdd.umons.ac.be et réalisation d'un snapshot local archivé sur p-Cloud. Pour récupérer les données entre deux dates seulement\ : `mongodump --query "{\"ts\":{\"\$gt\":{\"\$date\":`date -d 2011-08-10 +%s`000},\"\$lte\":{\"\$date\":`date -d 2011-08-11 +%s`000}}}"`
+
+- Récupération d'une copie des différentes bases de données SQLite liées aux challenges, et élimination de ces bases de données depuis sdd.umons.ac.be à la fin de chaque année académique. `sudo tar -czvf backup/challenges.tar.gz A04_challenge B04_challenge C03_challenge`, then from a local machine\ : `scp econum@sdd.umons.ac.be:/data1/backup/challenges.tar.gz challenges.tar.gz`
 
 - Mise à jour et vérification logicielle et matérielle de sdd.umons.ac.be
 
