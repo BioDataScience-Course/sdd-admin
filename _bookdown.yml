@@ -1,6 +1,6 @@
 book_filename: "sdd-admin"
 #chapter_name: "Module "
-repo: https://github.com/pBioDataScience-Course/sdd-admin
+repo: https://github.com/BioDataScience-Course/sdd-admin
 output_dir: docs
 clean: [packages.bib, bookdown.bbl]
 delete_merged_file: yes
